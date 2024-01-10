@@ -16,25 +16,22 @@ appHeight();
 // start scroll
 const showreelbutton = document.querySelector('.showreel__button');
 const showreel = document.querySelector('.showreel');
-const pbbutton = document.querySelector('.project_banner__button');
-const pbinview = document.querySelector('.project_banner__inview');
+const hbottom = document.querySelector('.header__bottom');
+const htop = document.querySelector('.header__top');
 if (!document.querySelector('.has-scroll-smooth')) {
-  let parallaxscrollY;
-  parallaxscrollY = window.scrollY;
-  if (showreel) {
-    showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${parallaxscrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight)}, 0, 1)`;
-  }
-  if (pbbutton) {
-    pbbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${parallaxscrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight)}, 0, 1)`;
-  }
-  const hbottom = document.querySelector('.header__bottom');
-  const htop = document.querySelector('.header__top');
-  window.addEventListener('scroll', function () {
-    if (window.scrollY >= htop.scrollHeight) {
-      hbottom.classList.add("fixed");
-    } else {
-      hbottom.classList.remove("fixed");
+  window.addEventListener('scroll', function() {
+    let parallaxscrollY;
+    parallaxscrollY = window.scrollY;
+    if (showreel) {
+      showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${parallaxscrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + htop.scrollHeight)}, 0, 1)`;
     }
+    window.addEventListener('scroll', function () {
+      if (window.scrollY >= htop.scrollHeight) {
+        hbottom.classList.add("fixed");
+      } else {
+        hbottom.classList.remove("fixed");
+      }
+    });
   });
 }
 // end scroll
@@ -61,39 +58,39 @@ const burger_ctwo = document.querySelector('.button__project_two');
 const menuItemActive = document.getElementsByClassName("header__nav_item active");
 
 // button header__burger
-burger.addEventListener('click', function() {
-  if (burger.classList.contains("active")) {
-    bodyoverlay.classList.remove("active");
-    menu.classList.remove("active");
-    burger.classList.remove("active");
-    header.classList.remove("active");
-    document.body.style.overflow = null;
-    document.body.style.height = null;
-  } else {
-    bodyoverlay.classList.add("active");
-    menu.classList.add("active");
-    burger.classList.add("active");
-    header.classList.add("active");
-    document.body.style.overflow = "hidden";
-    document.body.style.height = "100vh";
-  }
-})
+// burger.addEventListener('click', function() {
+//   if (burger.classList.contains("active")) {
+//     bodyoverlay.classList.remove("active");
+//     menu.classList.remove("active");
+//     burger.classList.remove("active");
+//     header.classList.remove("active");
+//     document.body.style.overflow = null;
+//     document.body.style.height = null;
+//   } else {
+//     bodyoverlay.classList.add("active");
+//     menu.classList.add("active");
+//     burger.classList.add("active");
+//     header.classList.add("active");
+//     document.body.style.overflow = "hidden";
+//     document.body.style.height = "100vh";
+//   }
+// })
 // end header__burger
 
 // button overlay
-bodyoverlay.addEventListener('click', function() {
-  if (bodyoverlay.classList.contains("active")) {
-    bodyoverlay.classList.remove("active");
-    header.classList.remove("active");
-    header.classList.remove("hidden");
-    headerlinks.classList.remove("hidden");
-    headerbuttons.classList.remove("active");
-    menu.classList.remove("active");
-    burger.classList.remove("active");
-    document.body.style.overflow = null;
-    document.body.style.height = null;
-  }
-})
+// bodyoverlay.addEventListener('click', function() {
+//   if (bodyoverlay.classList.contains("active")) {
+//     bodyoverlay.classList.remove("active");
+//     header.classList.remove("active");
+//     header.classList.remove("hidden");
+//     headerlinks.classList.remove("hidden");
+//     headerbuttons.classList.remove("active");
+//     menu.classList.remove("active");
+//     burger.classList.remove("active");
+//     document.body.style.overflow = null;
+//     document.body.style.height = null;
+//   }
+// })
 // end overlay
 
 // start select
@@ -194,42 +191,19 @@ Select.attach()
 // end select
 
 // start articles
-const articlesSlider = document.querySelector('.articles__swiper');
+const articlesSlider = document.querySelector('.hero__slider');
 if(articlesSlider){
-  var aboutusSlider = new Swiper('.articles__swiper', {
-    loop: false,
-    freeMode: true,
-    watchSlidesProgress: true,
-    slidesPerView: 'auto',
-    loopedSlides: 4,
-    spaceBetween: 10,
-    speed: 1000,
+  var aboutusSlider = new Swiper(".hero__slider", {
+    slidesPerView: 1.4,
+    spaceBetween: 0,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
     navigation: {
-      nextEl: '.articles__next',
-      prevEl: '.articles__prev',
-    },
-    breakpoints: {
-      1919: {
-        spaceBetween: 30,
-      },
-      1023: {
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-      },
-    },
-    breakpoints: {
-      1920: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
-      1440: {
-        slidesPerView: 4,
-        spaceBetween: 30,
-      },
-      1024: {
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-      },
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
   });
 }
@@ -242,8 +216,8 @@ const showreelmodalClose = document.querySelector('.showreel__modal_close');
 const showreelvideor = document.querySelector('.showreel__video_responsive');
 window.onload = function(){
   if(showreelvideor){
-    document.querySelector('.showreel__block').innerHTML = '<video poster=".img/showreel.webp " playsinline autoplay muted loop><source src="./img/showreel.mp4" type="video/mp4"></video>';
-    showreelvideor.innerHTML = '<video id="showreel__video" poster=".img/showreel.webp " playsinline autoplay loop data-overlay="1" data-title="ANYERA"><source src="./img/showreel.mp4" type="video/mp4"></video>';
+    document.querySelector('.showreel__block').innerHTML = '<video poster="./img/showreel.webp " playsinline autoplay muted loop><source src="./img/showreel.mp4" type="video/mp4"></video>';
+    showreelvideor.innerHTML = '<video id="showreel__video" poster="./img/showreel.webp " playsinline autoplay loop data-overlay="1" data-title="ANYERA"><source src="./img/showreel.mp4" type="video/mp4"></video>';
     setTimeout(function() {
       const showreelvideo = document.getElementById('showreel__video');
       if(showreelvideo){
