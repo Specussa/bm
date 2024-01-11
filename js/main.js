@@ -200,6 +200,7 @@ if(heroblock){
     slidesPerView: 1.333,
     spaceBetween: 0,
     loop: true,
+    loopedSlides: 4,
     speed: 1500,
     pagination: {
       el: '.hero__pagination',
@@ -684,4 +685,9 @@ if(projectsfilters) {
     };
   }
 }
+// end accordion projects__filter
+
+// start accordion projects__filter
+const categorysl = document.querySelectorAll('.category__sublist');
+[...categorysl].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
 // end accordion projects__filter
