@@ -195,7 +195,7 @@ class Select {
 Select.attach()
 // end select
 
-// start articles
+// start hero__slider
 const heroblock = document.querySelector(".hero__block");
 if(heroblock){
   var heroslider = new Swiper(".hero__slider", {
@@ -225,7 +225,27 @@ if(heroblock){
     }
   });
 }
-// end articles
+// end hero__slider
+
+// start hero__slider
+const companyslider = document.querySelector(".company_slider");
+if(companyslider){
+  var companysliderslider = new Swiper(".company_slider__slider", {
+    slidesPerView: 4,
+    spaceBetween: 16,
+    loop: true,
+    speed: 500,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+    },
+    navigation: {
+      nextEl: ".company_slider__next",
+      prevEl: ".company_slider__prev"
+    },
+  });
+}
+// end hero__slider
 
 // start video
 const preview = document.querySelector('.showreel__button');

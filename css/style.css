@@ -570,10 +570,6 @@ html.has-scroll-dragging {
 
 /* start showreel */
 
-.showreel {
-  padding: 0 0 80px;
-}
-
 .showreel__container {
   max-width: 100%;
   padding: 0;
@@ -1638,8 +1634,8 @@ html.has-scroll-dragging {
   left: 0;
   right: 0;
   bottom: 0;
-  color: var(--white);
   z-index: 11;
+  color: var(--white);
   -webkit-transition: color 0.2s linear;
   transition: color 0.2s linear;
 }
@@ -1889,6 +1885,83 @@ html.has-scroll-dragging {
 }
 
 /* end company */
+
+/* start company_slider */
+
+.company_slider__block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.company_slider__flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+}
+
+.company_slider__info {
+  display: flex;
+  max-width: 850px;
+  padding: 40px;
+  flex-direction: column;
+  gap: 40px;
+  background-color: var(--white);
+}
+
+.company_slider__divider {
+  width: 160px;
+  height: 2px;
+  background-color: var(--red);
+}
+
+.company_slider__navigations {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.company_slider__next,
+.company_slider__prev {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 18px;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  color: var(--white);
+  background-color: var(--text);
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+.company_slider__next:hover,
+.company_slider__prev:hover {
+  background-color: var(--red);
+}
+
+.company_slider__image,
+.company_slider__image img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.company_slider__link {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.company_slider__name {
+  padding: 0 20px;
+}
+
+/* end company_slider */
 
 /* max-width: 1919px */
 @media (max-width: 1919px){
