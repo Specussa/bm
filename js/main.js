@@ -18,15 +18,17 @@ const showreelbutton = document.querySelector('.showreel__button');
 const showreel = document.querySelector('.showreel');
 const hbottom = document.querySelector('.header__bottom');
 const htop = document.querySelector('.header__top');
+const showreelhead = document.querySelector('.showreel__head');
+
 if (!document.querySelector('.has-scroll-smooth')) {
   if (showreel) {
     document.addEventListener("DOMContentLoaded", () => {
-      showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + htop.scrollHeight)}, 0, 1)`;
+      showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + htop.scrollHeight + showreelhead.scrollHeight)}, 0, 1)`;
     });
   }
   window.addEventListener('scroll', function() {
     if (showreel) {
-      showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + htop.scrollHeight)}, 0, 1)`;
+      showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + htop.scrollHeight + showreelhead.scrollHeight)}, 0, 1)`;
     }
     window.addEventListener('scroll', function () {
       if (window.scrollY >= htop.scrollHeight) {
