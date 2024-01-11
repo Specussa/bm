@@ -196,34 +196,30 @@ Select.attach()
 // end select
 
 // start articles
-const articlesSlider = document.querySelector('.hero__slider');
-if(articlesSlider){
-  const progressCircle = document.querySelector(".autoplay-progress svg");
-  const progressContent = document.querySelector(".autoplay-progress span");
-  var aboutusSlider = new Swiper(".hero__slider", {
-    slidesPerView: 1.4,
+const heroblock = document.querySelector(".hero__block");
+if(heroblock){
+  var heroslider = new Swiper(".hero__slider", {
+    slidesPerView: 1.333,
     spaceBetween: 0,
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+      el: '.hero__pagination',
+      type: 'custom',
+      renderCustom: function (swiper, current, total) {
+          return '<div class="hero__count">' + current + "</div>" + '<div class="hero__total">' + total + "</div>"; 
+      }
     },
     autoplay: {
-      delay: 2500,
+      delay: 3000,
       disableOnInteraction: false
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true
-    },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
+      nextEl: ".hero__next",
+      prevEl: ".hero__prev"
     },
     on: {
       autoplayTimeLeft(s, time, progress) {
-        progressCircle.style.setProperty("--progress", 1 - progress);
-        progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+        heroblock.style.setProperty("--progress", 1 - progress);
       }
     }
   });

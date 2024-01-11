@@ -1,7 +1,7 @@
 :root {
   --inc-step: 1;
   --height: 100vh;
-  --left: 50%;
+  --progress: 0;
   --title-font: 'Raleway', sans-serif;
   --text-font: 'Roboto', sans-serif;
   --bg: #f5f5f5;
@@ -1572,10 +1572,92 @@ html.has-scroll-dragging {
 
 /* start hero */
 
+.hero__block {
+  position: relative;
+}
+
 .hero__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.hero__navigations {
+  display: flex;
+  width: 70px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 66px;
+  position: absolute;
+  top: 50%;
+  left: calc(75% - 35px);
+  z-index: 2;
+  background-color: var(--text);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.hero__next,
+.hero__prev {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: var(--white);
+}
+
+.hero__pagination  {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.hero__count,
+.hero__total {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  position: absolute;
+  color: var(--white);
+}
+
+.hero__count {
+  top: 75px;
+}
+
+.hero__total {
+  bottom: 75px;
+}
+
+.hero__progress {
+  display: flex;
+  width: 2px;
+  height: 120px;
+  justify-content: center;
+  position: relative;
+  background-color: var(--gray);
+}
+
+.hero__progress::after {
+  content: "";
+  width: 2px;
+  height: 100%;
+  max-height: calc(var(--progress)*100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: var(--red);
 }
 
 /* end hero */
