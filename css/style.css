@@ -1632,6 +1632,13 @@ html.has-scroll-dragging {
   bottom: 0;
   color: var(--white);
   z-index: 11;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
+.hero__next:hover,
+.hero__prev:hover {
+  color: var(--red);
 }
 
 .hero__pagination  {
@@ -1655,11 +1662,11 @@ html.has-scroll-dragging {
 }
 
 .hero__count {
-  top: 75px;
+  top: 70px;
 }
 
 .hero__total {
-  bottom: 75px;
+  bottom: 70px;
 }
 
 .hero__progress {
