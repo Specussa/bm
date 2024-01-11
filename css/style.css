@@ -1576,6 +1576,28 @@ html.has-scroll-dragging {
   position: relative;
 }
 
+.hero__item {
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-slide.hero__item::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #010101cc;
+  -webkit-transition: background-color 0.5s linear;
+  transition: background-color 0.5s linear;
+}
+
+.swiper-slide-active.swiper-slide.hero__item::after {
+  background-color: transparent;
+}
+
 .hero__image {
   width: 100%;
   height: 100%;
@@ -1609,6 +1631,7 @@ html.has-scroll-dragging {
   right: 0;
   bottom: 0;
   color: var(--white);
+  z-index: 11;
 }
 
 .hero__pagination  {

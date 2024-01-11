@@ -202,6 +202,7 @@ if(heroblock){
     slidesPerView: 1.333,
     spaceBetween: 0,
     loop: true,
+    speed: 1500,
     pagination: {
       el: '.hero__pagination',
       type: 'custom',
@@ -210,7 +211,7 @@ if(heroblock){
       }
     },
     autoplay: {
-      delay: 3000,
+      delay: 4000,
       disableOnInteraction: false
     },
     navigation: {
