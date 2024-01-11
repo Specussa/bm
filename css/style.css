@@ -69,7 +69,7 @@ button {
   padding: 0;
   margin: 0;
   background: transparent;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .main {
@@ -108,7 +108,11 @@ input::-webkit-inner-spin-button {
 input,
 textarea,
 label {
-  /* cursor: none; */
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
 }
 
 textarea:focus,
@@ -137,7 +141,7 @@ a {
   -webkit-transition: color 0.15s linear;
   transition: color 0.15s linear;
   text-decoration: none;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 a:hover {
@@ -209,6 +213,7 @@ b,
 strong,
 input,
 input::placeholder,
+textarea::placeholder,
 textarea,
 [data-select-title],
 [data-select-item] {
@@ -226,12 +231,13 @@ li,
 label,
 input,
 input::placeholder,
+textarea::placeholder,
 textarea,
 [data-select-title],
 [data-select-item] {
   font-weight: 300;
   font-family: var(--text-font);
-  color: var(--text-gray);
+  color: var(--gray);
 }
 
 input,
@@ -253,7 +259,7 @@ b,
 strong {
   font-family: var(--title-font);
   font-weight: 600;
-  color: var(--text-gray);
+  color: var(--gray);
 }
 
 button,
@@ -322,7 +328,7 @@ section {
 }
 
 .swiper-pagination-clickable .swiper-pagination-bullet {
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .swiper-pagination {
@@ -403,7 +409,7 @@ section {
 .swiper-button-prev.swiper-button-disabled {
   pointer-events: all;
   opacity: 0.5;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .swiper-button-next:after,
@@ -443,7 +449,24 @@ section {
 
 /* start buttons */
 
+.btn {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  -webkit-transition: color 0.2s linear, background-color 0.2s linear;
+  transition: color 0.2s linear, background-color 0.2s linear;
+}
 
+.btn__white {
+  color: var(--text);
+  background-color: var(--white);
+}
+
+.btn__white:hover {
+  color: var(--white);
+  background-color: var(--text);
+}
 
 /* end buttons */
 
@@ -535,7 +558,7 @@ html.has-scroll-dragging {
   opacity: 1;
   -webkit-transition: width .3s;
   transition: width .3s;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .c-scrollbar:hover .c-scrollbar_thumb {
@@ -558,7 +581,7 @@ html.has-scroll-dragging {
 .has-scroll-dragging .c-scrollbar_thumb {
   cursor: -webkit-grabbing;
   cursor: grabbing;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 [data-scroll-direction=horizontal] .c-scrollbar_thumb {
@@ -650,7 +673,7 @@ html.has-scroll-dragging {
   height: var(--height);
   -o-object-fit: cover;
   object-fit: cover;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .showreel__video_responsive {
@@ -887,7 +910,7 @@ html.has-scroll-dragging {
   font-size: 0;
   overflow: hidden;
   border-radius: 5px;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .spec:before {
@@ -937,7 +960,7 @@ html.has-scroll-dragging {
   border: 0;
   line-height: 1;
   outline: 0;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .spec__button.toggle {
@@ -995,7 +1018,7 @@ html.has-scroll-dragging {
   visibility: visible;
   opacity: 0;
   z-index: 2;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .spec__slider {
@@ -1047,7 +1070,7 @@ html.has-scroll-dragging {
   background: transparent;
   border-top: 1px solid hsla(0,0%,100%,.2);
   border-bottom: 1px solid hsla(0,0%,100%,.2);
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .spec .progress__line {
@@ -1118,7 +1141,7 @@ html.has-scroll-dragging {
   font-size: 0;
   overflow: hidden;
   border-radius: 5px;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .minimal:before {
@@ -1157,7 +1180,7 @@ html.has-scroll-dragging {
   -ms-flex-pack: center;
   -webkit-box-pack: center;
   justify-content: center;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .minimal__button i {
@@ -1184,7 +1207,7 @@ html.has-scroll-dragging {
   transition: all .2s ease-in;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .minimal__slider {
@@ -1255,7 +1278,7 @@ html.has-scroll-dragging {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   position: relative;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .minimal .progress__filled {
@@ -1276,7 +1299,7 @@ html.has-scroll-dragging {
   font-size: 0;
   overflow: hidden;
   border-radius: 5px;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .compact:before {
@@ -1314,7 +1337,7 @@ html.has-scroll-dragging {
   line-height: 1;
   outline: 0;
   padding: 0;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .compact__button i {
@@ -1341,7 +1364,7 @@ html.has-scroll-dragging {
   transition: all .2s ease-in;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .compact__slider {
@@ -1413,7 +1436,7 @@ html.has-scroll-dragging {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 4px;
   position: relative;
-  /* cursor: none; */
+  cursor: pointer;
 }
 
 .compact .progress__filled {
@@ -1550,10 +1573,6 @@ html.has-scroll-dragging {
   height: 100%;
   padding: 14px 14px 14px 46px;
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25) inset;
-}
-
-.header__search_input::placeholder {
-  color: var(--gray);
 }
 
 .header__search_label {
@@ -1890,6 +1909,7 @@ html.has-scroll-dragging {
 
 .company_slider__block {
   display: flex;
+  padding: 0 0 40px;
   flex-direction: column;
   gap: 20px;
 }
@@ -1962,6 +1982,149 @@ html.has-scroll-dragging {
 }
 
 /* end company_slider */
+
+/* start feedback */
+
+.feedback {
+  margin: 40px 0 0;
+  background-color: var(--bg-gray);
+}
+
+.feedback__block {
+  padding: 100px 0;
+}
+
+.feedback__heading {
+  padding: 0 0 25px;
+  color: var(--white);
+  border-bottom: 1px solid var(--white);
+}
+
+.feedback__head {
+  color: var(--white);
+}
+
+.feedback__flex {
+  display: flex;
+  padding: 20px 0 0;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.feedback__form_flex {
+  display: flex;
+  gap: 20px;
+}
+
+.feedback__left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feedback__input {
+  width: 350px;
+  height: 40px;
+  padding: 15px;
+}
+
+.feedback__textarea {
+  width: 410px;
+  height: 100%;
+  padding: 15px;
+}
+
+.feedback input:-webkit-autofill,
+.feedback input:-webkit-autofill:hover,
+.feedback textarea:-webkit-autofill,
+.feedback textarea:-webkit-autofill:hover,
+.feedback select:-webkit-autofill,
+.feedback select:-webkit-autofill:hover {
+  border: none;
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0 1000px var(--text) inset;
+  color: var(--white);
+  box-shadow: 0 0 0 1000px var(--text) inset;
+}
+
+.feedback input,
+.feedback textarea {
+  color: var(--white);
+  background-color: var(--text);
+}
+
+.feedback input::-moz-selection,
+.feedback textarea::-moz-selection {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.feedback input::selection,
+.feedback textarea::selection {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+.feedback__checkbox {
+  display: flex;
+  width: 350px;
+  align-items: center;
+  gap: 15px;
+}
+
+.feedback__bottom {
+  display: flex;
+  padding: 20px 0 0;
+  gap: 20px;
+}
+
+.feedback__checkbox_text,
+.feedback__checkbox_text a {
+  color: var(--white);
+}
+
+.feedback__checkbox_text a:hover {
+  color: var(--red);
+}
+
+.feedback__btn {
+  width: 410px;
+}
+
+.feedback__checkbox_input {
+  display: none;
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.feedback__checkbox_check {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  background-color: var(--text);
+  border-radius: 5px;
+}
+
+.feedback__checkbox_check svg {
+  width: 12px;
+  height: 8px;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.feedback__checkbox input:checked ~ .feedback__checkbox_check svg {
+  opacity: 1;
+}
+
+.feedback__checkbox input ~ .feedback__checkbox_check svg {
+  opacity: 0;
+}
+
+/* end feedback */
 
 /* max-width: 1919px */
 @media (max-width: 1919px){

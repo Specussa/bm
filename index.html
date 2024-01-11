@@ -538,19 +538,53 @@
         </div>
       </div>
     </section>
+    <section class="feedback" data-scroll-section>
+      <div class="container feedback__container">
+        <div class="feedback__block">
+          <p class="feedback__heading">Обратная связь</p>
+          <div class="feedback__flex">
+            <h2 class="feedback__head">Узнать стоимость, задать вопрос</h2>
+            <form action="" class="feedback__form">
+              <div class="feedback__form_flex">
+                <div class="feedback__left">
+                  <input type="text" name="feedback__name" id="feedback__name" class="feedback__input" placeholder="ФИО" required>
+                  <input type="mail" name="feedback__mail" id="feedback__mail" class="feedback__input" placeholder="E-mail" required>
+                  <input type="text" name="feedback__phone" id="feedback__phone" class="feedback__input" placeholder="Телефон" required>
+                </div>
+                <div class="feedback__right">
+                  <textarea name="feedback__text" id="feedback__text" class="feedback__textarea" placeholder="Ваш вопрос" required></textarea>
+                </div>
+              </div>
+              <div class="feedback__bottom">
+                <label class="feedback__checkbox">
+                  <input type="checkbox" class="feedback__checkbox_input" required>
+                  <span class="feedback__checkbox_check">
+                    <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.3335 3.73301L4.8335 7.33301L10.6668 1.33301" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <p class="feedback__checkbox_text">Я согласен на обработку <a href="#">персональных данных</a></p>
+                </label>
+                <button class="btn btn__white feedback__btn">Отправить</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer class="footer" data-scroll-section>
       <div class="container footer__container">
       </div>
     </footer>
   </main>
-  <div class="header__nav">
+  <!-- <div class="header__nav">
     <div class="header__nav_scroll" data-scrollbar>
       <div class="header__nav_block">
         <div class="container header__nav_container">
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <div class="showreel__modal">
     <div class="showreel__modal_inner">
       <div class="showreel__video_responsive">
