@@ -1808,8 +1808,8 @@ html.has-scroll-dragging {
   transform: translateY(0px);
   -webkit-transition: opacity 0.1s linear, -webkit-transform 0.2s linear;
   transition: opacity 0.1s linear, transform 0.2s linear;
-  -webkit-transition-delay: calc(var(--inc-step)*0.05s);
-  transition-delay: calc(var(--inc-step)*0.05s);
+  -webkit-transition-delay: calc(var(--inc-step)*0.05s + 0.2s);
+  transition-delay: calc(var(--inc-step)*0.05s + 0.2s);
 }
 
 .category__image,
