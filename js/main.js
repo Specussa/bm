@@ -200,7 +200,6 @@ if(heroblock){
     slidesPerView: 1.333,
     spaceBetween: 0,
     loop: true,
-    loopedSlides: 4,
     speed: 1500,
     pagination: {
       el: '.hero__pagination',
