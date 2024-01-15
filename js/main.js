@@ -267,6 +267,31 @@ if(news){
 }
 // end company_slider
 
+// start company_slider
+const partnerlist = document.querySelectorAll('.partner__list');
+if (document.querySelectorAll(".partner__item").length <= 1) {
+  [...document.querySelectorAll('.partner__block')].map((n, i) => {
+      n.querySelector('.partner__list').innerHTML = partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML
+  })
+} else if (document.querySelectorAll(".partner__item").length <= 2) {
+  [...document.querySelectorAll('.partner__block')].map((n, i) => {
+      n.querySelector('.partner__list').innerHTML = partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML
+  })
+} else if (document.querySelectorAll(".partner__item").length <= 3) {
+  [...document.querySelectorAll('.partner__block')].map((n, i) => {
+      n.querySelector('.partner__list').innerHTML = partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML
+  })
+} else if (document.querySelectorAll(".partner__item").length <= 6) {
+  [...document.querySelectorAll('.partner__block')].map((n, i) => {
+      n.querySelector('.partner__list').innerHTML = partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML
+  })
+} else if (document.querySelectorAll(".partner__item").length <= 11) {
+  [...document.querySelectorAll('.partner__block')].map((n, i) => {
+      n.querySelector('.partner__list').innerHTML = partnerlist[i].innerHTML + partnerlist[i].innerHTML
+  })
+}
+// end company_slider
+
 // start video
 const preview = document.querySelector('.showreel__button');
 const showreelmodal = document.querySelector('.showreel__modal');
