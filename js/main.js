@@ -199,7 +199,7 @@ Select.attach()
 const heroblock = document.querySelector(".hero__block");
 if(heroblock){
   var heroslider = new Swiper(".hero__slider", {
-    slidesPerView: 1.333,
+    slidesPerView: 1.33333,
     spaceBetween: 0,
     loop: true,
     speed: 1500,
