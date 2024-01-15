@@ -1466,7 +1466,6 @@ html.has-scroll-dragging {
 .header__right,
 .header__social_list,
 .header__nav_list,
-.header__social_list,
 .header__region,
 .header__tel,
 .header__nav_link,
@@ -1589,6 +1588,105 @@ html.has-scroll-dragging {
 }
 
 /* end header */
+
+/* start footer */
+
+.footer {
+  background-color: var(--text);
+}
+
+.footer__top {
+  display: flex;
+  padding: 40px 0 30px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--gray);
+}
+
+.footer__info {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.footer__logo {
+  color: var(--white);
+}
+
+.footer__desc {
+  max-width: 240px;
+  color: var(--white);
+}
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__contact a {
+  color: var(--white);
+}
+
+.footer__contact a:hover {
+  color: var(--red);
+}
+
+.footer__social_list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__social_link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: var(--white);
+  border-radius: 3px;
+  border: 0.5px solid var(--white);
+  -webkit-transition: color 0.15s linear, border 0.15s linear;
+  transition: color 0.15s linear, border 0.15s linear;
+}
+
+.footer__social_link:hover {
+  border: 0.5px solid var(--red);
+}
+
+.footer__lists {
+  display: flex;
+  width: 50%;
+  padding: 60px 0;
+  margin: 0 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 120px;
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer__link,
+.footer__policy,
+.footer__anyera {
+  color: var(--white);
+}
+
+.footer__bottom {
+  display: flex;
+  padding: 35px 0 40px;
+  justify-content: space-between;
+  gap: 15px;
+  border-top: 1px solid var(--gray);
+}
+
+/* end footer */
 
 /* start hero */
 
@@ -2431,7 +2529,9 @@ html.has-scroll-dragging {
 }
 
 .news__slider_container {
+  display: flex;
   padding: 0;
+  justify-content: flex-end;
 }
 
 .news__navigations {
@@ -2506,7 +2606,7 @@ html.has-scroll-dragging {
 .news__slider {
   width: 100%;
   max-width: 1408px;
-  margin: -250px 0 0 auto;
+  margin: -250px 0 0 340px;
 }
 
 .news__slider_image {
