@@ -268,27 +268,32 @@ if(news){
 // end company_slider
 
 // start company_slider
-const partnerlist = document.querySelectorAll('.partner__list');
-if (document.querySelectorAll(".partner__item").length <= 1) {
-  [...document.querySelectorAll('.partner__block')].map((n, i) => {
-      n.querySelector('.partner__list').innerHTML = partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML
-  })
-} else if (document.querySelectorAll(".partner__item").length <= 2) {
-  [...document.querySelectorAll('.partner__block')].map((n, i) => {
-      n.querySelector('.partner__list').innerHTML = partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML
-  })
-} else if (document.querySelectorAll(".partner__item").length <= 3) {
-  [...document.querySelectorAll('.partner__block')].map((n, i) => {
-      n.querySelector('.partner__list').innerHTML = partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML
-  })
-} else if (document.querySelectorAll(".partner__item").length <= 6) {
-  [...document.querySelectorAll('.partner__block')].map((n, i) => {
-      n.querySelector('.partner__list').innerHTML = partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML + partnerlist[i].innerHTML
-  })
-} else if (document.querySelectorAll(".partner__item").length <= 11) {
-  [...document.querySelectorAll('.partner__block')].map((n, i) => {
-      n.querySelector('.partner__list').innerHTML = partnerlist[i].innerHTML + partnerlist[i].innerHTML
-  })
+const partnerlist = document.querySelector('.partner__list');
+if(partnerlist){
+  const partnerlists = document.querySelectorAll('.partner__list');
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.querySelectorAll(".partner__item").length <= 1) {
+      [...document.querySelectorAll('.partner__block')].map((n, i) => {
+          n.querySelector('.partner__list').innerHTML = partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML
+      })
+    } else if (document.querySelectorAll(".partner__item").length <= 2) {
+      [...document.querySelectorAll('.partner__block')].map((n, i) => {
+          n.querySelector('.partner__list').innerHTML = partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML
+      })
+    } else if (document.querySelectorAll(".partner__item").length <= 3) {
+      [...document.querySelectorAll('.partner__block')].map((n, i) => {
+          n.querySelector('.partner__list').innerHTML = partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML
+      })
+    } else if (document.querySelectorAll(".partner__item").length <= 6) {
+      [...document.querySelectorAll('.partner__block')].map((n, i) => {
+          n.querySelector('.partner__list').innerHTML = partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML + partnerlists[i].innerHTML
+      })
+    } else if (document.querySelectorAll(".partner__item").length <= 11) {
+      [...document.querySelectorAll('.partner__block')].map((n, i) => {
+          n.querySelector('.partner__list').innerHTML = partnerlists[i].innerHTML + partnerlists[i].innerHTML
+      })
+    }
+  });
 }
 // end company_slider
 
