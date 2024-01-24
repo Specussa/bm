@@ -1,6 +1,7 @@
 :root {
   --inc-step: 1;
   --height: 100vh;
+  --hscroll: 0px;
   --progress: 0;
   --title-font: 'Raleway', sans-serif;
   --text-font: 'Roboto', sans-serif;
@@ -47,8 +48,6 @@
 
 html {
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -56,6 +55,8 @@ html {
   -ms-user-select: none;
   user-select: none;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 html.noscroll {
@@ -1566,13 +1567,13 @@ html.has-scroll-dragging {
   flex-direction: column;
   gap: 20px;
   position: fixed;
-  height: 100vh;
-  top: 0;
+  height: calc(100vh - var(--hscroll));
+  top: calc(0px + var(--hscroll));
   left: 0;
   z-index: 98;
   background-color: var(--white);
-  -webkit-transition: -webkit-transform 1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 1s;
-  transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 1s;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0.4s;
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.1s, opacity 0s linear 0.4s;
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
 }
@@ -1580,8 +1581,8 @@ html.has-scroll-dragging {
 .header__nav_sublist.active {
   opacity: 1;
   z-index: 99;
-  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
-  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.2s linear 0s;
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
+  transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.1s linear 0s;
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
@@ -1706,6 +1707,7 @@ html.has-scroll-dragging {
   gap: 10px;
 }
 
+.footer__contact p,
 .footer__contact a {
   color: var(--white);
 }
@@ -2134,8 +2136,8 @@ html.has-scroll-dragging {
   z-index: 11;
   color: var(--white);
   background-color: var(--text);
-  -webkit-transition: background-color 0.2s linear;
-  transition: background-color 0.2s linear;
+  -webkit-transition: background-color 0.15s linear;
+  transition: background-color 0.15s linear;
 }
 
 .company_slider__next:hover,
@@ -2148,6 +2150,19 @@ html.has-scroll-dragging {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  overflow: hidden;
+}
+
+.company_slider__image img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.15s linear;
+  transition: transform 0.15s linear;
+}
+
+.company_slider__link:hover .company_slider__image img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .company_slider__link {
@@ -2158,6 +2173,12 @@ html.has-scroll-dragging {
 
 .company_slider__name {
   padding: 0 20px;
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+
+.company_slider__link:hover .company_slider__name {
+  color: var(--red);
 }
 
 /* end company_slider */
