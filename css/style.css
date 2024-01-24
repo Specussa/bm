@@ -1572,7 +1572,7 @@ html.has-scroll-dragging {
   left: 0;
   z-index: 98;
   background-color: var(--white);
-  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0.4s;
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 1s;
   transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.1s, opacity 0s linear 0.4s;
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
@@ -1581,8 +1581,8 @@ html.has-scroll-dragging {
 .header__nav_sublist.active {
   opacity: 1;
   z-index: 99;
-  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
-  transition: transform 0.3s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.1s linear 0s;
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.1s linear 0s;
   -webkit-transform: translateX(0);
   transform: translateX(0);
 }
