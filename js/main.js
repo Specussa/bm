@@ -1,3 +1,5 @@
+var i;
+
 // start height
 let oldWidth = window.innerWidth;
 const docheight = document.documentElement
@@ -14,10 +16,12 @@ appHeight();
 // end height
 
 // start scroll
+const html = document.querySelector('html');
 const showreelbutton = document.querySelector('.showreel__button');
 const showreel = document.querySelector('.showreel');
 const hbottom = document.querySelector('.header__bottom');
 const htop = document.querySelector('.header__top');
+const htopblock = document.querySelector('.header__top_block');
 const showreelhead = document.querySelector('.showreel__head');
 
 if (!document.querySelector('.has-scroll-smooth')) {
@@ -26,17 +30,20 @@ if (!document.querySelector('.has-scroll-smooth')) {
       showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + htop.scrollHeight + showreelhead.scrollHeight)}, 0, 1)`;
     });
   }
+  if (window.scrollY >= htop.scrollHeight) {
+    hbottom.classList.add("fixed");
+  } else {
+    hbottom.classList.remove("fixed");
+  }
   window.addEventListener('scroll', function() {
     if (showreel) {
       showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + htop.scrollHeight + showreelhead.scrollHeight)}, 0, 1)`;
     }
-    window.addEventListener('scroll', function () {
-      if (window.scrollY >= htop.scrollHeight) {
-        hbottom.classList.add("fixed");
-      } else {
-        hbottom.classList.remove("fixed");
-      }
-    });
+    if (window.scrollY >= htop.scrollHeight) {
+      hbottom.classList.add("fixed");
+    } else {
+      hbottom.classList.remove("fixed");
+    }
   });
 }
 // end scroll
@@ -52,17 +59,19 @@ if(year){
 
 // start navbar
 const bodyoverlay = document.querySelector('.overlay');
-
-const headerlinks = document.querySelector('.header__links');
-const headerbuttons = document.querySelector('.header__buttons');
-
 const menu = document.querySelector('.header__nav');
 const burger = document.querySelector('.header__burger');
+const popupActive = document.querySelectorAll("html .popup");
+const popupClose = document.getElementsByClassName("popup__close");
 
-const burger_ctwo = document.querySelector('.button__project_two');
-const menuItemActive = document.getElementsByClassName("header__nav_item active");
+for (i = 0; i < popupClose.length; i++) {
+  popupClose[i].onclick = function(e) {
+    popupActive.forEach((n) => n.classList.remove("active"));
+    bodyoverlay.classList.remove("active");
+  }
+}
 
-// button header__burger
+// start header__burger
 // burger.addEventListener('click', function() {
 //   if (burger.classList.contains("active")) {
 //     bodyoverlay.classList.remove("active");
@@ -82,21 +91,90 @@ const menuItemActive = document.getElementsByClassName("header__nav_item active"
 // })
 // end header__burger
 
-// button overlay
-// bodyoverlay.addEventListener('click', function() {
-//   if (bodyoverlay.classList.contains("active")) {
-//     bodyoverlay.classList.remove("active");
-//     header.classList.remove("active");
-//     header.classList.remove("hidden");
-//     headerlinks.classList.remove("hidden");
-//     headerbuttons.classList.remove("active");
-//     menu.classList.remove("active");
-//     burger.classList.remove("active");
-//     document.body.style.overflow = null;
-//     document.body.style.height = null;
-//   }
-// })
+// start overlay
+bodyoverlay.addEventListener('click', function() {
+  if (bodyoverlay.classList.contains("active")) {
+    popupActive.forEach((n) => n.classList.remove("active"));
+    html.classList.remove("noscroll");
+    bodyoverlay.classList.remove("active");
+  }
+})
 // end overlay
+
+// start menu
+if(menu) {
+  const headernl = document.getElementsByClassName("header__nav_link");
+  for (i = 0; i < headernl.length; i++) {
+    headernl[i].onclick = function(e) {
+      if (!this.classList.contains("active")) {
+        const headernlNext = this.nextElementSibling;
+        const headernsl = document.getElementsByClassName("header__nav_sublist");
+        const headernlActive = document.getElementsByClassName("header__nav_link active");
+  
+        if (headernlNext.classList.contains("active")) {
+          this.classList.remove("active");
+          headernlNext.classList.remove("active");
+          bodyoverlay.classList.remove("active");
+          html.classList.remove("noscroll");
+        } else {
+          for (var q = 0; q < headernlActive.length; q++) {
+            headernlActive[q].classList.remove("active");
+            headernsl[q].classList.remove("active");
+          }
+          for (var p = 0; p < headernsl.length; p++) {
+            this.classList.remove("active");
+            headernsl[p].classList.remove("active");
+          }
+          e.preventDefault();
+          headernlNext.classList.add("active");
+          if (window.scrollY < htopblock.scrollHeight) {
+            headernlNext.style.height = "calc(100vh - " + (htopblock.scrollHeight - window.scrollY) + "px" + ")";
+            headernlNext.style.top = (htopblock.scrollHeight - window.scrollY) + "px";
+          }
+          this.classList.add("active");
+          bodyoverlay.classList.add("active");
+          html.classList.add("noscroll");
+        }
+      }
+    };
+  }
+
+
+
+
+
+
+  
+  // var expertisebutton = document.getElementsByClassName("header__nav_link");
+
+  // for (i = 0; i < expertisebutton.length; i++) {
+  //   expertisebutton[i].onclick = function(e) {
+  //     var expertise = this.nextElementSibling;
+  //     var courseExpertise = document.getElementsByClassName("header__nav_sublist");
+  //     var courseExpertiseActive = document.getElementsByClassName("header__nav_link active");
+
+  //     if (expertise.style.maxHeight) {
+  //       expertise.style.maxHeight = null;
+  //       this.classList.remove("active");
+  //       expertise.classList.remove("active");
+  //     } else {
+  //       for (var q = 0; q < courseExpertiseActive.length; q++) {
+  //         courseExpertiseActive[q].classList.remove("active");
+  //         courseExpertise[q].classList.remove("active");
+  //       }
+  //       for (var p = 0; p < courseExpertise.length; p++) {
+  //         this.classList.remove("active");
+  //         courseExpertise[p].classList.remove("active");
+  //         courseExpertise[p].style.maxHeight = null;
+  //       }
+  //       expertise.style.maxHeight = (expertise.scrollHeight + 40) + "px";
+  //       expertise.classList.add("active");
+  //       this.classList.add("active");
+  //     }
+  //   };
+  // }
+}
+// end menu
 
 // start select
 const SELECT = '[data-select]'
@@ -712,51 +790,6 @@ window.onload = function(){
   }
 }
 // end video
-
-// start accordion projects__filter
-const projectsfilters = document.querySelector('.projects__filter');
-if(projectsfilters) {
-  var projectsfilter = document.getElementsByClassName("projects__filter_button");
-  for (i = 0; i < projectsfilter.length; i++) {
-    projectsfilter[i].onclick = function(e) {
-      var projectsfilterordion = this.nextElementSibling;
-      var courseprojectsfilterordion = document.getElementsByClassName("projects__filter_sublist");
-      var courseprojectsfilterordionActive = document.getElementsByClassName("projects__filter_button active");
-
-      if (projectsfilterordion.style.maxHeight) {
-        projectsfilterordion.style.maxHeight = null;
-        this.classList.remove("active");
-        projectsfilterordion.classList.remove("active");
-      } else {
-        for (var q = 0; q < courseprojectsfilterordionActive.length; q++) {
-          courseprojectsfilterordionActive[q].classList.remove("active");
-          courseprojectsfilterordion[q].classList.remove("active");
-        }
-        for (var p = 0; p < courseprojectsfilterordion.length; p++) {
-          this.classList.remove("active");
-          courseprojectsfilterordion[p].classList.remove("active");
-          courseprojectsfilterordion[p].style.maxHeight = null;
-        }
-        projectsfilterordion.style.maxHeight = (projectsfilterordion.scrollHeight * 2) + "px";
-        projectsfilterordion.classList.add("active");
-        this.classList.add("active");
-      }
-      window.addEventListener('click', e => {
-        const target = e.target
-        if (!target.closest('.projects__filter')) {
-          for (var q = 0; q < courseprojectsfilterordionActive.length; q++) {
-            courseprojectsfilterordionActive[q].classList.remove("active");
-            courseprojectsfilterordion[q].classList.remove("active");
-          }
-          projectsfilterordion.style.maxHeight = null;
-          this.classList.remove("active");
-          projectsfilterordion.classList.remove("active");
-        }
-      })
-    };
-  }
-}
-// end accordion projects__filter
 
 // start accordion projects__filter
 const categorysl = document.querySelectorAll('.category__sublist');
