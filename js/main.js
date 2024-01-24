@@ -407,7 +407,7 @@ const showreelvideor = document.querySelector('.showreel__video_responsive');
 window.onload = function(){
   if(showreelvideor){
     document.querySelector('.showreel__block').innerHTML = '<video poster="./img/showreel.webp " playsinline autoplay muted loop><source src="./img/showreel.mp4" type="video/mp4"></video>';
-    showreelvideor.innerHTML = '<video id="showreel__video" poster="./img/showreel.webp " playsinline autoplay loop data-overlay="1" data-title="ANYERA"><source src="./img/showreel.mp4" type="video/mp4"></video>';
+    showreelvideor.innerHTML = '<video id="showreel__video" poster="./img/showreel.webp " playsinline loop data-overlay="1" data-title="ANYERA"><source src="./img/showreel.mp4" type="video/mp4"></video>';
     setTimeout(function() {
       const showreelvideo = document.getElementById('showreel__video');
       if(showreelvideo){
