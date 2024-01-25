@@ -354,7 +354,7 @@ const news = document.querySelector(".news");
 if(news){
   var newsslider = new Swiper(".news__slider", {
     slidesPerView: 'auto',
-    spaceBetween: 16,
+    spaceBetween: 10,
     loop: true,
     speed: 500,
     autoplay: {
@@ -364,6 +364,11 @@ if(news){
     navigation: {
       nextEl: ".news__next",
       prevEl: ".news__prev"
+    },
+    breakpoints: {
+      1024: {
+        spaceBetween: 16,
+      },
     },
   });
 }
