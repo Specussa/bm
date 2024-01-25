@@ -45,14 +45,23 @@
               Ваш регион
             </a>
           </div>
-          <form action="" class="header__search">
-            <input type="text" id="header__search" class="header__search_input" placeholder="Найти технику, например “Трактор”">
-            <label for="header__search" class="header__search_label">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.93594C0 3.10533 3.07227 0 6.86211 0C8.68206 0 10.4275 0.730749 11.7144 2.03149C13.0013 3.33223 13.7242 5.09642 13.7242 6.93594C13.7242 10.7666 10.652 13.8719 6.86211 13.8719C3.07227 13.8719 0 10.7666 0 6.93594ZM13.6107 12.5235L15.6544 14.1732H15.6899C16.1034 14.5911 16.1034 15.2687 15.6899 15.6866C15.2764 16.1046 14.606 16.1046 14.1926 15.6866L12.4966 13.7429C12.3362 13.5814 12.2461 13.362 12.2461 13.1332C12.2461 12.9044 12.3362 12.685 12.4966 12.5235C12.8058 12.2164 13.3015 12.2164 13.6107 12.5235Z" fill="currentColor"/>
-              </svg>
-            </label>
-          </form>
+          <div class="header__divider"></div>
+          <div class="header__search_block">
+            <form action="" class="header__search">
+              <input type="text" id="header__search" class="header__search_input" placeholder="Найти технику, например “Трактор”">
+              <label for="header__search" class="header__search_label">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 6.93594C0 3.10533 3.07227 0 6.86211 0C8.68206 0 10.4275 0.730749 11.7144 2.03149C13.0013 3.33223 13.7242 5.09642 13.7242 6.93594C13.7242 10.7666 10.652 13.8719 6.86211 13.8719C3.07227 13.8719 0 10.7666 0 6.93594ZM13.6107 12.5235L15.6544 14.1732H15.6899C16.1034 14.5911 16.1034 15.2687 15.6899 15.6866C15.2764 16.1046 14.606 16.1046 14.1926 15.6866L12.4966 13.7429C12.3362 13.5814 12.2461 13.362 12.2461 13.1332C12.2461 12.9044 12.3362 12.685 12.4966 12.5235C12.8058 12.2164 13.3015 12.2164 13.6107 12.5235Z" fill="currentColor"/>
+                </svg>
+              </label>
+            </form>
+            <button class="header__burger">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
           <div class="header__right">
             <a href="tel://" class="header__tel">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -253,15 +262,15 @@
           <ul class="category__list">
             <li class="category__item">
               <div class="category__top">
-                <div class="category__image">
+                <a href="#" class="category__image">
                   <picture class="category__image">
                     <source media="(min-width: 1025px)" data-srcset="img/category/category_1.webp" srcset="img/category/category_1.webp">
                     <img src="img/category/category_1.webp" data-src="img/category/category_1.webp" alt="">
                   </picture>
-                </div>
-                <div class="category__info">
+                </a>
+                <a href="#" class="category__info">
                   <h5 class="category__name">Самоходная техника&nbsp;<span>(20)</span></h5>
-                </div>
+                </a>
               </div>
               <div class="category__bottom">
                 <h4 class="category__title">Самоходная техника</h4>
@@ -297,15 +306,15 @@
             </li>
             <li class="category__item">
               <div class="category__top">
-                <div class="category__image">
+                <a href="#" class="category__image">
                   <picture class="category__image">
                     <source media="(min-width: 1025px)" data-srcset="img/category/category_2.webp" srcset="img/category/category_2.webp">
                     <img src="img/category/category_2.webp" data-src="img/category/category_2.webp" alt="">
                   </picture>
-                </div>
-                <div class="category__info">
+                </a>
+                <a href="#" class="category__info">
                   <h5 class="category__name">Прицепная техника&nbsp;<span>(19)</span></h5>
-                </div>
+                </a>
               </div>
               <div class="category__bottom">
                 <h4 class="category__title">Самоходная техника</h4>
@@ -336,15 +345,15 @@
             </li>
             <li class="category__item">
               <div class="category__top">
-                <div class="category__image">
+                <a href="#" class="category__image">
                   <picture class="category__image">
                     <source media="(min-width: 1025px)" data-srcset="img/category/category_3.webp" srcset="img/category/category_3.webp">
                     <img src="img/category/category_3.webp" data-src="img/category/category_3.webp" alt="">
                   </picture>
-                </div>
-                <div class="category__info">
+                </a>
+                <a href="#" class="category__info">
                   <h5 class="category__name">Точное земледелие&nbsp;<span>(18)</span></h5>
-                </div>
+                </a>
               </div>
               <div class="category__bottom">
                 <h4 class="category__title">Самоходная техника</h4>
@@ -385,15 +394,15 @@
             </li>
             <li class="category__item">
               <div class="category__top">
-                <div class="category__image">
+                <a href="#" class="category__image">
                   <picture class="category__image">
                     <source media="(min-width: 1025px)" data-srcset="img/category/category_4.webp" srcset="img/category/category_4.webp">
                     <img src="img/category/category_4.webp" data-src="img/category/category_4.webp" alt="">
                   </picture>
-                </div>
-                <div class="category__info">
+                </a>
+                <a href="#" class="category__info">
                   <h5 class="category__name">Запасные части&nbsp;<span>(17)</span></h5>
-                </div>
+                </a>
               </div>
               <div class="category__bottom">
                 <h4 class="category__title">Самоходная техника</h4>
@@ -453,7 +462,7 @@
           </div>
           <div class="company__right">
             <a href="#" class="company__link">
-              подробнее
+              <h4>подробнее</h4>
               <svg width="41" height="43" viewBox="0 0 41 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M40 4.5C40 2.84315 38.6569 1.5 37 1.5H10C8.34315 1.5 7 2.84315 7 4.5C7 6.15685 8.34315 7.5 10 7.5H34V31.5C34 33.1569 35.3431 34.5 37 34.5C38.6569 34.5 40 33.1569 40 31.5V4.5ZM5.12132 40.6213L39.1213 6.62132L34.8787 2.37868L0.87868 36.3787L5.12132 40.6213Z" fill="#EF0010"/>
               </svg>
@@ -830,7 +839,7 @@
                 </svg>
               </p>
             </a>
-            <div class="models__bottom_big">
+            <a href="#" class="models__bottom_big">
               <div class="models__bottom_big_info">
                 <h3 class="models__bottom_big_head">Комбайн ТС56</h3>
                 <div class="models__bottom_big_desc">
@@ -839,7 +848,7 @@
                 </div>
               </div>
               <img class="models__bottom_image" src="img/models/models_big.webp" alt="">
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -1029,11 +1038,11 @@
               </a>
               <p class="footer__desc"><b>Продаже и обслуживание сельскохозяйственной техники</b></p>
             </div>
-            <div class="footer__contact">
+            <div class="footer__contact footer__contact_tel">
               <p>Звонок по России Бесплатный</p>
               <a href="tel://+7800800800"><h5>+ 7 800 800 800</h5></a>
             </div>
-            <div class="footer__contact">
+            <div class="footer__contact footer__contact_mail">
               <p>Напишите нам</p>
               <a href="mailto://mail@bmtechnics.ru"><h5>mail@bmtechnics.ru</h5></a>
             </div>
