@@ -189,7 +189,8 @@ textarea::placeholder,
 textarea,
 .header__nav_link,
 .header__region,
-.header__tel {
+.header__tel,
+.category__item span {
   font-family: var(--text-font);
   font-size: 14px;
   font-weight: 400;
@@ -257,7 +258,7 @@ h4,
   color: var(--text);
 }
 
-h6 {
+h5 {
   font-family: var(--title-font);
   font-size: 20px;
   font-weight: 700;
@@ -1907,6 +1908,7 @@ html.has-scroll-dragging {
   display: flex;
   width: 25%;
   height: auto;
+  min-height: 440px;
   padding: 50px 40px;
   align-items: center;
   flex-direction: column;
@@ -1929,35 +1931,72 @@ html.has-scroll-dragging {
   background-color: var(--bg-gray);
 }
 
+.category__item h5,
+.category__item span {
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+}
+
 .category__item:nth-child(1n) a,
 .category__item:nth-child(1n) p,
+.category__item:nth-child(1n) h4,
+.category__item:nth-child(1n) h5,
+.category__item:nth-child(1n) span,
 .category__item:nth-child(2n) a,
 .category__item:nth-child(2n) p,
+.category__item:nth-child(2n) h4,
+.category__item:nth-child(2n) h5,
+.category__item:nth-child(2n) span,
 .category__item:nth-child(4n) a,
-.category__item:nth-child(4n) p {
+.category__item:nth-child(4n) p,
+.category__item:nth-child(4n) h4,
+.category__item:nth-child(4n) h5,
+.category__item:nth-child(4n) span {
   color: var(--white);
 }
 
 .category__item:nth-child(3n) a,
-.category__item:nth-child(3n) p {
+.category__item:nth-child(3n) p,
+.category__item:nth-child(3n) h4,
+.category__item:nth-child(3n) h5,
+.category__item:nth-child(3n) span {
   color: var(--text);
 }
 
 .category__item:nth-child(1n) a:hover,
-.category__item:nth-child(3n) a:hover {
+.category__item:nth-child(1n) a:hover h4,
+.category__item:nth-child(1n) a:hover h5,
+.category__item:nth-child(1n) a:hover span,
+.category__item:nth-child(3n) a:hover,
+.category__item:nth-child(3n) a:hover h4,
+.category__item:nth-child(3n) a:hover h5,
+.category__item:nth-child(3n) a:hover span {
   color: var(--red);
 }
 
 .category__item:nth-child(2n) a:hover,
-.category__item:nth-child(4n) a:hover {
+.category__item:nth-child(2n) a:hover h4,
+.category__item:nth-child(2n) a:hover h5,
+.category__item:nth-child(2n) a:hover span,
+.category__item:nth-child(4n) a:hover,
+.category__item:nth-child(4n) a:hover h4,
+.category__item:nth-child(4n) a:hover h5,
+.category__item:nth-child(4n) a:hover span {
   color: var(--text);
 }
 
 .category__top {
   display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 50px 40px;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   gap: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .category__image,
@@ -1968,14 +2007,9 @@ html.has-scroll-dragging {
 
 .category__bottom {
   display: flex;
-  width: 100%;
   height: 100%;
-  padding: 50px 40px;
   flex-direction: column;
   gap: 20px;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .category__sublist {
@@ -3001,60 +3035,9 @@ html.has-scroll-dragging {
 
 /* max-width: 1919px */
 @media (max-width: 1919px){
-  a,
-  p,
-  li,
-  label,
-  [data-select-title],
-  [data-select-item] {
-    font-size: 16px;
-    line-height: 21px;
-  }
-  input,
-  input::placeholder,
-  textarea::placeholder,
-  textarea,
-  .header__nav_link,
-  .header__region,
-  .header__tel {
-    font-size: 14px;
-    line-height: 18px;
-  }
-  small {
-    font-size: 10px;
-    line-height: 12px;
-  }
-  b,
-  strong {
-    font-size: 16px;
-    line-height: 19px;
-  }
-  button,
-  .btn,
-  .btn input {
-    font-size: 16px;
-    line-height: 21px;
-  }
   h1 {
     font-size: 99px;
     line-height: 102px;
-  }
-  h2 {
-    font-size: 67px;
-    line-height: 72px;
-  }
-  h3 {
-    font-size: 41px;
-    line-height: 48px;
-  }
-  h4,
-  .company__link {
-    font-size: 25px;
-    line-height: 29px;
-  }
-  h6 {
-    font-size: 20px;
-    line-height: 28px;
   }
   .showreel__inview {
     max-height: 600px;
@@ -3071,8 +3054,8 @@ html.has-scroll-dragging {
   label,
   [data-select-title],
   [data-select-item] {
-    font-size: 16px;
-    line-height: 21px;
+    font-size: 14px;
+    line-height: 20px;
   }
   input,
   input::placeholder,
@@ -3080,7 +3063,8 @@ html.has-scroll-dragging {
   textarea,
   .header__nav_link,
   .header__region,
-  .header__tel {
+  .header__tel,
+  .category__item span {
     font-size: 14px;
     line-height: 18px;
   }
@@ -3116,7 +3100,7 @@ html.has-scroll-dragging {
     font-size: 18px;
     line-height: 21px;
   }
-  h6 {
+  h5 {
     font-size: 18px;
     line-height: 25px;
   }
@@ -3129,6 +3113,50 @@ html.has-scroll-dragging {
 
 /* max-width: 1023px */
 @media (max-width: 1023px){
+  a,
+  p,
+  li,
+  label,
+  [data-select-title],
+  [data-select-item],
+  input,
+  input::placeholder,
+  textarea::placeholder,
+  textarea,
+  .header__nav_link,
+  .header__region,
+  .header__tel,
+  .category__item span,
+  b,
+  strong,
+  button,
+  .btn,
+  .btn input {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  small {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 26px;
+  }
+  h4,
+  .company__link,
+  h5 {
+    font-size: 16px;
+    line-height: 19px;
+  }
   .showreel__inview {
     max-height: 350px;
   }
