@@ -311,13 +311,6 @@ if(heroblock){
     spaceBetween: 0,
     loop: true,
     speed: 1500,
-    pagination: {
-      el: '.hero__pagination',
-      type: 'custom',
-      renderCustom: function (swiper, current, total) {
-          return '<div class="hero__count">' + current + "</div>" + '<div class="hero__total">' + total + "</div>"; 
-      }
-    },
     autoplay: {
       delay: 4000,
       disableOnInteraction: false
@@ -329,8 +322,20 @@ if(heroblock){
     breakpoints: {
       1439: {
         slidesPerView: 1.33333,
+        pagination: {
+          el: '.hero__pagination',
+          type: 'custom',
+          renderCustom: function (swiper, current, total) {
+              return '<div class="hero__count">' + current + "</div>" + '<div class="hero__total">' + total + "</div>"; 
+          }
+        },
       },
-      580: {
+      1: {
+        pagination: {
+          el: '.hero__pagination',
+          type: 'bullets',
+          clickable: true,
+        },
         slidesPerView: 1,
       },
     },
@@ -351,10 +356,10 @@ if(companyslider){
     spaceBetween: 16,
     loop: true,
     speed: 500,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //   delay: 4000,
+    //   disableOnInteraction: false
+    // },
     navigation: {
       nextEl: ".company_slider__next",
       prevEl: ".company_slider__prev"
@@ -364,7 +369,7 @@ if(companyslider){
         slidesPerView: 4,
         spaceBetween: 16,
       },
-      580: {
+      1: {
         slidesPerView: 'auto',
         spaceBetween: 16,
       },
