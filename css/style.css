@@ -3742,6 +3742,9 @@ html.has-scroll-dragging {
   .partner__link {
     padding: 25px;
   }
+  .partner__link:hover {
+    padding: 15px;
+  }
   .partner__item {
     width: 130px;
     height: 80px;
