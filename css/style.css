@@ -3783,7 +3783,10 @@ html.has-scroll-dragging {
     gap: 10px;
   }
   .news__link:hover .news__info {
-    height: 65px;
+    height: 90px;
+  }
+  .news__link:hover .news__slider_image {
+    max-height: 160px;
   }
   .models__list {
     gap: 10px;
