@@ -320,7 +320,7 @@ if(heroblock){
       renderBullet: function (index, className) {
         return '<span class="' + className + '">' + '<span class="count">' + (index + 1) + "</span>" + "</span>";
       },
-      clickable: false,
+      clickable: true,
     },
     navigation: {
       nextEl: ".hero__next",
@@ -331,10 +331,6 @@ if(heroblock){
         slidesPerView: 1.33333,
       },
       1: {
-        slidesPerView: 1,
-        pagination: {
-          clickable: true,
-        },
         slidesPerView: 1,
       },
     },
