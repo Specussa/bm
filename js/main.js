@@ -307,13 +307,20 @@ Select.attach()
 const heroblock = document.querySelector(".hero__block");
 if(heroblock){
   var heroslider = new Swiper(".hero__slider", {
-    slidesPerView: 1,
-    spaceBetween: 0,
     loop: true,
+    spaceBetween: 0,
     speed: 1500,
     autoplay: {
       delay: 4000,
       disableOnInteraction: false
+    },
+    pagination: {
+      el: '.hero__pagination',
+      type: 'bullets',
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + '<span class="count">' + (index + 1) + "</span>" + "</span>";
+      },
+      clickable: false,
     },
     navigation: {
       nextEl: ".hero__next",
@@ -322,18 +329,10 @@ if(heroblock){
     breakpoints: {
       1439: {
         slidesPerView: 1.33333,
-        pagination: {
-          el: '.hero__pagination',
-          type: 'custom',
-          renderCustom: function (swiper, current, total) {
-              return '<div class="hero__count">' + current + "</div>" + '<div class="hero__total">' + total + "</div>"; 
-          }
-        },
       },
       1: {
+        slidesPerView: 1,
         pagination: {
-          el: '.hero__pagination',
-          type: 'bullets',
           clickable: true,
         },
         slidesPerView: 1,
@@ -342,9 +341,15 @@ if(heroblock){
     on: {
       autoplayTimeLeft(s, time, progress) {
         heroblock.style.setProperty("--progress", 1 - progress);
+      },
+      slideChange: function (swiper) {
+        const count = document.querySelector('.hero__pagination .swiper-pagination-bullet-active');
+        const herocount = document.querySelector('.hero__count');
+        herocount.innerHTML = count.children[0].innerHTML;
       }
     }
   });
+  document.querySelector('.hero__total').innerHTML = document.querySelector('.hero__list').children.length;
 }
 // end hero__slider
 

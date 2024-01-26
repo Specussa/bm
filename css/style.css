@@ -2003,6 +2003,7 @@ html.has-scroll-dragging {
 }
 
 .hero__pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+  display: none;
   width: calc(100% - 40px);
   position: absolute;
   top: 0;
@@ -2049,6 +2050,10 @@ html.has-scroll-dragging {
   background-color: var(--red);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
+}
+
+.hero__pagination .count {
+  display: none;
 }
 
 .hero__count,
@@ -3695,6 +3700,15 @@ html.has-scroll-dragging {
     background-color: transparent;
     -webkit-transform: none;
     transform: none;
+  }
+  .hero__pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .hero__count,
+  .hero__total {
+    display: none;
   }
   .swiper-pagination-bullet {
     width: 100%;
