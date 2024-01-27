@@ -4,7 +4,6 @@ var i;
 let oldWidth = window.innerWidth;
 const docheight = document.documentElement
 const htopblock = document.querySelector('.header__top_block');
-const hbottomblock = document.querySelector('.header__bottom_block');
 const menulinkActive = document.querySelectorAll(".header__bottom_block .header__nav_link");
 const menusublinkActive = document.querySelectorAll(".header__bottom_block .header__nav_sublink");
 const menusublistActive = document.querySelectorAll(".header__bottom_block .header__nav_subsublist");
@@ -53,7 +52,7 @@ if (!document.querySelector('.has-scroll-smooth')) {
 
   if (showreel) {
     if (oldWidth < 1440) {
-      showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + hbottomblock.scrollHeight + showreelhead.scrollHeight)}, 0, 1)`;
+      showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + showreelhead.scrollHeight)}, 0, 1)`;
     } else {
       showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + htop.scrollHeight + showreelhead.scrollHeight)}, 0, 1)`;
     }
@@ -74,7 +73,7 @@ if (!document.querySelector('.has-scroll-smooth')) {
 
     if (showreel) {
       if (oldWidth < 1440) {
-        showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + hbottomblock.scrollHeight + showreelhead.scrollHeight)}, 0, 1)`;
+        showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + showreelhead.scrollHeight)}, 0, 1)`;
       } else {
         showreelbutton.style.transform = `matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, ${window.scrollY - (document.querySelector('[data-persistent]').offsetTop - window.innerHeight + htop.scrollHeight + showreelhead.scrollHeight)}, 0, 1)`;
       }
