@@ -3553,6 +3553,7 @@ html.has-scroll-dragging {
   .header__bottom_contact {
     display: flex;
     padding: 25px 20px;
+    margin: 10px 0 0;
     justify-content: space-between;
     gap: 20px;
     background-color: var(--text);
@@ -3652,6 +3653,7 @@ html.has-scroll-dragging {
     display: flex;
     height: 70px;
     padding: 15px 20px;
+    margin: 0 0 10px;
     align-items: center;
     background-color: var(--text);
   }
