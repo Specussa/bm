@@ -5,11 +5,23 @@ let oldWidth = window.innerWidth;
 const docheight = document.documentElement
 const htopblock = document.querySelector('.header__top_block');
 const hbottomblock = document.querySelector('.header__bottom_block');
+const menulinkActive = document.querySelectorAll(".header__bottom_block .header__nav_link");
+const menusublinkActive = document.querySelectorAll(".header__bottom_block .header__nav_sublink");
+const menusublistActive = document.querySelectorAll(".header__bottom_block .header__nav_subsublist");
+const headerpopup = document.querySelectorAll(".header__nav_list .popup");
+const popup = document.querySelectorAll("html .popup");
+
 docheight.style.setProperty('--height', `${window.innerHeight}px`);
 const appHeight = () => {
   var newWidth = window.innerWidth;
   if (newWidth != oldWidth) {
     docheight.style.setProperty('--height', `${window.innerHeight}px`);
+    headerpopup.forEach((n) => n.style.maxHeight = null);
+    popup.forEach((n) => n.classList.remove("active"));
+    menulinkActive.forEach((n) => n.classList.remove("active"));
+    menusublinkActive.forEach((n) => n.classList.remove("active"));
+    menusublistActive.forEach((n) => n.classList.remove("active"));
+    menusublistActive.forEach((n) => n.style.maxHeight = null);
     if (!document.querySelector('.has-scroll-smooth')) {
       if (window.scrollY < htopblock.scrollHeight) {
         docheight.style.setProperty('--hscroll', `${htopblock.scrollHeight - window.scrollY}px`);
@@ -88,21 +100,23 @@ if(year){
 
 // start navbar
 const bodyoverlay = document.querySelector('.overlay');
+const headeroverlay = document.querySelector('.header__overlay');
 const menu = document.querySelector('.header__nav');
 const burger = document.querySelector('.header__burger');
-const menulinkActive = document.querySelectorAll(".header__bottom_block .header__nav_link");
-const headerpopup = document.querySelectorAll(".header__nav_list .popup");
-const popup = document.querySelectorAll("html .popup");
 const popupClose = document.getElementsByClassName("popup__close");
 
 for (i = 0; i < popupClose.length; i++) {
   popupClose[i].onclick = function(e) {
     html.classList.remove("noscroll");
-    headerpopup.forEach((n) => n.style.height = null);
-    headerpopup.forEach((n) => n.style.top = null);
+    headerpopup.forEach((n) => n.style.maxHeight = null);
     popup.forEach((n) => n.classList.remove("active"));
     menulinkActive.forEach((n) => n.classList.remove("active"));
+    menusublinkActive.forEach((n) => n.classList.remove("active"));
+    menusublistActive.forEach((n) => n.classList.remove("active"));
+    menusublistActive.forEach((n) => n.style.maxHeight = null);
     bodyoverlay.classList.remove("active");
+    headeroverlay.classList.remove("active");
+    hbottom.classList.remove("active");
     burger.classList.remove("active");
   }
 }
@@ -110,16 +124,22 @@ for (i = 0; i < popupClose.length; i++) {
 // start header__burger
 burger.addEventListener('click', function() {
   if (burger.classList.contains("active")) {
+    hbottom.classList.remove("active");
     html.classList.remove("noscroll");
-    headerpopup.forEach((n) => n.style.height = null);
-    headerpopup.forEach((n) => n.style.top = null);
+    headerpopup.forEach((n) => n.style.maxHeight = null);
     popup.forEach((n) => n.classList.remove("active"));
     menulinkActive.forEach((n) => n.classList.remove("active"));
+    menusublinkActive.forEach((n) => n.classList.remove("active"));
+    menusublistActive.forEach((n) => n.classList.remove("active"));
+    menusublistActive.forEach((n) => n.style.maxHeight = null);
     bodyoverlay.classList.remove("active");
+    headeroverlay.classList.remove("active");
     burger.classList.remove("active");
   } else {
+    hbottom.classList.add("active");
     html.classList.add("noscroll");
     bodyoverlay.classList.add("active");
+    headeroverlay.classList.add("active");
     burger.classList.add("active");
   }
 })
@@ -129,11 +149,30 @@ burger.addEventListener('click', function() {
 bodyoverlay.addEventListener('click', function() {
   if (bodyoverlay.classList.contains("active")) {
     html.classList.remove("noscroll");
-    headerpopup.forEach((n) => n.style.height = null);
-    headerpopup.forEach((n) => n.style.top = null);
+    headerpopup.forEach((n) => n.style.maxHeight = null);
     popup.forEach((n) => n.classList.remove("active"));
     menulinkActive.forEach((n) => n.classList.remove("active"));
+    menusublinkActive.forEach((n) => n.classList.remove("active"));
+    menusublistActive.forEach((n) => n.classList.remove("active"));
+    menusublistActive.forEach((n) => n.style.maxHeight = null);
     bodyoverlay.classList.remove("active");
+    headeroverlay.classList.remove("active");
+    hbottom.classList.remove("active");
+    burger.classList.remove("active");
+  }
+})
+headeroverlay.addEventListener('click', function() {
+  if (headeroverlay.classList.contains("active")) {
+    html.classList.remove("noscroll");
+    headerpopup.forEach((n) => n.style.maxHeight = null);
+    popup.forEach((n) => n.classList.remove("active"));
+    menulinkActive.forEach((n) => n.classList.remove("active"));
+    menusublinkActive.forEach((n) => n.classList.remove("active"));
+    menusublistActive.forEach((n) => n.classList.remove("active"));
+    menusublistActive.forEach((n) => n.style.maxHeight = null);
+    bodyoverlay.classList.remove("active");
+    headeroverlay.classList.remove("active");
+    hbottom.classList.remove("active");
     burger.classList.remove("active");
   }
 })
@@ -153,8 +192,11 @@ if(menu) {
           this.classList.remove("active");
           headernlNext.classList.remove("active");
           bodyoverlay.classList.remove("active");
-          headernlNext.style.height = null;
-          headernlNext.style.top = null;
+          headeroverlay.classList.remove("active");
+          headernlNext.style.maxHeight = null;
+          menusublinkActive.forEach((n) => n.classList.remove("active"));
+          menusublistActive.forEach((n) => n.classList.remove("active"));
+          menusublistActive.forEach((n) => n.style.maxHeight = null);
           html.classList.remove("noscroll");
         } else {
           for (var q = 0; q < headernlActive.length; q++) {
@@ -164,8 +206,13 @@ if(menu) {
           for (var p = 0; p < headernsl.length; p++) {
             this.classList.remove("active");
             headernsl[p].classList.remove("active");
+            headernsl[p].style.maxHeight = null;
           }
           e.preventDefault();
+          menusublinkActive.forEach((n) => n.classList.remove("active"));
+          menusublistActive.forEach((n) => n.classList.remove("active"));
+          menusublistActive.forEach((n) => n.style.maxHeight = null);
+          headernlNext.style.maxHeight = headernlNext.scrollHeight + "px";
           headernlNext.classList.add("active");
           this.classList.add("active");
           bodyoverlay.classList.add("active");
@@ -174,35 +221,37 @@ if(menu) {
       }
     };
   }
+  const headernsl = document.getElementsByClassName("header__nav_sublink");
+  for (i = 0; i < headernsl.length; i++) {
+    headernsl[i].onclick = function(e) {
+      if (!this.classList.contains("active")) {
+        const headernslNext = this.nextElementSibling;
+        const headernssl = document.getElementsByClassName("header__nav_subsublist");
+        const headernslActive = document.getElementsByClassName("header__nav_sublink active");
   
-  // var expertisebutton = document.getElementsByClassName("header__nav_link");
-
-  // for (i = 0; i < expertisebutton.length; i++) {
-  //   expertisebutton[i].onclick = function(e) {
-  //     var expertise = this.nextElementSibling;
-  //     var courseExpertise = document.getElementsByClassName("header__nav_sublist");
-  //     var courseExpertiseActive = document.getElementsByClassName("header__nav_link active");
-
-  //     if (expertise.style.maxHeight) {
-  //       expertise.style.maxHeight = null;
-  //       this.classList.remove("active");
-  //       expertise.classList.remove("active");
-  //     } else {
-  //       for (var q = 0; q < courseExpertiseActive.length; q++) {
-  //         courseExpertiseActive[q].classList.remove("active");
-  //         courseExpertise[q].classList.remove("active");
-  //       }
-  //       for (var p = 0; p < courseExpertise.length; p++) {
-  //         this.classList.remove("active");
-  //         courseExpertise[p].classList.remove("active");
-  //         courseExpertise[p].style.maxHeight = null;
-  //       }
-  //       expertise.style.maxHeight = (expertise.scrollHeight + 40) + "px";
-  //       expertise.classList.add("active");
-  //       this.classList.add("active");
-  //     }
-  //   };
-  // }
+        if (headernslNext.classList.contains("active")) {
+          this.classList.remove("active");
+          headernslNext.classList.remove("active");
+          headernslNext.style.maxHeight = null;
+        } else {
+          for (var q = 0; q < headernslActive.length; q++) {
+            headernslActive[q].classList.remove("active");
+            headernssl[q].classList.remove("active");
+          }
+          for (var p = 0; p < headernssl.length; p++) {
+            this.classList.remove("active");
+            headernssl[p].classList.remove("active");
+            headernssl[p].style.maxHeight = null;
+          }
+          e.preventDefault();
+          headernslNext.parentElement.parentElement.style.maxHeight = (headernslNext.parentElement.parentElement.scrollHeight + headernslNext.scrollHeight) + "px";
+          headernslNext.style.maxHeight = headernslNext.scrollHeight + "px";
+          headernslNext.classList.add("active");
+          this.classList.add("active");
+        }
+      }
+    };
+  }
 }
 // end menu
 
