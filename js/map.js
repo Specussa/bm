@@ -245,6 +245,9 @@ if (map) {
 const maplist = document.querySelector(".map__list")
 if(maplist) {
   document.addEventListener("DOMContentLoaded", () => {
+    const mapscroll = document.querySelector('.map__scroll');
+    const mapflex = document.querySelector('.map__back_shadow');
+    const mapactive = document.querySelector('.map__active');
     const mapitem = document.getElementsByClassName("map__item");
     const mappoint = document.querySelectorAll(".map__image .map__point");
     const mapall = document.querySelectorAll(".map__image .map__all");
@@ -280,6 +283,8 @@ if(maplist) {
     const mapbuttonten = document.querySelector('.map__button_ten');
     const mappointten = document.querySelector('.map__point_ten');
     const mapten = document.querySelector('.map__ten');
+
+    mapscroll.style.height = (mapflex.scrollHeight - mapactive.scrollHeight) + "px";
     
     for (i = 0; i < mapitem.length; i++) {
       mapitem[i].onclick = function(e) {
@@ -288,7 +293,6 @@ if(maplist) {
         const mapinfoActive = document.getElementsByClassName("map__item active");
     
         if (this.classList.contains("active")) {
-          mapinfoHeight.style.maxHeight = null;
           this.classList.remove("active");
           mapinfoHeight.classList.remove("active");
           mappoint.forEach((n) => n.classList.remove("active"));
@@ -303,10 +307,12 @@ if(maplist) {
           for (var p = 0; p < mapinfo.length; p++) {
             this.classList.remove("active");
             mapinfo[p].classList.remove("active");
-            mapinfo[p].style.maxHeight = null;
             mappoint.forEach((n) => n.classList.remove("active"));
             mapall.forEach((n) => n.classList.remove("active"));
           }
+          mapactive.innerHTML = this.innerHTML;
+          mapinfoHeight.classList.add("active");
+          mapscroll.style.height = (mapflex.scrollHeight - mapactive.scrollHeight) + "px";
           mappoint.forEach((n) => n.classList.remove("active"));
           mapall.forEach((n) => n.classList.remove("active"));
           if (this.classList.contains("map__button_one")) {
@@ -349,8 +355,6 @@ if(maplist) {
             mappointten.classList.add("active");
             mapten.classList.add("active");
           }
-          mapinfoHeight.style.maxHeight = mapinfoHeight.scrollHeight + "px";
-          mapinfoHeight.classList.add("active");
           this.classList.add("active");
         }
       };
@@ -360,126 +364,137 @@ if(maplist) {
       mapall.forEach((n) => n.classList.remove("active"));
       maplistall.forEach((n) => n.classList.remove("active"));
       mapinfoall.forEach((n) => n.classList.remove("active"));
-      mapinfoall.forEach((n) => n.style.maxHeight = null);
+      mapscroll.style.height = (mapflex.scrollHeight - mapactive.scrollHeight) + "px";
     }
     mappointone.addEventListener('click', function() {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
+        mapactive.innerHTML = mapbuttonone.innerHTML;
         mapActiveRemove();
-        mapbuttonone.children[2].style.maxHeight = mapbuttonone.children[2].scrollHeight + "px";
-        mapbuttonone.children[2].classList.add("active");
         mapbuttonone.classList.add("active");
         mappointone.classList.add("active");
         mapone.classList.add("active");
+        mapbuttonone.children[2].classList.add("active");
+        mapbuttonone.parentNode.parentNode.scrollTop =  mapbuttonone.offsetTop - mapactive.scrollHeight - mapbuttonone.scrollHeight;
       }
     });
     mappointtwo.addEventListener('click', function() {
+      let mapitemactive = document.getElementsByClassName("map__item active")
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
+        mapactive.innerHTML = mapbuttontwo.innerHTML;
         mapActiveRemove();
-        mapbuttontwo.children[2].style.maxHeight = mapbuttontwo.children[2].scrollHeight + "px";
-        mapbuttontwo.children[2].classList.add("active");
         mapbuttontwo.classList.add("active");
         mappointtwo.classList.add("active");
         maptwo.classList.add("active");
+        mapbuttontwo.children[2].classList.add("active");
+        mapbuttontwo.parentNode.parentNode.scrollTop = mapbuttontwo.offsetTop - mapactive.scrollHeight + mapbuttontwo.previousElementSibling.scrollHeight - mapbuttontwo.scrollHeight;
       }
     });
     mappointthree.addEventListener('click', function() {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
+        mapactive.innerHTML = mapbuttonthree.innerHTML;
         mapActiveRemove();
-        mapbuttonthree.children[2].style.maxHeight = mapbuttonthree.children[2].scrollHeight + "px";
-        mapbuttonthree.children[2].classList.add("active");
         mapbuttonthree.classList.add("active");
         mappointthree.classList.add("active");
         mapthree.classList.add("active");
+        mapbuttonthree.children[2].classList.add("active");
+        mapbuttonthree.parentNode.parentNode.scrollTop = mapbuttonthree.offsetTop - mapactive.scrollHeight + mapbuttonthree.previousElementSibling.scrollHeight - mapbuttonthree.scrollHeight;
       }
     });
     mappointfour.addEventListener('click', function() {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
+        mapactive.innerHTML = mapbuttonfour.innerHTML;
         mapActiveRemove();
-        mapbuttonfour.children[2].style.maxHeight = mapbuttonfour.children[2].scrollHeight + "px";
-        mapbuttonfour.children[2].classList.add("active");
         mapbuttonfour.classList.add("active");
         mappointfour.classList.add("active");
         mapfour.classList.add("active");
+        mapbuttonfour.children[2].classList.add("active");
+        mapbuttonfour.parentNode.parentNode.scrollTop = mapbuttonfour.offsetTop - mapactive.scrollHeight + mapbuttonfour.previousElementSibling.scrollHeight - mapbuttonfour.scrollHeight;
       }
     });
     mappointfive.addEventListener('click', function() {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
+        mapactive.innerHTML = mapbuttonfive.innerHTML;
         mapActiveRemove();
-        mapbuttonfive.children[2].style.maxHeight = mapbuttonfive.children[2].scrollHeight + "px";
-        mapbuttonfive.children[2].classList.add("active");
         mapbuttonfive.classList.add("active");
         mappointfive.classList.add("active");
         mapfive.classList.add("active");
+        mapbuttonfive.children[2].classList.add("active");
+        mapbuttonfive.parentNode.parentNode.scrollTop = mapbuttonfive.offsetTop - mapactive.scrollHeight + mapbuttonfive.previousElementSibling.scrollHeight - mapbuttonfive.scrollHeight;
       }
     });
     mappointsix.addEventListener('click', function() {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
+        mapactive.innerHTML = mapbuttonsix.innerHTML;
         mapActiveRemove();
-        mapbuttonsix.children[2].style.maxHeight = mapbuttonsix.children[2].scrollHeight + "px";
-        mapbuttonsix.children[2].classList.add("active");
         mapbuttonsix.classList.add("active");
         mappointsix.classList.add("active");
         mapsix.classList.add("active");
+        mapbuttonsix.children[2].classList.add("active");
+        mapbuttonsix.parentNode.parentNode.scrollTop = mapbuttonsix.offsetTop - mapactive.scrollHeight + mapbuttonsix.previousElementSibling.scrollHeight - mapbuttonsix.scrollHeight;
       }
     });
     mappointseven.addEventListener('click', function() {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
+        mapactive.innerHTML = mapbuttonseven.innerHTML;
         mapActiveRemove();
-        mapbuttonseven.children[2].style.maxHeight = mapbuttonseven.children[2].scrollHeight + "px";
-        mapbuttonseven.children[2].classList.add("active");
         mapbuttonseven.classList.add("active");
         mappointseven.classList.add("active");
         mapseven.classList.add("active");
+        mapbuttonseven.children[2].classList.add("active");
+        mapbuttonseven.parentNode.parentNode.scrollTop = mapbuttonseven.offsetTop - mapactive.scrollHeight + mapbuttonseven.previousElementSibling.scrollHeight - mapbuttonseven.scrollHeight;
       }
     });
     mappointeight.addEventListener('click', function() {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
+        mapactive.innerHTML = mapbuttoneight.innerHTML;
         mapActiveRemove();
-        mapbuttoneight.children[2].style.maxHeight = mapbuttoneight.children[2].scrollHeight + "px";
-        mapbuttoneight.children[2].classList.add("active");
         mapbuttoneight.classList.add("active");
         mappointeight.classList.add("active");
         mapeight.classList.add("active");
+        mapbuttoneight.children[2].classList.add("active");
+        mapbuttoneight.parentNode.parentNode.scrollTop = mapbuttoneight.offsetTop - mapactive.scrollHeight + mapbuttoneight.previousElementSibling.scrollHeight - mapbuttoneight.scrollHeight;
       }
     });
     mappointnine.addEventListener('click', function() {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
+        mapactive.innerHTML = mapbuttonnine.innerHTML;
         mapActiveRemove();
-        mapbuttonnine.children[2].style.maxHeight = mapbuttonnine.children[2].scrollHeight + "px";
-        mapbuttonnine.children[2].classList.add("active");
         mapbuttonnine.classList.add("active");
         mappointnine.classList.add("active");
         mapnine.classList.add("active");
+        mapbuttonnine.children[2].classList.add("active");
+        mapbuttonnine.parentNode.parentNode.scrollTop = mapbuttonnine.offsetTop - mapactive.scrollHeight + mapbuttonnine.previousElementSibling.scrollHeight - mapbuttonnine.scrollHeight;
       }
     });
     mappointten.addEventListener('click', function() {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
+        mapactive.innerHTML = mapbuttonten.innerHTML;
         mapActiveRemove();
-        mapbuttonten.children[2].style.maxHeight = mapbuttonten.children[2].scrollHeight + "px";
-        mapbuttonten.children[2].classList.add("active");
         mapbuttonten.classList.add("active");
         mappointten.classList.add("active");
         mapten.classList.add("active");
+        mapbuttonten.children[2].classList.add("active");
+        mapbuttonten.parentNode.parentNode.scrollTop = mapbuttonten.offsetTop - mapactive.scrollHeight + mapbuttonten.previousElementSibling.scrollHeight - mapbuttonten.scrollHeight;
       }
     });
   });
