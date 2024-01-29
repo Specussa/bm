@@ -366,6 +366,17 @@ if(maplist) {
       mapinfoall.forEach((n) => n.classList.remove("active"));
       mapscroll.style.height = (mapflex.scrollHeight - mapactive.scrollHeight) + "px";
     }
+    mapactive.addEventListener('click', function() {
+      if (this.classList.contains("active")) {
+        this.classList.remove("active");
+        mapscroll.classList.remove("active");
+        mapscroll.style.height = (mapflex.scrollHeight - mapactive.scrollHeight) + "px";
+      } else {
+        this.classList.add("active");
+        mapscroll.classList.add("active");
+        mapscroll.style.height = (mapflex.scrollHeight - mapactive.scrollHeight) + "px";
+      }
+    });
     mappointone.addEventListener('click', function() {
       if (this.classList.contains("active")) {
         mapActiveRemove();

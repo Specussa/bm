@@ -3239,6 +3239,7 @@ html.has-scroll-dragging {
 .map__image {
   height: 100%;
   position: relative;
+  z-index: 1;
 }
 
 .map__image svg {
@@ -3253,6 +3254,7 @@ html.has-scroll-dragging {
   gap: 295px;
   position: relative;
   z-index: 3;
+  overflow: hidden;
 }
 
 .map__left {
@@ -3260,6 +3262,8 @@ html.has-scroll-dragging {
   width: 345px;
   flex: 0 0 auto;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
 }
 
 .map__scroll {
@@ -3292,6 +3296,30 @@ html.has-scroll-dragging {
   flex-direction: column;
   position: relative;
   cursor: pointer;
+}
+
+.map__active {
+  color: var(--white);
+  z-index: 3;
+}
+
+.map__active svg {
+  display: none;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  object-fit: contain;
+  -webkit-transform: translateY(-50%) rotate(0deg);
+  transform: translateY(-50%) rotate(0deg);
+  -webkit-transition: transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+
+.map__active.active svg {
+  -webkit-transform: translateY(-50%) rotate(-180deg);
+  transform: translateY(-50%) rotate(-180deg);
 }
 
 .map__item::before,
@@ -4039,9 +4067,7 @@ html.has-scroll-dragging {
   .map__image {
     transform: translateX(-100px);
   }
-  .map__desc {
-    padding: 15px 0 0;
-  }
+  .map__desc,
   .map__contact {
     padding: 15px 0 0;
   }
@@ -4366,6 +4392,57 @@ html.has-scroll-dragging {
     flex-direction: column;
     align-items: flex-start;
     gap: 15px;
+  }
+  .map__container {
+    padding: 0;
+  }
+  .map__flex {
+    height: auto;
+    flex-direction: column;
+  }
+  .map__left {
+    width: 100%;
+    background-color: var(--text);
+  }
+  .map__active {
+    padding: 10px 70px 10px 20px;
+    background-color: var(--text);
+  }
+  .map__active svg {
+    display: block;
+  }
+  .map__image {
+    height: 630px;
+    transform: translateX(-200px);
+  }
+  .map__scroll {
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    background-color: var(--text);
+    -webkit-transition: -webkit-transform 1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 1s;
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.1s, opacity 0s linear 0.4s;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  .map__scroll.active {
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
+    transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.1s linear 0s;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  .map__desc,
+  .map__contact {
+    padding: 10px 0 0;
+  }
+  .map__info {
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0 60px;
   }
   .footer__top {
     align-items: flex-start;

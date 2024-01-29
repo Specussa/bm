@@ -187,7 +187,7 @@ if(menu) {
         const headernsl = document.getElementsByClassName("header__nav_sublist");
         const headernlActive = document.getElementsByClassName("header__nav_link active");
   
-        if (headernlNext.classList.contains("active")) {
+        if (headernlNext && headernlNext.classList.contains("active")) {
           this.classList.remove("active");
           headernlNext.classList.remove("active");
           bodyoverlay.classList.remove("active");
@@ -197,7 +197,7 @@ if(menu) {
           menusublistActive.forEach((n) => n.classList.remove("active"));
           menusublistActive.forEach((n) => n.style.maxHeight = null);
           html.classList.remove("noscroll");
-        } else {
+        } else if (headernlNext) {
           for (var q = 0; q < headernlActive.length; q++) {
             headernlActive[q].classList.remove("active");
             headernsl[q].classList.remove("active");
@@ -228,11 +228,11 @@ if(menu) {
         const headernssl = document.getElementsByClassName("header__nav_subsublist");
         const headernslActive = document.getElementsByClassName("header__nav_sublink active");
   
-        if (headernslNext.classList.contains("active")) {
+        if (headernslNext && headernslNext.classList.contains("active")) {
           this.classList.remove("active");
           headernslNext.classList.remove("active");
           headernslNext.style.maxHeight = null;
-        } else {
+        } else if (headernslNext) {
           for (var q = 0; q < headernslActive.length; q++) {
             headernslActive[q].classList.remove("active");
             headernssl[q].classList.remove("active");
