@@ -3323,12 +3323,7 @@ html.has-scroll-dragging {
 }
 
 .map__desc {
-  display: none;
   padding: 20px 0 0;
-}
-
-.map__active .map__desc {
-  display: block;
 }
 
 .map__info {
@@ -3347,7 +3342,6 @@ html.has-scroll-dragging {
 }
 
 .map__contact {
-  padding: 0 0 10px;
   padding: 20px 0 0;
 }
 
@@ -4028,6 +4022,28 @@ html.has-scroll-dragging {
   .feedback input,
   .feedback textarea {
     width: 100%;
+  }
+  .map__container {
+    padding: 0 0 0 20px;
+  }
+  .map__flex {
+    gap: 0;
+  }
+  .map__left {
+    width: 270px;
+  }
+  .map__item,
+  .map__active {
+    padding: 10px 20px;
+  }
+  .map__image {
+    transform: translateX(-100px);
+  }
+  .map__desc {
+    padding: 15px 0 0;
+  }
+  .map__contact {
+    padding: 15px 0 0;
   }
   .footer__top {
     padding: 30px 0;
