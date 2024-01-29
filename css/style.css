@@ -3322,8 +3322,13 @@ html.has-scroll-dragging {
   color: var(--white);
 }
 
-.map__head {
-  padding: 0 0 20px;
+.map__desc {
+  display: none;
+  padding: 20px 0 0;
+}
+
+.map__active .map__desc {
+  display: block;
 }
 
 .map__info {
