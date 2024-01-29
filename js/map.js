@@ -297,6 +297,9 @@ if(maplist) {
           mapinfoHeight.classList.remove("active");
           mappoint.forEach((n) => n.classList.remove("active"));
           mapall.forEach((n) => n.classList.remove("active"));
+          mapactive.classList.remove("active");
+          mapscroll.classList.remove("active");
+          mapscroll.style.height = (mapflex.scrollHeight - mapactive.scrollHeight) + "px";
         } else {
           for (var q = 0; q < mapinfoActive.length; q++) {
             mapinfoActive[q].classList.remove("active");
@@ -311,6 +314,8 @@ if(maplist) {
             mapall.forEach((n) => n.classList.remove("active"));
           }
           mapactive.innerHTML = this.innerHTML;
+          mapactive.classList.remove("active");
+          mapscroll.classList.remove("active");
           mapinfoHeight.classList.add("active");
           mapscroll.style.height = (mapflex.scrollHeight - mapactive.scrollHeight) + "px";
           mappoint.forEach((n) => n.classList.remove("active"));
