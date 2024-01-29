@@ -248,6 +248,7 @@ if(maplist) {
     const mapscroll = document.querySelector('.map__scroll');
     const mapflex = document.querySelector('.map__back_shadow');
     const mapactive = document.querySelector('.map__active');
+    const mapactiveblock = document.querySelector('.map__active_block');
     const mapitem = document.getElementsByClassName("map__item");
     const mappoint = document.querySelectorAll(".map__image .map__point");
     const mapall = document.querySelectorAll(".map__image .map__all");
@@ -313,7 +314,7 @@ if(maplist) {
             mappoint.forEach((n) => n.classList.remove("active"));
             mapall.forEach((n) => n.classList.remove("active"));
           }
-          mapactive.innerHTML = this.innerHTML;
+          mapactiveblock.innerHTML = this.innerHTML;
           mapactive.classList.remove("active");
           mapscroll.classList.remove("active");
           mapinfoHeight.classList.add("active");
@@ -386,7 +387,7 @@ if(maplist) {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
-        mapactive.innerHTML = mapbuttonone.innerHTML;
+        mapactiveblock.innerHTML = mapbuttonone.innerHTML;
         mapActiveRemove();
         mapbuttonone.classList.add("active");
         mappointone.classList.add("active");
@@ -400,7 +401,7 @@ if(maplist) {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
-        mapactive.innerHTML = mapbuttontwo.innerHTML;
+        mapactiveblock.innerHTML = mapbuttontwo.innerHTML;
         mapActiveRemove();
         mapbuttontwo.classList.add("active");
         mappointtwo.classList.add("active");
@@ -413,7 +414,7 @@ if(maplist) {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
-        mapactive.innerHTML = mapbuttonthree.innerHTML;
+        mapactiveblock.innerHTML = mapbuttonthree.innerHTML;
         mapActiveRemove();
         mapbuttonthree.classList.add("active");
         mappointthree.classList.add("active");
@@ -426,7 +427,7 @@ if(maplist) {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
-        mapactive.innerHTML = mapbuttonfour.innerHTML;
+        mapactiveblock.innerHTML = mapbuttonfour.innerHTML;
         mapActiveRemove();
         mapbuttonfour.classList.add("active");
         mappointfour.classList.add("active");
@@ -439,7 +440,7 @@ if(maplist) {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
-        mapactive.innerHTML = mapbuttonfive.innerHTML;
+        mapactiveblock.innerHTML = mapbuttonfive.innerHTML;
         mapActiveRemove();
         mapbuttonfive.classList.add("active");
         mappointfive.classList.add("active");
@@ -452,7 +453,7 @@ if(maplist) {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
-        mapactive.innerHTML = mapbuttonsix.innerHTML;
+        mapactiveblock.innerHTML = mapbuttonsix.innerHTML;
         mapActiveRemove();
         mapbuttonsix.classList.add("active");
         mappointsix.classList.add("active");
@@ -465,7 +466,7 @@ if(maplist) {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
-        mapactive.innerHTML = mapbuttonseven.innerHTML;
+        mapactiveblock.innerHTML = mapbuttonseven.innerHTML;
         mapActiveRemove();
         mapbuttonseven.classList.add("active");
         mappointseven.classList.add("active");
@@ -478,7 +479,7 @@ if(maplist) {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
-        mapactive.innerHTML = mapbuttoneight.innerHTML;
+        mapactiveblock.innerHTML = mapbuttoneight.innerHTML;
         mapActiveRemove();
         mapbuttoneight.classList.add("active");
         mappointeight.classList.add("active");
@@ -491,7 +492,7 @@ if(maplist) {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
-        mapactive.innerHTML = mapbuttonnine.innerHTML;
+        mapactiveblock.innerHTML = mapbuttonnine.innerHTML;
         mapActiveRemove();
         mapbuttonnine.classList.add("active");
         mappointnine.classList.add("active");
@@ -504,7 +505,7 @@ if(maplist) {
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
-        mapactive.innerHTML = mapbuttonten.innerHTML;
+        mapactiveblock.innerHTML = mapbuttonten.innerHTML;
         mapActiveRemove();
         mapbuttonten.classList.add("active");
         mappointten.classList.add("active");
