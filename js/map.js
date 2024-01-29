@@ -241,3 +241,246 @@ if (map) {
   </button>
   `;
 }
+
+const maplist = document.querySelector(".map__list")
+if(maplist) {
+  document.addEventListener("DOMContentLoaded", () => {
+    const mapitem = document.getElementsByClassName("map__item");
+    const mappoint = document.querySelectorAll(".map__image .map__point");
+    const mapall = document.querySelectorAll(".map__image .map__all");
+    const maplistall = document.querySelectorAll(".map__list .map__item");
+    const mapinfoall = document.querySelectorAll(".map__list .map__info");
+    const mapbuttonone = document.querySelector('.map__button_one');
+    const mappointone = document.querySelector('.map__point_one');
+    const mapone = document.querySelector('.map__one');
+    const mapbuttontwo = document.querySelector('.map__button_two');
+    const mappointtwo = document.querySelector('.map__point_two');
+    const maptwo = document.querySelector('.map__two');
+    const mapbuttonthree = document.querySelector('.map__button_three');
+    const mappointthree = document.querySelector('.map__point_three');
+    const mapthree = document.querySelector('.map__three');
+    const mapbuttonfour = document.querySelector('.map__button_four');
+    const mappointfour = document.querySelector('.map__point_four');
+    const mapfour = document.querySelector('.map__four');
+    const mapbuttonfive = document.querySelector('.map__button_five');
+    const mappointfive = document.querySelector('.map__point_five');
+    const mapfive = document.querySelector('.map__five');
+    const mapbuttonsix = document.querySelector('.map__button_six');
+    const mappointsix = document.querySelector('.map__point_six');
+    const mapsix = document.querySelector('.map__six');
+    const mapbuttonseven = document.querySelector('.map__button_seven');
+    const mappointseven = document.querySelector('.map__point_seven');
+    const mapseven = document.querySelector('.map__seven');
+    const mapbuttoneight = document.querySelector('.map__button_eight');
+    const mappointeight = document.querySelector('.map__point_eight');
+    const mapeight = document.querySelector('.map__eight');
+    const mapbuttonnine = document.querySelector('.map__button_nine');
+    const mappointnine = document.querySelector('.map__point_nine');
+    const mapnine = document.querySelector('.map__nine');
+    const mapbuttonten = document.querySelector('.map__button_ten');
+    const mappointten = document.querySelector('.map__point_ten');
+    const mapten = document.querySelector('.map__ten');
+    
+    for (i = 0; i < mapitem.length; i++) {
+      mapitem[i].onclick = function(e) {
+        const mapinfoHeight = this.children[2];
+        const mapinfo = document.getElementsByClassName("map__info");
+        const mapinfoActive = document.getElementsByClassName("map__item active");
+    
+        if (this.classList.contains("active")) {
+          mapinfoHeight.style.maxHeight = null;
+          this.classList.remove("active");
+          mapinfoHeight.classList.remove("active");
+          mappoint.forEach((n) => n.classList.remove("active"));
+          mapall.forEach((n) => n.classList.remove("active"));
+        } else {
+          for (var q = 0; q < mapinfoActive.length; q++) {
+            mapinfoActive[q].classList.remove("active");
+            mapinfo[q].classList.remove("active");
+            mappoint.forEach((n) => n.classList.remove("active"));
+            mapall.forEach((n) => n.classList.remove("active"));
+          }
+          for (var p = 0; p < mapinfo.length; p++) {
+            this.classList.remove("active");
+            mapinfo[p].classList.remove("active");
+            mapinfo[p].style.maxHeight = null;
+            mappoint.forEach((n) => n.classList.remove("active"));
+            mapall.forEach((n) => n.classList.remove("active"));
+          }
+          mappoint.forEach((n) => n.classList.remove("active"));
+          mapall.forEach((n) => n.classList.remove("active"));
+          if (this.classList.contains("map__button_one")) {
+            mappointone.classList.add("active");
+            mapone.classList.add("active");
+          }
+          if (this.classList.contains("map__button_two")) {
+            mappointtwo.classList.add("active");
+            maptwo.classList.add("active");
+          }
+          if (this.classList.contains("map__button_three")) {
+            mappointthree.classList.add("active");
+            mapthree.classList.add("active");
+          }
+          if (this.classList.contains("map__button_four")) {
+            mappointfour.classList.add("active");
+            mapfour.classList.add("active");
+          }
+          if (this.classList.contains("map__button_five")) {
+            mappointfive.classList.add("active");
+            mapfive.classList.add("active");
+          }
+          if (this.classList.contains("map__button_six")) {
+            mappointsix.classList.add("active");
+            mapsix.classList.add("active");
+          }
+          if (this.classList.contains("map__button_seven")) {
+            mappointseven.classList.add("active");
+            mapseven.classList.add("active");
+          }
+          if (this.classList.contains("map__button_eight")) {
+            mappointeight.classList.add("active");
+            mapeight.classList.add("active");
+          }
+          if (this.classList.contains("map__button_nine")) {
+            mappointnine.classList.add("active");
+            mapnine.classList.add("active");
+          }
+          if (this.classList.contains("map__button_ten")) {
+            mappointten.classList.add("active");
+            mapten.classList.add("active");
+          }
+          mapinfoHeight.style.maxHeight = mapinfoHeight.scrollHeight + "px";
+          mapinfoHeight.classList.add("active");
+          this.classList.add("active");
+        }
+      };
+    }
+    function mapActiveRemove() {
+      mappoint.forEach((n) => n.classList.remove("active"));
+      mapall.forEach((n) => n.classList.remove("active"));
+      maplistall.forEach((n) => n.classList.remove("active"));
+      mapinfoall.forEach((n) => n.classList.remove("active"));
+      mapinfoall.forEach((n) => n.style.maxHeight = null);
+    }
+    mappointone.addEventListener('click', function() {
+      if (this.classList.contains("active")) {
+        mapActiveRemove();
+      } else {
+        mapActiveRemove();
+        mapbuttonone.children[2].style.maxHeight = mapbuttonone.children[2].scrollHeight + "px";
+        mapbuttonone.children[2].classList.add("active");
+        mapbuttonone.classList.add("active");
+        mappointone.classList.add("active");
+        mapone.classList.add("active");
+      }
+    });
+    mappointtwo.addEventListener('click', function() {
+      if (this.classList.contains("active")) {
+        mapActiveRemove();
+      } else {
+        mapActiveRemove();
+        mapbuttontwo.children[2].style.maxHeight = mapbuttontwo.children[2].scrollHeight + "px";
+        mapbuttontwo.children[2].classList.add("active");
+        mapbuttontwo.classList.add("active");
+        mappointtwo.classList.add("active");
+        maptwo.classList.add("active");
+      }
+    });
+    mappointthree.addEventListener('click', function() {
+      if (this.classList.contains("active")) {
+        mapActiveRemove();
+      } else {
+        mapActiveRemove();
+        mapbuttonthree.children[2].style.maxHeight = mapbuttonthree.children[2].scrollHeight + "px";
+        mapbuttonthree.children[2].classList.add("active");
+        mapbuttonthree.classList.add("active");
+        mappointthree.classList.add("active");
+        mapthree.classList.add("active");
+      }
+    });
+    mappointfour.addEventListener('click', function() {
+      if (this.classList.contains("active")) {
+        mapActiveRemove();
+      } else {
+        mapActiveRemove();
+        mapbuttonfour.children[2].style.maxHeight = mapbuttonfour.children[2].scrollHeight + "px";
+        mapbuttonfour.children[2].classList.add("active");
+        mapbuttonfour.classList.add("active");
+        mappointfour.classList.add("active");
+        mapfour.classList.add("active");
+      }
+    });
+    mappointfive.addEventListener('click', function() {
+      if (this.classList.contains("active")) {
+        mapActiveRemove();
+      } else {
+        mapActiveRemove();
+        mapbuttonfive.children[2].style.maxHeight = mapbuttonfive.children[2].scrollHeight + "px";
+        mapbuttonfive.children[2].classList.add("active");
+        mapbuttonfive.classList.add("active");
+        mappointfive.classList.add("active");
+        mapfive.classList.add("active");
+      }
+    });
+    mappointsix.addEventListener('click', function() {
+      if (this.classList.contains("active")) {
+        mapActiveRemove();
+      } else {
+        mapActiveRemove();
+        mapbuttonsix.children[2].style.maxHeight = mapbuttonsix.children[2].scrollHeight + "px";
+        mapbuttonsix.children[2].classList.add("active");
+        mapbuttonsix.classList.add("active");
+        mappointsix.classList.add("active");
+        mapsix.classList.add("active");
+      }
+    });
+    mappointseven.addEventListener('click', function() {
+      if (this.classList.contains("active")) {
+        mapActiveRemove();
+      } else {
+        mapActiveRemove();
+        mapbuttonseven.children[2].style.maxHeight = mapbuttonseven.children[2].scrollHeight + "px";
+        mapbuttonseven.children[2].classList.add("active");
+        mapbuttonseven.classList.add("active");
+        mappointseven.classList.add("active");
+        mapseven.classList.add("active");
+      }
+    });
+    mappointeight.addEventListener('click', function() {
+      if (this.classList.contains("active")) {
+        mapActiveRemove();
+      } else {
+        mapActiveRemove();
+        mapbuttoneight.children[2].style.maxHeight = mapbuttoneight.children[2].scrollHeight + "px";
+        mapbuttoneight.children[2].classList.add("active");
+        mapbuttoneight.classList.add("active");
+        mappointeight.classList.add("active");
+        mapeight.classList.add("active");
+      }
+    });
+    mappointnine.addEventListener('click', function() {
+      if (this.classList.contains("active")) {
+        mapActiveRemove();
+      } else {
+        mapActiveRemove();
+        mapbuttonnine.children[2].style.maxHeight = mapbuttonnine.children[2].scrollHeight + "px";
+        mapbuttonnine.children[2].classList.add("active");
+        mapbuttonnine.classList.add("active");
+        mappointnine.classList.add("active");
+        mapnine.classList.add("active");
+      }
+    });
+    mappointten.addEventListener('click', function() {
+      if (this.classList.contains("active")) {
+        mapActiveRemove();
+      } else {
+        mapActiveRemove();
+        mapbuttonten.children[2].style.maxHeight = mapbuttonten.children[2].scrollHeight + "px";
+        mapbuttonten.children[2].classList.add("active");
+        mapbuttonten.classList.add("active");
+        mappointten.classList.add("active");
+        mapten.classList.add("active");
+      }
+    });
+  });
+}
