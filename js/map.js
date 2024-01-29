@@ -370,6 +370,8 @@ if(maplist) {
       mapall.forEach((n) => n.classList.remove("active"));
       maplistall.forEach((n) => n.classList.remove("active"));
       mapinfoall.forEach((n) => n.classList.remove("active"));
+      mapactive.classList.remove("active");
+      mapscroll.classList.remove("active");
       mapscroll.style.height = (mapflex.scrollHeight - mapactive.scrollHeight) + "px";
     }
     mapactive.addEventListener('click', function() {
@@ -397,7 +399,6 @@ if(maplist) {
       }
     });
     mappointtwo.addEventListener('click', function() {
-      let mapitemactive = document.getElementsByClassName("map__item active")
       if (this.classList.contains("active")) {
         mapActiveRemove();
       } else {
