@@ -254,6 +254,93 @@ if(menu) {
 }
 // end menu
 
+// start map__list
+const maplist = document.querySelector(".map__list")
+if(maplist) {
+  document.addEventListener("DOMContentLoaded", () => {
+    const mapitem = document.getElementsByClassName("map__item");
+    const mappoint = document.querySelectorAll(".map__image .map__point");
+    const mapall = document.querySelectorAll(".map__image .map__all");
+    var i;
+    
+    for (i = 0; i < mapitem.length; i++) {
+      mapitem[i].onclick = function(e) {
+        const mapinfoHeight = this.children[2];
+        const mapinfo = document.getElementsByClassName("map__info");
+        const mapinfoActive = document.getElementsByClassName("map__item active");
+    
+        if (this.classList.contains("active")) {
+          mapinfoHeight.style.maxHeight = null;
+          this.classList.remove("active");
+          mapinfoHeight.classList.remove("active");
+          mappoint.forEach((n) => n.classList.remove("active"));
+          mapall.forEach((n) => n.classList.remove("active"));
+        } else {
+          for (var q = 0; q < mapinfoActive.length; q++) {
+            mapinfoActive[q].classList.remove("active");
+            mapinfo[q].classList.remove("active");
+            mappoint.forEach((n) => n.classList.remove("active"));
+            mapall.forEach((n) => n.classList.remove("active"));
+          }
+          for (var p = 0; p < mapinfo.length; p++) {
+            this.classList.remove("active");
+            mapinfo[p].classList.remove("active");
+            mapinfo[p].style.maxHeight = null;
+            mappoint.forEach((n) => n.classList.remove("active"));
+            mapall.forEach((n) => n.classList.remove("active"));
+          }
+          mappoint.forEach((n) => n.classList.remove("active"));
+          mapall.forEach((n) => n.classList.remove("active"));
+          if (this.classList.contains("map__button_one")) {
+            document.querySelector('.map__point_one').classList.add("active");
+            document.querySelector('.map__one').classList.add("active");
+          }
+          if (this.classList.contains("map__button_two")) {
+            document.querySelector('.map__point_two').classList.add("active");
+            document.querySelector('.map__two').classList.add("active");
+          }
+          if (this.classList.contains("map__button_three")) {
+            document.querySelector('.map__point_three').classList.add("active");
+            document.querySelector('.map__three').classList.add("active");
+          }
+          if (this.classList.contains("map__button_four")) {
+            document.querySelector('.map__point_four').classList.add("active");
+            document.querySelector('.map__four').classList.add("active");
+          }
+          if (this.classList.contains("map__button_five")) {
+            document.querySelector('.map__point_five').classList.add("active");
+            document.querySelector('.map__five').classList.add("active");
+          }
+          if (this.classList.contains("map__button_six")) {
+            document.querySelector('.map__point_six').classList.add("active");
+            document.querySelector('.map__six').classList.add("active");
+          }
+          if (this.classList.contains("map__button_seven")) {
+            document.querySelector('.map__point_seven').classList.add("active");
+            document.querySelector('.map__seven').classList.add("active");
+          }
+          if (this.classList.contains("map__button_eight")) {
+            document.querySelector('.map__point_eight').classList.add("active");
+            document.querySelector('.map__eight').classList.add("active");
+          }
+          if (this.classList.contains("map__button_nine")) {
+            document.querySelector('.map__point_nine').classList.add("active");
+            document.querySelector('.map__nine').classList.add("active");
+          }
+          if (this.classList.contains("map__button_ten")) {
+            document.querySelector('.map__point_ten').classList.add("active");
+            document.querySelector('.map__ten').classList.add("active");
+          }
+          mapinfoHeight.style.maxHeight = mapinfoHeight.scrollHeight + "px";
+          mapinfoHeight.classList.add("active");
+          this.classList.add("active");
+        }
+      };
+    }
+  })
+}
+// end menu
+
 // start select
 const SELECT = '[data-select]'
 const SELECT_LIST = '[data-select-list]'

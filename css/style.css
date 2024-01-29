@@ -3251,58 +3251,18 @@ html.has-scroll-dragging {
   height: 72.79px;
   position: absolute;
   z-index: 1;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  -webkit-transition: width 0.15s linear, height 0.15s linear, -webkit-transform 0.15s linear;
+  transition: width 0.15s linear, height 0.15s linear, transform 0.15s linear;
 }
 
-#map__one {
-  top: calc(50% - 15px);
-  left: 330px;
-}
-
-#map__two {
-  top: calc(50% + 75px);
-  left: 340px;
-}
-
-#map__three {
-  top: calc(50% + 180px);
-  left: 400px;
-}
-
-#map__four {
-  top: calc(50% + 150px);
-  left: 317px;
-}
-
-#map__five {
-  top: calc(50% + 105px);
-  left: 265px;
-}
-
-#map__six {
-  top: calc(50% + 180px);
-  left: 240px;
-}
-
-#map__seven {
-  top: calc(50% + 50px);
-  left: 220px;
-}
-
-#map__eight {
-  top: calc(50% + 75px);
-  left: 160px;
-}
-
-#map__nine {
-  top: calc(50% - 240px);
-  left: 385px;
-}
-
-#map__ten {
-  top: calc(50% - 210px);
-  left: 230px;
+.map__point.active {
+  width: 90px;
+  height: 109.18px;
+  z-index: 2;
+  -webkit-transform: translate(-15px, calc(-50% - 18.195px));
+  transform: translate(-15px, calc(-50% - 18.195px));
 }
 
 .map__point_back {
@@ -3325,6 +3285,7 @@ html.has-scroll-dragging {
   overflow: hidden;
 }
 
+.map__point_back svg,
 .map__point_logo svg,
 .map__point_image img {
   width: 100%;
@@ -3334,11 +3295,83 @@ html.has-scroll-dragging {
 
 .map__point_logo {
   z-index: 2;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
 }
 
 .map__point_image {
   opacity: 0;
   z-index: 3;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.map__point.active .map__point_logo {
+  opacity: 0;
+}
+
+.map__point.active .map__point_image {
+  opacity: 1;
+}
+
+.map__all {
+  color: var(--text);
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+
+.map__all.active {
+  color: var(--red);
+}
+
+.map__point_one {
+  top: calc(50% - 15px);
+  left: 330px;
+}
+
+.map__point_two {
+  top: calc(50% + 75px);
+  left: 340px;
+}
+
+.map__point_three {
+  top: calc(50% + 180px);
+  left: 400px;
+}
+
+.map__point_four {
+  top: calc(50% + 150px);
+  left: 317px;
+}
+
+.map__point_five {
+  top: calc(50% + 105px);
+  left: 265px;
+}
+
+.map__point_six {
+  top: calc(50% + 180px);
+  left: 240px;
+}
+
+.map__point_seven {
+  top: calc(50% + 50px);
+  left: 220px;
+}
+
+.map__point_eight {
+  top: calc(50% + 75px);
+  left: 160px;
+}
+
+.map__point_nine {
+  top: calc(50% - 240px);
+  left: 385px;
+}
+
+.map__point_ten {
+  top: calc(50% - 210px);
+  left: 230px;
 }
 
 .map__flex {
@@ -3378,6 +3411,7 @@ html.has-scroll-dragging {
   padding: 20px 40px;
   flex-direction: column;
   position: relative;
+  cursor: pointer;
 }
 
 .map__item::before {
@@ -3404,7 +3438,7 @@ html.has-scroll-dragging {
 }
 
 .map__head {
-  padding: 0 0 10px;
+  padding: 0 0 20px;
 }
 
 .map__info {
@@ -3412,12 +3446,12 @@ html.has-scroll-dragging {
   width: 100%;
   max-height: 0;
   flex-direction: column;
-  -webkit-transition: max-height 0.5s linear, padding 0.5s linear;
-  transition: max-height 0.5s linear, padding 0.5s linear;
+  -webkit-transition: max-height 0.3s linear, padding 0.3s linear;
+  transition: max-height 0.3s linear, padding 0.3s linear;
   overflow: hidden;
 }
 
-.map__info.active {
+.map__item.active .map__info {
   max-height: 2000px;
 }
 
