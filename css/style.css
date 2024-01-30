@@ -3659,6 +3659,13 @@ html.has-scroll-dragging {
   align-items: center;
   text-align: center;
   position: relative;
+  background-color: transparent;
+  -webkit-transition: background-color 0.15s linear;
+  transition: background-color 0.15s linear;
+}
+
+.catalog__link:hover {
+  background-color: var(--white);
 }
 
 .catalog__back {
@@ -3698,8 +3705,17 @@ html.has-scroll-dragging {
 }
 
 .catalog__head {
+  padding: 0 15px 20px;
   position: relative;
   z-index: 1;
+}
+
+.catalog__info {
+  display: flex;
+  padding: 0 15px 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
 }
 
 .catalog__head span {
@@ -4306,7 +4322,7 @@ html.has-scroll-dragging {
     padding: 30px 0 40px;
   }
   .catalog__list {
-    gap: 30px 10px;
+    gap: 10px;
   }
   .catalog__item {
     width: calc(33.333% - 7px);
@@ -4699,7 +4715,7 @@ html.has-scroll-dragging {
     padding: 20px 0 25px;
   }
   .catalog__list {
-    gap: 20px 5px;
+    gap: 10px 5px;
   }
   .catalog__item {
     width: calc(50% - 2.5px);
@@ -4713,9 +4729,12 @@ html.has-scroll-dragging {
   }
   .catalog__head {
     display: flex;
-    padding: 0 5px;
+    padding: 0 5px 5px;
     flex-direction: column;
     gap: 5px;
+  }
+  .catalog__info {
+    padding: 0 5px 5px;
   }
   .catalog_top__right {
     width: 100%;
