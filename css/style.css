@@ -3859,6 +3859,10 @@ html.has-scroll-dragging {
   left: -100%;
 }
 
+.catalog_filter__popup_head {
+  padding: 0 40px;
+}
+
 /* end catalog */
 
 /* max-width: 1919px */
@@ -4217,6 +4221,7 @@ html.has-scroll-dragging {
     gap: 15px;
   }
   .header__nav_close,
+  .catalog_filter__close,
   .header__head {
     display: none;
   }
@@ -4623,7 +4628,8 @@ html.has-scroll-dragging {
   .header__top_block {
     height: 70px;
   }
-  .header__bottom {
+  .header__bottom,
+  .catalog_filter__popup {
     max-width: calc(100% - 40px);
   }
   .header__overlay {
