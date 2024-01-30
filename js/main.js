@@ -103,6 +103,9 @@ const headeroverlay = document.querySelector('.header__overlay');
 const menu = document.querySelector('.header__nav');
 const burger = document.querySelector('.header__burger');
 const popupClose = document.getElementsByClassName("popup__close");
+const cf = document.querySelector(".catalog_filter");
+const cfpopupActive = document.querySelectorAll(".catalog_filter .catalog_filter__popup");
+const cflinksActive = document.querySelectorAll(".catalog_filter .catalog_filter__link");
 
 for (i = 0; i < popupClose.length; i++) {
   popupClose[i].onclick = function(e) {
@@ -113,6 +116,9 @@ for (i = 0; i < popupClose.length; i++) {
     menusublinkActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
+    if(cf){cflinksActive.forEach((n) => n.classList.remove("active"))};
+    if(cf){cfpopupActive.forEach((n) => n.classList.remove("active"))};
+    if(cf){cfpopupActive.forEach((n) => n.style.maxHeight = null)};
     bodyoverlay.classList.remove("active");
     headeroverlay.classList.remove("active");
     hbottom.classList.remove("active");
@@ -154,6 +160,9 @@ bodyoverlay.addEventListener('click', function() {
     menusublinkActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
+    if(cf){cflinksActive.forEach((n) => n.classList.remove("active"))};
+    if(cf){cfpopupActive.forEach((n) => n.classList.remove("active"))};
+    if(cf){cfpopupActive.forEach((n) => n.style.maxHeight = null)};
     bodyoverlay.classList.remove("active");
     headeroverlay.classList.remove("active");
     hbottom.classList.remove("active");
@@ -169,6 +178,9 @@ headeroverlay.addEventListener('click', function() {
     menusublinkActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
+    if(cf){cflinksActive.forEach((n) => n.classList.remove("active"))};
+    if(cf){cfpopupActive.forEach((n) => n.classList.remove("active"))};
+    if(cf){cfpopupActive.forEach((n) => n.style.maxHeight = null)};
     bodyoverlay.classList.remove("active");
     headeroverlay.classList.remove("active");
     hbottom.classList.remove("active");
@@ -261,6 +273,50 @@ if (catalogtophead) {
   catalogtopheads.forEach((n) => n.innerHTML = `<span>${n.textContent[0]}</span>${n.textContent.substring(1)}`);
 }
 // end catalog__head
+
+// start filter
+if(cf) {
+  const cflink = document.getElementsByClassName("catalog_filter__link");
+  for (i = 0; i < cflink.length; i++) {
+    cflink[i].onclick = function(e) {
+      const cflinkNext = this.nextElementSibling;
+      const cfpopup = document.getElementsByClassName("catalog_filter__popup");
+      const cflinkActive = document.getElementsByClassName("catalog_filter__link active");
+
+      if (cflinkNext && cflinkNext.classList.contains("active")) {
+        this.classList.remove("active");
+        cflinkNext.classList.remove("active");
+        cflinkNext.style.maxHeight = null;
+        cflinksActive.forEach((n) => n.classList.remove("active"));
+        cfpopupActive.forEach((n) => n.classList.remove("active"));
+        cfpopupActive.forEach((n) => n.style.maxHeight = null);
+        headeroverlay.classList.remove("active");
+        bodyoverlay.classList.remove("active");
+        html.classList.remove("noscroll");
+      } else if (cflinkNext) {
+        for (var q = 0; q < cflinkActive.length; q++) {
+          cflinkActive[q].classList.remove("active");
+          cfpopup[q].classList.remove("active");
+        }
+        for (var p = 0; p < cfpopup.length; p++) {
+          this.classList.remove("active");
+          cfpopup[p].classList.remove("active");
+          cfpopup[p].style.maxHeight = null;
+        }
+        cflinksActive.forEach((n) => n.classList.remove("active"));
+        cfpopupActive.forEach((n) => n.classList.remove("active"));
+        cfpopupActive.forEach((n) => n.style.maxHeight = null);
+        cflinkNext.style.maxHeight = cflinkNext.scrollHeight + "px";
+        cflinkNext.classList.add("active");
+        this.classList.add("active");
+        headeroverlay.classList.add("active");
+        bodyoverlay.classList.add("active");
+        html.classList.add("noscroll");
+      }
+    };
+  }
+}
+// end filter
 
 // start hero__slider
 const heroblock = document.querySelector(".hero__block");
