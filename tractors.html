@@ -258,9 +258,21 @@
     <section class="catalog_filter" data-scroll-section>
       <div class="container catalog_filter__container">
         <div class="catalog_filter__block">
+          <div class="catalog_filter__mobile">
+            <div class="catalog_filter__mobile_check">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 3.88089V6.37396L8.81163 12.0803V18.8947L12.8769 20.5568V12.0803L20.723 6.37396V3.88089M1 3.88089V1H20.723V3.88089M1 3.88089H20.723" stroke="currentColor"></path>
+                <circle cx="16" cy="12" r="4.5" fill="currentColor" stroke="currentColor"></circle>
+              </svg>
+              <p>Фильтры</p>
+            </div>
+            <button class="catalog_filter__clear">
+              <p>Очистить всё</p>
+            </button>
+          </div>
           <ul class="catalog_filter__list">
             <li class="catalog_filter__item">
-              <a class="catalog_filter__link">
+              <a class="catalog_filter__link catalog_filter__link_one">
                 <div class="catalog_filter__info">
                   <p class="catalog_filter__name">Бренд</p>
                   <p class="catalog_filter__active">Все бренды</p>
@@ -271,36 +283,9 @@
                   </svg>   
                 </div>               
               </a>
-              <div class="catalog_filter__popup popup">
-                <h3 class="catalog_filter__popup_head">Вся техника</h3>
-                <button class="catalog_filter__close popup__close">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.6259 8.62688C9.01643 8.23635 9.64959 8.23635 10.0401 8.62688L23.3734 21.9602C23.764 22.3507 23.764 22.9839 23.3734 23.3744C22.9829 23.7649 22.3498 23.7649 21.9592 23.3744L8.6259 10.0411C8.23538 9.65057 8.23538 9.0174 8.6259 8.62688Z" fill="#161616"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M23.3734 8.62688C23.764 9.0174 23.764 9.65057 23.3734 10.0411L10.0401 23.3744C9.64959 23.7649 9.01643 23.7649 8.6259 23.3744C8.23538 22.9839 8.23538 22.3507 8.6259 21.9602L21.9592 8.62688C22.3498 8.23635 22.9829 8.23635 23.3734 8.62688Z" fill="#161616"/>
-                  </svg>
-                </button>
-                <ul class="catalog_filter__popup_list">
-                  <li class="catalog_filter__popup_item active">
-                    <label class="catalog_filter__popup_label" for="one">Все бренды</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="Все бренды" name="" id="one">
-                  </li>
-                  <li class="catalog_filter__popup_item">
-                    <label class="catalog_filter__popup_label" for="two">NEW HOLLAND</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="NEW HOLLAND" name="" id="two">
-                  </li>
-                  <li class="catalog_filter__popup_item">
-                    <label class="catalog_filter__popup_label" for="three">NEW HOLLAND</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="NEW HOLLAND" name="" id="three">
-                  </li>
-                  <li class="catalog_filter__popup_item">
-                    <label class="catalog_filter__popup_label" for="four">NEW HOLLAND</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="NEW HOLLAND" name="" id="four">
-                  </li>
-                </ul>
-              </div>
             </li>
             <li class="catalog_filter__item">
-              <a class="catalog_filter__link">
+              <a class="catalog_filter__link catalog_filter__link_two">
                 <div class="catalog_filter__info">
                   <p class="catalog_filter__name">Литраж</p>
                   <p class="catalog_filter__active">155 - 266 лс</p>
@@ -311,36 +296,9 @@
                   </svg>   
                 </div>               
               </a>
-              <div class="catalog_filter__popup popup">
-                <h3 class="catalog_filter__popup_head">Вся техника</h3>
-                <button class="catalog_filter__close popup__close">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.6259 8.62688C9.01643 8.23635 9.64959 8.23635 10.0401 8.62688L23.3734 21.9602C23.764 22.3507 23.764 22.9839 23.3734 23.3744C22.9829 23.7649 22.3498 23.7649 21.9592 23.3744L8.6259 10.0411C8.23538 9.65057 8.23538 9.0174 8.6259 8.62688Z" fill="#161616"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M23.3734 8.62688C23.764 9.0174 23.764 9.65057 23.3734 10.0411L10.0401 23.3744C9.64959 23.7649 9.01643 23.7649 8.6259 23.3744C8.23538 22.9839 8.23538 22.3507 8.6259 21.9602L21.9592 8.62688C22.3498 8.23635 22.9829 8.23635 23.3734 8.62688Z" fill="#161616"/>
-                  </svg>
-                </button>
-                <ul class="catalog_filter__popup_list">
-                  <li class="catalog_filter__popup_item active">
-                    <label class="catalog_filter__popup_label" for="one">Все бренды</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="Все бренды" name="" id="one">
-                  </li>
-                  <li class="catalog_filter__popup_item">
-                    <label class="catalog_filter__popup_label" for="two">NEW HOLLAND</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="NEW HOLLAND" name="" id="two">
-                  </li>
-                  <li class="catalog_filter__popup_item">
-                    <label class="catalog_filter__popup_label" for="three">NEW HOLLAND</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="NEW HOLLAND" name="" id="three">
-                  </li>
-                  <li class="catalog_filter__popup_item">
-                    <label class="catalog_filter__popup_label" for="four">NEW HOLLAND</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="NEW HOLLAND" name="" id="four">
-                  </li>
-                </ul>
-              </div>
             </li>
             <li class="catalog_filter__item">
-              <a class="catalog_filter__link">
+              <a class="catalog_filter__link catalog_filter__link_three">
                 <div class="catalog_filter__info">
                   <p class="catalog_filter__name">Мощность</p>
                   <p class="catalog_filter__active">155 - 266 лс</p>
@@ -351,38 +309,72 @@
                   </svg>   
                 </div>               
               </a>
-              <div class="catalog_filter__popup popup">
-                <h3 class="catalog_filter__popup_head">Вся техника</h3>
-                <button class="catalog_filter__close popup__close">
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.6259 8.62688C9.01643 8.23635 9.64959 8.23635 10.0401 8.62688L23.3734 21.9602C23.764 22.3507 23.764 22.9839 23.3734 23.3744C22.9829 23.7649 22.3498 23.7649 21.9592 23.3744L8.6259 10.0411C8.23538 9.65057 8.23538 9.0174 8.6259 8.62688Z" fill="#161616"/>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M23.3734 8.62688C23.764 9.0174 23.764 9.65057 23.3734 10.0411L10.0401 23.3744C9.64959 23.7649 9.01643 23.7649 8.6259 23.3744C8.23538 22.9839 8.23538 22.3507 8.6259 21.9602L21.9592 8.62688C22.3498 8.23635 22.9829 8.23635 23.3734 8.62688Z" fill="#161616"/>
-                  </svg>
-                </button>
-                <ul class="catalog_filter__popup_list">
-                  <li class="catalog_filter__popup_item active">
-                    <label class="catalog_filter__popup_label" for="one">Все бренды</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="Все бренды" name="" id="one">
-                  </li>
-                  <li class="catalog_filter__popup_item">
-                    <label class="catalog_filter__popup_label" for="two">NEW HOLLAND</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="NEW HOLLAND" name="" id="two">
-                  </li>
-                  <li class="catalog_filter__popup_item">
-                    <label class="catalog_filter__popup_label" for="three">NEW HOLLAND</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="NEW HOLLAND" name="" id="three">
-                  </li>
-                  <li class="catalog_filter__popup_item">
-                    <label class="catalog_filter__popup_label" for="four">NEW HOLLAND</label>
-                    <input class="catalog_filter__popup_input" type="button" placeholder="NEW HOLLAND" name="" id="four">
-                  </li>
-                </ul>
-              </div>
             </li>
           </ul>
         </div>
       </div>
     </section>
+    <div class="catalog_filter__popup popup">
+      <h3 class="catalog_filter__popup_head">Фильтры</h3>
+      <button class="catalog_filter__close popup__close">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M8.6259 8.62688C9.01643 8.23635 9.64959 8.23635 10.0401 8.62688L23.3734 21.9602C23.764 22.3507 23.764 22.9839 23.3734 23.3744C22.9829 23.7649 22.3498 23.7649 21.9592 23.3744L8.6259 10.0411C8.23538 9.65057 8.23538 9.0174 8.6259 8.62688Z" fill="#161616"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M23.3734 8.62688C23.764 9.0174 23.764 9.65057 23.3734 10.0411L10.0401 23.3744C9.64959 23.7649 9.01643 23.7649 8.6259 23.3744C8.23538 22.9839 8.23538 22.3507 8.6259 21.9602L21.9592 8.62688C22.3498 8.23635 22.9829 8.23635 23.3734 8.62688Z" fill="#161616"/>
+        </svg>
+      </button>
+      <h3 class="catalog_filter__popup_heading">Фильтры</h3>
+      <ul class="catalog_filter__popup_list catalog_filter__one">
+        <li class="catalog_filter__popup_item">
+          <a class="catalog_filter__one_all catalog_filter__popup_label active">Все бренды</a>
+        </li>
+        <li class="catalog_filter__popup_item">
+          <input class="catalog_filter__popup_input" type="checkbox" placeholder="NEW HOLLAND" name="brand_one" id="brand_one">
+          <label class="catalog_filter__popup_label" for="brand_one">NEW HOLLAND</label>
+        </li>
+        <li class="catalog_filter__popup_item">
+          <input class="catalog_filter__popup_input" type="checkbox" placeholder="NEW HOLLAND" name="brand_two" id="brand_two">
+          <label class="catalog_filter__popup_label" for="brand_two">NEW HOLLAND</label>
+        </li>
+        <li class="catalog_filter__popup_item">
+          <input class="catalog_filter__popup_input" type="checkbox" placeholder="NEW HOLLAND" name="brand_three" id="brand_three">
+          <label class="catalog_filter__popup_label" for="brand_three">NEW HOLLAND</label>
+        </li>
+      </ul>
+      <ul class="catalog_filter__popup_list catalog_filter__two">
+        <li class="catalog_filter__popup_item">
+          <a class="catalog_filter__two_all catalog_filter__popup_label active">Весь литраж</a>
+        </li>
+        <li class="catalog_filter__popup_item">
+          <input class="catalog_filter__popup_input" type="checkbox" placeholder="155 - 266 лс" name="" id="dis_one">
+          <label class="catalog_filter__popup_label" for="dis_one">155 - 266 лс</label>
+        </li>
+        <li class="catalog_filter__popup_item">
+          <input class="catalog_filter__popup_input" type="checkbox" placeholder="155 - 266 лс" name="" id="dis_two">
+          <label class="catalog_filter__popup_label" for="dis_two">155 - 266 лс</label>
+        </li>
+        <li class="catalog_filter__popup_item">
+          <input class="catalog_filter__popup_input" type="checkbox" placeholder="155 - 266 лс" name="" id="dis_three">
+          <label class="catalog_filter__popup_label" for="dis_three">155 - 266 лс</label>
+        </li>
+      </ul>
+      <ul class="catalog_filter__popup_list catalog_filter__three">
+        <li class="catalog_filter__popup_item">
+          <a class="catalog_filter__three_all catalog_filter__popup_label active">Вся мощность</a>
+        </li>
+        <li class="catalog_filter__popup_item">
+          <input class="catalog_filter__popup_input" type="checkbox" placeholder="155 - 266 лс" name="" id="power_one">
+          <label class="catalog_filter__popup_label" for="power_one">155 - 266 лс</label>
+        </li>
+        <li class="catalog_filter__popup_item">
+          <input class="catalog_filter__popup_input" type="checkbox" placeholder="155 - 266 лс" name="" id="power_two">
+          <label class="catalog_filter__popup_label" for="power_two">155 - 266 лс</label>
+        </li>
+        <li class="catalog_filter__popup_item">
+          <input class="catalog_filter__popup_input" type="checkbox" placeholder="155 - 266 лс" name="" id="power_three">
+          <label class="catalog_filter__popup_label" for="power_three">155 - 266 лс</label>
+        </li>
+      </ul>
+    </div>
     <section class="catalog" data-scroll-section>
       <div class="container catalog__container">
         <div class="catalog__block">

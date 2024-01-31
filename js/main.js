@@ -21,6 +21,11 @@ const appHeight = () => {
     menusublinkActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
+    if(cf){
+      cfLinksActive.forEach((n) => n.classList.remove("active"));
+      cfPopupActive.forEach((n) => n.classList.remove("active"));
+      cfPopupActive.forEach((n) => n.style.maxHeight = null);
+    };
     if (!document.querySelector('.has-scroll-smooth')) {
       if (window.scrollY < htopblock.scrollHeight) {
         docheight.style.setProperty('--hscroll', `${htopblock.scrollHeight - window.scrollY}px`);
@@ -98,14 +103,14 @@ if(year){
 // end year
 
 // start navbar
-const bodyoverlay = document.querySelector('.overlay');
-const headeroverlay = document.querySelector('.header__overlay');
+const bodyOverlay = document.querySelector('.overlay');
+const headerOverlay = document.querySelector('.header__overlay');
 const menu = document.querySelector('.header__nav');
 const burger = document.querySelector('.header__burger');
 const popupClose = document.getElementsByClassName("popup__close");
 const cf = document.querySelector(".catalog_filter");
-const cfpopupActive = document.querySelectorAll(".catalog_filter .catalog_filter__popup");
-const cflinksActive = document.querySelectorAll(".catalog_filter .catalog_filter__link");
+const cfLinksActive = document.querySelectorAll(".catalog_filter .catalog_filter__link");
+const cfPopupActive = document.querySelectorAll("html .catalog_filter__popup");
 
 for (i = 0; i < popupClose.length; i++) {
   popupClose[i].onclick = function(e) {
@@ -116,11 +121,13 @@ for (i = 0; i < popupClose.length; i++) {
     menusublinkActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
-    if(cf){cflinksActive.forEach((n) => n.classList.remove("active"))};
-    if(cf){cfpopupActive.forEach((n) => n.classList.remove("active"))};
-    if(cf){cfpopupActive.forEach((n) => n.style.maxHeight = null)};
-    bodyoverlay.classList.remove("active");
-    headeroverlay.classList.remove("active");
+    if(cf){
+      cfLinksActive.forEach((n) => n.classList.remove("active"));
+      cfPopupActive.forEach((n) => n.classList.remove("active"));
+      cfPopupActive.forEach((n) => n.style.maxHeight = null);
+    };
+    bodyOverlay.classList.remove("active");
+    headerOverlay.classList.remove("active");
     hbottom.classList.remove("active");
     burger.classList.remove("active");
   }
@@ -137,22 +144,22 @@ burger.addEventListener('click', function() {
     menusublinkActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
-    bodyoverlay.classList.remove("active");
-    headeroverlay.classList.remove("active");
+    bodyOverlay.classList.remove("active");
+    headerOverlay.classList.remove("active");
     burger.classList.remove("active");
   } else {
     hbottom.classList.add("active");
     html.classList.add("noscroll");
-    bodyoverlay.classList.add("active");
-    headeroverlay.classList.add("active");
+    bodyOverlay.classList.add("active");
+    headerOverlay.classList.add("active");
     burger.classList.add("active");
   }
 })
 // end header__burger
 
 // start overlay
-bodyoverlay.addEventListener('click', function() {
-  if (bodyoverlay.classList.contains("active")) {
+bodyOverlay.addEventListener('click', function() {
+  if (bodyOverlay.classList.contains("active")) {
     html.classList.remove("noscroll");
     headerpopup.forEach((n) => n.style.maxHeight = null);
     popup.forEach((n) => n.classList.remove("active"));
@@ -160,17 +167,19 @@ bodyoverlay.addEventListener('click', function() {
     menusublinkActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
-    if(cf){cflinksActive.forEach((n) => n.classList.remove("active"))};
-    if(cf){cfpopupActive.forEach((n) => n.classList.remove("active"))};
-    if(cf){cfpopupActive.forEach((n) => n.style.maxHeight = null)};
-    bodyoverlay.classList.remove("active");
-    headeroverlay.classList.remove("active");
+    if(cf){
+      cfLinksActive.forEach((n) => n.classList.remove("active"));
+      cfPopupActive.forEach((n) => n.classList.remove("active"));
+      cfPopupActive.forEach((n) => n.style.maxHeight = null);
+    };
+    bodyOverlay.classList.remove("active");
+    headerOverlay.classList.remove("active");
     hbottom.classList.remove("active");
     burger.classList.remove("active");
   }
 })
-headeroverlay.addEventListener('click', function() {
-  if (headeroverlay.classList.contains("active")) {
+headerOverlay.addEventListener('click', function() {
+  if (headerOverlay.classList.contains("active")) {
     html.classList.remove("noscroll");
     headerpopup.forEach((n) => n.style.maxHeight = null);
     popup.forEach((n) => n.classList.remove("active"));
@@ -178,11 +187,13 @@ headeroverlay.addEventListener('click', function() {
     menusublinkActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
-    if(cf){cflinksActive.forEach((n) => n.classList.remove("active"))};
-    if(cf){cfpopupActive.forEach((n) => n.classList.remove("active"))};
-    if(cf){cfpopupActive.forEach((n) => n.style.maxHeight = null)};
-    bodyoverlay.classList.remove("active");
-    headeroverlay.classList.remove("active");
+    if(cf){
+      cfLinksActive.forEach((n) => n.classList.remove("active"));
+      cfPopupActive.forEach((n) => n.classList.remove("active"));
+      cfPopupActive.forEach((n) => n.style.maxHeight = null);
+    };
+    bodyOverlay.classList.remove("active");
+    headerOverlay.classList.remove("active");
     hbottom.classList.remove("active");
     burger.classList.remove("active");
   }
@@ -202,8 +213,8 @@ if(menu) {
         if (headernlNext && headernlNext.classList.contains("active")) {
           this.classList.remove("active");
           headernlNext.classList.remove("active");
-          bodyoverlay.classList.remove("active");
-          headeroverlay.classList.remove("active");
+          bodyOverlay.classList.remove("active");
+          headerOverlay.classList.remove("active");
           headernlNext.style.maxHeight = null;
           menusublinkActive.forEach((n) => n.classList.remove("active"));
           menusublistActive.forEach((n) => n.classList.remove("active"));
@@ -220,13 +231,18 @@ if(menu) {
             headernsl[p].style.maxHeight = null;
           }
           e.preventDefault();
+          if(cf){
+            cfLinksActive.forEach((n) => n.classList.remove("active"));
+            cfPopupActive.forEach((n) => n.classList.remove("active"));
+            cfPopupActive.forEach((n) => n.style.maxHeight = null);
+          };
           menusublinkActive.forEach((n) => n.classList.remove("active"));
           menusublistActive.forEach((n) => n.classList.remove("active"));
           menusublistActive.forEach((n) => n.style.maxHeight = null);
           headernlNext.style.maxHeight = headernlNext.scrollHeight + "px";
           headernlNext.classList.add("active");
           this.classList.add("active");
-          bodyoverlay.classList.add("active");
+          bodyOverlay.classList.add("active");
           html.classList.add("noscroll");
         }
       }
@@ -268,7 +284,7 @@ if(menu) {
 
 // start catalog__head
 const catalogtophead = document.querySelector(".catalog_top__head");
-const catalogtopheads = document.querySelectorAll(".main .catalog_top__head");
+const catalogtopheads = document.querySelectorAll("html .catalog_top__head");
 if (catalogtophead) {
   catalogtopheads.forEach((n) => n.innerHTML = `<span>${n.textContent[0]}</span>${n.textContent.substring(1)}`);
 }
@@ -276,45 +292,138 @@ if (catalogtophead) {
 
 // start filter
 if(cf) {
-  const cflink = document.getElementsByClassName("catalog_filter__link");
-  for (i = 0; i < cflink.length; i++) {
-    cflink[i].onclick = function(e) {
-      const cflinkNext = this.nextElementSibling;
-      const cfpopup = document.getElementsByClassName("catalog_filter__popup");
-      const cflinkActive = document.getElementsByClassName("catalog_filter__link active");
+  const cfLink = document.getElementsByClassName("catalog_filter__link");
+  const cfPopup = document.querySelector(".catalog_filter__popup");
+  const cfOne = document.querySelector('.catalog_filter__one');
+  const cfTwo = document.querySelector('.catalog_filter__two');
+  const cfThree = document.querySelector('.catalog_filter__three');
+  for (i = 0; i < cfLink.length; i++) {
+    cfLink[i].onclick = function(e) {
+      const cfPopupHead = document.querySelector(".catalog_filter__popup_head");
+      const cfLinkActive = document.getElementsByClassName("catalog_filter__link active");
+      const cfItemActive = document.querySelectorAll(".catalog_filter .catalog_filter__popup_item");
 
-      if (cflinkNext && cflinkNext.classList.contains("active")) {
+      if (cfPopup.classList.contains("active")) {
         this.classList.remove("active");
-        cflinkNext.classList.remove("active");
-        cflinkNext.style.maxHeight = null;
-        cflinksActive.forEach((n) => n.classList.remove("active"));
-        cfpopupActive.forEach((n) => n.classList.remove("active"));
-        cfpopupActive.forEach((n) => n.style.maxHeight = null);
-        headeroverlay.classList.remove("active");
-        bodyoverlay.classList.remove("active");
+        cfLinksActive.forEach((n) => n.classList.remove("active"));
+        cfPopupActive.forEach((n) => n.classList.remove("active"));
+        cfPopupActive.forEach((n) => n.style.maxHeight = null);
+        headerOverlay.classList.remove("active");
+        bodyOverlay.classList.remove("active");
         html.classList.remove("noscroll");
-      } else if (cflinkNext) {
-        for (var q = 0; q < cflinkActive.length; q++) {
-          cflinkActive[q].classList.remove("active");
-          cfpopup[q].classList.remove("active");
+      } else {
+        for (var q = 0; q < cfLinkActive.length; q++) {
+          cfLinkActive[q].classList.remove("active");
+          cfPopup.classList.remove("active");
         }
-        for (var p = 0; p < cfpopup.length; p++) {
-          this.classList.remove("active");
-          cfpopup[p].classList.remove("active");
-          cfpopup[p].style.maxHeight = null;
+        if (document.querySelector(".catalog_filter__link_one")) {
+          cfItemActive.forEach((n) => n.classList.remove("active"));
+          cfOne.classList.add("active");
+        } else if (document.querySelector(".catalog_filter__link_two")) {
+          cfItemActive.forEach((n) => n.classList.remove("active"));
+          cfTwo.classList.add("active");
+        } else {
+          cfItemActive.forEach((n) => n.classList.remove("active"));
+          cfThree.classList.add("active");
         }
-        cflinksActive.forEach((n) => n.classList.remove("active"));
-        cfpopupActive.forEach((n) => n.classList.remove("active"));
-        cfpopupActive.forEach((n) => n.style.maxHeight = null);
-        cflinkNext.style.maxHeight = cflinkNext.scrollHeight + "px";
-        cflinkNext.classList.add("active");
+        cfPopupHead.innerText = this.querySelector(".catalog_filter__name").innerText
+        cfLinksActive.forEach((n) => n.classList.remove("active"));
+        cfPopupActive.forEach((n) => n.classList.remove("active"));
+        cfPopupActive.forEach((n) => n.style.maxHeight = null);
+        cfPopup.style.maxHeight = cfPopup.scrollHeight + "px";
+        cfPopup.classList.add("active");
         this.classList.add("active");
-        headeroverlay.classList.add("active");
-        bodyoverlay.classList.add("active");
+        headerOverlay.classList.add("active");
+        bodyOverlay.classList.add("active");
         html.classList.add("noscroll");
       }
     };
   }
+
+  const cfInputs = [...document.querySelectorAll('.catalog_filter__popup_input')];
+  const cfOneInputs = [...document.querySelectorAll('.catalog_filter__one .catalog_filter__popup_input')];
+  const cfTwoInputs = [...document.querySelectorAll('.catalog_filter__two .catalog_filter__popup_input')];
+  const cfThreeInputs = [...document.querySelectorAll('.catalog_filter__three .catalog_filter__popup_input')];
+  const cfOneAll = document.querySelector('.catalog_filter__one_all')
+  const cfTwoAll = document.querySelector('.catalog_filter__two_all')
+  const cfThreeAll = document.querySelector('.catalog_filter__three_all')
+  const cfClear = document.querySelector('.catalog_filter__clear');
+  const cfCheck = document.querySelector('.catalog_filter__mobile_check');
+
+  const onChecked = () => {
+    if(cfOneAll.classList.contains("active") && cfTwoAll.classList.contains("active") && cfThreeAll.classList.contains("active")) {
+      cfOneAll.classList.add("active");
+      cfTwoAll.classList.add("active");
+      cfThreeAll.classList.add("active");
+      cfClear.classList.remove("active");
+      cfCheck.classList.remove("active");
+    } else {
+      cfClear.classList.add("active");
+      cfCheck.classList.add("active");
+    }
+  }
+
+  cfOneInputs.forEach(input => input.addEventListener('input', function(event) {
+    if (event.target.checked) {
+      cfOneAll.classList.remove("active");
+    } else {
+      cfOneAll.classList.add("active");
+    }
+    onChecked()
+  }))
+
+  cfTwoInputs.forEach(input => input.addEventListener('input', function(event) {
+    if (event.target.checked) {
+      cfTwoAll.classList.remove("active");
+    } else {
+      cfTwoAll.classList.add("active");
+    }
+    onChecked()
+  }))
+
+  cfThreeInputs.forEach(input => input.addEventListener('input', function(event) {
+    if (event.target.checked) {
+      cfThreeAll.classList.remove("active");
+    } else {
+      cfThreeAll.classList.add("active");
+    }
+    onChecked()
+  }))
+
+  cfCheck.addEventListener('click', function() {
+    cfPopup.style.maxHeight = cfPopup.scrollHeight + "px";
+    cfPopup.classList.add("active");
+    headerOverlay.classList.add("active");
+    bodyOverlay.classList.add("active");
+    html.classList.add("noscroll");
+  })
+
+  cfOneAll.addEventListener('click', function() {
+    for(var i = 0;i < cfOneInputs.length; i++) {cfOneInputs[i].checked = false;};
+    cfOneAll.classList.add("active");
+    onChecked()
+  })
+
+  cfTwoAll.addEventListener('click', function() {
+    for(var i = 0;i < cfTwoInputs.length; i++) {cfTwoInputs[i].checked = false;};
+    cfTwoAll.classList.add("active");
+    onChecked()
+  })
+
+  cfThreeAll.addEventListener('click', function() {
+    for(var i = 0;i < cfThreeInputs.length; i++) {cfThreeInputs[i].checked = false;};
+    cfThreeAll.classList.add("active");
+    onChecked()
+  })
+
+  cfClear.addEventListener('click', function() {
+    for(var i = 0;i < cfInputs.length; i++) {cfInputs[i].checked = false;};
+    cfOneAll.classList.add("active");
+    cfTwoAll.classList.add("active");
+    cfThreeAll.classList.add("active");
+    cfCheck.classList.remove("active");
+    cfClear.classList.remove("active");
+  })
 }
 // end filter
 

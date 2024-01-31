@@ -7,6 +7,7 @@
   --text-font: 'Roboto', sans-serif;
   --bg: #f5f5f5;
   --bg-gray: #737780;
+  --bg-lgray: #eeeeee;
   --bg-dgray: #3b3a38;
   --text: #2b2a28;
   --gray: #c4c4c4;
@@ -3731,11 +3732,6 @@ html.has-scroll-dragging {
   transform: translateY(-1px);
 }
 
-.catalog_filter {
-  will-change: auto;
-  perspective: none !important;
-}
-
 .catalog_filter__block {
   padding: 40px 0 0;
 }
@@ -3789,6 +3785,14 @@ html.has-scroll-dragging {
   color: var(--white);
 }
 
+.catalog_filter__name,
+.catalog_filter__active {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .catalog_filter__arrow {
   width: 32px;
   height: 32px;
@@ -3811,37 +3815,49 @@ html.has-scroll-dragging {
 }
 
 .catalog_filter__popup_list {
-  display: flex;
+  display: none;
   flex-direction: column;
+}
+
+.catalog_filter__popup_list.active {
+  display: flex;
 }
 
 .catalog_filter__popup_item {
   width: 100%;
   position: relative;
+}
+
+.catalog_filter__popup_label {
+  width: 100%;
   background-color: transparent;
   -webkit-transition: background-color 0.15s linear;
   transition: background-color 0.15s linear;
 }
 
-.catalog_filter__popup_item:hover,
-.catalog_filter__popup_item.active {
-  background-color: var(--gray);
+.catalog_filter__popup_label:hover,
+.catalog_filter__popup_label.active,
+.catalog_filter__popup_input:checked ~ .catalog_filter__popup_label {
+  color: var(--text);
+  background-color: var(--bg-lgray);
 }
 
-.catalog_filter__popup_item::before {
+.catalog_filter__popup_label::before {
   content: "";
   width: 4px;
   height: 100%;
+  max-height: 0px;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: transparent;
-  -webkit-transition: background-color 0.15s linear;
-  transition: background-color 0.15s linear;
+  background-color: var(--red);
+  -webkit-transition: max-height 0.15s linear;
+  transition: max-height 0.15s linear;
 }
 
-.catalog_filter__popup_item.active::before {
-  background-color: var(--red);
+.catalog_filter__popup_label.active::before,
+.catalog_filter__popup_input:checked ~ .catalog_filter__popup_label::before {
+  max-height: 100%;
 }
 
 .catalog_filter__popup_label {
@@ -3859,8 +3875,47 @@ html.has-scroll-dragging {
   left: -100%;
 }
 
-.catalog_filter__popup_head {
+.catalog_filter__popup_head,
+.catalog_filter__popup_heading {
   padding: 0 40px;
+}
+
+.catalog_filter__popup_heading {
+  display: none;
+}
+
+.catalog_filter__mobile,
+.catalog_filter__clear {
+  display: none;
+}
+
+.catalog_filter__clear.active {
+  display: flex;
+}
+
+.catalog_filter__mobile_check {
+  display: flex;
+  padding: 4px 10px 4px 4px;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--text);
+}
+
+.catalog_filter__mobile_check svg {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.catalog_filter__mobile_check svg circle {
+  fill: var(--white);
+  stroke: var(--text);
+  -webkit-transition: fill 0.15s linear;
+  transition: fill 0.15s linear;
+}
+
+.catalog_filter__mobile_check.active svg circle {
+  fill: var(--red);
 }
 
 /* end catalog */
@@ -4473,6 +4528,25 @@ html.has-scroll-dragging {
   .catalog__image {
     margin: 20px 0 0;
   }
+  .catalog_filter__block {
+    padding: 20px 0 0;
+  }
+  .catalog_filter__item {
+    width: calc(33.333% - 14px);
+  }
+  .catalog_filter__popup {
+    height: 100vh;
+    top: 0px;
+  }
+  .catalog_filter__popup_list {
+    display: flex;
+  }
+  .catalog_filter__popup_head {
+    display: none;
+  }
+  .catalog_filter__popup_heading {
+    display: flex;
+  }
   .footer__top {
     padding: 30px 0;
     flex-wrap: wrap;
@@ -4881,6 +4955,28 @@ html.has-scroll-dragging {
     width: 100%;
     padding: 20px;
     margin: 0;
+  }
+  .catalog_filter__list {
+    display: none;
+  }
+  .catalog_filter__block {
+    padding: 20px 0;
+  }
+  .catalog_filter__clear {
+    height: 100%;
+  }
+  .catalog_filter__mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .catalog_filter__popup_label:hover {
+    background-color: transparent;
+  }
+  .catalog_filter__popup_label.active,
+  .catalog_filter__popup_input:checked ~ .catalog_filter__popup_label {
+    background-color: var(--bg-lgray);
   }
   .footer__top {
     align-items: flex-start;
