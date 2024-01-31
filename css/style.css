@@ -3663,6 +3663,7 @@ html.has-scroll-dragging {
 
 .catalog__link {
   display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -3720,7 +3721,9 @@ html.has-scroll-dragging {
 
 .catalog__info {
   display: flex;
-  padding: 0 15px 20px;
+  width: 100%;
+  padding: 0 30px 20px;
+  text-align: left;
   align-items: center;
   justify-content: space-between;
   gap: 5px;
@@ -4949,7 +4952,7 @@ html.has-scroll-dragging {
     gap: 5px;
   }
   .catalog__info {
-    padding: 0 5px 5px;
+    padding: 0 20px 10px;
   }
   .catalog_top__right {
     width: 100%;
