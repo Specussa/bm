@@ -301,7 +301,7 @@ if(cf) {
     cfLink[i].onclick = function(e) {
       const cfPopupHead = document.querySelector(".catalog_filter__popup_head");
       const cfLinkActive = document.getElementsByClassName("catalog_filter__link active");
-      const cfItemActive = document.querySelectorAll(".catalog_filter .catalog_filter__popup_item");
+      const cfListActive = document.querySelectorAll(".catalog_filter__popup .catalog_filter__popup_list");
 
       if (cfPopup.classList.contains("active")) {
         this.classList.remove("active");
@@ -316,16 +316,6 @@ if(cf) {
           cfLinkActive[q].classList.remove("active");
           cfPopup.classList.remove("active");
         }
-        if (document.querySelector(".catalog_filter__link_one")) {
-          cfItemActive.forEach((n) => n.classList.remove("active"));
-          cfOne.classList.add("active");
-        } else if (document.querySelector(".catalog_filter__link_two")) {
-          cfItemActive.forEach((n) => n.classList.remove("active"));
-          cfTwo.classList.add("active");
-        } else {
-          cfItemActive.forEach((n) => n.classList.remove("active"));
-          cfThree.classList.add("active");
-        }
         cfPopupHead.innerText = this.querySelector(".catalog_filter__name").innerText
         cfLinksActive.forEach((n) => n.classList.remove("active"));
         cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -333,6 +323,16 @@ if(cf) {
         cfPopup.style.maxHeight = cfPopup.scrollHeight + "px";
         cfPopup.classList.add("active");
         this.classList.add("active");
+        if (document.querySelector(".catalog_filter__link_one").classList.contains("active")) {
+          cfListActive.forEach((n) => n.classList.remove("active"));
+          cfOne.classList.add("active");
+        } else if (document.querySelector(".catalog_filter__link_two").classList.contains("active")) {
+          cfListActive.forEach((n) => n.classList.remove("active"));
+          cfTwo.classList.add("active");
+        } else {
+          cfListActive.forEach((n) => n.classList.remove("active"));
+          cfThree.classList.add("active");
+        }
         headerOverlay.classList.add("active");
         bodyOverlay.classList.add("active");
         html.classList.add("noscroll");
