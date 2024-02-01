@@ -432,17 +432,16 @@ const productChar = document.querySelector('.product__char')
 const productCharBlock = document.querySelector('.product__char_block')
 const productDesc = document.querySelector('.product__description')
 const productDescBlock = document.querySelector('.product__description_block')
-if (productChar && productCharBlock) {
-  productDesc.addEventListener('click', function() {
-    if (!productDesc.classList.contains("active")) {
-      productDesc.classList.add("active");
-      productDescBlock.classList.add("active");
-      productChar.classList.remove("active");
-      productCharBlock.classList.remove("active");
+if (productChar && productCharBlock && productDesc && productDescBlock) {
+  productChar.addEventListener('click', function() {
+    if (!productChar.classList.contains("active")) {
+      productChar.classList.add("active");
+      productCharBlock.classList.add("active");
+      productDesc.classList.remove("active");
+      productDescBlock.classList.remove("active");
     }
   })
-}
-if (productDesc && productDescBlock) {
+  
   productDesc.addEventListener('click', function() {
     if (!productDesc.classList.contains("active")) {
       productDesc.classList.add("active");
