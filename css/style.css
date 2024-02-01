@@ -3860,6 +3860,10 @@ html.has-scroll-dragging {
   background-color: var(--bg-lgray);
 }
 
+.catalog_filter__popup_label:hover b {
+  color: var(--text);
+}
+
 .catalog_filter__popup_label::before {
   content: "";
   width: 4px;
