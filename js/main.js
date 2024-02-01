@@ -489,9 +489,11 @@ if(heroblock){
         heroblock.style.setProperty("--progress", 1 - progress);
       },
       slideChange: function (swiper) {
-        const count = document.querySelector('.hero__pagination .swiper-pagination-bullet-active');
-        const herocount = document.querySelector('.hero__count');
-        herocount.innerHTML = count.children[0].innerHTML;
+        const count = document.querySelector('.hero__pagination .swiper-pagination-bullet-active .count');
+        if (count) {
+          const herocount = document.querySelector('.hero__count');
+          herocount.innerHTML = count.innerHTML;
+        }
       }
     }
   });
