@@ -596,22 +596,21 @@ if(otherslider){
 // end other__slider
 
 // start other__slider
-var swiper = new Swiper(".mySwiper", {
+var productthumbs = new Swiper(".product__thumbs", {
   loop: true,
+  slidesPerView: 'auto',
   spaceBetween: 10,
-  slidesPerView: 4,
-  freeMode: true,
-  watchSlidesProgress: true,
 });
-var swiper2 = new Swiper(".mySwiper2", {
+var productslider = new Swiper(".product__slider", {
   loop: true,
+  slidesPerView: 1,
   spaceBetween: 10,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
   thumbs: {
-    swiper: swiper,
+    swiper: productthumbs,
   },
 });
 // end other__slider
