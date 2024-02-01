@@ -2439,7 +2439,8 @@ html.has-scroll-dragging {
 }
 
 .company_slider__divider {
-  width: 160px;
+  width: 100%;
+  max-width: 160px;
   height: 2px;
   background-color: var(--red);
 }
@@ -2812,6 +2813,10 @@ html.has-scroll-dragging {
   background-color: var(--bg-gray);
 }
 
+.models__bottom_info:hover h4 {
+  color: var(--white);
+}
+
 .models__bottom_info p {
   color: var(--white);
 }
@@ -2824,6 +2829,10 @@ html.has-scroll-dragging {
   width: calc(75% - 4px);
   min-height: 500px;
   position: relative;
+}
+
+.models__bottom_big:hover h4 {
+  color: var(--white);
 }
 
 .models__bottom_image {
@@ -3111,6 +3120,7 @@ html.has-scroll-dragging {
 }
 
 .news__link:hover .news__slider_arrow {
+  color: var(--white);
   background-color: var(--red);
 }
 
@@ -3657,6 +3667,11 @@ html.has-scroll-dragging {
   gap: 30px 5px;
 }
 
+.catalog__list.swiper-wrapper {
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
 .catalog__item {
   width: calc(20% - 4px);
 }
@@ -3902,6 +3917,7 @@ html.has-scroll-dragging {
   align-items: center;
   gap: 12px;
   border-bottom: 1px solid var(--text);
+  cursor: pointer;
 }
 
 .catalog_filter__mobile_check svg {
@@ -3922,6 +3938,32 @@ html.has-scroll-dragging {
 }
 
 /* end catalog */
+
+/* start other */
+
+.other__block {
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.other__head {
+  display: flex;
+  padding: 0 0 30px;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+.other__head::after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  height: 2px;
+  background-color: var(--red);
+}
+
+/* end other */
 
 /* max-width: 1919px */
 @media (max-width: 1919px){
@@ -4458,6 +4500,9 @@ html.has-scroll-dragging {
   .company_slider__item {
     width: 350px;
   }
+  .feedback {
+    margin: 25px 0 0;
+  }
   .feedback__head {
     display: none;
   }
@@ -4522,6 +4567,9 @@ html.has-scroll-dragging {
   .catalog__list {
     gap: 10px;
   }
+  .catalog__list.swiper-wrapper {
+    gap: 0;
+  }
   .catalog__item {
     width: calc(33.333% - 7px);
   }
@@ -4549,6 +4597,9 @@ html.has-scroll-dragging {
   }
   .catalog_filter__popup_heading {
     display: flex;
+  }
+  .other__block {
+    padding: 25px 0;
   }
   .footer__top {
     padding: 30px 0;
@@ -4935,14 +4986,17 @@ html.has-scroll-dragging {
   .catalog__list {
     gap: 10px 5px;
   }
+  .catalog__list.swiper-wrapper {
+    gap: 0;
+  }
   .catalog__item {
     width: calc(50% - 2.5px);
   }
   .catalog__back {
-    height: 100px;
+    height: 140px;
   }
   .catalog__image {
-    height: 130px;
+    height: 210px;
     margin: 20px 0 0;
   }
   .catalog__head {

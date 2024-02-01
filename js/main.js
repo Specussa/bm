@@ -528,6 +528,26 @@ if(news){
 }
 // end news__slider
 
+// start other__slider
+const otherslider = document.querySelector(".other__slider");
+if(otherslider){
+  var otherswiper = new Swiper(".other__slider", {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    loop: true,
+    speed: 500,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false
+    },
+    navigation: {
+      nextEl: ".other__slider_next",
+      prevEl: ".other__slider_prev"
+    },
+  });
+}
+// end other__slider
+
 // start partner__list
 const partnerlist = document.querySelector('.partner__list');
 if(partnerlist){
