@@ -4015,6 +4015,7 @@ html.has-scroll-dragging {
 
 .product__left {
   width: 800px;
+  overflow: hidden;
 }
 
 .product__right {
@@ -5391,6 +5392,9 @@ html.has-scroll-dragging {
   .catalog_filter__popup_label.active,
   .catalog_filter__popup_input:checked ~ .catalog_filter__popup_label {
     background-color: var(--bg-lgray);
+  }
+  .product__left {
+    overflow: visible;
   }
   .product__slider {
     height: 225px;
