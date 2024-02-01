@@ -427,6 +427,31 @@ if(cf) {
 }
 // end filter
 
+// start product
+const productChar = document.querySelector('.product__char')
+const productCharBlock = document.querySelector('.product__char_block')
+const productDesc = document.querySelector('.product__description')
+const productDescBlock = document.querySelector('.product__description_block')
+
+productChar.addEventListener('click', function() {
+  if (!productChar.classList.contains("active")) {
+    productChar.classList.add("active");
+    productCharBlock.classList.add("active");
+    productDesc.classList.remove("active");
+    productDescBlock.classList.remove("active");
+  }
+})
+
+productDesc.addEventListener('click', function() {
+  if (!productDesc.classList.contains("active")) {
+    productDesc.classList.add("active");
+    productDescBlock.classList.add("active");
+    productChar.classList.remove("active");
+    productCharBlock.classList.remove("active");
+  }
+})
+// end product
+
 // start hero__slider
 const heroblock = document.querySelector(".hero__block");
 if(heroblock){
