@@ -3674,6 +3674,7 @@ html.has-scroll-dragging {
 
 .catalog__item {
   width: calc(20% - 4px);
+  height: auto;
 }
 
 .catalog__link {
@@ -3942,6 +3943,14 @@ html.has-scroll-dragging {
 }
 
 /* end catalog */
+
+/* start product */
+
+.product__block {
+
+}
+
+/* end product */
 
 /* start other */
 
