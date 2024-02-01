@@ -5408,6 +5408,7 @@ html.has-scroll-dragging {
   }
   .product__slider_next,
   .product__slider_prev {
+    bottom: -87.5px;
     -webkit-transform: none;
     transform: none;
   }
