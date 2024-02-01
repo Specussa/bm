@@ -128,7 +128,7 @@ input,
 textarea,
 label {
   border: 0;
-  cursor: pointer;
+  cursor: text;
 }
 
 textarea {

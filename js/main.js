@@ -596,33 +596,36 @@ if(otherslider){
 // end other__slider
 
 // start other__slider
-var productthumbs = new Swiper(".product__thumbs", {
-  loop: true,
-  slidesPerView: 'auto',
-  spaceBetween: 10,
-  breakpoints: {
-    1024: {
-      slidesPerView: 'auto',
-      spaceBetween: 16,
+const productsliders = document.querySelector(".product__slider");
+if(productsliders){
+  var productthumbs = new Swiper(".product__thumbs", {
+    loop: true,
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    breakpoints: {
+      1024: {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+      },
+      1: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
     },
-    1: {
-      slidesPerView: 3,
-      spaceBetween: 10,
+  });
+  var productslider = new Swiper(".product__slider", {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
-  },
-});
-var productslider = new Swiper(".product__slider", {
-  loop: true,
-  slidesPerView: 1,
-  spaceBetween: 20,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  thumbs: {
-    swiper: productthumbs,
-  },
-});
+    thumbs: {
+      swiper: productthumbs,
+    },
+  });
+}
 // end other__slider
 
 // start partner__list
