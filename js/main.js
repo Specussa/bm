@@ -582,7 +582,7 @@ if(otherslider){
         slidesPerView: 3,
         spaceBetween: 16,
       },
-      400: {
+      580: {
         slidesPerView: 2,
         spaceBetween: 16,
       },
@@ -600,11 +600,21 @@ var productthumbs = new Swiper(".product__thumbs", {
   loop: true,
   slidesPerView: 'auto',
   spaceBetween: 10,
+  breakpoints: {
+    1024: {
+      slidesPerView: 'auto',
+      spaceBetween: 16,
+    },
+    1: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+  },
 });
 var productslider = new Swiper(".product__slider", {
   loop: true,
   slidesPerView: 1,
-  spaceBetween: 10,
+  spaceBetween: 20,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
