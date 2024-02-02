@@ -5474,6 +5474,10 @@ html.has-scroll-dragging {
 
 /* start 400px */
 @media (max-width: 400px) {
+  .header__bottom_contact {
+    padding: 15px 20px;
+    flex-direction: column;
+  }
   .catalog_top__left {
     padding: 20px;
     width: 100%;
