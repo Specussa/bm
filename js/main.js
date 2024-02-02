@@ -585,7 +585,7 @@ if(otherslider){
         slidesPerView: 3,
         spaceBetween: 16,
       },
-      580: {
+      400: {
         slidesPerView: 2,
         spaceBetween: 16,
       },

@@ -5472,8 +5472,8 @@ html.has-scroll-dragging {
 }
 /* max-width: 1023px */
 
-/* start 389px */
-@media (max-width: 580px) {
+/* start 400px */
+@media (max-width: 400px) {
   .catalog_top__left {
     padding: 20px;
     width: 100%;
@@ -5518,4 +5518,4 @@ html.has-scroll-dragging {
     margin: 0;
   }
 }
-/* end 389px */
+/* end 400px */
