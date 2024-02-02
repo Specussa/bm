@@ -548,7 +548,7 @@ if(news){
       prevEl: ".news__prev"
     },
     breakpoints: {
-      1024: {
+      768: {
         spaceBetween: 16,
       },
     },
@@ -581,7 +581,7 @@ if(otherslider){
         slidesPerView: 4,
         spaceBetween: 16,
       },
-      1024: {
+      768: {
         slidesPerView: 3,
         spaceBetween: 16,
       },
@@ -606,7 +606,7 @@ if(productsliders){
     slidesPerView: 'auto',
     spaceBetween: 10,
     breakpoints: {
-      1024: {
+      768: {
         slidesPerView: 'auto',
         spaceBetween: 16,
       },

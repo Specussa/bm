@@ -4993,8 +4993,8 @@ html.has-scroll-dragging {
 /* max-width: 1439px */
 
 
-/* max-width: 1023px */
-@media (max-width: 1023px){
+/* max-width: 767px */
+@media (max-width: 767px){
   a,
   p,
   li,
@@ -5470,7 +5470,7 @@ html.has-scroll-dragging {
     text-align: center;
   }
 }
-/* max-width: 1023px */
+/* max-width: 767px */
 
 /* start 400px */
 @media (max-width: 400px) {
