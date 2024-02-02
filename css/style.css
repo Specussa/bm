@@ -4816,6 +4816,9 @@ html.has-scroll-dragging {
   .models__bottom_big_desc {
     gap: 3px;
   }
+  .showreel__container {
+    padding: 0;
+  }
   .showreel__inview {
     max-height: 450px;
   }
