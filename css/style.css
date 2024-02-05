@@ -5602,11 +5602,19 @@ html.has-scroll-dragging {
     top: calc(50% - 155px);
     left: 343px;
   }
+  .models__info {
+    gap: 20px;
+  }
 }
 /* end 580px */
 
 /* start 390px */
 @media (max-width: 389px) {
+  .models__flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
   .footer__top {
     flex-direction: column;
   }
