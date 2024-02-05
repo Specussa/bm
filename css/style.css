@@ -1527,6 +1527,8 @@ html.has-scroll-dragging {
 .header__left,
 .header__right,
 .header__social_list,
+.header__social_item,
+.footer__social_item,
 .header__nav_list,
 .header__region,
 .header__tel,
@@ -1540,7 +1542,7 @@ html.has-scroll-dragging {
 
 .header__top_block {
   height: 100px;
-  gap: 160px;
+  gap: 80px;
 }
 
 .header__left {
@@ -1564,6 +1566,10 @@ html.has-scroll-dragging {
 .header__social_link {
   flex: 0 0 auto;
   color: var(--white);
+}
+
+.header__logo {
+  display: flex;
 }
 
 .header__logo svg {
@@ -1724,6 +1730,10 @@ html.has-scroll-dragging {
   height: 100%;
 }
 
+.header__nav_link {
+  padding: 0 25px;
+}
+
 .header__nav_link svg {
   width: 8px;
   height: 5px;
@@ -1841,6 +1851,7 @@ html.has-scroll-dragging {
 .header__search_block {
   display: flex;
   width: 100%;
+  max-width: 680px;
   align-items: center;
   gap: 60px;
 }
@@ -2419,7 +2430,13 @@ html.has-scroll-dragging {
 .company__block {
   display: flex;
   padding: 80px 0 50px;
-  align-items: flex-end;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.company__flex {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 40px;
 }
@@ -2615,6 +2632,14 @@ html.has-scroll-dragging {
 .feedback textarea {
   color: var(--white);
   background-color: var(--text);
+}
+
+.feedback input {
+  border-radius: 5px;
+}
+
+.feedback textarea {
+  border-radius: 2px;
 }
 
 .feedback input::-moz-selection,
@@ -2967,7 +2992,7 @@ html.has-scroll-dragging {
 
 .news__block {
   display: flex;
-  width: calc(100% - 340px);
+  width: calc(100% - 315px);
   height: 500px;
   padding: 80px;
   flex-direction: column;
@@ -3084,7 +3109,7 @@ html.has-scroll-dragging {
 
 .news__item {
   display: flex;
-  width: 360px;
+  width: 340px;
   height: auto;
   background-color: var(--white);
 }
@@ -3115,7 +3140,7 @@ html.has-scroll-dragging {
 .news__slider {
   width: 100%;
   max-width: 1468px;
-  margin: -295px 0 0 340px;
+  margin: -295px 0 0 538px;
 }
 
 .news__slider_image {
@@ -4291,9 +4316,6 @@ html.has-scroll-dragging {
   .container {
     padding: 0 40px;
   }
-  .header__top_block {
-    gap: 80px;
-  }
   .hero {
     padding: 20px 0 0;
   }
@@ -4312,6 +4334,7 @@ html.has-scroll-dragging {
   }
   .company__block {
     padding: 80px 0 30px;
+    gap: 30px;
   }
   .company__left {
     gap: 30px;
@@ -4746,7 +4769,7 @@ html.has-scroll-dragging {
   }
   .company__block {
     padding: 50px 0;
-    gap: 60px;
+    gap: 20px;
   }
   .company__link h4 {
     display: none;
@@ -5257,6 +5280,9 @@ html.has-scroll-dragging {
   }
   .company_slider__info {
     padding: 30px 15px;
+  }
+  .company__block {
+    gap: 15px;
   }
   .showreel__inview {
     max-height: 350px;
