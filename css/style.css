@@ -10,6 +10,7 @@
   --bg-lgray: #eeeeee;
   --bg-dgray: #3b3a38;
   --text: #2b2a28;
+  --text-gray: #797979;
   --gray: #c4c4c4;
   --white: #fff;
   --black: #000;
@@ -1981,10 +1982,13 @@ html.has-scroll-dragging {
   gap: 10px;
 }
 
-.footer__contact p,
 .footer__contact a,
 .footer__contact h5 {
   color: var(--white);
+}
+
+.footer__contact p {
+  color: var(--text-gray);
 }
 
 .footer__contact a:hover {
