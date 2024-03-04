@@ -3774,6 +3774,10 @@ html.has-scroll-dragging {
   z-index: 1;
 }
 
+.catalog__image_brand {
+  padding: 50px;
+}
+
 .catalog__image img {
   width: 100%;
   height: 100%;
@@ -4939,6 +4943,9 @@ html.has-scroll-dragging {
   }
   .catalog__image {
     margin: 20px 0 0;
+  }
+  .catalog__image_brand {
+    padding: 30px;
   }
   .catalog_filter__block {
     padding: 20px 0 0;
