@@ -4469,9 +4469,14 @@ html.has-scroll-dragging {
 
 /* start systems */
 
+.system__back_flex {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 .system__back_block {
   position: relative;
-  overflow: hidden;
 }
 
 .systems__left::before {
@@ -4504,7 +4509,8 @@ html.has-scroll-dragging {
 
 .system__back {
   width: 100%;
-  height: 600px;
+  height: 100%;
+  min-height: 600px;
   position: absolute;
   top: 0;
   left: 0;
@@ -4519,11 +4525,18 @@ html.has-scroll-dragging {
 }
 
 .systems__top {
+  display: flex;
   margin: 150px 0 0;
+  flex-direction: column;
+}
+
+.systems__top_flex {
+  display: flex;
+  width: 100%;
   position: relative;
 }
 
-.systems__top::before {
+.systems__top_flex::before {
   content: "";
   width: 50%;
   height: 100%;
@@ -4533,14 +4546,10 @@ html.has-scroll-dragging {
   background-color: var(--text);
 }
 
-.systems__top_flex {
-  display: flex;
-  padding: 70px 60px;
-  background-color: var(--text);
-}
-
 .systems__top_flex .catalog_top__head {
   max-width: 100%;
+  padding: 70px 60px;
+  background-color: var(--text);
 }
 
 .systems__head {
@@ -4556,6 +4565,10 @@ html.has-scroll-dragging {
 .systems_top__image {
   width: 240px;
   object-fit: contain;
+}
+
+.systems__bottom {
+  margin: -100px 0 0;
 }
 
 .systems__bottom_flex {
@@ -4588,6 +4601,7 @@ html.has-scroll-dragging {
 .systems__buttons {
   display: flex;
   width: 360px;
+  margin: 0 0 0 auto;
   flex: 0 0 auto;
   flex-direction: column;
 }
@@ -4634,21 +4648,29 @@ html.has-scroll-dragging {
 
 .system__flex_right {
   width: calc(50% - 10px);
+  position: relative;
+}
+
+.system__flex_images {
+  display: flex;
+  width: 100%;
   height: 100%;
   padding: 20px 0;
+  flex-direction: column;
+  gap: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .system__flex_image {
   display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  gap: 20px;
+  height: calc(50% - 10px);
 }
 
 .system__flex_image img {
   width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -4832,7 +4854,9 @@ html.has-scroll-dragging {
   .systems__top {
     margin: 100px 0px 0px;
   }
-  .system__back,
+  .system__back {
+    min-height: 500px;
+  }
   .systems__image img {
     height: 500px;
   }
@@ -5385,19 +5409,24 @@ html.has-scroll-dragging {
     padding: 40px 20px;
   }
   .system__flex_left {
-    width: 100%;
+    width: calc(100% - 40px);
+    margin: 0 20px;
   }
-  .systems__top_flex {
+  .systems__top_flex .catalog_top__head {
     padding: 50px 20px;
   }
   .system__back {
-    height: 392px;
+    min-height: 100%;
   }
   .systems__image img {
     height: 350px;
   }
   .systems__top {
     margin: 80px 0px 0px;
+    padding: 0 0 40px;
+  }
+  .systems__bottom {
+    margin: 0;
   }
   .systems__bottom_flex {
     flex-direction: column-reverse;
@@ -5416,11 +5445,15 @@ html.has-scroll-dragging {
     width: 100%;
     padding: 0 0 20px;
   }
-  .system__flex_image {
+  .system__container {
+    padding: 0;
+  }
+  .system__flex_images {
     flex-direction: row;
     gap: 10px;
+    position: relative;
   }
-  .system__flex_image img {
+  .system__flex_image {
     width: calc(50% - 5px);
     height: 190px;
   }
@@ -5429,6 +5462,9 @@ html.has-scroll-dragging {
   }
   .systems__button {
     height: 80px;
+  }
+  .systems__desc {
+    gap: 20px;
   }
   .footer__top {
     padding: 30px 0;
@@ -5929,17 +5965,11 @@ html.has-scroll-dragging {
   .brand__desc {
     gap: 20px;
   }
-  .system__back {
-    height: 300px;
-  }
   .systems__image img {
     height: 250px;
   }
   .systems__bottom_flex {
     gap: 40px;
-  }
-  .system__back {
-    height: 352px;
   }
   .footer__top {
     align-items: flex-start;
@@ -6105,11 +6135,18 @@ html.has-scroll-dragging {
   .systems__button {
     height: 50px;
   }
-  .system__flex_image {
+  .system__flex_images {
     flex-direction: column;
   }
-  .system__flex_image img {
+  .system__flex_image {
     width: 100%;
+  }
+  .systems__top_flex .catalog_top__head {
+    padding: 30px 20px;
+  }
+  .system__flex_left,
+  .systems__bottom_desc {
+    padding: 20px;
   }
 }
 /* end 580px */
