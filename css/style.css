@@ -4696,6 +4696,7 @@ html.has-scroll-dragging {
 
 .actions__link {
   display: flex;
+  width: 100%;
   flex-direction: column;
 }
 
@@ -5067,6 +5068,9 @@ html.has-scroll-dragging {
   }
   .system__flex_left {
     padding: 80px 60px;
+  }
+  .actions__item {
+    width: calc(33.333% - 14px);
   }
 }
 /* max-width: 1919px */
