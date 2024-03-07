@@ -1081,3 +1081,30 @@ window.onload = function(){
 const categorysl = document.querySelectorAll('.category__sublist');
 [...categorysl].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){elem.style.setProperty('--inc-step', index+1);}});
 // end accordion projects__filter
+
+// start product
+const btnactions = document.querySelector('.button__actions')
+const blockactions = document.querySelector('.actions__flex_actions')
+const btnnews = document.querySelector('.button__news')
+const blocknews = document.querySelector('.actions__flex_news')
+
+if (btnactions && blockactions && btnnews && blocknews) {
+  btnactions.addEventListener('click', function() {
+    if (!btnactions.classList.contains("active")) {
+      btnactions.classList.add("active");
+      blockactions.classList.add("active");
+      btnnews.classList.remove("active");
+      blocknews.classList.remove("active");
+    }
+  })
+  
+  btnnews.addEventListener('click', function() {
+    if (!btnnews.classList.contains("active")) {
+      btnnews.classList.add("active");
+      blocknews.classList.add("active");
+      btnactions.classList.remove("active");
+      blockactions.classList.remove("active");
+    }
+  })
+}
+// end product
