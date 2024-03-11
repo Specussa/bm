@@ -4683,6 +4683,10 @@ html.has-scroll-dragging {
   height: calc(50% - 10px);
 }
 
+.system__flex_images_three .system__flex_image {
+  height: calc(33.333% - 4px);
+}
+
 .system__flex_image img {
   width: 100%;
   height: 100%;
@@ -5693,8 +5697,12 @@ html.has-scroll-dragging {
     width: calc(50% - 5px);
     height: 190px;
   }
-  .system__flex_image {
+  .system__flex_image,
+  .system__flex_images_three .system__flex_image {
     height: 350px;
+  }
+  .system__flex_images_three.system__flex_images {
+    flex-direction: column;
   }
   .systems__buttons {
     width: 306px;
@@ -6442,7 +6450,8 @@ html.has-scroll-dragging {
     padding: 15px 15px 25px;
     gap: 15px;
   }
-  .system__flex_image {
+  .system__flex_image,
+  .system__flex_images_three .system__flex_image {
     height: 250px;
   }
 }
