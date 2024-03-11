@@ -4383,6 +4383,16 @@ html.has-scroll-dragging {
   max-width: 100%;
 }
 
+.brand__top_flex_date {
+  flex-direction: column;
+  justify-content: start;
+  gap: 20px;
+}
+
+.catalog_top__date {
+  color: var(--white);
+}
+
 .brand__head {
   color: var(--white);
   position: relative;
@@ -4665,6 +4675,9 @@ html.has-scroll-dragging {
 
 .system__flex_image {
   display: flex;
+}
+
+.system__flex_images_two .system__flex_image {
   height: calc(50% - 10px);
 }
 
@@ -5610,6 +5623,9 @@ html.has-scroll-dragging {
     padding: 0 70px 0 20px;
     gap: 90px;
   }
+  .brand__top_flex_date {
+    gap: 10px;
+  }
   .brand__bottom_desc {
     padding: 40px 20px;
   }
@@ -5662,7 +5678,7 @@ html.has-scroll-dragging {
     gap: 10px;
     position: relative;
   }
-  .system__flex_image {
+  .system__flex_images_two .system__flex_image {
     width: calc(50% - 5px);
     height: 190px;
   }
