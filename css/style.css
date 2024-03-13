@@ -6152,28 +6152,6 @@ html.has-scroll-dragging {
   .hide.showreel__modal .button__close {
     border: 1px solid hsla(0,0%,100%,.2);
   }
-  .header__divider,
-  .header__search,
-  .header__region,
-  .header__right {
-    display: none;
-  }
-  .header__search_block {
-    width: max-content;
-  }
-  .header__top_block {
-    height: 70px;
-  }
-  .header__bottom,
-  .catalog_filter__popup {
-    max-width: calc(100% - 40px);
-  }
-  .header__overlay {
-    height: 70px;
-  }
-  .top {
-    height: 70px;
-  }
   .hero__slider {
     height: calc(100vh - 70px);
   }
@@ -6556,6 +6534,33 @@ html.has-scroll-dragging {
   }
 }
 /* max-width: 769px */
+
+/* start 767px */
+@media (max-width: 767px) {
+  .header__divider,
+  .header__search,
+  .header__region,
+  .header__right {
+    display: none;
+  }
+  .header__search_block {
+    width: max-content;
+  }
+  .header__top_block {
+    height: 70px;
+  }
+  .header__bottom,
+  .catalog_filter__popup {
+    max-width: calc(100% - 40px);
+  }
+  .header__overlay {
+    height: 70px;
+  }
+  .top {
+    height: 70px;
+  }
+}
+/* max-width: 767px */
 
 /* start 580px */
 @media (max-width: 580px) {
