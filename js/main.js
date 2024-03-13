@@ -351,44 +351,109 @@ if(cf) {
   const cfCheck = document.querySelector('.catalog_filter__mobile_check');
 
   const onChecked = () => {
-    if(cfOneAll.classList.contains("active") && cfTwoAll.classList.contains("active") && cfThreeAll.classList.contains("active")) {
-      cfOneAll.classList.add("active");
-      cfTwoAll.classList.add("active");
-      cfThreeAll.classList.add("active");
-      cfClear.classList.remove("active");
-      cfCheck.classList.remove("active");
-    } else {
-      cfClear.classList.add("active");
-      cfCheck.classList.add("active");
+    if(cfOneAll && cfTwoAll && cfThreeAll) {
+      if(cfOneAll.classList.contains("active") && cfTwoAll.classList.contains("active") && cfThreeAll.classList.contains("active")) {
+        if(cfOneAll){cfOneAll.classList.add("active")};
+        if(cfTwoAll){cfTwoAll.classList.add("active")};
+        if(cfThreeAll){cfThreeAll.classList.add("active")};
+        cfClear.classList.remove("active");
+        cfCheck.classList.remove("active");
+      } else {
+        cfClear.classList.add("active");
+        cfCheck.classList.add("active");
+      }
+    } else if (cfOneAll && cfTwoAll) {
+      if(cfOneAll.classList.contains("active") && cfTwoAll.classList.contains("active")) {
+        if(cfOneAll){cfOneAll.classList.add("active")};
+        if(cfTwoAll){cfTwoAll.classList.add("active")};
+        cfClear.classList.remove("active");
+        cfCheck.classList.remove("active");
+      } else {
+        cfClear.classList.add("active");
+        cfCheck.classList.add("active");
+      }
+    } else if (cfTwoAll && cfThreeAll) {
+      if(cfTwoAll.classList.contains("active") && cfThreeAll.classList.contains("active")) {
+        if(cfTwoAll){cfTwoAll.classList.add("active")};
+        if(cfThreeAll){cfThreeAll.classList.add("active")};
+        cfClear.classList.remove("active");
+        cfCheck.classList.remove("active");
+      } else {
+        cfClear.classList.add("active");
+        cfCheck.classList.add("active");
+      }
+    } else if (cfOneAll && cfThreeAll) {
+      if(cfOneAll.classList.contains("active") && cfThreeAll.classList.contains("active")) {
+        if(cfOneAll){cfOneAll.classList.add("active")};
+        if(cfThreeAll){cfThreeAll.classList.add("active")};
+        cfClear.classList.remove("active");
+        cfCheck.classList.remove("active");
+      } else {
+        cfClear.classList.add("active");
+        cfCheck.classList.add("active");
+      }
+    } else if (cfOneAll) {
+      if(cfOneAll.classList.contains("active")) {
+        if(cfOneAll){cfOneAll.classList.add("active")};
+        cfClear.classList.remove("active");
+        cfCheck.classList.remove("active");
+      } else {
+        cfClear.classList.add("active");
+        cfCheck.classList.add("active");
+      }
+    } else if (cfTwoAll) {
+      if(cfTwoAll.classList.contains("active")) {
+        if(cfTwoAll){cfTwoAll.classList.add("active")};
+        cfClear.classList.remove("active");
+        cfCheck.classList.remove("active");
+      } else {
+        cfClear.classList.add("active");
+        cfCheck.classList.add("active");
+      }
+    } else if (cfThreeAll) {
+      if(cfThreeAll.classList.contains("active")) {
+        if(cfThreeAll){cfThreeAll.classList.add("active")};
+        cfClear.classList.remove("active");
+        cfCheck.classList.remove("active");
+      } else {
+        cfClear.classList.add("active");
+        cfCheck.classList.add("active");
+      }
     }
   }
 
-  cfOneInputs.forEach(input => input.addEventListener('input', function(event) {
-    if (event.target.checked) {
-      cfOneAll.classList.remove("active");
-    } else {
-      cfOneAll.classList.add("active");
-    }
-    onChecked()
-  }))
+  if(cfOneAll){
+    cfOneInputs.forEach(input => input.addEventListener('input', function(event) {
+      if (event.target.checked) {
+        cfOneAll.classList.remove("active");
+      } else {
+        cfOneAll.classList.add("active");
+      }
+      onChecked()
+    }))
+  };
 
-  cfTwoInputs.forEach(input => input.addEventListener('input', function(event) {
-    if (event.target.checked) {
-      cfTwoAll.classList.remove("active");
-    } else {
-      cfTwoAll.classList.add("active");
-    }
-    onChecked()
-  }))
+  if(cfTwoAll){
+    cfTwoInputs.forEach(input => input.addEventListener('input', function(event) {
+      if (event.target.checked) {
+        cfTwoAll.classList.remove("active");
+      } else {
+        cfTwoAll.classList.add("active");
+      }
+      onChecked()
+    }))
+  };
 
-  cfThreeInputs.forEach(input => input.addEventListener('input', function(event) {
-    if (event.target.checked) {
-      cfThreeAll.classList.remove("active");
-    } else {
-      cfThreeAll.classList.add("active");
-    }
-    onChecked()
-  }))
+  if(cfThreeAll){
+    cfThreeInputs.forEach(input => input.addEventListener('input', function(event) {
+      if (event.target.checked) {
+        cfThreeAll.classList.remove("active");
+      } else {
+        cfThreeAll.classList.add("active");
+      }
+      onChecked()
+    }))
+  };
 
   cfCheck.addEventListener('click', function() {
     cfPopup.style.maxHeight = cfPopup.scrollHeight + "px";
@@ -398,29 +463,35 @@ if(cf) {
     html.classList.add("noscroll");
   })
 
-  cfOneAll.addEventListener('click', function() {
-    for(var i = 0;i < cfOneInputs.length; i++) {cfOneInputs[i].checked = false;};
-    cfOneAll.classList.add("active");
-    onChecked()
-  })
+  if(cfOneAll){
+    cfOneAll.addEventListener('click', function() {
+      for(var i = 0;i < cfOneInputs.length; i++) {cfOneInputs[i].checked = false;};
+      cfOneAll.classList.add("active");
+      onChecked()
+    })
+  }
 
-  cfTwoAll.addEventListener('click', function() {
-    for(var i = 0;i < cfTwoInputs.length; i++) {cfTwoInputs[i].checked = false;};
-    cfTwoAll.classList.add("active");
-    onChecked()
-  })
+  if(cfTwoAll){
+    cfTwoAll.addEventListener('click', function() {
+      for(var i = 0;i < cfTwoInputs.length; i++) {cfTwoInputs[i].checked = false;};
+      cfTwoAll.classList.add("active");
+      onChecked()
+    })
+  }
 
-  cfThreeAll.addEventListener('click', function() {
-    for(var i = 0;i < cfThreeInputs.length; i++) {cfThreeInputs[i].checked = false;};
-    cfThreeAll.classList.add("active");
-    onChecked()
-  })
+  if(cfThreeAll){
+    cfThreeAll.addEventListener('click', function() {
+      for(var i = 0;i < cfThreeInputs.length; i++) {cfThreeInputs[i].checked = false;};
+      cfThreeAll.classList.add("active");
+      onChecked()
+    })
+  }
 
   cfClear.addEventListener('click', function() {
     for(var i = 0;i < cfInputs.length; i++) {cfInputs[i].checked = false;};
-    cfOneAll.classList.add("active");
-    cfTwoAll.classList.add("active");
-    cfThreeAll.classList.add("active");
+    if(cfOneAll){cfOneAll.classList.add("active")};
+    if(cfTwoAll){cfTwoAll.classList.add("active")};
+    if(cfThreeAll){cfThreeAll.classList.add("active")};
     cfCheck.classList.remove("active");
     cfClear.classList.remove("active");
   })

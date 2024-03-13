@@ -3830,7 +3830,6 @@ html.has-scroll-dragging {
   width: 100%;
   padding: 0 30px 20px;
   text-align: left;
-  align-items: center;
   justify-content: space-between;
   gap: 5px;
 }
@@ -4508,7 +4507,7 @@ html.has-scroll-dragging {
 
 .systems .breadcrumbs__link,
 .systems .breadcrumbs__link b,
-.breadcrumbs__item:not(:last-child)::after {
+.systems .breadcrumbs__item:not(:last-child)::after {
   color: var(--white);
 }
 
