@@ -1254,17 +1254,24 @@ if (btnacademy && blockbm && btnarticle && blockarticle) {
 }
 // end actions
 
-// start expertise
+// start vacancy__accordion
 const vacancybutton = document.querySelector('.vacancy__button');
 if (vacancybutton) {
-  var vacancybuttons = document.getElementsByClassName("vacancy__button");
-  var i;
 
+  // start vacancy__count
+  const vacancycounter = document.querySelectorAll('.vacancy__accordion');
+  [...vacancycounter].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){
+    elem.children[0].children[0].children[0].innerHTML = index+1;
+    elem.children[0].children[0].children[0].innerText = elem.children[0].children[0].children[0].innerHTML.length < 2 ? '0' + elem.children[0].children[0].children[0].innerHTML: elem.children[0].children[0].children[0].innerHTML;
+  }});
+  // end vacancy__count
+
+  var vacancybuttons = document.getElementsByClassName("vacancy__button");
   for (i = 0; i < vacancybuttons.length; i++) {
     vacancybuttons[i].onclick = function(e) {
       var vacancyNext = this.nextElementSibling;
       var vacancypanel = document.getElementsByClassName("vacancy__panel");
-      var vacancypanelActive = document.getElementsByClassName("vacancy__panel active");
+      var vacancypanelActive = document.getElementsByClassName("vacancy__button active");
 
       if (vacancyNext.style.maxHeight) {
         vacancyNext.style.maxHeight = null;
@@ -1280,11 +1287,11 @@ if (vacancybutton) {
           vacancypanel[p].classList.remove("active");
           vacancypanel[p].style.maxHeight = null;
         }
-        vacancyNext.style.maxHeight = (vacancyNext.scrollHeight + 40) + "px";
+        vacancyNext.style.maxHeight = vacancyNext.scrollHeight + "px";
         vacancyNext.classList.add("active");
         this.classList.add("active");
       }
     };
   }
 }
-// end expertise
+// end vacancy__accordion
