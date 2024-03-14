@@ -1253,3 +1253,38 @@ if (btnacademy && blockbm && btnarticle && blockarticle) {
   })
 }
 // end actions
+
+// start expertise
+const vacancybutton = document.querySelector('.vacancy__button');
+if (vacancybutton) {
+  var vacancybuttons = document.getElementsByClassName("vacancy__button");
+  var i;
+
+  for (i = 0; i < vacancybuttons.length; i++) {
+    vacancybuttons[i].onclick = function(e) {
+      var vacancyNext = this.nextElementSibling;
+      var vacancypanel = document.getElementsByClassName("vacancy__panel");
+      var vacancypanelActive = document.getElementsByClassName("vacancy__panel active");
+
+      if (vacancyNext.style.maxHeight) {
+        vacancyNext.style.maxHeight = null;
+        this.classList.remove("active");
+        vacancyNext.classList.remove("active");
+      } else {
+        for (var q = 0; q < vacancypanelActive.length; q++) {
+          vacancypanelActive[q].classList.remove("active");
+          vacancypanel[q].classList.remove("active");
+        }
+        for (var p = 0; p < vacancypanel.length; p++) {
+          this.classList.remove("active");
+          vacancypanel[p].classList.remove("active");
+          vacancypanel[p].style.maxHeight = null;
+        }
+        vacancyNext.style.maxHeight = (vacancyNext.scrollHeight + 40) + "px";
+        vacancyNext.classList.add("active");
+        this.classList.add("active");
+      }
+    };
+  }
+}
+// end expertise
