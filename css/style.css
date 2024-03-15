@@ -5278,6 +5278,13 @@ html.has-scroll-dragging {
   align-items: flex-end;
   justify-content: space-between;
   gap: 20px;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+.vacancy__panel.active .vacancy__flex {
+  opacity: 1;
 }
 
 .vacancy__info {
@@ -5318,6 +5325,81 @@ html.has-scroll-dragging {
   width: 100%;
   max-width: 100%;
   height: 100px;
+}
+
+/* end vacancy */
+
+/* start vacancy */
+
+.achievements__block {
+  padding: 50px 0;
+}
+
+.achievements__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.achievements__item {
+  width: calc(20% - 16px);
+}
+
+.achievements__link {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.achievements__image {
+  display: flex;
+  width: 100%;
+  height: 445px;
+  overflow: hidden;
+}
+
+.achievements__image img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.15s linear;
+  transition: transform 0.15s linear;
+}
+
+.achievements__link:hover .achievements__image img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.achievements__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.achievements__divider {
+  display: block;
+  width: 100%;
+  max-width: 160px;
+  border-bottom: 2px solid var(--red);
+  -webkit-transition: max-width 0.15s linear;
+  transition: max-width 0.15s linear;
+}
+
+.achievements__link:hover .achievements__divider {
+  max-width: 100%;
+}
+
+.achievements__head {
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+
+.achievements__link:hover .achievements__head {
+  color: var(--red);
 }
 
 /* end vacancy */
@@ -5525,6 +5607,9 @@ html.has-scroll-dragging {
     height: 300px;
   }
   .review__item {
+    width: calc(25% - 15px);
+  }
+  .achievements__item {
     width: calc(25% - 15px);
   }
 }
@@ -6194,6 +6279,18 @@ html.has-scroll-dragging {
   .vacancy__link,
   .vacancy__contact {
     height: 80px;
+  }
+  .achievements__list {
+    gap: 20px 10px;
+  }
+  .achievements__item {
+    width: calc(33.333% - 7px);
+  }
+  .achievements__image {
+    height: 320px;
+  }
+  .achievements__info {
+    gap: 15px;
   }
   .footer__top {
     padding: 30px 0;
@@ -6974,6 +7071,18 @@ html.has-scroll-dragging {
   }
   .vacancy__button_info {
     gap: 10px;
+  }
+  .achievements__block {
+    padding: 30px 0;
+  }
+  .achievements__item {
+    width: calc(50% - 5px);
+  }
+  .achievements__link {
+    gap: 15px;
+  }
+  .achievements__image {
+    height: 230px;
   }
 }
 /* end 580px */
