@@ -13,7 +13,7 @@
   --text-gray: #797979;
   --gray: #c4c4c4;
   --white: #fff;
-  --black: #000;
+  --black: #161616;
   --border: #3F3F3F;
   --red: #ef0010;
   --error: #d91717;
@@ -311,8 +311,8 @@ h5 {
 section {
   height: 100%;
   width: 100vw;
-  margin: -1px 0 0;
-  padding: 0 0 1px;
+  /* margin: -1px 0 0;
+  padding: 0 0 1px; */
   position: relative;
   opacity: 1;
   pointer-events: all;
@@ -1862,7 +1862,7 @@ html.has-scroll-dragging {
   height: 100%;
   position: absolute;
   top: 0;
-  left: -40px;
+  left: 0;
   background-color: var(--red);
 }
 
@@ -1918,8 +1918,9 @@ html.has-scroll-dragging {
   width: 100%;
   height: 100%;
   max-height: 0px;
-  -webkit-transition: max-height 0.3s linear;
-  transition: max-height 0.3s linear;
+  opacity: 0;
+  -webkit-transition: max-height 0.3s linear, opacity 0.3s linear;
+  transition: max-height 0.3s linear, opacity 0.3s linear;
   overflow: hidden;
 }
 
@@ -2497,6 +2498,193 @@ html.has-scroll-dragging {
 
 .company__desc {
   max-width: 750px;
+}
+
+.company_page__back_flex {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.company_page__back_block {
+  position: relative;
+}
+
+.company_page__back {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  background-color: var(--bg);
+}
+
+.company_page__block {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.company_page__top {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.company_page__top::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--text);
+}
+
+.company_page__top_flex {
+  display: flex;
+  width: 100%;
+  max-width: 50%;
+  padding: 100px 60px 100px 0;
+  flex-direction: column;
+  gap: 40px;
+  background-color: var(--text);
+  position: relative;
+}
+
+.company_page__shadow {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 60px;
+  z-index: 1;
+  object-fit: contain;
+}
+
+.company_page .breadcrumbs__link,
+.company_page .breadcrumbs__link b,
+.company_page .breadcrumbs__item:not(:last-child)::after {
+  color: var(--white);
+}
+
+.company_page .breadcrumbs__link:hover,
+.company_page .breadcrumbs__link:hover b {
+  color: var(--red);
+}
+
+.company_page__desc {
+  width: 100%;
+  max-width: 520px;
+  color: var(--white);
+}
+
+.company_page__desc b {
+  color: var(--white);
+}
+
+.company_bottom__list {
+  display: flex;
+}
+
+.company_bottom__item {
+  flex: 1;
+  -webkit-transition: flex 0.3s linear;
+  transition: flex 0.3s linear;
+}
+
+.company_bottom__item:hover {
+  flex: 2;
+}
+
+.company_bottom__item:nth-child(1) {
+  background-color: var(--bg-gray);
+}
+
+.company_bottom__item:nth-child(2) {
+  background-color: var(--black);
+}
+
+.company_bottom__item:nth-child(3) {
+  background-color: var(--white);
+}
+
+.company_bottom__link {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 80px 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.company_bottom__info {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.company_bottom__item:nth-child(1) .company_bottom__head,
+.company_bottom__item:nth-child(1) .company_bottom__button,
+.company_bottom__item:nth-child(2) .company_bottom__head,
+.company_bottom__item:nth-child(2) .company_bottom__button {
+  color: var(--white);
+}
+
+.company_bottom__item:nth-child(1) .company_bottom__link:hover .company_bottom__button,
+.company_bottom__item:nth-child(2) .company_bottom__link:hover .company_bottom__button,
+.company_bottom__item:nth-child(3) .company_bottom__link:hover .company_bottom__button {
+  color: var(--red);
+}
+
+.company_bottom__item:nth-child(3) .company_bottom__head {
+  color: var(--text);
+}
+
+.company_bottom__button {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 8px;
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+
+.company_bottom__button svg {
+  color: var(--red);
+}
+
+.company_bottom__image {
+  display: flex;
+  width: 0px;
+  height: 300px;
+  margin: 0;
+  flex: 0 0 auto;
+  opacity: 0;
+  -webkit-transition: width 0.3s linear, margin 0.3s linear, opacity 0.3s linear;
+  transition: width 0.3s linear, margin 0.3s linear, opacity 0.3s linear;
+}
+
+.company_bottom__link:hover .company_bottom__image {
+  width: 225px;
+  margin: 0 0 0 60px;
+  opacity: 1;
+}
+
+.company_bottom__link:hover .company_bottom__image {
+  width: 225px;
+  margin: 0 0 0 60px;
+  opacity: 1;
+}
+
+.company_bottom__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* end company */
