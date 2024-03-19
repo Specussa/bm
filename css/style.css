@@ -7145,9 +7145,6 @@ html.has-scroll-dragging {
     padding: 20px;
     width: 100%;
   }
-  .catalog__item {
-    width: 100%;
-  }
   .catalog__back {
     height: 50%;
   }
@@ -7361,6 +7358,9 @@ html.has-scroll-dragging {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+  }
+  .catalog__item {
+    width: 100%;
   }
   .footer__top {
     flex-direction: column;
