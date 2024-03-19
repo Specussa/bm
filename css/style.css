@@ -2665,14 +2665,18 @@ html.has-scroll-dragging {
   margin: 0;
   flex: 0 0 auto;
   opacity: 0;
-  -webkit-transition: width 0.3s linear, margin 0.3s linear, opacity 0.3s linear;
-  transition: width 0.3s linear, margin 0.3s linear, opacity 0.3s linear;
+  -webkit-transition: width 0.3s linear, margin 0.2s linear, opacity 0.3s linear;
+  transition: width 0.3s linear, margin 0.2s linear, opacity 0.3s linear;
+  -webkit-transition-delay: 0s, 0.2s, 0s;
+  transition-delay: 0s, 0.2s, 0s;
 }
 
 .company_bottom__link:hover .company_bottom__image {
   width: 225px;
   margin: 0 0 0 60px;
   opacity: 1;
+  -webkit-transition-delay: 0s, 0.3s, 0.3s;
+  transition-delay: 0s, 0.3s, 0.3s;
 }
 
 .company_bottom__link:hover .company_bottom__image {
@@ -2695,6 +2699,7 @@ html.has-scroll-dragging {
 .company_top__item {
   display: flex;
   flex-wrap: wrap;
+  background-color: var(--white);
 }
 
 .company_top__item:nth-child(2n) {
@@ -5681,6 +5686,49 @@ html.has-scroll-dragging {
 }
 
 /* end vacancy */
+
+/* start company_specialists */
+
+.company_specialists {
+  background-color: var(--text);
+}
+
+.company_specialists__head {
+  color: var(--white);
+}
+
+.company_specialists__slider {
+  width: calc(100% + 100px);
+}
+
+.company_specialists__item {
+  width: 335px;
+}
+
+.company_specialists__link {
+  display: flex;
+  flex-direction: column;
+}
+
+.company_specialists__image {
+  display: flex;
+  width: 100%;
+  height: 335px;
+}
+
+.company_specialists__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.company_specialists__name,
+.company_specialists__job {
+  color: var(--white);
+}
+
+/* end company_specialists */
 
 /* max-width: 1919px */
 @media (max-width: 1919px){

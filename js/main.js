@@ -602,6 +602,30 @@ if(companyslider){
 }
 // end company_slider
 
+// start company_specialists
+const companyspecialists = document.querySelector(".company_specialists");
+if(companyspecialists){
+  var companyspecialist = new Swiper(".company_specialists__slider", {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+    loop: true,
+    speed: 500,
+    navigation: {
+      nextEl: ".company_specialists__next",
+      prevEl: ".company_specialists__prev"
+    },
+    breakpoints: {
+      1439: {
+        spaceBetween: 10,
+      },
+      1: {
+        spaceBetween: 10,
+      },
+    },
+  });
+}
+// end company_specialists
+
 // start news__slider
 const news = document.querySelector(".news");
 if(news){
@@ -768,6 +792,7 @@ const showreelmodal = document.querySelector('.showreel__modal');
 const showreelmodalClose = document.querySelector('.showreel__modal_close');
 const showreelvideor = document.querySelector('.showreel__video_responsive');
 window.onload = function(){
+  setTimeout(() => {
   if(showreelvideor){
     document.querySelector('.showreel__block').innerHTML = '<video poster="./img/showreel.webp " playsinline autoplay muted loop><source src="./img/showreel.mp4" type="video/mp4"></video>';
     showreelvideor.innerHTML = '<video id="showreel__video" poster="./img/showreel.webp " playsinline loop data-overlay="1" data-title="ANYERA"><source src="./img/showreel.mp4" type="video/mp4"></video>';
@@ -1175,6 +1200,16 @@ window.onload = function(){
       }
     }, 1);
   }
+  // start company_top__video
+  const companyti = document.querySelector('.company_top__image');
+  const companytiAll = document.querySelectorAll('[ctvid]');
+  if (companyti) {
+    [...companytiAll].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){
+      elem.parentElement.innerHTML = '<div class="company_top__button"></div><iframe width="100%" height="400" src="https://www.youtube.com/embed/'+elem.parentElement.getAttribute('ctvid')+'?autoplay=1&controls=0&mute=1&loop=1&autohide=1&modestbranding=1&rel=0&disablekb=1&enablejsapi=0&fs=0&iv_load_policy=3&playlist='+elem.parentElement.getAttribute('ctvid')+'" frameborder="0" allow="autoplay;"></iframe>';
+    }});
+  }
+  // end company_top__video
+  }, 1000);
 }
 // end video
 
@@ -1303,15 +1338,3 @@ const companytl = document.querySelectorAll('.company_top__list');
   elem.children[0].children[0].children[1].children[0].innerText = elem.children[0].children[0].children[1].children[0].innerHTML.length < 2 ? '0' + elem.children[0].children[0].children[1].children[0].innerHTML: elem.children[0].children[0].children[1].children[0].innerHTML;
 }});
 // end company_top__count
-
-// start company_top__video
-document.addEventListener("DOMContentLoaded", () => {
-  const companyti = document.querySelector('.company_top__image');
-  const companytiAll = document.querySelectorAll('[ctvid]');
-  if (companyti) {
-    [...companytiAll].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){
-      elem.parentElement.innerHTML = '<div class="company_top__button"></div><iframe width="100%" height="400" src="https://www.youtube.com/embed/'+elem.parentElement.getAttribute('ctvid')+'?autoplay=1&controls=0&mute=1&loop=1&autohide=1&modestbranding=1&rel=0&disablekb=1&enablejsapi=0&fs=0&iv_load_policy=3&playlist='+elem.parentElement.getAttribute('ctvid')+'" frameborder="0" allow="autoplay;"></iframe>';
-    }});
-  }
-});
-// end company_top__video
