@@ -6593,8 +6593,8 @@ html.has-scroll-dragging {
 /* max-width: 1439px */
 
 
-/* max-width: 769px */
-@media (max-width: 769px){
+/* max-width: 800px */
+@media (max-width: 800px){
   a,
   p,
   li,
@@ -7102,7 +7102,7 @@ html.has-scroll-dragging {
     gap: 10px;
   }
 }
-/* max-width: 769px */
+/* max-width: 800px */
 
 /* start 767px */
 @media (max-width: 767px) {
