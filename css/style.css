@@ -4640,9 +4640,12 @@ html.has-scroll-dragging {
 }
 
 .brand__top_flex_date {
+  display: flex;
+  padding: 70px 60px;
   flex-direction: column;
   justify-content: start;
   gap: 20px;
+  background-color: var(--text);
 }
 
 .catalog_top__date {
@@ -4796,13 +4799,15 @@ html.has-scroll-dragging {
   flex-direction: column;
 }
 
-.systems__top_flex {
+.systems__top_flex,
+.systems__top_flex_new {
   display: flex;
   width: 100%;
   position: relative;
 }
 
-.systems__top_flex::before {
+.systems__top_flex::before,
+.systems__top_flex_new::before {
   content: "";
   width: 50%;
   height: 100%;
@@ -4816,6 +4821,10 @@ html.has-scroll-dragging {
   max-width: 100%;
   padding: 70px 60px;
   background-color: var(--text);
+}
+
+.systems__top_flex_new .catalog_top__head {
+  max-width: 100%;
 }
 
 .systems__head {
@@ -6421,7 +6430,8 @@ html.has-scroll-dragging {
     width: calc(100% - 40px);
     margin: 0 20px;
   }
-  .systems__top_flex .catalog_top__head {
+  .systems__top_flex .catalog_top__head,
+  .brand__top_flex_date {
     padding: 50px 20px;
   }
   .system__back {
@@ -7267,7 +7277,8 @@ html.has-scroll-dragging {
   .system__flex_images_two .system__flex_image {
     width: 100%;
   }
-  .systems__top_flex .catalog_top__head {
+  .systems__top_flex .catalog_top__head,
+  .brand__top_flex_date {
     padding: 30px 20px;
   }
   .system__flex_left,
