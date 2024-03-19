@@ -6100,7 +6100,6 @@ html.has-scroll-dragging {
     gap: 15px;
   }
   .header__nav_close,
-  .catalog_filter__close,
   .header__head {
     display: none;
   }
