@@ -5048,7 +5048,7 @@ html.has-scroll-dragging {
   display: flex;
   padding: 0 0 40px;
   flex-wrap: wrap;
-  gap: 80px;
+  gap: 20px 80px;
 }
 
 .actions__button {
@@ -6512,7 +6512,7 @@ html.has-scroll-dragging {
   .actions__buttons,
   .academy__buttons {
     padding: 0 0 30px;
-    gap: 40px;
+    gap: 10px 40px;
   }
   .actions__list {
     gap: 20px 10px;
@@ -6850,10 +6850,6 @@ html.has-scroll-dragging {
   .feedback__block {
     padding: 50px 0;
   }
-  .feedback__form_flex,
-  .feedback__bottom {
-    flex-direction: column;
-  }
   .feedback__left,
   .feedback__right,
   .feedback__checkbox,
@@ -7143,6 +7139,10 @@ html.has-scroll-dragging {
   .review__image {
     height: 330px;
   }
+  .feedback__form_flex,
+  .feedback__bottom {
+    flex-direction: column;
+  }
 }
 /* max-width: 767px */
 
@@ -7319,10 +7319,6 @@ html.has-scroll-dragging {
     min-height: auto;
     padding: 15px 15px 25px;
     gap: 15px;
-  }
-  .actions__buttons,
-  .academy__buttons {
-    gap: 10px 15px;
   }
   .academy__block {
     padding: 20px 0;
