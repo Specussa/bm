@@ -5126,6 +5126,10 @@ html.has-scroll-dragging {
   gap: 8px;
 }
 
+.pagination__item {
+  display: flex;
+}
+
 .pagination__link {
   display: flex;
   width: 32px;
@@ -5142,6 +5146,7 @@ html.has-scroll-dragging {
   background-color: var(--white);
   -webkit-transition: color 0.15s linear, border 0.15s linear, background-color 0.15s linear;
   transition: color 0.15s linear, border 0.15s linear, background-color 0.15s linear;
+  overflow: hidden;
 }
 
 .pagination__item:first-child .pagination__link {
@@ -5150,6 +5155,13 @@ html.has-scroll-dragging {
 
 .pagination__item:last-child .pagination__link {
   color: var(--gray);
+}
+
+.pagination__link svg {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  margin: auto;
 }
 
 .pagination__link.disabled {
