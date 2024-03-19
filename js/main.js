@@ -1295,3 +1295,23 @@ if (vacancybutton) {
   }
 }
 // end vacancy__accordion
+
+// start company_top__count
+const companytl = document.querySelectorAll('.company_top__list');
+[...companytl].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){
+  elem.children[0].children[0].children[1].children[0].innerHTML = index+1;
+  elem.children[0].children[0].children[1].children[0].innerText = elem.children[0].children[0].children[1].children[0].innerHTML.length < 2 ? '0' + elem.children[0].children[0].children[1].children[0].innerHTML: elem.children[0].children[0].children[1].children[0].innerHTML;
+}});
+// end company_top__count
+
+// start company_top__video
+window.onload = function(){
+  const companyti = document.querySelector('.company_top__image');
+  const companytiAll = document.querySelectorAll('[ctvid]');
+  if (companyti) {
+    [...companytiAll].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){
+      elem.parentElement.innerHTML = '<div class="company_top__button"></div><iframe width="100%" height="400" src="https://www.youtube.com/embed/'+elem.parentElement.getAttribute('ctvid')+'?autoplay=1&controls=0&mute=1&loop=1&autohide=1&modestbranding=1&rel=0&disablekb=1&enablejsapi=0&fs=0&iv_load_policy=3&playlist='+elem.parentElement.getAttribute('ctvid')+'" frameborder="0" allow="autoplay;"></iframe>';
+    }});
+  }
+};
+// end company_top__video
