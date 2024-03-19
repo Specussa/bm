@@ -4581,13 +4581,13 @@ html.has-scroll-dragging {
 
 .product__slider_prev,
 .swiper-rtl .product__slider_next {
-  left: calc(50% - 300px);
+  left: calc(50% - 260px);
   right: auto;
 }
 
 .product__slider_next,
 .swiper-rtl .product__slider_prev {
-  right: calc(50% - 300px);
+  right: calc(50% - 290px);
   left: auto;
 }
 
@@ -7007,11 +7007,11 @@ html.has-scroll-dragging {
   }
   .product__slider_next,
   .swiper-rtl .product__slider_prev {
-    right: -20px;
+    right: -10px;
   }
   .product__slider_prev,
   .swiper-rtl .product__slider_next {
-    left: -20px;
+    left: -10px;
     right: auto;
   }
   .product__bottom {
@@ -7181,6 +7181,14 @@ html.has-scroll-dragging {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
+  }
+  .product__slider_next,
+  .swiper-rtl .product__slider_prev {
+    right: -20px;
+  }
+  .product__slider_prev,
+  .swiper-rtl .product__slider_next {
+    left: -20px;
   }
   .news__item {
     width: 240px;
