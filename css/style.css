@@ -4515,7 +4515,7 @@ html.has-scroll-dragging {
 .product__thumbs {
   display: flex;
   width: 100%;
-  max-width: 371px;
+  max-width: 383px;
   margin: 0 auto;
   overflow: hidden;
 }
