@@ -2691,6 +2691,11 @@ html.has-scroll-dragging {
   object-fit: cover;
 }
 
+.company_top__container,
+.company_bottom__container {
+  padding: 0;
+}
+
 .company_top__list {
   display: flex;
   flex-wrap: wrap;
@@ -4128,9 +4133,20 @@ html.has-scroll-dragging {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  position: relative;
   background-color: var(--white);
   -webkit-transition: background-color 0.15s linear;
   transition: background-color 0.15s linear;
+}
+
+.catalog_filter__link::before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--red);
 }
 
 .catalog_filter__link:hover,
@@ -4144,6 +4160,7 @@ html.has-scroll-dragging {
 
 .catalog_filter__active,
 .catalog_filter__arrow {
+  color: var(--text);
   -webkit-transition: color 0.15s linear;
   transition: color 0.15s linear;
 }
@@ -4179,7 +4196,6 @@ html.has-scroll-dragging {
 }
 
 .catalog_filter__link.active .catalog_filter__arrow svg {
-  color: var(--white);
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
@@ -4291,6 +4307,27 @@ html.has-scroll-dragging {
 
 .catalog_filter__mobile_check.active svg circle {
   fill: var(--red);
+}
+
+.catalog_filter__black .catalog_filter__link {
+  background-color: var(--text);
+}
+
+.catalog_filter__black .catalog_filter__link:hover,
+.catalog_filter__black .catalog_filter__link.active {
+  background-color: var(--white);
+}
+
+.catalog_filter__black .catalog_filter__active,
+.catalog_filter__black .catalog_filter__arrow {
+  color: var(--white);
+}
+
+.catalog_filter__black .catalog_filter__link:hover .catalog_filter__active,
+.catalog_filter__black .catalog_filter__link.active .catalog_filter__active,
+.catalog_filter__black .catalog_filter__link:hover .catalog_filter__arrow,
+.catalog_filter__black .catalog_filter__link.active .catalog_filter__arrow {
+  color: var(--text);
 }
 
 /* end catalog */
@@ -5693,6 +5730,19 @@ html.has-scroll-dragging {
   background-color: var(--text);
 }
 
+.company_specialists__block {
+  display: flex;
+  padding: 100px 0;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.company_specialists__flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
 .company_specialists__head {
   color: var(--white);
 }
@@ -5724,8 +5774,79 @@ html.has-scroll-dragging {
 }
 
 .company_specialists__name,
+.company_specialists__name b,
 .company_specialists__job {
   color: var(--white);
+}
+
+.company_specialists__navigations {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.company_specialists__next,
+.company_specialists__prev {
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 18px;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;
+  color: var(--text);
+  background-color: var(--white);
+  -webkit-transition: background-color 0.15s linear;
+  transition: background-color 0.15s linear;
+}
+
+.company_specialists__next:hover,
+.company_specialists__prev:hover {
+  background-color: var(--red);
+}
+
+.company_specialists__image,
+.company_specialists__image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.company_specialists__image img {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.15s linear;
+  transition: transform 0.15s linear;
+}
+
+.company_specialists__divider {
+  width: 100%;
+  max-width: 160px;
+  height: 2px;
+  margin: 20px 0 10px;
+  background-color: var(--red);
+  -webkit-transition: max-width 0.3s linear;
+  transition: max-width 0.3s linear;
+}
+
+.company_specialists__link:hover .company_specialists__divider {
+  max-width: 100%;
+}
+
+.company_specialists__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.company_specialists__information {
+  display: flex;
+  flex-direction: column;
 }
 
 /* end company_specialists */
@@ -5937,6 +6058,26 @@ html.has-scroll-dragging {
   }
   .achievements__item {
     width: calc(25% - 15px);
+  }
+  .company_page__top_flex {
+    padding: 60px 40px 60px 0;
+    gap: 40px;
+  }
+  .company_top__container,
+  .company_bottom__container {
+    padding: 0;
+  }
+  .company_top__info {
+    padding: 40px;
+  }
+  .company_top__image {
+    min-height: 360px;
+  }
+  .company_specialists__block {
+    padding: 80px 0;
+  }
+  .company_bottom__link {
+    padding: 30px 40px;
   }
 }
 /* max-width: 1919px */
@@ -6618,6 +6759,32 @@ html.has-scroll-dragging {
   .achievements__info {
     gap: 15px;
   }
+  .company_page__top_flex {
+    padding: 40px 40px 40px 0;
+    gap: 20px;
+  }
+  .company_top__info {
+    padding: 40px 20px;
+    gap: 20px;
+  }
+  .company_top__image {
+    min-height: 240px;
+  }
+  .company_specialists__block {
+    padding: 40px 0;
+    gap: 20px;
+  }
+  .company_top__container,
+  .company_bottom__container {
+    padding: 0;
+  }
+  .company_bottom__image {
+    height: 238px;
+  }
+  .company_bottom__link:hover .company_bottom__image {
+    width: 176px;
+    margin: 0 0 0 20px;
+  }
   .footer__top {
     padding: 30px 0;
     flex-wrap: wrap;
@@ -7191,6 +7358,33 @@ html.has-scroll-dragging {
   .feedback__bottom {
     flex-direction: column;
   }
+  .company_page__top::before,
+  .company_top__info,
+  .company_top__image {
+    width: 100%;
+  }
+  .company_page__top_flex {
+    max-width: 100%;;
+  }
+  .company_top__item,
+  .company_top__item:nth-child(2n) {
+    flex-direction: column-reverse;
+  }
+  .company_bottom__list {
+    flex-direction: column;
+  }
+  .company_bottom__link {
+    justify-content: space-between;
+  }
+  .company_bottom__image {
+    width: 176px;
+    height: 238px;
+    margin: 0 0 0 20px;
+    opacity: 1;
+  }
+  .company_bottom__info {
+    margin: auto;
+  }
 }
 /* max-width: 767px */
 
@@ -7412,6 +7606,12 @@ html.has-scroll-dragging {
   .achievements__image {
     height: 230px;
   }
+  .footer__desc {
+    max-width: 100%;
+  }
+  .footer__top {
+    gap: 10px;
+  }
 }
 /* end 580px */
 
@@ -7424,6 +7624,9 @@ html.has-scroll-dragging {
   }
   .catalog__item {
     width: 100%;
+  }
+  .company_bottom__image {
+    display: none;
   }
   .footer__top {
     flex-direction: column;

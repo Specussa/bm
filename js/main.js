@@ -9,6 +9,7 @@ const menusublinkActive = document.querySelectorAll(".header__bottom_block .head
 const menusublistActive = document.querySelectorAll(".header__bottom_block .header__nav_subsublist");
 const headerpopup = document.querySelectorAll(".header__nav_list .popup");
 const popup = document.querySelectorAll("html .popup");
+const cf = document.querySelector(".catalog_filter");
 
 docheight.style.setProperty('--height', `${window.innerHeight}px`);
 const appHeight = () => {
@@ -108,7 +109,6 @@ const headerOverlay = document.querySelector('.header__overlay');
 const menu = document.querySelector('.header__nav');
 const burger = document.querySelector('.header__burger');
 const popupClose = document.getElementsByClassName("popup__close");
-const cf = document.querySelector(".catalog_filter");
 const cfLinksActive = document.querySelectorAll(".catalog_filter .catalog_filter__link");
 const cfPopupActive = document.querySelectorAll("html .catalog_filter__popup");
 
