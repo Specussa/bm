@@ -7364,7 +7364,8 @@ html.has-scroll-dragging {
     width: 100%;
   }
   .company_page__top_flex {
-    max-width: 100%;;
+    max-width: 100%;
+    padding: 40px 0;
   }
   .company_top__item,
   .company_top__item:nth-child(2n) {
