@@ -1254,6 +1254,13 @@ window.onload = function(){
       videopopup.classList.remove("active");
       videoinner.innerHTML = "";
     })
+    videopopup.addEventListener('click', function() {
+      html.classList.remove("noscroll");
+      headerOverlay.classList.remove("active");
+      bodyOverlay.classList.remove("active");
+      videopopup.classList.remove("active");
+      videoinner.innerHTML = "";
+    })
   }
   }, 1000);
 }
