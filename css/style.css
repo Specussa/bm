@@ -6079,6 +6079,14 @@ html.has-scroll-dragging {
   .company_bottom__link {
     padding: 30px 40px;
   }
+  .product__slider_next,
+  .swiper-rtl .product__slider_prev {
+    right: -20px;
+  }
+  .product__slider_prev,
+  .swiper-rtl .product__slider_next {
+    left: 10px;
+  }
 }
 /* max-width: 1919px */
 
@@ -6605,6 +6613,14 @@ html.has-scroll-dragging {
   }
   .product__info_buttons {
     padding: 30px 0 20px;
+  }
+  .product__slider_prev,
+  .swiper-rtl .product__slider_next {
+    left: calc(50% - 260px);
+  }
+  .product__slider_next,
+  .swiper-rtl .product__slider_prev {
+    right: calc(50% - 290px);
   }
   .partner__container {
     padding: 0;
