@@ -111,6 +111,8 @@ const burger = document.querySelector('.header__burger');
 const popupClose = document.getElementsByClassName("popup__close");
 const cfLinksActive = document.querySelectorAll(".catalog_filter .catalog_filter__link");
 const cfPopupActive = document.querySelectorAll("html .catalog_filter__popup");
+const videopopup = document.querySelector('.video__popup');
+const videoinner = document.querySelector('.video__inner');
 
 for (i = 0; i < popupClose.length; i++) {
   popupClose[i].onclick = function(e) {
@@ -125,6 +127,11 @@ for (i = 0; i < popupClose.length; i++) {
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.style.maxHeight = null);
+    };
+    if(videopopup){
+      headerOverlay.classList.remove("active");
+      videopopup.classList.remove("active");
+      videoinner.innerHTML = "";
     };
     bodyOverlay.classList.remove("active");
     headerOverlay.classList.remove("active");
@@ -153,6 +160,10 @@ burger.addEventListener('click', function() {
     bodyOverlay.classList.add("active");
     headerOverlay.classList.add("active");
     burger.classList.add("active");
+    if(videopopup){
+      videopopup.classList.remove("active");
+      videoinner.innerHTML = "";
+    };
   }
 })
 // end header__burger
@@ -171,6 +182,11 @@ bodyOverlay.addEventListener('click', function() {
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.style.maxHeight = null);
+    };
+    if(videopopup){
+      headerOverlay.classList.remove("active");
+      videopopup.classList.remove("active");
+      videoinner.innerHTML = "";
     };
     bodyOverlay.classList.remove("active");
     headerOverlay.classList.remove("active");
@@ -191,6 +207,11 @@ headerOverlay.addEventListener('click', function() {
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.style.maxHeight = null);
+    };
+    if(videopopup){
+      headerOverlay.classList.remove("active");
+      videopopup.classList.remove("active");
+      videoinner.innerHTML = "";
     };
     bodyOverlay.classList.remove("active");
     headerOverlay.classList.remove("active");
@@ -235,6 +256,11 @@ if(menu) {
             cfLinksActive.forEach((n) => n.classList.remove("active"));
             cfPopupActive.forEach((n) => n.classList.remove("active"));
             cfPopupActive.forEach((n) => n.style.maxHeight = null);
+          };
+          if(videopopup){
+            headerOverlay.classList.remove("active");
+            videopopup.classList.remove("active");
+            videoinner.innerHTML = "";
           };
           menusublinkActive.forEach((n) => n.classList.remove("active"));
           menusublistActive.forEach((n) => n.classList.remove("active"));
@@ -1202,13 +1228,33 @@ window.onload = function(){
   }
   // start company_top__video
   const companyti = document.querySelector('.company_top__image');
-  const companytiAll = document.querySelectorAll('[ctvid]');
+  const companytiAll = document.querySelectorAll('[video]');
   if (companyti) {
     [...companytiAll].forEach(function (li) {for (let [index, elem] of [...li.children].entries()){
-      elem.parentElement.innerHTML = '<div class="company_top__button"></div><iframe width="100%" height="400" src="https://www.youtube.com/embed/'+elem.parentElement.getAttribute('ctvid')+'?autoplay=1&controls=0&mute=1&loop=1&autohide=1&modestbranding=1&rel=0&disablekb=1&enablejsapi=0&fs=0&iv_load_policy=3&playlist='+elem.parentElement.getAttribute('ctvid')+'" frameborder="0" allow="autoplay;"></iframe>';
+      elem.parentElement.innerHTML = '<div class="video__button" videobutton="'+elem.parentElement.getAttribute('video')+'"></div><iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+elem.parentElement.getAttribute('video')+'?autoplay=1&controls=0&mute=1&loop=1&autohide=1&modestbranding=1&rel=0&disablekb=1&enablejsapi=0&fs=0&iv_load_policy=3&playlist='+elem.parentElement.getAttribute('video')+'" frameborder="0" allow="autoplay;"></iframe>';
     }});
   }
   // end company_top__video
+  if (videopopup) {
+    let videobutton = document.querySelectorAll(".video__button");
+    const videoclose = document.querySelector('.video__close');
+    for (let i = 0; i < videobutton.length; i++) {
+      videobutton[i].onclick = function(e) {
+        html.classList.add("noscroll");
+        headerOverlay.classList.add("active");
+        bodyOverlay.classList.add("active");
+        videopopup.classList.add("active");
+        videoinner.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/'+this.getAttribute('videobutton')+'?autoplay=1&controls=1&mute=0&loop=1&autohide=1&modestbranding=1&rel=0&disablekb=1&enablejsapi=0&fs=0&iv_load_policy=3&playlist='+this.getAttribute('videobutton')+'" frameborder="0" allow="autoplay;"></iframe>';
+      }
+    }
+    videoclose.addEventListener('click', function() {
+      html.classList.remove("noscroll");
+      headerOverlay.classList.remove("active");
+      bodyOverlay.classList.remove("active");
+      videopopup.classList.remove("active");
+      videoinner.innerHTML = "";
+    })
+  }
   }, 1000);
 }
 // end video

@@ -2754,16 +2754,6 @@ html.has-scroll-dragging {
   object-fit: cover;
 }
 
-.company_top__button {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  cursor: pointer;
-}
-
 /* end company */
 
 /* start company_slider */
@@ -5855,6 +5845,104 @@ html.has-scroll-dragging {
 
 /* end company_specialists */
 
+/* start video */
+
+.video__button {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.video__popup {
+  display: flex;
+  width: calc(100% - 20px);
+  height: 900px;
+  max-height: calc(100vh - var(--hscroll) - 190px);
+  max-width: calc(16 / 9 * 100vh);
+  flex-direction: column;
+  position: fixed;
+  top: calc(50% + 190px);
+  left: 50%;
+  right: 0;
+  z-index: 130;
+  opacity: 0;
+  -webkit-transform: translate(-200%, calc(-200% - 190px));
+  transform: translate(-200%, calc(-200% - 190px));
+  -webkit-transition: -webkit-transform 0s 0.3s, opacity 0.3s linear 0s;
+  transition: transform 0s 0.3s, opacity 0.3s linear 0s;
+  overflow: hidden;
+}
+
+.video__popup.active {
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0s 0s, opacity 0.3s linear 0s;
+  transition: transform 0s 0s, opacity 0.3s linear 0s;
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  -webkit-transform: translate(-50%, calc(-50% - 190px));
+  transform: translate(-50%, calc(-50% - 190px));
+}
+
+.video__container {
+  height: 100%;
+  padding: 0;
+}
+
+.video__block {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  background-color: var(--text);
+}
+
+.video__inner {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.video__inner video,
+.video__inner iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.video__close {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  right: -32px;
+  color: var(--white);
+  background-color: #16161661;
+  cursor: pointer;
+}
+
+.video__close svg {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.video__close:hover svg {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+/* end video */
+
 /* max-width: 1919px */
 @media (max-width: 1919px){
   h1 {
@@ -6087,6 +6175,12 @@ html.has-scroll-dragging {
   .product__slider_prev,
   .swiper-rtl .product__slider_next {
     left: 10px;
+  }
+  .video__popup {
+    height: 735px;
+  }
+  .video__container {
+    padding: 0;
   }
 }
 /* max-width: 1919px */
@@ -6811,6 +6905,30 @@ html.has-scroll-dragging {
     width: 176px;
     margin: 0 0 0 20px;
   }
+  .video__close {
+    width: 20px;
+    height: 20px;
+    right: -20px;
+  }
+  .video__popup {
+    max-height: calc(100% - 20px);
+  }
+  .video__popup {
+    height: 415px;
+  }
+  .video__popup {
+    max-height: calc(100vh - 140px);
+    top: calc(50% + 140px);
+    -webkit-transform: translate(-200%, calc(-200% - 70px));
+    transform: translate(-200%, calc(-200% - 70px));
+  }
+  .video__popup.active {
+    -webkit-transform: translate(-50%, calc(-50% - 70px));
+    transform: translate(-50%, calc(-50% - 70px));
+  }
+  .video__container {
+    padding: 0;
+  }
   .footer__top {
     padding: 30px 0;
     flex-wrap: wrap;
@@ -7421,6 +7539,16 @@ html.has-scroll-dragging {
   .brand__button {
     height: 50px;
   }
+  .video__popup {
+    max-height: calc(100vh - 70px);
+    top: calc(50% + 70px);
+    -webkit-transform: translate(-200%, calc(-200% - 35px));
+    transform: translate(-200%, calc(-200% - 35px));
+  }
+  .video__popup.active {
+    -webkit-transform: translate(-50%, calc(-50% - 35px));
+    transform: translate(-50%, calc(-50% - 35px));
+  }
 }
 /* max-width: 767px */
 
@@ -7666,6 +7794,9 @@ html.has-scroll-dragging {
   }
   .company_bottom__image {
     display: none;
+  }
+  .video__popup {
+    height: 200px;
   }
   .footer__top {
     flex-direction: column;
