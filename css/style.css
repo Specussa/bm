@@ -6527,6 +6527,9 @@ html.has-scroll-dragging {
   .header__tel_flex {
     padding: 0 20px;
   }
+  .header__tel_desc {
+    padding: 0;
+  }
   .header__region_popup .header__head,
   .header__tel_popup .header__head {
     display: flex;
@@ -6558,6 +6561,9 @@ html.has-scroll-dragging {
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+  }
+  .header__tel_flex {
+    padding: 0 20px;
   }
   .header__region_close,
   .header__tel_close {
