@@ -1601,6 +1601,25 @@ html.has-scroll-dragging {
   object-fit: contain;
 }
 
+.header__region,
+.header__region span,
+.header__mobile_region,
+.header__mobile_region b,
+.header__tel,
+.header__mobile_tel {
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+
+.header__region:hover,
+.header__region:hover span,
+.header__mobile_region:hover,
+.header__mobile_region:hover b,
+.header__tel:hover,
+.header__mobile_tel:hover {
+  color: var(--red);
+}
+
 .header__region svg,
 .header__tel svg {
   display: flex;
@@ -1783,7 +1802,8 @@ html.has-scroll-dragging {
 
 .header__nav_sublist,
 .catalog_filter__popup,
-.header__region_popup {
+.header__region_popup,
+.header__tel_popup {
   display: flex;
   width: 380px;
   padding: 50px 0;
@@ -1804,23 +1824,35 @@ html.has-scroll-dragging {
   overflow-y: scroll;
 }
 
+.header__region_desc,
+.header__tel_form {
+  padding: 0 40px;
+}
+
+.header__tel_btn {
+  min-width: 100%;
+}
+
 .header__nav_sublist::-webkit-scrollbar,
 .catalog_filter__popup::-webkit-scrollbar,
-.header__region_popup::-webkit-scrollbar {
+.header__region_popup::-webkit-scrollbar,
+.header__tel_popup::-webkit-scrollbar {
   display: none;
   width: 0px;
 }
 
 .header__nav_sublist::-webkit-scrollbar-thumb,
 .catalog_filter__popup::-webkit-scrollbar-thumb,
-.header__region_popup::-webkit-scrollbar-thumb {
+.header__region_popup::-webkit-scrollbar-thumb,
+.header__tel_popup::-webkit-scrollbar-thumb {
   display: none;
   width: 0px;
 }
 
 .header__nav_sublist.active,
 .catalog_filter__popup.active,
-.header__region_popup.active {
+.header__region_popup.active,
+.header__tel_popup.active {
   opacity: 1;
   z-index: 102;
   -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
@@ -1838,7 +1870,8 @@ html.has-scroll-dragging {
 
 .header__nav_close,
 .catalog_filter__close,
-.header__region_close {
+.header__region_close,
+.header__tel_close {
   display: flex;
   width: 32px;
   height: 32px;
@@ -1849,7 +1882,8 @@ html.has-scroll-dragging {
 
 .header__nav_close svg,
 .catalog_filter__close svg,
-.header__region_close svg {
+.header__region_close svg,
+.header__tel_close svg {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -1861,9 +1895,123 @@ html.has-scroll-dragging {
 
 .header__nav_close:hover svg,
 .catalog_filter__close:hover svg,
-.header__region_close:hover svg {
+.header__region_close:hover svg,
+.header__tel_close:hover svg {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+
+.header__tel_desc {
+  padding: 0 40px;
+}
+
+.header__tel_form_flex {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header__tel_input {
+  width: 100%;
+  height: 40px;
+  padding: 15px;
+}
+
+.header__tel_checkbox_input {
+  display: none;
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.header__tel_checkbox_check {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  background-color: var(--bg-lgray);
+  border-radius: 5px;
+}
+
+.header__tel_checkbox_check svg {
+  width: 12px;
+  height: 8px;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.header__tel_checkbox input:checked ~ .header__tel_checkbox_check svg {
+  opacity: 1;
+}
+
+.header__tel_checkbox input ~ .header__tel_checkbox_check svg {
+  opacity: 0;
+}
+
+.header__tel_popup input:-webkit-autofill,
+.header__tel_popup input:-webkit-autofill:hover,
+.header__tel_popup textarea:-webkit-autofill,
+.header__tel_popup textarea:-webkit-autofill:hover,
+.header__tel_popup select:-webkit-autofill,
+.header__tel_popup select:-webkit-autofill:hover {
+  border: none;
+  -webkit-text-fill-color: var(--text);
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-lgray) inset;
+  color: var(--text);
+  box-shadow: 0 0 0 1000px var(--bg-lgray) inset;
+}
+
+.header__tel_popup input,
+.header__tel_popup textarea {
+  color: var(--text);
+  background-color: var(--bg-lgray);
+}
+
+.header__tel_popup input {
+  border-radius: 5px;
+}
+
+.header__tel_popup textarea {
+  border-radius: 2px;
+}
+
+.header__tel_popup input::-moz-selection,
+.header__tel_popup textarea::-moz-selection {
+  background-color: var(--text);
+  color: var(--white);
+}
+
+.header__tel_popup input::selection,
+.header__tel_popup textarea::selection {
+  background-color: var(--text);
+  color: var(--white);
+}
+
+.header__tel_checkbox {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 15px;
+}
+
+.header__tel_bottom {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 0;
+  gap: 20px;
+}
+
+.header__tel__checkbox_text,
+.header__tel__checkbox_text a,
+.header__tel__checkbox_text a b {
+  color: var(--text);
+}
+
+.header__tel__checkbox_text a:hover b {
+  color: var(--red);
 }
 
 .header__nav_sublink {
@@ -2927,6 +3075,7 @@ html.has-scroll-dragging {
 .feedback__heading b {
   color: var(--white);
 }
+
 .feedback__head {
   color: var(--white);
 }
@@ -6340,7 +6489,8 @@ html.has-scroll-dragging {
     gap: 15px;
   }
   .header__bottom,
-  .header__region_popup {
+  .header__region_popup,
+  .header__tel_popup {
     width: 100%;
     max-width: 380px;
     padding: 0;
@@ -6359,7 +6509,8 @@ html.has-scroll-dragging {
     transform: translateX(100%);
   }
   .header__bottom.active,
-  .header__region_popup.active {
+  .header__region_popup.active,
+  .header__tel_popup.active {
     opacity: 1;
     -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
     transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.1s linear 0s;
@@ -6370,27 +6521,46 @@ html.has-scroll-dragging {
     padding: 25px 0;
     background-color: var(--text);
   }
-  .header__region_popup .header__head {
+  .header__tel_popup {
+    padding: 25px 0;
+  }
+  .header__tel_flex {
+    padding: 0 20px;
+  }
+  .header__region_popup .header__head,
+  .header__tel_popup .header__head {
     display: flex;
     padding: 0;
     color: var(--white);
+  }
+  .header__region_desc,
+  .header__tel_form {
+    padding: 0 20px;
+  }
+  .header__tel_form_flex {
+    gap: 10px;
   }
   .header__region_list {
     gap: 0;
     background-color: var(--white);
     overflow-y: scroll;
   }
+  .header__tel_form {
+    overflow-y: scroll;
+  }
   .header__region_item:not(:last-child) {
     border-bottom: 1px solid var(--gray);
   }
-  .header__region_flex {
+  .header__region_flex,
+  .header__tel_flex {
     display: flex;
     padding: 0 20px 0 40px;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
   }
-  .header__region_close {
+  .header__region_close,
+  .header__tel_close {
     position: relative;
     top: 0;
     right: 0;
@@ -7565,7 +7735,8 @@ html.has-scroll-dragging {
   }
   .header__bottom,
   .catalog_filter__popup,
-  .header__region_popup {
+  .header__region_popup,
+  .header__tel_popup {
     max-width: calc(100% - 40px);
   }
   .header__overlay {

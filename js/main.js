@@ -10,6 +10,8 @@ const menusublistActive = document.querySelectorAll(".header__bottom_block .head
 const headerpopup = document.querySelectorAll(".header__nav_list .popup");
 const popup = document.querySelectorAll("html .popup");
 const cf = document.querySelector(".catalog_filter");
+const bodyOverlay = document.querySelector('.overlay');
+const headerOverlay = document.querySelector('.header__overlay');
 
 docheight.style.setProperty('--height', `${window.innerHeight}px`);
 const appHeight = () => {
@@ -22,6 +24,8 @@ const appHeight = () => {
     menusublinkActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
+    bodyOverlay.classList.remove("active");
+    headerOverlay.classList.remove("active");
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -104,8 +108,6 @@ if(year){
 // end year
 
 // start navbar
-const bodyOverlay = document.querySelector('.overlay');
-const headerOverlay = document.querySelector('.header__overlay');
 const menu = document.querySelector('.header__nav');
 const burger = document.querySelector('.header__burger');
 const popupClose = document.getElementsByClassName("popup__close");
@@ -114,6 +116,7 @@ const cfPopupActive = document.querySelectorAll("html .catalog_filter__popup");
 const headernslpActive = document.querySelectorAll("html .header__nav_sublist");
 const headernlpActive = document.querySelectorAll("html .header__nav_link");
 const headerregionpopup = document.querySelector(".header__region_popup");
+const headertelpopup = document.querySelector(".header__tel_popup");
 const videopopup = document.querySelector('.video__popup');
 const videoinner = document.querySelector('.video__inner');
 
@@ -127,6 +130,7 @@ for (i = 0; i < popupClose.length; i++) {
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
     headerregionpopup.classList.remove("active");
+    headertelpopup.classList.remove("active");
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -159,6 +163,7 @@ burger.addEventListener('click', function() {
     headerOverlay.classList.remove("active");
     burger.classList.remove("active");
     headerregionpopup.classList.remove("active");
+    headertelpopup.classList.remove("active");
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -175,6 +180,7 @@ burger.addEventListener('click', function() {
     headerOverlay.classList.add("active");
     burger.classList.add("active");
     headerregionpopup.classList.remove("active");
+    headertelpopup.classList.remove("active");
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -199,6 +205,7 @@ bodyOverlay.addEventListener('click', function() {
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
     headerregionpopup.classList.remove("active");
+    headertelpopup.classList.remove("active");
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -225,6 +232,7 @@ headerOverlay.addEventListener('click', function() {
     menusublistActive.forEach((n) => n.classList.remove("active"));
     menusublistActive.forEach((n) => n.style.maxHeight = null);
     headerregionpopup.classList.remove("active");
+    headertelpopup.classList.remove("active");
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -275,6 +283,7 @@ if(menu) {
           }
           e.preventDefault();
           headerregionpopup.classList.remove("active");
+          headertelpopup.classList.remove("active");
           if(cf){
             cfLinksActive.forEach((n) => n.classList.remove("active"));
             cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -343,6 +352,7 @@ if(headerregionpopup) {
       headerOverlay.classList.add("active");
       bodyOverlay.classList.add("active");
       html.classList.add("noscroll");
+      headertelpopup.classList.remove("active");
       headernslpActive.forEach((n) => n.classList.remove("active"));
       headernslpActive.forEach((n) => n.style.maxHeight = null);
       headernlpActive.forEach((n) => n.classList.remove("active"));
@@ -369,6 +379,7 @@ if(headerregionpopup) {
       headerOverlay.classList.add("active");
       bodyOverlay.classList.add("active");
       html.classList.add("noscroll");
+      headertelpopup.classList.remove("active");
       headernslpActive.forEach((n) => n.classList.remove("active"));
       headernslpActive.forEach((n) => n.style.maxHeight = null);
       headernlpActive.forEach((n) => n.classList.remove("active"));
@@ -409,6 +420,87 @@ if(headerregionpopup) {
   }
 }
 // end region
+
+// start tel
+const headertel = document.querySelector(".header__tel");
+const headermobiletel = document.querySelector(".header__mobile_tel");
+const headertelclose = document.querySelector(".header__tel_close");
+const headertellabel = document.getElementsByClassName("header__tel_label");
+if(headertelpopup) {
+  headertel.addEventListener('click', function() {
+    if (!headertelpopup.classList.contains("active")) {
+      headertelpopup.classList.add("active");
+      headerOverlay.classList.add("active");
+      bodyOverlay.classList.add("active");
+      html.classList.add("noscroll");
+      headerregionpopup.classList.remove("active");
+      headernslpActive.forEach((n) => n.classList.remove("active"));
+      headernslpActive.forEach((n) => n.style.maxHeight = null);
+      headernlpActive.forEach((n) => n.classList.remove("active"));
+      if(cf){
+        cfLinksActive.forEach((n) => n.classList.remove("active"));
+        cfPopupActive.forEach((n) => n.classList.remove("active"));
+        cfPopupActive.forEach((n) => n.style.maxHeight = null);
+      };
+      if(videopopup){
+        headerOverlay.classList.remove("active");
+        videopopup.classList.remove("active");
+        videoinner.innerHTML = "";
+      };
+    } else {
+      headertelpopup.classList.remove("active");
+      headerOverlay.classList.remove("active");
+      bodyOverlay.classList.remove("active");
+      html.classList.remove("noscroll");
+    }
+  })
+  headermobiletel.addEventListener('click', function() {
+    if (!headertelpopup.classList.contains("active")) {
+      headertelpopup.classList.add("active");
+      headerOverlay.classList.add("active");
+      bodyOverlay.classList.add("active");
+      html.classList.add("noscroll");
+      headerregionpopup.classList.remove("active");
+      headernslpActive.forEach((n) => n.classList.remove("active"));
+      headernslpActive.forEach((n) => n.style.maxHeight = null);
+      headernlpActive.forEach((n) => n.classList.remove("active"));
+      if(cf){
+        cfLinksActive.forEach((n) => n.classList.remove("active"));
+        cfPopupActive.forEach((n) => n.classList.remove("active"));
+        cfPopupActive.forEach((n) => n.style.maxHeight = null);
+      };
+      if(videopopup){
+        headerOverlay.classList.remove("active");
+        videopopup.classList.remove("active");
+        videoinner.innerHTML = "";
+      };
+      hbottom.classList.remove("active");
+      burger.classList.remove("active");
+    } else {
+      headertelpopup.classList.remove("active");
+      headerOverlay.classList.remove("active");
+      bodyOverlay.classList.remove("active");
+      html.classList.remove("noscroll");
+    }
+  })
+  headertelclose.addEventListener('click', function() {
+    headertelpopup.classList.remove("active");
+    headerOverlay.classList.remove("active");
+    bodyOverlay.classList.remove("active");
+    html.classList.remove("noscroll");
+  })
+  for (i = 0; i < headertellabel.length; i++) {
+    headertellabel[i].onclick = function(e) {
+      headertel.children[1].innerText = this.innerText;
+      headermobiletel.children[1].innerText = this.innerText;
+      headertelpopup.classList.remove("active");
+      headerOverlay.classList.remove("active");
+      bodyOverlay.classList.remove("active");
+      html.classList.remove("noscroll");
+    };
+  }
+}
+// end tel
 
 // start catalog__head
 const catalogtophead = document.querySelector(".catalog_top__head");
