@@ -1778,7 +1778,8 @@ html.has-scroll-dragging {
 }
 
 .header__nav_sublist,
-.catalog_filter__popup {
+.catalog_filter__popup,
+.header__region_popup {
   display: flex;
   width: 380px;
   padding: 50px 0;
@@ -1800,19 +1801,22 @@ html.has-scroll-dragging {
 }
 
 .header__nav_sublist::-webkit-scrollbar,
-.catalog_filter__popup::-webkit-scrollbar {
+.catalog_filter__popup::-webkit-scrollbar,
+.header__region_popup::-webkit-scrollbar {
   display: none;
   width: 0px;
 }
 
 .header__nav_sublist::-webkit-scrollbar-thumb,
-.catalog_filter__popup::-webkit-scrollbar-thumb {
+.catalog_filter__popup::-webkit-scrollbar-thumb,
+.header__region_popup::-webkit-scrollbar-thumb {
   display: none;
   width: 0px;
 }
 
 .header__nav_sublist.active,
-.catalog_filter__popup.active {
+.catalog_filter__popup.active,
+.header__region_popup.active {
   opacity: 1;
   z-index: 102;
   -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
@@ -1821,8 +1825,16 @@ html.has-scroll-dragging {
   transform: translateX(0);
 }
 
+.header__region_list {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .header__nav_close,
-.catalog_filter__close {
+.catalog_filter__close,
+.header__region_close {
   display: flex;
   width: 32px;
   height: 32px;
@@ -1832,7 +1844,8 @@ html.has-scroll-dragging {
 }
 
 .header__nav_close svg,
-.catalog_filter__close svg {
+.catalog_filter__close svg,
+.header__region_close svg {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -1843,17 +1856,53 @@ html.has-scroll-dragging {
 }
 
 .header__nav_close:hover svg,
-.catalog_filter__close:hover svg {
+.catalog_filter__close:hover svg,
+.header__region_close:hover svg {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .header__nav_sublink {
   padding: 15px 40px;
+  position: relative;
 }
 
-.header__nav_sublink {
+.header__region_item {
   position: relative;
+}
+
+.header__region_label {
+  display: flex;
+  padding: 15px 40px;
+  -webkit-transition: color 0.15s linear;
+  transition: color 0.15s linear;
+}
+
+.header__region_label::before {
+  content: "";
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  -webkit-transition: background-color 0.15s linear;
+  transition: background-color 0.15s linear;
+}
+
+.header__region_input:checked ~ .header__region_label::before {
+  background-color: var(--red);
+}
+
+.header__region_input:checked ~ .header__region_label {
+  color: var(--red);
+}
+
+.header__region_input {
+  display: none;
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .header__nav_sublink::before {
@@ -6286,13 +6335,15 @@ html.has-scroll-dragging {
     justify-content: space-between;
     gap: 15px;
   }
-  .header__bottom {
+  .header__bottom,
+  .header__region_popup {
     width: 100%;
     max-width: 380px;
     padding: 0;
     position: fixed;
     height: 100vh;
     top: 0;
+    left: auto;
     right: 0;
     z-index: 102;
     opacity: 0;
@@ -6303,12 +6354,45 @@ html.has-scroll-dragging {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
   }
-  .header__bottom.active {
+  .header__bottom.active,
+  .header__region_popup.active {
     opacity: 1;
     -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
     transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.1s linear 0s;
     -webkit-transform: translateX(0);
     transform: translateX(0);
+  }
+  .header__region_popup {
+    padding: 25px 0;
+    background-color: var(--text);
+  }
+  .header__region_popup .header__head {
+    display: flex;
+    padding: 0;
+    color: var(--white);
+  }
+  .header__region_list {
+    gap: 0;
+    background-color: var(--white);
+    overflow-y: scroll;
+  }
+  .header__region_item:not(:last-child) {
+    border-bottom: 1px solid var(--gray);
+  }
+  .header__region_flex {
+    display: flex;
+    padding: 0 20px 0 40px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .header__region_close {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+  .header__region_close svg {
+    color: var(--white);
   }
   .header__bottom_block {
     height: 100vh;
@@ -7476,7 +7560,8 @@ html.has-scroll-dragging {
     height: 70px;
   }
   .header__bottom,
-  .catalog_filter__popup {
+  .catalog_filter__popup,
+  .header__region_popup {
     max-width: calc(100% - 40px);
   }
   .header__overlay {
