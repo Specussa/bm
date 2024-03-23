@@ -1902,7 +1902,7 @@ html.has-scroll-dragging {
 }
 
 .header__tel_desc {
-  padding: 0 40px;
+  padding: 20px 40px 0;
 }
 
 .header__tel_form_flex {
