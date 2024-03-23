@@ -1584,6 +1584,7 @@ html.has-scroll-dragging {
 
 .header__logo,
 .header__region,
+.header__region span,
 .header__tel,
 .header__social_link {
   flex: 0 0 auto;

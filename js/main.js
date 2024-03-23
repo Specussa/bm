@@ -399,8 +399,8 @@ if(headerregionpopup) {
   })
   for (i = 0; i < headerregionlabel.length; i++) {
     headerregionlabel[i].onclick = function(e) {
-      headerregion.innerText = this.innerText;
-      headermobileregion.innerText = this.innerText;
+      headerregion.children[1].innerText = this.innerText;
+      headermobileregion.children[1].innerText = this.innerText;
       headerregionpopup.classList.remove("active");
       headerOverlay.classList.remove("active");
       bodyOverlay.classList.remove("active");
