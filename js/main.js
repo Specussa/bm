@@ -335,6 +335,7 @@ if(menu) {
 const headerregion = document.querySelector(".header__region");
 const headermobileregion = document.querySelector(".header__mobile_region");
 const headerregionclose = document.querySelector(".header__region_close");
+const headerregionlabel = document.getElementsByClassName("header__region_label");
 if(headerregionpopup) {
   headerregion.addEventListener('click', function() {
     if (!headerregionpopup.classList.contains("active")) {
@@ -396,6 +397,16 @@ if(headerregionpopup) {
     bodyOverlay.classList.remove("active");
     html.classList.remove("noscroll");
   })
+  for (i = 0; i < headerregionlabel.length; i++) {
+    headerregionlabel[i].onclick = function(e) {
+      headerregion.innerText = this.innerText;
+      headermobileregion.innerText = this.innerText;
+      headerregionpopup.classList.remove("active");
+      headerOverlay.classList.remove("active");
+      bodyOverlay.classList.remove("active");
+      html.classList.remove("noscroll");
+    };
+  }
 }
 // end region
 
