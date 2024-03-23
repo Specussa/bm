@@ -1603,9 +1603,12 @@ html.has-scroll-dragging {
 
 .header__region svg,
 .header__tel svg {
+  display: flex;
   width: 16px;
   height: 16px;
   object-fit: contain;
+  -webkit-transform: translateY(-1px);
+  transform: translateY(-1px);
 }
 
 .header__social_list,
