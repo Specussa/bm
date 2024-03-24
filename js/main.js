@@ -26,6 +26,7 @@ const appHeight = () => {
     menusublistActive.forEach((n) => n.style.maxHeight = null);
     bodyOverlay.classList.remove("active");
     headerOverlay.classList.remove("active");
+    html.classList.remove("noscroll");
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -117,6 +118,7 @@ const headernslpActive = document.querySelectorAll("html .header__nav_sublist");
 const headernlpActive = document.querySelectorAll("html .header__nav_link");
 const headerregionpopup = document.querySelector(".header__region_popup");
 const headertelpopup = document.querySelector(".header__tel_popup");
+const headervacancypopup = document.querySelector(".header__vacancy_popup");
 const videopopup = document.querySelector('.video__popup');
 const videoinner = document.querySelector('.video__inner');
 
@@ -131,6 +133,7 @@ for (i = 0; i < popupClose.length; i++) {
     menusublistActive.forEach((n) => n.style.maxHeight = null);
     headerregionpopup.classList.remove("active");
     headertelpopup.classList.remove("active");
+    if(headervacancypopup){headervacancypopup.classList.remove("active")};
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -164,6 +167,7 @@ burger.addEventListener('click', function() {
     burger.classList.remove("active");
     headerregionpopup.classList.remove("active");
     headertelpopup.classList.remove("active");
+    if(headervacancypopup){headervacancypopup.classList.remove("active")};
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -181,6 +185,7 @@ burger.addEventListener('click', function() {
     burger.classList.add("active");
     headerregionpopup.classList.remove("active");
     headertelpopup.classList.remove("active");
+    if(headervacancypopup){headervacancypopup.classList.remove("active")};
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -206,6 +211,7 @@ bodyOverlay.addEventListener('click', function() {
     menusublistActive.forEach((n) => n.style.maxHeight = null);
     headerregionpopup.classList.remove("active");
     headertelpopup.classList.remove("active");
+    if(headervacancypopup){headervacancypopup.classList.remove("active")};
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -233,6 +239,7 @@ headerOverlay.addEventListener('click', function() {
     menusublistActive.forEach((n) => n.style.maxHeight = null);
     headerregionpopup.classList.remove("active");
     headertelpopup.classList.remove("active");
+    if(headervacancypopup){headervacancypopup.classList.remove("active")};
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -284,6 +291,7 @@ if(menu) {
           e.preventDefault();
           headerregionpopup.classList.remove("active");
           headertelpopup.classList.remove("active");
+          if(headervacancypopup){headervacancypopup.classList.remove("active")};
           if(cf){
             cfLinksActive.forEach((n) => n.classList.remove("active"));
             cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -356,6 +364,7 @@ if(headerregionpopup) {
       headernslpActive.forEach((n) => n.classList.remove("active"));
       headernslpActive.forEach((n) => n.style.maxHeight = null);
       headernlpActive.forEach((n) => n.classList.remove("active"));
+      if(headervacancypopup){headervacancypopup.classList.remove("active")};
       if(cf){
         cfLinksActive.forEach((n) => n.classList.remove("active"));
         cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -383,6 +392,7 @@ if(headerregionpopup) {
       headernslpActive.forEach((n) => n.classList.remove("active"));
       headernslpActive.forEach((n) => n.style.maxHeight = null);
       headernlpActive.forEach((n) => n.classList.remove("active"));
+      if(headervacancypopup){headervacancypopup.classList.remove("active")};
       if(cf){
         cfLinksActive.forEach((n) => n.classList.remove("active"));
         cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -437,6 +447,7 @@ if(headertelpopup) {
       headernslpActive.forEach((n) => n.classList.remove("active"));
       headernslpActive.forEach((n) => n.style.maxHeight = null);
       headernlpActive.forEach((n) => n.classList.remove("active"));
+      if(headervacancypopup){headervacancypopup.classList.remove("active")};
       if(cf){
         cfLinksActive.forEach((n) => n.classList.remove("active"));
         cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -464,6 +475,7 @@ if(headertelpopup) {
       headernslpActive.forEach((n) => n.classList.remove("active"));
       headernslpActive.forEach((n) => n.style.maxHeight = null);
       headernlpActive.forEach((n) => n.classList.remove("active"));
+      if(headervacancypopup){headervacancypopup.classList.remove("active")};
       if(cf){
         cfLinksActive.forEach((n) => n.classList.remove("active"));
         cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -499,6 +511,50 @@ if(headertelpopup) {
       html.classList.remove("noscroll");
     };
   }
+}
+// end tel
+
+// start tel
+const headervacancydesc = document.querySelector(".header__vacancy_desc");
+const headervacancyclose = document.querySelector(".header__vacancy_close");
+const vacancycontact = document.getElementsByClassName("vacancy__contact");
+if(headervacancypopup) {
+  for (i = 0; i < vacancycontact.length; i++) {
+    vacancycontact[i].onclick = function(e) {
+      if (!headervacancypopup.classList.contains("active")) {
+        headervacancydesc.children[1].innerText = this.parentElement.parentElement.parentElement.parentElement.children[0].children[0].children[1].children[0].children[0].innerText;
+        headervacancypopup.classList.add("active");
+        headerOverlay.classList.add("active");
+        bodyOverlay.classList.add("active");
+        html.classList.add("noscroll");
+        headerregionpopup.classList.remove("active");
+        headernslpActive.forEach((n) => n.classList.remove("active"));
+        headernslpActive.forEach((n) => n.style.maxHeight = null);
+        headernlpActive.forEach((n) => n.classList.remove("active"));
+        if(cf){
+          cfLinksActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.style.maxHeight = null);
+        };
+        if(videopopup){
+          headerOverlay.classList.remove("active");
+          videopopup.classList.remove("active");
+          videoinner.innerHTML = "";
+        };
+      } else {
+        headervacancypopup.classList.remove("active");
+        headerOverlay.classList.remove("active");
+        bodyOverlay.classList.remove("active");
+        html.classList.remove("noscroll");
+      }
+    };
+  }
+  headervacancyclose.addEventListener('click', function() {
+    headervacancypopup.classList.remove("active");
+    headerOverlay.classList.remove("active");
+    bodyOverlay.classList.remove("active");
+    html.classList.remove("noscroll");
+  })
 }
 // end tel
 

@@ -326,7 +326,7 @@
           </span>
           <p class="header__tel_checkbox_text">Я согласен на обработку <a href="#"><b>персональных данных</b></a></p>
         </label>
-        <button class="btn btn__red header__tel_btn">Отправить</button>
+        <button class="btn btn__red header__tel_btn">Заказать звонок</button>
       </div>
     </form>
   </div>
@@ -487,12 +487,12 @@
                     </p>
                   </div>
                   <div class="vacancy__buttons">
-                    <a href="#" class="btn btn__black vacancy__link">
+                    <a href="https://hh.ru" target="_blank" class="btn btn__black vacancy__link">
                       <b>Вакансия на HH</b>
                     </a>
-                    <a href="#" class="btn btn__red vacancy__contact">
+                    <button class="btn btn__red vacancy__contact">
                       <b>Откликнуться</b>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -557,12 +557,12 @@
                     </p>
                   </div>
                   <div class="vacancy__buttons">
-                    <a href="#" class="btn btn__black vacancy__link">
+                    <a href="https://hh.ru" target="_blank" class="btn btn__black vacancy__link">
                       <b>Вакансия на HH</b>
                     </a>
-                    <a href="#" class="btn btn__red vacancy__contact">
+                    <button class="btn btn__red vacancy__contact">
                       <b>Откликнуться</b>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -627,12 +627,12 @@
                     </p>
                   </div>
                   <div class="vacancy__buttons">
-                    <a href="#" class="btn btn__black vacancy__link">
+                    <a href="https://hh.ru" target="_blank" class="btn btn__black vacancy__link">
                       <b>Вакансия на HH</b>
                     </a>
-                    <a href="#" class="btn btn__red vacancy__contact">
+                    <button class="btn btn__red vacancy__contact">
                       <b>Откликнуться</b>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -641,6 +641,64 @@
         </div>
       </div>
     </section>
+    <div class="header__vacancy_popup popup">
+      <div class="header__vacancy_flex">
+        <h4 class="header__vacancy_desc"><span>Отклик на вакансию</span> <span>Менеджер по продажам сельскохозяйственной продукции</span></h4>
+        <button class="header__vacancy_close popup__close">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.6259 8.62688C9.01643 8.23635 9.64959 8.23635 10.0401 8.62688L23.3734 21.9602C23.764 22.3507 23.764 22.9839 23.3734 23.3744C22.9829 23.7649 22.3498 23.7649 21.9592 23.3744L8.6259 10.0411C8.23538 9.65057 8.23538 9.0174 8.6259 8.62688Z" fill="currentColor"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M23.3734 8.62688C23.764 9.0174 23.764 9.65057 23.3734 10.0411L10.0401 23.3744C9.64959 23.7649 9.01643 23.7649 8.6259 23.3744C8.23538 22.9839 8.23538 22.3507 8.6259 21.9602L21.9592 8.62688C22.3498 8.23635 22.9829 8.23635 23.3734 8.62688Z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+      <form id="form__vacancy" action="" class="header__vacancy_form">
+        <input type="text" class="form__input_hidden">
+        <div class="header__forms_form_controls">
+          <div class="form__control">
+            <input class="form__input" type="text" minl="4" maxl="100" id="form__vacancy_username" placeholder="Имя" />
+            <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
+            <small class="form__error">Введите имя</small>
+          </div>
+          <div class="form__control">
+            <input class="form__input" data-phone-pattern type="text" minl="17" maxl="17" id="form__vacancy_phone" placeholder="Телефон" />
+            <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
+            <small class="form__error">Введите телефон</small>
+          </div>
+          <div class="form__control">
+            <input class="form__input" type="text" minl="7" maxl="40" id="form__vacancy_email" placeholder="E-mail" />
+            <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
+            <small class="form__error">Введите корректный email</small>
+          </div>
+          <div class="form__control">
+            <textarea class="form__input" type="text" minl="4" maxl="300" id="form__vacancy_text" placeholder="Сопроводительное письмо"></textarea>
+            <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
+            <small class="form__error">Введите текст или загрузите файл</small>
+          </div>
+          <div class="form__file">
+            <input type="file" class="form__input_file" id="form__vacancy_file" hidden>
+            <label class="form__file_button" for="form__vacancy_file">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.6442 1.83735C17.1967 1.78727 18.9081 2.29117 20.3087 3.69181C21.7094 5.09246 22.2133 6.80388 22.1632 8.35639C22.1139 9.8834 21.5261 11.3133 20.6623 12.1771L13.5915 19.2479L13.0609 18.7178L12.5306 18.1874L19.6016 11.1165C20.152 10.566 20.6248 9.52105 20.664 8.30802C20.7023 7.12049 20.3223 5.82671 19.2481 4.75247C18.1738 3.67824 16.88 3.29826 15.6925 3.33657C14.4795 3.3757 13.4345 3.84848 12.8841 4.39893L3.33816 13.9449C3.11711 14.1659 2.74449 14.794 2.67087 15.6038C2.60127 16.3693 2.79878 17.2946 3.69171 18.1875C4.58465 19.0804 5.50989 19.2779 6.27547 19.2083C7.08529 19.1347 7.71333 18.7621 7.93437 18.5411L17.1267 9.34866C17.3264 9.14902 17.5369 8.71503 17.5717 8.19393C17.6051 7.69163 17.469 7.21603 17.1267 6.87383C16.7845 6.53161 16.3089 6.39539 15.8066 6.42888C15.2855 6.46362 14.8515 6.67415 14.6519 6.8738L7.93466 13.591L7.40405 13.061L6.87379 12.5306L13.5912 5.81317C13.5912 5.81318 13.5912 5.81317 13.5912 5.81317C14.0987 5.30568 14.9021 4.98585 15.7068 4.9322C16.5303 4.8773 17.4689 5.09469 18.1874 5.81314C18.1874 5.81313 18.1874 5.81315 18.1874 5.81314M18.1874 10.4093C18.1874 10.4093 18.1874 10.4093 18.1874 10.4093C18.6949 9.90187 19.0147 9.0984 19.0683 8.29371C19.1232 7.4702 18.9058 6.53158 18.1874 5.81314M18.1874 10.4093L8.99503 19.6017C8.50898 20.0878 7.54601 20.599 6.41128 20.7022C5.23231 20.8094 3.85944 20.4765 2.63106 19.2482C1.40267 18.0198 1.06985 16.6469 1.17703 15.468C1.28019 14.3332 1.79144 13.3703 2.2775 12.8842L11.8234 3.33826C12.6872 2.47449 14.1171 1.88661 15.6442 1.83735M7.40405 13.061L6.87379 12.5306C6.5809 12.8235 6.58083 13.2984 6.87372 13.5913C7.16662 13.8842 7.64176 13.8839 7.93466 13.591L7.40405 13.061ZM12.5306 19.2482C12.2377 18.9553 12.2377 18.4803 12.5306 18.1874L13.0609 18.7178L13.5915 19.2479C13.2986 19.5408 12.8235 19.5411 12.5306 19.2482Z" fill="currentColor"/>
+              </svg>
+              Загрузить резюме
+            </label>
+            <ul id="form__file_container" class="form__file_list"></ul>
+          </div>
+        </div>
+        <div class="header__vacancy_bottom">
+          <label class="header__vacancy_checkbox">
+            <input type="checkbox" name="header__vacancy_checkbox_input" class="header__vacancy_checkbox_input">
+            <span class="header__vacancy_checkbox_check">
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1.3335 3.73301L4.8335 7.33301L10.6668 1.33301" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </span>
+            <p class="header__vacancy_checkbox_text">Я согласен на обработку <a href="#"><b>персональных данных</b></a></p>
+          </label>
+          <button class="btn btn__red header__vacancy_btn">Отправить</button>
+        </div>
+      </form>
+    </div>
     <section class="feedback" data-scroll-section>
       <div class="container feedback__container">
         <div class="feedback__block">
@@ -805,5 +863,7 @@
   </script>
   <script src="js/swiper.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/textarea.js"></script>
+  <script src="js/form.js"></script>
 </body>
 </html>

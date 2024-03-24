@@ -674,6 +674,141 @@ html.has-scroll-dragging {
 
 /* end scroll */
 
+/* start form */
+
+.form__control {
+  display: flex;
+  margin: 0 0 13px;
+  padding: 0 0 17px;
+  flex-direction: column-reverse;
+  position: relative;
+  overflow: hidden;
+}
+
+.form__control:last-child {
+  margin: 0;
+}
+
+.form__control .form__error {
+  height: 12px;
+  margin: 5px 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+
+.form__control.error .form__error {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+}
+
+.form__input:focus ~ .form__counter {
+  display: block;
+}
+
+.form__counter {
+  display: none;
+  height: 12px;
+  margin: 5px 0 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.form__counter.success {
+  color: var(--text);
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  height: 43px;
+  max-height: 43px;
+  padding: 10px 15px;
+  border: none;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  -webkit-transition: max-height 0.3s linear;
+  transition: max-height 0.3s linear;
+}
+
+.form__input:focus {
+  max-height: 500px;
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.form__textarea {
+  resize: none;
+  overflow: hidden;
+}
+
+.form__input_hidden {
+  display: none;
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.form__file {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__file_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.form__file_item {
+  display: flex;
+  height: 40px;
+  padding: 10px 15px;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--gray);
+  border-radius: 10px;
+}
+
+.form__file_item button,
+.form__file_item a {
+  display: flex;
+}
+
+.form__file_name {
+  display: block;
+  width: 80px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.form__checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form__file_button {
+  display: flex;
+  width: max-content;
+  padding: 10px 15px;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--bg-lgray);
+}
+
+/* end form */
+
 /* start showreel */
 
 .showreel__container {
@@ -1803,7 +1938,8 @@ html.has-scroll-dragging {
 .header__nav_sublist,
 .catalog_filter__popup,
 .header__region_popup,
-.header__tel_popup {
+.header__tel_popup,
+.header__vacancy_popup {
   display: flex;
   width: 380px;
   padding: 50px 0;
@@ -1825,18 +1961,21 @@ html.has-scroll-dragging {
 }
 
 .header__region_desc,
-.header__tel_form {
+.header__tel_form,
+.header__vacancy_form {
   padding: 0 40px;
 }
 
-.header__tel_btn {
+.header__tel_btn,
+.header__vacancy_btn {
   min-width: 100%;
 }
 
 .header__nav_sublist::-webkit-scrollbar,
 .catalog_filter__popup::-webkit-scrollbar,
 .header__region_popup::-webkit-scrollbar,
-.header__tel_popup::-webkit-scrollbar {
+.header__tel_popup::-webkit-scrollbar,
+.header__vacancy_popup::-webkit-scrollbar {
   display: none;
   width: 0px;
 }
@@ -1844,7 +1983,8 @@ html.has-scroll-dragging {
 .header__nav_sublist::-webkit-scrollbar-thumb,
 .catalog_filter__popup::-webkit-scrollbar-thumb,
 .header__region_popup::-webkit-scrollbar-thumb,
-.header__tel_popup::-webkit-scrollbar-thumb {
+.header__tel_popup::-webkit-scrollbar-thumb,
+.header__vacancy_popup::-webkit-scrollbar-thumb {
   display: none;
   width: 0px;
 }
@@ -1852,7 +1992,8 @@ html.has-scroll-dragging {
 .header__nav_sublist.active,
 .catalog_filter__popup.active,
 .header__region_popup.active,
-.header__tel_popup.active {
+.header__tel_popup.active,
+.header__vacancy_popup.active {
   opacity: 1;
   z-index: 102;
   -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
@@ -1871,10 +2012,12 @@ html.has-scroll-dragging {
 .header__nav_close,
 .catalog_filter__close,
 .header__region_close,
-.header__tel_close {
+.header__tel_close,
+.header__vacancy_close {
   display: flex;
   width: 32px;
   height: 32px;
+  flex: 0 0 auto;
   position: absolute;
   top: 30px;
   right: 30px;
@@ -1883,7 +2026,8 @@ html.has-scroll-dragging {
 .header__nav_close svg,
 .catalog_filter__close svg,
 .header__region_close svg,
-.header__tel_close svg {
+.header__tel_close svg,
+.header__vacancy_close svg {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -1896,35 +2040,51 @@ html.has-scroll-dragging {
 .header__nav_close:hover svg,
 .catalog_filter__close:hover svg,
 .header__region_close:hover svg,
-.header__tel_close:hover svg {
+.header__tel_close:hover svg,
+.header__vacancy_close:hover svg {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
-.header__tel_desc {
+.header__tel_desc,
+.header__vacancy_desc {
   padding: 20px 40px 0;
 }
 
-.header__tel_form_flex {
+.header__vacancy_desc span:nth-child(2) {
+  color: var(--red);
+}
+
+.header__tel_form_flex,
+.header__vacancy_form_flex {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.header__tel_input {
+.header__tel_input,
+.header__vacancy_input {
   width: 100%;
   height: 40px;
+  padding: 10px 15px;
+}
+
+.header__vacancy_textarea {
+  width: 100%;
+  height: 145px;
   padding: 15px;
 }
 
-.header__tel_checkbox_input {
+.header__tel_checkbox_input,
+.header__vacancy_checkbox_input {
   display: none;
   position: absolute;
   -webkit-appearance: none;
   appearance: none;
 }
 
-.header__tel_checkbox_check {
+.header__tel_checkbox_check,
+.header__vacancy_checkbox_check {
   display: inline-flex;
   width: 20px;
   height: 20px;
@@ -1936,18 +2096,21 @@ html.has-scroll-dragging {
   border-radius: 5px;
 }
 
-.header__tel_checkbox_check svg {
+.header__tel_checkbox_check svg,
+.header__vacancy_checkbox_check svg {
   width: 12px;
   height: 8px;
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
 
-.header__tel_checkbox input:checked ~ .header__tel_checkbox_check svg {
+.header__tel_checkbox input:checked ~ .header__tel_checkbox_check svg,
+.header__vacancy_checkbox input:checked ~ .header__vacancy_checkbox_check svg {
   opacity: 1;
 }
 
-.header__tel_checkbox input ~ .header__tel_checkbox_check svg {
+.header__tel_checkbox input ~ .header__tel_checkbox_check svg,
+.header__vacancy_checkbox input ~ .header__vacancy_checkbox_check svg {
   opacity: 0;
 }
 
@@ -1956,7 +2119,13 @@ html.has-scroll-dragging {
 .header__tel_popup textarea:-webkit-autofill,
 .header__tel_popup textarea:-webkit-autofill:hover,
 .header__tel_popup select:-webkit-autofill,
-.header__tel_popup select:-webkit-autofill:hover {
+.header__tel_popup select:-webkit-autofill:hover,
+.header__vacancy_popup input:-webkit-autofill,
+.header__vacancy_popup input:-webkit-autofill:hover,
+.header__vacancy_popup textarea:-webkit-autofill,
+.header__vacancy_popup textarea:-webkit-autofill:hover,
+.header__vacancy_popup select:-webkit-autofill,
+.header__vacancy_popup select:-webkit-autofill:hover {
   border: none;
   -webkit-text-fill-color: var(--text);
   -webkit-box-shadow: 0 0 0 1000px var(--bg-lgray) inset;
@@ -1965,39 +2134,49 @@ html.has-scroll-dragging {
 }
 
 .header__tel_popup input,
-.header__tel_popup textarea {
+.header__tel_popup textarea,
+.header__vacancy_popup input,
+.header__vacancy_popup textarea {
   color: var(--text);
   background-color: var(--bg-lgray);
 }
 
-.header__tel_popup input {
+.header__tel_popup input,
+.header__vacancy_popup input {
   border-radius: 5px;
 }
 
-.header__tel_popup textarea {
+.header__tel_popup textarea,
+.header__vacancy_popup textarea {
   border-radius: 2px;
 }
 
 .header__tel_popup input::-moz-selection,
-.header__tel_popup textarea::-moz-selection {
+.header__tel_popup textarea::-moz-selection,
+.header__vacancy_popup input::-moz-selection,
+.header__vacancy_popup textarea::-moz-selection {
   background-color: var(--text);
   color: var(--white);
 }
 
 .header__tel_popup input::selection,
-.header__tel_popup textarea::selection {
+.header__tel_popup textarea::selection,
+.header__vacancy_popup input::selection,
+.header__vacancy_popup textarea::selection {
   background-color: var(--text);
   color: var(--white);
 }
 
-.header__tel_checkbox {
+.header__tel_checkbox,
+.header__vacancy_checkbox {
   display: flex;
   width: 100%;
   align-items: center;
   gap: 15px;
 }
 
-.header__tel_bottom {
+.header__tel_bottom,
+.header__vacancy_bottom {
   display: flex;
   flex-direction: column;
   padding: 20px 0 0;
@@ -2006,11 +2185,15 @@ html.has-scroll-dragging {
 
 .header__tel__checkbox_text,
 .header__tel__checkbox_text a,
-.header__tel__checkbox_text a b {
+.header__tel__checkbox_text a b,
+.header__vacancy__checkbox_text,
+.header__vacancy__checkbox_text a,
+.header__vacancy__checkbox_text a b {
   color: var(--text);
 }
 
-.header__tel__checkbox_text a:hover b {
+.header__tel__checkbox_text a:hover b,
+.header__vacancy__checkbox_text a:hover b {
   color: var(--red);
 }
 
@@ -6490,7 +6673,8 @@ html.has-scroll-dragging {
   }
   .header__bottom,
   .header__region_popup,
-  .header__tel_popup {
+  .header__tel_popup,
+  .header__vacancy_popup {
     width: 100%;
     max-width: 380px;
     padding: 0;
@@ -6510,7 +6694,8 @@ html.has-scroll-dragging {
   }
   .header__bottom.active,
   .header__region_popup.active,
-  .header__tel_popup.active {
+  .header__tel_popup.active,
+  .header__vacancy_popup.active {
     opacity: 1;
     -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
     transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.1s linear 0s;
@@ -6521,26 +6706,32 @@ html.has-scroll-dragging {
     padding: 25px 0;
     background-color: var(--text);
   }
-  .header__tel_popup {
+  .header__tel_popup,
+  .header__vacancy_popup {
     padding: 25px 0;
   }
-  .header__tel_flex {
+  .header__tel_flex,
+  .header__vacancy_flex {
     padding: 0 20px;
   }
-  .header__tel_desc {
+  .header__tel_desc,
+  .header__vacancy_desc {
     padding: 0;
   }
   .header__region_popup .header__head,
-  .header__tel_popup .header__head {
+  .header__tel_popup .header__head,
+  .header__vacancy_popup .header__head {
     display: flex;
     padding: 0;
     color: var(--white);
   }
   .header__region_desc,
-  .header__tel_form {
+  .header__tel_form,
+  .header__vacancy_form {
     padding: 0 20px;
   }
-  .header__tel_form_flex {
+  .header__tel_form_flex,
+  .header__vacancy_form_flex {
     gap: 10px;
   }
   .header__region_list {
@@ -6548,25 +6739,29 @@ html.has-scroll-dragging {
     background-color: var(--white);
     overflow-y: scroll;
   }
-  .header__tel_form {
+  .header__tel_form,
+  .header__vacancy_form {
     overflow-y: scroll;
   }
   .header__region_item:not(:last-child) {
     border-bottom: 1px solid var(--gray);
   }
   .header__region_flex,
-  .header__tel_flex {
+  .header__tel_flex,
+  .header__vacancy_flex {
     display: flex;
     padding: 0 20px 0 40px;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
   }
-  .header__tel_flex {
+  .header__tel_flex,
+  .header__vacancy_flex {
     padding: 0 20px;
   }
   .header__region_close,
-  .header__tel_close {
+  .header__tel_close,
+  .header__vacancy_close {
     position: relative;
     top: 0;
     right: 0;
@@ -7742,7 +7937,8 @@ html.has-scroll-dragging {
   .header__bottom,
   .catalog_filter__popup,
   .header__region_popup,
-  .header__tel_popup {
+  .header__tel_popup,
+  .header__vacancy_popup {
     max-width: calc(100% - 40px);
   }
   .header__overlay {
@@ -7810,7 +8006,9 @@ html.has-scroll-dragging {
   .catalog_filter__clear {
     height: 100%;
   }
-  .brand__button {
+  .brand__button,
+  .vacancy__link,
+  .vacancy__contact {
     height: 50px;
   }
   .video__popup {
