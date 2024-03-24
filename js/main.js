@@ -12,6 +12,8 @@ const popup = document.querySelectorAll("html .popup");
 const cf = document.querySelector(".catalog_filter");
 const bodyOverlay = document.querySelector('.overlay');
 const headerOverlay = document.querySelector('.header__overlay');
+const formSuccessfully = document.querySelectorAll("html .form__successfully");
+const formHidden = document.querySelectorAll("html .form");
 
 docheight.style.setProperty('--height', `${window.innerHeight}px`);
 const appHeight = () => {
@@ -27,6 +29,8 @@ const appHeight = () => {
     bodyOverlay.classList.remove("active");
     headerOverlay.classList.remove("active");
     html.classList.remove("noscroll");
+    formSuccessfully.forEach((n) => n.classList.remove("active"));
+    formHidden.forEach((n) => n.classList.remove("hidden"));
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
       cfPopupActive.forEach((n) => n.classList.remove("active"));
@@ -133,6 +137,8 @@ for (i = 0; i < popupClose.length; i++) {
     menusublistActive.forEach((n) => n.style.maxHeight = null);
     headerregionpopup.classList.remove("active");
     headertelpopup.classList.remove("active");
+    formSuccessfully.forEach((n) => n.classList.remove("active"));
+    formHidden.forEach((n) => n.classList.remove("hidden"));
     if(headervacancypopup){headervacancypopup.classList.remove("active")};
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
@@ -167,6 +173,8 @@ burger.addEventListener('click', function() {
     burger.classList.remove("active");
     headerregionpopup.classList.remove("active");
     headertelpopup.classList.remove("active");
+    formSuccessfully.forEach((n) => n.classList.remove("active"));
+    formHidden.forEach((n) => n.classList.remove("hidden"));
     if(headervacancypopup){headervacancypopup.classList.remove("active")};
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
@@ -211,6 +219,8 @@ bodyOverlay.addEventListener('click', function() {
     menusublistActive.forEach((n) => n.style.maxHeight = null);
     headerregionpopup.classList.remove("active");
     headertelpopup.classList.remove("active");
+    formSuccessfully.forEach((n) => n.classList.remove("active"));
+    formHidden.forEach((n) => n.classList.remove("hidden"));
     if(headervacancypopup){headervacancypopup.classList.remove("active")};
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));
@@ -239,6 +249,8 @@ headerOverlay.addEventListener('click', function() {
     menusublistActive.forEach((n) => n.style.maxHeight = null);
     headerregionpopup.classList.remove("active");
     headertelpopup.classList.remove("active");
+    formSuccessfully.forEach((n) => n.classList.remove("active"));
+    formHidden.forEach((n) => n.classList.remove("hidden"));
     if(headervacancypopup){headervacancypopup.classList.remove("active")};
     if(cf){
       cfLinksActive.forEach((n) => n.classList.remove("active"));

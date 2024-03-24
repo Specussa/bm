@@ -50,7 +50,7 @@
           </div>
           <div class="header__divider"></div>
           <div class="header__search_block">
-            <form action="" class="header__search">
+            <form action="" class="form header__search">
               <input type="text" id="header__search" class="header__search_input" placeholder="Найти технику, например “Трактор”">
               <label for="header__search" class="header__search_label">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -102,7 +102,7 @@
     <div class="header__bottom">
       <div class="container header__container">
         <div class="header__bottom_block">
-          <form action="" class="header__mobile_search">
+          <form action="" class="form header__mobile_search">
             <input type="text" id="header__mobile_search" class="header__search_input" placeholder="Найти технику, например “Трактор”">
             <label for="header__search" class="header__search_label">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -311,14 +311,22 @@
         </svg>
       </button>
     </div>
-    <form action="" class="header__tel_form">
-      <div class="header__tel_form_flex">
-        <input type="text" name="header__tel_name" id="header__tel_name" class="header__tel_input" placeholder="Имя" required="">
-        <input type="text" name="header__tel_phone" id="header__tel_phone" class="header__tel_input" placeholder="Телефон" required="">
+    <form id="form__tel" action="" class="form header__tel_form">
+      <div class="header__forms_form_controls">
+        <div class="form__control">
+          <input class="form__input" type="text" minl="4" maxl="100" id="form__tel_username" placeholder="Имя" />
+          <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
+          <small class="form__error">Введите имя</small>
+        </div>
+        <div class="form__control">
+          <input class="form__input" data-phone-pattern type="text" minl="17" maxl="17" id="form__tel_phone" placeholder="Телефон" />
+          <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
+          <small class="form__error">Введите телефон</small>
+        </div>
       </div>
       <div class="header__tel_bottom">
         <label class="header__tel_checkbox">
-          <input type="checkbox" name="header__tel_checkbox_input" class="header__tel_checkbox_input" required="">
+          <input type="checkbox" id="tel__checkbox" name="header__tel_checkbox_input" class="header__tel_checkbox_input">
           <span class="header__tel_checkbox_check">
             <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1.3335 3.73301L4.8335 7.33301L10.6668 1.33301" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -329,6 +337,15 @@
         <button class="btn btn__red header__tel_btn">Заказать звонок</button>
       </div>
     </form>
+    <div class="form__successfully" id="form__successfully_form__tel">
+      <div class="form__successfully_image">
+        <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M226.83 74.8303L98.8298 202.83C98.4583 203.202 98.0171 203.497 97.5315 203.699C97.046 203.9 96.5254 204.003 95.9998 204.003C95.4741 204.003 94.9536 203.9 94.468 203.699C93.9824 203.497 93.5413 203.202 93.1698 202.83L37.1698 146.83C36.4192 146.08 35.9976 145.062 35.9976 144C35.9976 142.939 36.4192 141.921 37.1698 141.17C37.9203 140.42 38.9383 139.998 39.9998 139.998C41.0612 139.998 42.0792 140.42 42.8298 141.17L95.9998 194.34L221.17 69.1703C221.92 68.4197 222.938 67.998 224 67.998C225.061 67.998 226.079 68.4197 226.83 69.1703C227.58 69.9208 228.002 70.9388 228.002 72.0003C228.002 73.0617 227.58 74.0797 226.83 74.8303Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <h4 class="form__successfully_head">Отправлено</h4>
+      <p class="form__successfully_desc">Форма заполнена и отправлена. Спасибо за обращение в ближайшее время мы свяжемся с вами</p>
+    </div>
   </div>
   <main class="main" data-scroll-container>
     <section class="top" data-scroll-section id="top"></section>
@@ -444,20 +461,36 @@
           <p class="feedback__heading"><b>Обратная связь</b></p>
           <div class="feedback__flex">
             <h2 class="feedback__head">Узнать стоимость, <br>задать вопрос</h2>
-            <form action="" class="feedback__form">
+            <form id="form__feedback" action="" class="form feedback__form">
               <div class="feedback__form_flex">
                 <div class="feedback__left">
-                  <input type="text" name="feedback__name" id="feedback__name" class="feedback__input" placeholder="ФИО" required>
-                  <input type="mail" name="feedback__mail" id="feedback__mail" class="feedback__input" placeholder="E-mail" required>
-                  <input type="text" name="feedback__phone" id="feedback__phone" class="feedback__input" placeholder="Телефон" required>
+                  <div class="form__control">
+                    <input class="form__input" type="text" minl="4" maxl="100" id="form__feedback_username" placeholder="Имя" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
+                    <small class="form__error">Введите имя</small>
+                  </div>
+                  <div class="form__control">
+                    <input class="form__input" type="text" minl="7" maxl="40" id="form__feedback_email" placeholder="E-mail" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
+                    <small class="form__error">Введите корректный email</small>
+                  </div>
+                  <div class="form__control">
+                    <input class="form__input" data-phone-pattern type="text" minl="17" maxl="17" id="form__feedback_phone" placeholder="Телефон" />
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
+                    <small class="form__error">Введите телефон</small>
+                  </div>
                 </div>
                 <div class="feedback__right">
-                  <textarea name="feedback__text" id="feedback__text" class="feedback__textarea" placeholder="Ваш вопрос" required></textarea>
+                  <div class="form__control">
+                    <textarea class="form__input feedback__textarea" type="text" minl="4" maxl="300" id="form__feedback_text" placeholder="Ваш вопрос"></textarea>
+                    <small class="form__counter"><span class="form__counter_min">0</span> из <span class="form__counter_max">0</span></small>
+                    <small class="form__error">Введите вопрос</small>
+                  </div>
                 </div>
               </div>
               <div class="feedback__bottom">
                 <label class="feedback__checkbox">
-                  <input type="checkbox" class="feedback__checkbox_input" required>
+                  <input type="checkbox" id="feedback__checkbox" name="feedback__checkbox_input" class="feedback__checkbox_input">
                   <span class="feedback__checkbox_check">
                     <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M1.3335 3.73301L4.8335 7.33301L10.6668 1.33301" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
@@ -468,6 +501,15 @@
                 <button class="btn btn__white feedback__btn">Отправить</button>
               </div>
             </form>
+            <div class="form__successfully" id="form__successfully_form__feedback">
+              <div class="form__successfully_image">
+                <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M226.83 74.8303L98.8298 202.83C98.4583 203.202 98.0171 203.497 97.5315 203.699C97.046 203.9 96.5254 204.003 95.9998 204.003C95.4741 204.003 94.9536 203.9 94.468 203.699C93.9824 203.497 93.5413 203.202 93.1698 202.83L37.1698 146.83C36.4192 146.08 35.9976 145.062 35.9976 144C35.9976 142.939 36.4192 141.921 37.1698 141.17C37.9203 140.42 38.9383 139.998 39.9998 139.998C41.0612 139.998 42.0792 140.42 42.8298 141.17L95.9998 194.34L221.17 69.1703C221.92 68.4197 222.938 67.998 224 67.998C225.061 67.998 226.079 68.4197 226.83 69.1703C227.58 69.9208 228.002 70.9388 228.002 72.0003C228.002 73.0617 227.58 74.0797 226.83 74.8303Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <h4 class="form__successfully_head">Отправлено</h4>
+              <p class="form__successfully_desc">Форма заполнена и отправлена. Спасибо за обращение в ближайшее время мы свяжемся с вами</p>
+            </div>
           </div>
         </div>
       </div>
@@ -602,5 +644,6 @@
   </script>
   <script src="js/swiper.min.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/form.js"></script>
 </body>
 </html>

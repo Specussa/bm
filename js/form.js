@@ -1,7 +1,3 @@
-// start autosize textarea
-autosize(document.querySelectorAll('textarea'));
-// end autosize textarea
-
 // start mask phone
 const phone_input = document.querySelector('[data-phone-pattern]');
 if (phone_input) {
@@ -87,6 +83,7 @@ if(formvacancy) {
   const vacancytext = document.getElementById('form__vacancy_text');
   const vacancyphone = document.getElementById('form__vacancy_phone');
   const vacancyfile = document.getElementById('form__vacancy_file');
+  const vacancycheckbox = document.getElementById('vacancy__checkbox');
   const vacancyusernameMin = vacancyusername.getAttribute('minl');
   const vacancyusernameMax = vacancyusername.getAttribute('maxl');
   const vacancyemailMin = vacancyemail.getAttribute('minl');
@@ -163,13 +160,19 @@ if(formvacancy) {
     } else {
       setErrorFor(vacancytext);
     }
+    if(vacancycheckbox.checked) {
+      vacancycheckbox.nextElementSibling.classList.remove('error');
+    } else {
+      vacancycheckbox.nextElementSibling.classList.add('error');
+    }
   
     if(!isFormEmailValid(vacancyemailValue)) {
       setErrorFor(vacancyemail);
-    } else if(vacancyusernameValue !== '' && vacancyusernameValue.length >= vacancyusernameMin && vacancyusernameValue.length <= vacancyusernameMax && 
-    vacancyemailValue === '' && vacancyemailValue.length >= vacancyemailMin && vacancyemailValue.length <= vacancyemailMax && 
+    } else if (vacancyusernameValue !== '' && vacancyusernameValue.length >= vacancyusernameMin && vacancyusernameValue.length <= vacancyusernameMax && 
+    vacancyemailValue !== '' && vacancyemailValue.length >= vacancyemailMin && vacancyemailValue.length <= vacancyemailMax && 
     vacancytextValue !== '' && vacancytextValue.length >= vacancytextMin && vacancytextValue.length <= vacancytextMax && 
-    vacancyphoneValue !== '' && vacancyphoneValue.length >= vacancyphoneMin && vacancyphoneValue.length <= vacancyphoneMax) {
+    vacancyphoneValue !== '' && vacancyphoneValue.length >= vacancyphoneMin && vacancyphoneValue.length <= vacancyphoneMax && 
+    vacancycheckbox.checked) {
       formvacancy.classList.add("hidden");
       document.getElementById('form__successfully_form__vacancy').classList.add("active");
       fetch('/ajax/sendMail.php', {
@@ -188,7 +191,8 @@ if(formvacancy) {
     } else if(vacancyusernameValue !== '' && vacancyusernameValue.length >= vacancyusernameMin && vacancyusernameValue.length <= vacancyusernameMax && 
     vacancyemailValue !== '' && vacancyemailValue.length >= vacancyemailMin && vacancyemailValue.length <= vacancyemailMax &&  
     vacancyphoneValue !== '' && vacancyphoneValue.length >= vacancyphoneMin && vacancyphoneValue.length <= vacancyphoneMax && 
-    vacancyfileValue !== '') {
+    vacancyfileValue !== '' && 
+    vacancycheckbox.checked) {
       formvacancy.classList.add("hidden");
       document.getElementById('form__successfully_form__vacancy').classList.add("active");
       fetch('/ajax/sendMail.php', {
@@ -270,3 +274,178 @@ if(formvacancy) {
   }
 }
 // end validate form vacancy
+
+// start validate form tel
+const formtel = document.getElementById('form__tel');
+if(formtel) {
+  const telusername = document.getElementById('form__tel_username');
+  const telphone = document.getElementById('form__tel_phone');
+  const telcheckbox = document.getElementById('tel__checkbox');
+  const telusernameMin = telusername.getAttribute('minl');
+  const telusernameMax = telusername.getAttribute('maxl');
+  const telphoneMin = telphone.getAttribute('minl');
+  const telphoneMax = telphone.getAttribute('maxl');
+  telusername.oninput = function(){
+    this.value = this.value.substr(0, telusernameMax);
+    this.value = this.value.replace(/[0-9]/g, '');
+    this.value = this.value.replace(/[()!?•—@:,'";№\-_=« »<>%#~`&\/\$\^\.\*\+\\\{\}\[\]\(\|]$/g, '')
+  }
+  telphone.oninput = function(){this.value = this.value.substr(0, telphoneMax);}
+
+  formtel.addEventListener('submit', e => {
+    e.preventDefault();
+    checkTelInputs();
+  });
+
+  function checkTelInputs() {
+    const telusernameValue = telusername.value.trim();
+    const telphoneValue = telphone.value.trim();
+  
+    if(telusernameValue !== '' && telusernameValue.length >= telusernameMin && telusernameValue.length <= telusernameMax) {
+      setSuccessFor(telusername);
+    } else {
+      setErrorFor(telusername);
+    }
+    if(telphoneValue !== '' && telphoneValue.length >= telphoneMin && telphoneValue.length <= telphoneMax) {
+      setSuccessFor(telphone);
+    } else {
+      setErrorFor(telphone);
+    }
+    if(telcheckbox.checked) {
+      telcheckbox.nextElementSibling.classList.remove('error');
+    } else {
+      telcheckbox.nextElementSibling.classList.add('error');
+    }
+  
+    if (telusernameValue !== '' && telusernameValue.length >= telusernameMin && telusernameValue.length <= telusernameMax && 
+    telphoneValue !== '' && telphoneValue.length >= telphoneMin && telphoneValue.length <= telphoneMax && 
+    telcheckbox.checked) {
+      formtel.classList.add("hidden");
+      document.getElementById('form__successfully_form__tel').classList.add("active");
+      fetch('/ajax/sendMail.php', {
+        method: 'POST',
+        body: JSON.stringify({
+          one: telusernameValue,
+          two: telphoneValue
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      });
+    }
+  }
+}
+// end validate form tel
+
+// start validate form feedback
+const formfeedback = document.getElementById('form__feedback');
+if(formfeedback) {
+  const feedbackusername = document.getElementById('form__feedback_username');
+  const feedbackemail = document.getElementById('form__feedback_email');
+  const feedbacktext = document.getElementById('form__feedback_text');
+  const feedbackphone = document.getElementById('form__feedback_phone');
+  const feedbackcheckbox = document.getElementById('feedback__checkbox');
+  const feedbackusernameMin = feedbackusername.getAttribute('minl');
+  const feedbackusernameMax = feedbackusername.getAttribute('maxl');
+  const feedbackemailMin = feedbackemail.getAttribute('minl');
+  const feedbackemailMax = feedbackemail.getAttribute('maxl');
+  const feedbacktextMin = feedbacktext.getAttribute('minl');
+  const feedbacktextMax = feedbacktext.getAttribute('maxl');
+  const feedbackphoneMin = feedbackphone.getAttribute('minl');
+  const feedbackphoneMax = feedbackphone.getAttribute('maxl');
+  feedbackusername.oninput = function(){
+    this.value = this.value.substr(0, feedbackusernameMax);
+    this.value = this.value.replace(/[0-9]/g, '');
+    this.value = this.value.replace(/[()!?•—@:,'";№\-_=« »<>%#~`&\/\$\^\.\*\+\\\{\}\[\]\(\|]$/g, '')
+  }
+  feedbackemail.oninput = function(){
+    this.value = this.value.substr(0, feedbackemailMax);
+    this.value = this.value.replace(/[()!?•—:,'";№\-_=« »<>%#~`&\/\$\^\*\+\\\{\}\[\]\(\|]$/g, '')
+  }
+  feedbacktext.oninput = function(){
+    this.value = this.value.substr(0, feedbacktextMax);
+    this.value = this.value.replace(/[•@:'";№\-_=« »<>%#~`&\/\$\^\*\+\\\{\}\[\]\(\|]$/g, '')
+  }
+  feedbackphone.oninput = function(){this.value = this.value.substr(0, feedbackphoneMax);}
+  feedbackemail.addEventListener('input', function () {
+    const feedbackemailValid = feedbackemail.value.trim();
+    this.nextElementSibling.children[0].textContent = Math.max(0, Math.min(this.getAttribute('maxl'), this.value.length));
+    if (this.value.length < this.getAttribute('minl')) {
+      this.parentElement.classList.add('error');
+      this.parentElement.classList.remove('success');
+      this.nextElementSibling.classList.remove('success');
+    } else if (!isFormEmailValid(feedbackemailValid)) {
+      this.parentElement.classList.add('error');
+      this.parentElement.classList.remove('success');
+      this.nextElementSibling.classList.remove('success');
+    } else {
+      this.parentElement.classList.remove('error');
+      this.parentElement.classList.add('success');
+      this.nextElementSibling.classList.add('success');
+    }
+  })
+
+  formfeedback.addEventListener('submit', e => {
+    e.preventDefault();
+    checkCareerInputs();
+  });
+
+  function checkCareerInputs() {
+    const feedbackusernameValue = feedbackusername.value.trim();
+    const feedbackemailValue = feedbackemail.value.trim();
+    const feedbacktextValue = feedbacktext.value.trim();
+    const feedbackphoneValue = feedbackphone.value.trim();
+  
+    if(feedbackusernameValue !== '' && feedbackusernameValue.length >= feedbackusernameMin && feedbackusernameValue.length <= feedbackusernameMax) {
+      setSuccessFor(feedbackusername);
+    } else {
+      setErrorFor(feedbackusername);
+    }
+    if(!isFormEmailValid(feedbackemailValue)) {
+      setErrorFor(feedbackemail);
+    } else if (feedbackemailValue !== '' && feedbackemailValue.length >= feedbackemailMin && feedbackemailValue.length <= feedbackemailMax) {
+      setSuccessFor(feedbackemail);
+    } else {
+      setErrorFor(feedbackemail);
+    }
+    if(feedbackphoneValue !== '' && feedbackphoneValue.length >= feedbackphoneMin && feedbackphoneValue.length <= feedbackphoneMax) {
+      setSuccessFor(feedbackphone);
+    } else {
+      setErrorFor(feedbackphone);
+    }
+    if(feedbacktextValue !== '' && feedbacktextValue.length >= feedbacktextMin && feedbacktextValue.length <= feedbacktextMax) {
+      setSuccessFor(feedbacktext);
+    } else {
+      setErrorFor(feedbacktext);
+    }
+    if(feedbackcheckbox.checked) {
+      feedbackcheckbox.nextElementSibling.classList.remove('error');
+    } else {
+      feedbackcheckbox.nextElementSibling.classList.add('error');
+    }
+  
+    if(!isFormEmailValid(feedbackemailValue)) {
+      setErrorFor(feedbackemail);
+    } else if (feedbackusernameValue !== '' && feedbackusernameValue.length >= feedbackusernameMin && feedbackusernameValue.length <= feedbackusernameMax && 
+    feedbackemailValue !== '' && feedbackemailValue.length >= feedbackemailMin && feedbackemailValue.length <= feedbackemailMax && 
+    feedbacktextValue !== '' && feedbacktextValue.length >= feedbacktextMin && feedbacktextValue.length <= feedbacktextMax && 
+    feedbackphoneValue !== '' && feedbackphoneValue.length >= feedbackphoneMin && feedbackphoneValue.length <= feedbackphoneMax && 
+    feedbackcheckbox.checked) {
+      formfeedback.classList.add("hidden");
+      document.getElementById('form__successfully_form__feedback').classList.add("active");
+      fetch('/ajax/sendMail.php', {
+        method: 'POST',
+        body: JSON.stringify({
+          one: feedbackusernameValue,
+          two: feedbackemailValue,
+          three: feedbacktextValue,
+          four: feedbackphoneValue
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      });
+    }
+  }
+}
+// end validate form feedback

@@ -16,6 +16,7 @@
   --black: #161616;
   --border: #3F3F3F;
   --red: #ef0010;
+  --green: #0fe397;
   --error: #d91717;
 }
 
@@ -676,6 +677,10 @@ html.has-scroll-dragging {
 
 /* start form */
 
+.form.hidden {
+  display: none;
+}
+
 .form__control {
   display: flex;
   margin: 0 0 13px;
@@ -808,6 +813,48 @@ html.has-scroll-dragging {
 }
 
 /* end form */
+
+/* start form__successfully */
+
+.form__successfully {
+  display: none;
+  max-width: 500px;
+}
+
+.form__successfully.active {
+  display: block;
+}
+
+.form__successfully_image {
+  width: 100%;
+  max-width: 200px;
+  max-height: 200px;
+  padding: 0 0 10px;
+  color: var(--green);
+}
+
+.form__successfully_image img,
+.form__successfully_image svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.form__successfully_head {
+  padding: 0 0 30px;
+}
+
+#form__successfully_form__feedback .form__successfully_head,
+#form__successfully_form__feedback .form__successfully_desc {
+  color: var(--white);
+}
+
+#form__successfully_form__tel,
+#form__successfully_form__vacancy {
+  padding: 0 40px;
+}
+
+/* end form__successfully */
 
 /* start showreel */
 
@@ -2094,6 +2141,20 @@ html.has-scroll-dragging {
   color: var(--text);
   background-color: var(--bg-lgray);
   border-radius: 5px;
+  -webkit-transition: background-color 0.15s linear;
+  transition: background-color 0.15s linear;
+}
+
+.header__tel_checkbox_check.error,
+.header__vacancy_checkbox_check.error {
+  background-color: var(--error);
+}
+
+.header__tel_checkbox_input:checked ~ .header__tel_checkbox_check,
+.header__tel_checkbox_input:checked ~ .header__tel_checkbox_check.error,
+.header__vacancy_checkbox_input:checked ~ .header__vacancy_checkbox_check,
+.header__vacancy_checkbox_input:checked ~ .header__vacancy_checkbox_check.error {
+  background-color: var(--bg-lgray);
 }
 
 .header__tel_checkbox_check svg,
@@ -2148,6 +2209,8 @@ html.has-scroll-dragging {
 
 .header__tel_popup textarea,
 .header__vacancy_popup textarea {
+  height: 100px;
+  max-height: 100px;
   border-radius: 2px;
 }
 
@@ -3275,10 +3338,22 @@ html.has-scroll-dragging {
   gap: 20px;
 }
 
-.feedback__left {
+.feedback__left,
+.feedback__right {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+}
+
+.feedback__right {
+  width: 410px;
+}
+
+.feedback__left {
+  width: 350px;
+}
+
+.feedback__right .form__control {
+  height: 100%;
 }
 
 .feedback__input {
@@ -3290,6 +3365,7 @@ html.has-scroll-dragging {
 .feedback__textarea {
   width: 410px;
   height: 100%;
+  max-height: 100%;
   padding: 15px;
 }
 
@@ -3376,6 +3452,17 @@ html.has-scroll-dragging {
   color: var(--white);
   background-color: var(--text);
   border-radius: 5px;
+  -webkit-transition: background-color 0.15s linear;
+  transition: background-color 0.15s linear;
+}
+
+.feedback__checkbox_check.error {
+  background-color: var(--error);
+}
+
+.feedback__checkbox_input:checked ~ .feedback__checkbox_check,
+.feedback__checkbox_input:checked ~ .feedback__checkbox_check.error {
+  background-color: var(--text);
 }
 
 .feedback__checkbox_check svg {
@@ -6641,6 +6728,10 @@ html.has-scroll-dragging {
     line-height: 25px;
   }
   .container {
+    padding: 0 20px;
+  }
+  #form__successfully_form__tel,
+  #form__successfully_form__vacancy {
     padding: 0 20px;
   }
   .header {
