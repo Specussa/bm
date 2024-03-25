@@ -8000,11 +8000,15 @@ html.has-scroll-dragging {
     padding: 20px 0;
   }
   .vacancy__info {
+    width: 100%;
     padding: 0 0 20px;
+    flex: 0 0 auto;
   }
   .vacancy__buttons {
+    width: 100%;
     max-width: 100%;
     padding: 0 0 20px;
+    flex: 0 0 auto;
     flex-direction: row;
     gap: 10px;
   }
