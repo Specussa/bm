@@ -84,7 +84,7 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  min-height: var(--height);
+  /* min-height: var(--height); */
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -4229,7 +4229,8 @@ html.has-scroll-dragging {
   padding: 20px 0 0;
 }
 
-.map__point {
+.map__point,
+.yamap__point {
   width: 60px;
   height: 72.79px;
   position: absolute;
@@ -4240,7 +4241,12 @@ html.has-scroll-dragging {
   transition: width 0.15s linear, height 0.15s linear, transform 0.15s linear;
 }
 
-.map__point.active {
+.yamap__point {
+  position: relative;
+}
+
+.map__point.active,
+.yamap__point.active {
   width: 90px;
   height: 109.18px;
   z-index: 2;
@@ -4248,7 +4254,8 @@ html.has-scroll-dragging {
   transform: translate(-15px, calc(-50% - 18.195px));
 }
 
-.map__point_back {
+.map__point_back,
+.yamap__point_back {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -4259,7 +4266,9 @@ html.has-scroll-dragging {
 }
 
 .map__point_logo,
-.map__point_image {
+.map__point_image,
+.yamap__point_logo,
+.yamap__point_image {
   display: flex;
   width: calc(100% - 20px);
   position: absolute;
@@ -4271,30 +4280,37 @@ html.has-scroll-dragging {
 
 .map__point_back svg,
 .map__point_logo svg,
-.map__point_image img {
+.map__point_image img,
+.yamap__point_back svg,
+.yamap__point_logo svg,
+.yamap__point_image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.map__point_logo {
+.map__point_logo,
+.yamap__point_logo {
   z-index: 2;
   -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
 
-.map__point_image {
+.map__point_image,
+.yamap__point_image {
   opacity: 0;
   z-index: 3;
   -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
 
-.map__point.active .map__point_logo {
+.map__point.active .map__point_logo,
+.yamap__point.active .yamap__point_logo {
   opacity: 0;
 }
 
-.map__point.active .map__point_image {
+.map__point.active .map__point_image,
+.yamap__point.active .yamap__point_image {
   opacity: 1;
 }
 
@@ -6423,6 +6439,71 @@ html.has-scroll-dragging {
 }
 
 /* end video */
+
+/* start yamap */
+
+.yamap__container {
+  padding: 0;
+}
+
+.yamap__map {
+  width: 100vw;
+  height: calc(100vh - 150px);
+}
+
+.yamap__zoom {
+  padding: 5px;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  z-index: 1;
+  background-color: var(--text);
+  -webkit-transform: translate(calc(-50% + 885px), -50%);
+  transform: translate(calc(-50% + 885px), -50%);
+}
+
+.yamap__zoom_plus,
+.yamap__zoom_minus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--white);
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
+}
+
+.yamap__zoom_plus {
+  margin: 0 0 5px;
+}
+
+.yamap__zoom_plus svg,
+.yamap__zoom_minus svg {
+  width: 14px;
+  height: 14px;
+}
+
+.yamap__zoom_plus svg path,
+.yamap__zoom_minus svg path {
+  fill: var(--text);
+  -webkit-transition: fill 0.2s linear;
+  transition: fill 0.2s linear;
+}
+
+.yamap__zoom_plus:hover,
+.yamap__zoom_minus:hover {
+  background-color: var(--red);
+}
+
+.yamap__zoom_plus:hover svg path,
+.yamap__zoom_minus:hover svg path {
+  fill: var(--white);
+}
+
+/* end yamap */
 
 /* max-width: 1919px */
 @media (max-width: 1919px){
