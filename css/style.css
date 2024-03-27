@@ -4233,8 +4233,7 @@ html.has-scroll-dragging {
   padding: 20px 0 0;
 }
 
-.map__point,
-.yamap__point {
+.map__point {
   width: 60px;
   height: 72.79px;
   position: absolute;
@@ -4245,17 +4244,37 @@ html.has-scroll-dragging {
   transition: width 0.15s linear, height 0.15s linear, transform 0.15s linear;
 }
 
-.yamap__point {
-  position: relative;
-}
-
-.map__point.active,
-.yamap__point.active {
+.map__point.active {
   width: 90px;
   height: 109.18px;
   z-index: 2;
   -webkit-transform: translate(-15px, calc(-50% - 18.195px));
   transform: translate(-15px, calc(-50% - 18.195px));
+}
+
+.yamap__point {
+  width: 60px;
+  height: 72.79px;
+  z-index: 1;
+  position: relative;
+  -webkit-transform: translate(-30px,-72.79px);
+  transform: translate(-30px,-72.79px);
+  -webkit-transition: width 0.15s linear, height 0.15s linear, -webkit-transform 0.15s linear;
+  transition: width 0.15s linear, height 0.15s linear, transform 0.15s linear;
+}
+
+.yamap__point.active {
+  width: 90px;
+  height: 109.18px;
+  z-index: 2;
+  -webkit-transform: translate(-45px, -109.18px);
+  transform: translate(-45px, -109.18px);
+}
+
+.yamap__point {
+  position: relative;
+  -webkit-transform: translate(-30px,-72.79px);
+  transform: translate(-30px,-72.79px);
 }
 
 .map__point_back,
@@ -6465,7 +6484,7 @@ html.has-scroll-dragging {
 .yamap__popup_flex {
   display: none;
   height: 70px;
-  padding: 0 40px;
+  padding: 0 20px 0 40px;
   align-items: center;
   justify-content: space-between;
   gap: 10px;

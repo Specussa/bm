@@ -587,8 +587,8 @@ if(maps) {
         iconShape: {   
           type: 'Rectangle',
           coordinates: [
-            [15, -40],
-            [60, 40],
+            [-25, -80],
+            [30, 0],
           ],
         }
       });
