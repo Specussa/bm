@@ -1094,8 +1094,7 @@ window.onload = function(){
           showreelmodal.classList.add('showreel__modal_visible');
           document.querySelector('.spec__overlay').classList.add('is-playing');
           showreelvideo.play();
-          document.body.style.overflow = "hidden";
-          document.body.style.height = "100vh";
+          html.classList.add("noscroll");
           var t;
           window.addEventListener('mousemove', () => {
             if (t) {
@@ -1116,8 +1115,7 @@ window.onload = function(){
           showreelmodal.classList.remove('showreel__modal_visible');
           showreelvideo.pause();
           showreelvideo.currentTime = 0;
-          document.body.style.overflow = null;
-          document.body.style.height = null;
+          html.classList.remove("noscroll");
         }
       }
       (function () {

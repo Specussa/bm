@@ -1,7 +1,281 @@
 // yamap
 
+// start del active points
+const yamapPopup = document.querySelector('.yamap__popup');
+const yamapPopupClose = document.querySelector('.yamap__popup_close');
+const yamapPopupButton = document.querySelector('.yamap__popup_button');
+const yamapOverlay = document.querySelector('.yamap__overlay');
+const yamapButtonOne = document.querySelector('.yamap__button_one');
+const yamapButtonTwo = document.querySelector('.yamap__button_two');
+const yamapButtonThree = document.querySelector('.yamap__button_three');
+const yamapButtonFour = document.querySelector('.yamap__button_four');
+const yamapButtonFive = document.querySelector('.yamap__button_five');
+const yamapButtonSix = document.querySelector('.yamap__button_six');
+const yamapButtonSeven = document.querySelector('.yamap__button_seven');
+const yamapButtonEight = document.querySelector('.yamap__button_eight');
+const yamapButtonNine = document.querySelector('.yamap__button_nine');
+const yamapButtonTen = document.querySelector('.yamap__button_ten');
+const yamapButtonEleven = document.querySelector('.yamap__button_eleven');
+const yamapInfoInner = document.querySelector('.yamap__info_inner');
+const yamapInfoPopup = document.querySelector('.yamap__info_popup');
+function delmappoint() {
+  document.querySelector('#yamapone').classList.remove("active");
+  document.querySelector('#yamaptwo').classList.remove("active");
+  document.querySelector('#yamapthree').classList.remove("active");
+  document.querySelector('#yamapfour').classList.remove("active");
+  document.querySelector('#yamapfive').classList.remove("active");
+  document.querySelector('#yamapsix').classList.remove("active");
+  document.querySelector('#yamapseven').classList.remove("active");
+  document.querySelector('#yamapeight').classList.remove("active");
+  document.querySelector('#yamapnine').classList.remove("active");
+  document.querySelector('#yamapten').classList.remove("active");
+  document.querySelector('#yamapeleven').classList.remove("active");
+  yamapButtonOne.classList.remove("active");
+  yamapButtonTwo.classList.remove("active");
+  yamapButtonThree.classList.remove("active");
+  yamapButtonFour.classList.remove("active");
+  yamapButtonFive.classList.remove("active");
+  yamapButtonSix.classList.remove("active");
+  yamapButtonSeven.classList.remove("active");
+  yamapButtonEight.classList.remove("active");
+  yamapButtonNine.classList.remove("active");
+  yamapButtonTen.classList.remove("active");
+  yamapButtonEleven.classList.remove("active");
+  yamapPopup.classList.remove("active");
+  yamapPopupButton.classList.remove("active");
+  yamapOverlay.classList.remove("active");
+  yamapPopupButton.children[0].innerHTML = "Выберите город";
+}
+// end
+
+// start yamap__popup
+yamapPopupButton.addEventListener('click', () => {
+  if (yamapPopupButton.classList.contains("active")) {
+    yamapPopup.classList.remove("active");
+    yamapPopupButton.classList.remove("active");
+    yamapOverlay.classList.remove("active");
+  } else {
+    delmappoint();
+    myMap.setCenter([55.253215,37.622504],5);
+    yamapInfoPopup.classList.remove("active");
+    yamapPopup.classList.add("active");
+    yamapPopupButton.classList.add("active");
+    yamapOverlay.classList.add("active");
+  };
+});
+yamapOverlay.addEventListener('click', () => {
+  yamapPopup.classList.remove("active");
+  yamapPopupButton.classList.remove("active");
+  yamapOverlay.classList.remove("active");
+});
+yamapPopupClose.addEventListener('click', () => {
+  yamapPopup.classList.remove("active");
+  yamapPopupButton.classList.remove("active");
+  yamapOverlay.classList.remove("active");
+});
+// end
+
+// start map buttons
+if(yamapButtonOne){
+  yamapButtonOne.addEventListener('click', () => {
+    if (yamapButtonOne.classList.contains("active")) {
+      delmappoint();
+      myMap.setCenter([55.253215,37.622504],5);
+      yamapInfoPopup.classList.remove("active");
+    } else {
+      delmappoint();
+      yamapInfoInner.innerHTML = yamapButtonOne.nextElementSibling.children[0].children[0].innerHTML;
+      yamapPopupButton.children[0].innerHTML = yamapButtonOne.children[0].innerHTML;
+      yamapInfoPopup.classList.add("active");
+      yamapButtonOne.classList.add("active");
+      myMap.setCenter([55.88088924541,37.423524915344],12);
+      document.querySelector('#yamapone').classList.add("active");
+    };
+  });
+}
+
+if(yamapButtonTwo){
+  yamapButtonTwo.addEventListener('click', () => {
+    if (yamapButtonTwo.classList.contains("active")) {
+      delmappoint();
+      myMap.setCenter([55.253215,37.622504],5);
+      yamapInfoPopup.classList.remove("active");
+    } else {
+      delmappoint();
+      yamapInfoInner.innerHTML = yamapButtonTwo.nextElementSibling.children[0].children[0].innerHTML;
+      yamapPopupButton.children[0].innerHTML = yamapButtonTwo.children[0].innerHTML;
+      yamapInfoPopup.classList.add("active");
+      yamapButtonTwo.classList.add("active");
+      myMap.setCenter([59.618243,30.172631],12);
+      document.querySelector('#yamaptwo').classList.add("active");
+    };
+  });
+}
+
+if(yamapButtonThree){
+  yamapButtonThree.addEventListener('click', () => {
+    if (yamapButtonThree.classList.contains("active")) {
+      delmappoint();
+      myMap.setCenter([55.253215,37.622504],5);
+      yamapInfoPopup.classList.remove("active");
+    } else {
+      delmappoint();
+      yamapInfoInner.innerHTML = yamapButtonThree.nextElementSibling.children[0].children[0].innerHTML;
+      yamapPopupButton.children[0].innerHTML = yamapButtonThree.children[0].innerHTML;
+      yamapInfoPopup.classList.add("active");
+      yamapButtonThree.classList.add("active");
+      myMap.setCenter([51.639685,39.324973],12);
+      document.querySelector('#yamapthree').classList.add("active");
+    };
+  });
+}
+
+if(yamapButtonFour){
+  yamapButtonFour.addEventListener('click', () => {
+    if (yamapButtonFour.classList.contains("active")) {
+      delmappoint();
+      myMap.setCenter([55.253215,37.622504],5);
+      yamapInfoPopup.classList.remove("active");
+    } else {
+      delmappoint();
+      yamapInfoInner.innerHTML = yamapButtonFour.nextElementSibling.children[0].children[0].innerHTML;
+      yamapPopupButton.children[0].innerHTML = yamapButtonFour.children[0].innerHTML;
+      yamapInfoPopup.classList.add("active");
+      yamapButtonFour.classList.add("active");
+      myMap.setCenter([51.627834,36.117242],12);
+      document.querySelector('#yamapfour').classList.add("active");
+    };
+  });
+}
+
+if(yamapButtonFive){
+  yamapButtonFive.addEventListener('click', () => {
+    if (yamapButtonFive.classList.contains("active")) {
+      delmappoint();
+      myMap.setCenter([55.253215,37.622504],5);
+      yamapInfoPopup.classList.remove("active");
+    } else {
+      delmappoint();
+      yamapInfoInner.innerHTML = yamapButtonFive.nextElementSibling.children[0].children[0].innerHTML;
+      yamapPopupButton.children[0].innerHTML = yamapButtonFive.children[0].innerHTML;
+      yamapInfoPopup.classList.add("active");
+      yamapButtonFive.classList.add("active");
+      myMap.setCenter([52.597220203418,39.458276316873],12);
+      document.querySelector('#yamapfive').classList.add("active");
+    };
+  });
+}
+
+if(yamapButtonSix){
+  yamapButtonSix.addEventListener('click', () => {
+    if (yamapButtonSix.classList.contains("active")) {
+      delmappoint();
+      myMap.setCenter([55.253215,37.622504],5);
+      yamapInfoPopup.classList.remove("active");
+    } else {
+      delmappoint();
+      yamapInfoInner.innerHTML = yamapButtonSix.nextElementSibling.children[0].children[0].innerHTML;
+      yamapPopupButton.children[0].innerHTML = yamapButtonSix.children[0].innerHTML;
+      yamapInfoPopup.classList.add("active");
+      yamapButtonSix.classList.add("active");
+      myMap.setCenter([52.923587,36.078570],12);
+      document.querySelector('#yamapsix').classList.add("active");
+    };
+  });
+}
+
+if(yamapButtonSeven){
+  yamapButtonSeven.addEventListener('click', () => {
+    if (yamapButtonSeven.classList.contains("active")) {
+      delmappoint();
+      myMap.setCenter([55.253215,37.622504],5);
+      yamapInfoPopup.classList.remove("active");
+    } else {
+      delmappoint();
+      yamapInfoInner.innerHTML = yamapButtonSeven.nextElementSibling.children[0].children[0].innerHTML;
+      yamapPopupButton.children[0].innerHTML = yamapButtonSeven.children[0].innerHTML;
+      yamapInfoPopup.classList.add("active");
+      yamapButtonSeven.classList.add("active");
+      myMap.setCenter([50.452752,40.148549],12);
+      document.querySelector('#yamapseven').classList.add("active");
+    };
+  });
+}
+
+if(yamapButtonEight){
+  yamapButtonEight.addEventListener('click', () => {
+    if (yamapButtonEight.classList.contains("active")) {
+      delmappoint();
+      myMap.setCenter([55.253215,37.622504],5);
+      yamapInfoPopup.classList.remove("active");
+    } else {
+      delmappoint();
+      yamapInfoInner.innerHTML = yamapButtonEight.nextElementSibling.children[0].children[0].innerHTML;
+      yamapPopupButton.children[0].innerHTML = yamapButtonEight.children[0].innerHTML;
+      yamapInfoPopup.classList.add("active");
+      yamapButtonEight.classList.add("active");
+      myMap.setCenter([53.270195255583,45.024497906746],12);
+      document.querySelector('#yamapeight').classList.add("active");
+    };
+  });
+}
+
+if(yamapButtonNine){
+  yamapButtonNine.addEventListener('click', () => {
+    if (yamapButtonNine.classList.contains("active")) {
+      delmappoint();
+      myMap.setCenter([55.253215,37.622504],5);
+      yamapInfoPopup.classList.remove("active");
+    } else {
+      delmappoint();
+      yamapInfoInner.innerHTML = yamapButtonNine.nextElementSibling.children[0].children[0].innerHTML;
+      yamapPopupButton.children[0].innerHTML = yamapButtonNine.children[0].innerHTML;
+      yamapInfoPopup.classList.add("active");
+      yamapButtonNine.classList.add("active");
+      myMap.setCenter([56.9816779,29.9243012],12);
+      document.querySelector('#yamapnine').classList.add("active");
+    };
+  });
+}
+
+if(yamapButtonTen){
+  yamapButtonTen.addEventListener('click', () => {
+    if (yamapButtonTen.classList.contains("active")) {
+      delmappoint();
+      myMap.setCenter([55.253215,37.622504],5);
+      yamapInfoPopup.classList.remove("active");
+    } else {
+      delmappoint();
+      yamapInfoInner.innerHTML = yamapButtonTen.nextElementSibling.children[0].children[0].innerHTML;
+      yamapPopupButton.children[0].innerHTML = yamapButtonTen.children[0].innerHTML;
+      yamapInfoPopup.classList.add("active");
+      yamapButtonTen.classList.add("active");
+      myMap.setCenter([54.647213,39.638701],12);
+      document.querySelector('#yamapten').classList.add("active");
+    };
+  });
+}
+
+if(yamapButtonEleven){
+  yamapButtonEleven.addEventListener('click', () => {
+    if (yamapButtonEleven.classList.contains("active")) {
+      delmappoint();
+      myMap.setCenter([55.253215,37.622504],5);
+      yamapInfoPopup.classList.remove("active");
+    } else {
+      delmappoint();
+      yamapInfoInner.innerHTML = yamapButtonEleven.nextElementSibling.children[0].children[0].innerHTML;
+      yamapPopupButton.children[0].innerHTML = yamapButtonEleven.children[0].innerHTML;
+      yamapInfoPopup.classList.add("active");
+      yamapButtonEleven.classList.add("active");
+      myMap.setCenter([52.650429,41.407760],12);
+      document.querySelector('#yamapeleven').classList.add("active");
+    };
+  });
+}
+// end
+
 // start yandex map
-const map = document.querySelectorAll('.yamap');
 const maps = document.querySelector('.yamap');
 if(maps) {
   var myMap,ymaps;
@@ -17,9 +291,9 @@ if(maps) {
       zoomControlSize: 'auto'
     });
 
-    if(oldWidth <= 1200){
-        myMap.behaviors.disable('drag');
-    }
+    // if(oldWidth <= 1200){
+    //     myMap.behaviors.disable('drag');
+    // }
 
     const zoomInBtn = document.getElementById('zoom-in');
     const zoomOutBtn = document.getElementById('zoom-out');
@@ -39,7 +313,7 @@ if(maps) {
     var data = {
       'points': [{
         "infoPoint": 
-        '<div id="mapmoscow" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapone" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -62,7 +336,7 @@ if(maps) {
         },
         {
         "infoPoint": 
-        '<div id="mappeterburg" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamaptwo" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -85,7 +359,7 @@ if(maps) {
         },
         {
         "infoPoint": 
-        '<div id="mapvoronezh" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapthree" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -108,7 +382,7 @@ if(maps) {
         },
         {
         "infoPoint": 
-        '<div id="mapkursk" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapfour" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -131,7 +405,7 @@ if(maps) {
         },
         {
         "infoPoint": 
-        '<div id="maplipetsk" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapfive" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -154,7 +428,7 @@ if(maps) {
         },
         {
         "infoPoint": 
-        '<div id="maporel" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapsix" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -177,7 +451,7 @@ if(maps) {
         },
         {
         "infoPoint": 
-        '<div id="mappavlovsck" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapseven" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -200,7 +474,7 @@ if(maps) {
         },
         {
         "infoPoint": 
-        '<div id="mappenza" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapeight" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -223,7 +497,7 @@ if(maps) {
         },
         {
         "infoPoint": 
-        '<div id="mappskov" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapnine" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -246,7 +520,7 @@ if(maps) {
         },
         {
         "infoPoint": 
-        '<div id="mapryazan" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapten" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -269,7 +543,7 @@ if(maps) {
         },
         {
         "infoPoint": 
-        '<div id="maptambov" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapeleven" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -300,9 +574,9 @@ if(maps) {
       results.push(createPlacemark(item));
     });
     myMap.geoObjects.add(mapCoordinates);
-    if(window.innerWidth <= 800){
-      myMap.behaviors.disable('scrollZoom');
-    }
+    // if(window.innerWidth <= 800){
+    //   myMap.behaviors.disable('scrollZoom');
+    // }
 
   // Создать метку
     function createPlacemark(item) {
@@ -330,71 +604,125 @@ if(maps) {
           thatCoordinates = e.get('coords');
         }
       });
-      var idmap = document.querySelectorAll('.map__search_city');
-      var thismapinfo = document.querySelector('.map__search_info');
-      var mapmoscow = document.getElementById('mapmoscow');
-      const maphead = document.querySelectorAll('.map__search_city .map__search_head');
-      const mapinfo = document.querySelectorAll('.map__search_city .map__search_info');
 
       // start map__point function
       function mappoint() {
+        yamapButtonOne.classList.remove("active");
+        yamapButtonTwo.classList.remove("active");
+        yamapButtonThree.classList.remove("active");
+        yamapButtonFour.classList.remove("active");
+        yamapButtonFive.classList.remove("active");
+        yamapButtonSix.classList.remove("active");
+        yamapButtonSeven.classList.remove("active");
+        yamapButtonEight.classList.remove("active");
+        yamapButtonNine.classList.remove("active");
+        yamapButtonTen.classList.remove("active");
+        yamapButtonEleven.classList.remove("active");
       }
       // end
       
-      if (mapmoscow.classList.contains("active")) {
+      if (document.querySelector('#yamapone').classList.contains("active")) {
         mappoint();
+        yamapButtonOne.parentNode.parentNode.scrollTop =  yamapButtonOne.offsetTop - yamapButtonOne.scrollHeight;
+        yamapInfoInner.innerHTML = yamapButtonOne.nextElementSibling.children[0].children[0].innerHTML;
+        yamapPopupButton.children[0].innerHTML = yamapButtonOne.children[0].innerHTML;
+        yamapInfoPopup.classList.add("active");
+        yamapButtonOne.classList.add("active");
         myMap.setCenter([55.88088924541,37.423524915344],12);
       } else {
         myMap.setCenter([55.253215,37.622504],5);
-      };
-      var mappeterburg = document.getElementById('mappeterburg');
-      if (mappeterburg.classList.contains("active")) {
         mappoint();
+        yamapInfoPopup.classList.remove("active");
+        yamapPopupButton.children[0].innerHTML = "Выберите город";
+      };
+      if (document.querySelector('#yamaptwo').classList.contains("active")) {
+        mappoint();
+        yamapButtonTwo.parentNode.parentNode.scrollTop =  yamapButtonTwo.offsetTop - yamapButtonTwo.scrollHeight;
+        yamapInfoInner.innerHTML = yamapButtonTwo.nextElementSibling.children[0].children[0].innerHTML;
+        yamapPopupButton.children[0].innerHTML = yamapButtonTwo.children[0].innerHTML;
+        yamapInfoPopup.classList.add("active");
+        yamapButtonTwo.classList.add("active");
         myMap.setCenter([59.618243,30.172631],12);
       } else {};
-      var mapvoronezh = document.getElementById('mapvoronezh');
-      if (mapvoronezh.classList.contains("active")) {
+      if (document.querySelector('#yamapthree').classList.contains("active")) {
         mappoint();
+        yamapButtonThree.parentNode.parentNode.scrollTop =  yamapButtonThree.offsetTop - yamapButtonThree.scrollHeight;
+        yamapInfoInner.innerHTML = yamapButtonThree.nextElementSibling.children[0].children[0].innerHTML;
+        yamapPopupButton.children[0].innerHTML = yamapButtonThree.children[0].innerHTML;
+        yamapInfoPopup.classList.add("active");
+        yamapButtonThree.classList.add("active");
         myMap.setCenter([51.639685,39.324973],12);
       } else {};
-      var mapkursk = document.getElementById('mapkursk');
-      if (mapkursk.classList.contains("active")) {
+      if (document.querySelector('#yamapfour').classList.contains("active")) {
         mappoint();
+        yamapButtonFour.parentNode.parentNode.scrollTop =  yamapButtonFour.offsetTop - yamapButtonFour.scrollHeight;
+        yamapInfoInner.innerHTML = yamapButtonFour.nextElementSibling.children[0].children[0].innerHTML;
+        yamapPopupButton.children[0].innerHTML = yamapButtonFour.children[0].innerHTML;
+        yamapInfoPopup.classList.add("active");
+        yamapButtonFour.classList.add("active");
         myMap.setCenter([51.627834,36.117242],12);
       } else {};
-      var maplipetsk = document.getElementById('maplipetsk');
-      if (maplipetsk.classList.contains("active")) {
+      if (document.querySelector('#yamapfive').classList.contains("active")) {
         mappoint();
+        yamapButtonFive.parentNode.parentNode.scrollTop =  yamapButtonFive.offsetTop - yamapButtonFive.scrollHeight;
+        yamapInfoInner.innerHTML = yamapButtonFive.nextElementSibling.children[0].children[0].innerHTML;
+        yamapPopupButton.children[0].innerHTML = yamapButtonFive.children[0].innerHTML;
+        yamapInfoPopup.classList.add("active");
+        yamapButtonFive.classList.add("active");
         myMap.setCenter([52.597220203418,39.458276316873],12);
       } else {};
-      var maporel = document.getElementById('maporel');
-      if (maporel.classList.contains("active")) {
+      if (document.querySelector('#yamapsix').classList.contains("active")) {
         mappoint();
+        yamapButtonSix.parentNode.parentNode.scrollTop =  yamapButtonSix.offsetTop - yamapButtonSix.scrollHeight;
+        yamapInfoInner.innerHTML = yamapButtonSix.nextElementSibling.children[0].children[0].innerHTML;
+        yamapPopupButton.children[0].innerHTML = yamapButtonSix.children[0].innerHTML;
+        yamapInfoPopup.classList.add("active");
+        yamapButtonSix.classList.add("active");
         myMap.setCenter([52.923587,36.078570],12);
       } else {};
-      var mappavlovsck = document.getElementById('mappavlovsck');
-      if (mappavlovsck.classList.contains("active")) {
+      if (document.querySelector('#yamapseven').classList.contains("active")) {
         mappoint();
+        yamapButtonSeven.parentNode.parentNode.scrollTop =  yamapButtonSeven.offsetTop - yamapButtonSeven.scrollHeight;
+        yamapInfoInner.innerHTML = yamapButtonSeven.nextElementSibling.children[0].children[0].innerHTML;
+        yamapPopupButton.children[0].innerHTML = yamapButtonSeven.children[0].innerHTML;
+        yamapInfoPopup.classList.add("active");
+        yamapButtonSeven.classList.add("active");
         myMap.setCenter([50.452752,40.148549],12);
       } else {};
-      var mappenza = document.getElementById('mappenza');
-      if (mappenza.classList.contains("active")) {
+      if (document.querySelector('#yamapeight').classList.contains("active")) {
         mappoint();
+        yamapButtonEight.parentNode.parentNode.scrollTop =  yamapButtonEight.offsetTop - yamapButtonEight.scrollHeight;
+        yamapInfoInner.innerHTML = yamapButtonEight.nextElementSibling.children[0].children[0].innerHTML;
+        yamapPopupButton.children[0].innerHTML = yamapButtonEight.children[0].innerHTML;
+        yamapInfoPopup.classList.add("active");
+        yamapButtonEight.classList.add("active");
         myMap.setCenter([53.270195255583,45.024497906746],12);
       } else {};
-      var mappskov = document.getElementById('mappskov');
-      if (mappskov.classList.contains("active")) {
+      if (document.querySelector('#yamapnine').classList.contains("active")) {
         mappoint();
+        yamapButtonNine.parentNode.parentNode.scrollTop =  yamapButtonNine.offsetTop - yamapButtonNine.scrollHeight;
+        yamapInfoInner.innerHTML = yamapButtonNine.nextElementSibling.children[0].children[0].innerHTML;
+        yamapPopupButton.children[0].innerHTML = yamapButtonNine.children[0].innerHTML;
+        yamapInfoPopup.classList.add("active");
+        yamapButtonNine.classList.add("active");
         myMap.setCenter([56.9816779,29.9243012],12);
       } else {};
-      var mapryazan = document.getElementById('mapryazan');
-      if (mapryazan.classList.contains("active")) {
+      if (document.querySelector('#yamapten').classList.contains("active")) {
         mappoint();
+        yamapButtonTen.parentNode.parentNode.scrollTop =  yamapButtonTen.offsetTop - yamapButtonTen.scrollHeight;
+        yamapInfoInner.innerHTML = yamapButtonTen.nextElementSibling.children[0].children[0].innerHTML;
+        yamapPopupButton.children[0].innerHTML = yamapButtonTen.children[0].innerHTML;
+        yamapInfoPopup.classList.add("active");
+        yamapButtonTen.classList.add("active");
         myMap.setCenter([54.647213,39.638701],12);
       } else {};
-      var maptambov = document.getElementById('maptambov');
-      if (maptambov.classList.contains("active")) {
+      if (document.querySelector('#yamapeleven').classList.contains("active")) {
         mappoint();
+        yamapButtonEleven.parentNode.parentNode.scrollTop =  yamapButtonEleven.offsetTop - yamapButtonEleven.scrollHeight;
+        yamapInfoInner.innerHTML = yamapButtonEleven.nextElementSibling.children[0].children[0].innerHTML;
+        yamapPopupButton.children[0].innerHTML = yamapButtonEleven.children[0].innerHTML;
+        yamapInfoPopup.classList.add("active");
+        yamapButtonEleven.classList.add("active");
         myMap.setCenter([52.650429,41.407760],12);
       } else {};
     });

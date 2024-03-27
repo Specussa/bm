@@ -84,7 +84,7 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* min-height: var(--height); */
+  min-height: calc(100vh - 100px);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -871,6 +871,7 @@ html.has-scroll-dragging {
 
 .inview {
   height: var(--height);
+  background-color: var(--text);
   position: relative;
   overflow: hidden;
 }
@@ -2060,7 +2061,8 @@ html.has-scroll-dragging {
 .catalog_filter__close,
 .header__region_close,
 .header__tel_close,
-.header__vacancy_close {
+.header__vacancy_close,
+.yamap__popup_close {
   display: flex;
   width: 32px;
   height: 32px;
@@ -2074,7 +2076,8 @@ html.has-scroll-dragging {
 .catalog_filter__close svg,
 .header__region_close svg,
 .header__tel_close svg,
-.header__vacancy_close svg {
+.header__vacancy_close svg,
+.yamap__popup_close svg {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -2088,7 +2091,8 @@ html.has-scroll-dragging {
 .catalog_filter__close:hover svg,
 .header__region_close:hover svg,
 .header__tel_close:hover svg,
-.header__vacancy_close:hover svg {
+.header__vacancy_close:hover svg,
+.yamap__popup_close:hover svg {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
@@ -6442,8 +6446,87 @@ html.has-scroll-dragging {
 
 /* start yamap */
 
+.yamap,
+.yamap[data-scroll-section] {
+  position: relative;
+  will-change: auto;
+  perspective: none !important;
+}
+
 .yamap__container {
   padding: 0;
+}
+
+.yamap__block {
+  display: flex;
+  flex-direction: column;
+}
+
+.yamap__popup_flex {
+  display: none;
+  height: 70px;
+  padding: 0 40px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.yamap__popup_button {
+  display: none;
+  height: 60px;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: var(--black);
+}
+
+.yamap__heading,
+.yamap__popup_button span {
+  display: -webkit-box;
+  color: var(--white);
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.yamap__heading {
+  color: var(--white);
+}
+
+.yamap__popup_button svg {
+  width: 30px;
+  height: 30px;
+  color: var(--white);
+  object-fit: contain;
+  -webkit-transition: -webkit-transform 0.3s linear;
+  transition: transform 0.3s linear;
+}
+
+.yamap__overlay {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 110;
+  opacity: 0;
+  visibility: hidden;
+  background: transparent;
+  -webkit-transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+  transition: visibility 0.3s linear, opacity 0.3s linear, background-color 0.3s linear;
+}
+
+.yamap__overlay.active {
+  background-color: rgba(43, 42, 40, 0.6);
+  opacity: 1;
+  visibility: visible;
+}
+
+.yamap__popup_button.active svg {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .yamap__map {
@@ -6458,8 +6541,8 @@ html.has-scroll-dragging {
   right: 50%;
   z-index: 1;
   background-color: var(--text);
-  -webkit-transform: translate(calc(-50% + 885px), -50%);
-  transform: translate(calc(-50% + 885px), -50%);
+  -webkit-transform: translate(calc(-50% + 890px), -50%);
+  transform: translate(calc(-50% + 890px), -50%);
 }
 
 .yamap__zoom_plus,
@@ -6503,10 +6586,182 @@ html.has-scroll-dragging {
   fill: var(--white);
 }
 
+.yamap__popup {
+  width: 100%;
+  max-width: 350px;
+  height: calc(100vh - 150px);
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  background-color: var(--black);
+  -webkit-transform: translateX(calc(-50% - 685px));
+  transform: translateX(calc(-50% - 685px));
+}
+
+.yamap__scroll {
+  height: calc(100vh - 190px);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.yamap__scroll::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+}
+
+.yamap__scroll::-webkit-scrollbar-thumb {
+  display: none;
+  width: 0px;
+}
+
+.yamap__head,
+.yamap__desc,
+.yamap__contact {
+  color: var(--white);
+}
+
+.yamap__info {
+  display: none;
+}
+
+.yamap__info_flex {
+  display: flex;
+  padding: 40px 0;
+  justify-content: space-between;
+  gap: 200px;
+}
+
+.yamap__info_left {
+  width: 350px;
+  height: 100%;
+}
+
+.yamap__info_right {
+  display: flex;
+  width: calc(100% - 550px);
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.yamap__email,
+.yamap__contacts,
+.yamap__desc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.yamap__email,
+.yamap__contacts {
+  flex: 0 0 auto;
+}
+
+.yamap__email::before,
+.yamap__contacts::before,
+.yamap__desc::before {
+  content: "";
+  display: flex;
+  width: 100%;
+  max-width: 117px;
+  height: 1px;
+  margin: 0 0 10px;
+  flex: 0 0 auto;
+  background-color: var(--white);
+}
+
+.yamap__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.yamap__button {
+  display: flex;
+  width: 100%;
+  padding: 16px 100px;
+  position: relative;
+  background-color: var(--black);
+  -webkit-transition: background-color 0.15s linear;
+  transition: background-color 0.15s linear;
+}
+
+.yamap__button.active,
+.yamap__button:hover {
+  background-color: var(--text);
+}
+
+.yamap__button.active::before {
+  content: "";
+  display: flex;
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--red);
+  z-index: 1;
+}
+
+.yamap__info_popup {
+  display: flex;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  opacity: 0;
+  background-color: var(--text);
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 1s;
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.1s, opacity 0s linear 0.4s;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.yamap__info_popup.active {
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.1s linear 0s;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.yamap__phone {
+  width: 100%;
+  min-width: 360px;
+  max-width: 360px;
+  height: 100px;
+  position: absolute;
+  top: -100px;
+  right: 100px;
+  z-index: 1;
+  -webkit-transition: -webkit-transform 1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 1s, background-color 0.15s linear, color 0.15s linear;
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.1s, opacity 0s linear 0.4s, background-color 0.15s linear, color 0.15s linear;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.yamap__info_popup.active .yamap__phone {
+  -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s, background-color 0.15s linear, color 0.15s linear;
+  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.1s linear 0s, background-color 0.15s linear, color 0.15s linear;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.yamap__info_inner {
+  position: relative;
+  z-index: 2;
+  background-color: var(--text);
+}
+
 /* end yamap */
 
 /* max-width: 1919px */
 @media (max-width: 1919px){
+  .main {
+    min-height: calc(100vh - 90px);
+  }
   h1 {
     font-size: 99px;
     line-height: 102px;
@@ -6744,12 +6999,48 @@ html.has-scroll-dragging {
   .video__container {
     padding: 0;
   }
+  .yamap__map,
+  .yamap__popup {
+    height: calc(100vh - 140px);
+  }
+  .yamap__scroll {
+    height: calc(100vh - 180px);
+  }
+  .yamap__info_flex {
+    gap: 40px;
+  }
+  .yamap__info_left {
+    width: 210px;
+  }
+  .yamap__info_right {
+    width: calc(100% - 250px);
+  }
+  .yamap__popup {
+    max-width: 250px;
+    left: 0px;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  .yamap__phone {
+    right: 0;
+  }
+  .yamap__zoom {
+    right: 40px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+  }
+  .yamap__button {
+    padding: 16px 40px;
+  }
 }
 /* max-width: 1919px */
 
 
 /* max-width: 1439px */
 @media (max-width: 1439px){
+  .main {
+    min-height: calc(100vh - 140px);
+  }
   a,
   p,
   li,
@@ -6933,12 +7224,14 @@ html.has-scroll-dragging {
   }
   .header__region_close,
   .header__tel_close,
-  .header__vacancy_close {
+  .header__vacancy_close,
+  .yamap__popup_close {
     position: relative;
     top: 0;
     right: 0;
   }
-  .header__region_close svg {
+  .header__region_close svg,
+  .yamap__popup_close svg {
     color: var(--white);
   }
   .header__bottom_block {
@@ -7568,6 +7861,18 @@ html.has-scroll-dragging {
   .video__container {
     padding: 0;
   }
+  .yamap__phone {
+    height: 80px;
+    min-width: 306px;
+    max-width: 306px;
+    top: -80px;
+  }
+  .yamap__zoom {
+    right: 20px;
+  }
+  .yamap__info_flex {
+    padding: 20px 0;
+  }
   .footer__top {
     padding: 30px 0;
     flex-wrap: wrap;
@@ -8098,6 +8403,9 @@ html.has-scroll-dragging {
 
 /* start 767px */
 @media (max-width: 767px) {
+  .main {
+    min-height: calc(100vh - 70px);
+  }
   .header__divider,
   .header__search,
   .header__region,
@@ -8196,6 +8504,99 @@ html.has-scroll-dragging {
   .video__popup.active {
     -webkit-transform: translate(-50%, calc(-50% - 35px));
     transform: translate(-50%, calc(-50% - 35px));
+  }
+  .yamap__overlay {
+    display: flex;
+  }
+  .yamap__phone {
+    height: 50px;
+    min-width: max-content;
+    max-width: max-content;
+    padding: 20px 40px;
+    top: -50px;
+  }
+  .yamap__popup {
+    height: calc(100vh - 70px);
+  }
+  .yamap__scroll {
+    height: calc(100vh - 90px);
+  }
+  .yamap__info_left {
+    display: none;
+  }
+  .yamap__info_right {
+    width: 100%;
+  }
+  .yamap__info_right {
+    flex-direction: column;
+  }
+  .yamap__email,
+  .yamap__contacts,
+  .yamap__desc {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .yamap__email::before,
+  .yamap__contacts::before,
+  .yamap__desc::before {
+    margin: 0 calc(100% - 117px) 20px 0;
+  }
+  .yamap__contact:not(:last-child)::after {
+    content: "•";
+    margin: 0 10px;
+  }
+  .yamap__popup {
+    max-width: 250px;
+    left: 0px;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  .yamap__popup {
+    width: 100%;
+    height: 100vh;
+    max-width: 380px;
+    padding: 0 0 20px;
+    position: fixed;
+    top: 0;
+    right: auto;
+    left: 0;
+    z-index: 111;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 1s;
+    transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.1s, opacity 0s linear 0.4s;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  .yamap__popup.active {
+    opacity: 1;
+    -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s;
+    transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.1s linear 0s;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  .yamap__zoom_plus:hover,
+  .yamap__zoom_minus:hover {
+    background-color: var(--white);
+  }
+  .yamap__zoom_plus:hover svg path,
+  .yamap__zoom_minus:hover svg path {
+    fill: var(--text);
+  }
+  .yamap__map {
+    height: calc(100vh - 130px);
+  }
+  .yamap__popup_flex,
+  .yamap__popup_button {
+    display: flex;
+  }
+  .yamap__list,
+  .yamap__button {
+    background-color: var(--text);
+  }
+  .yamap__button.active,
+  .yamap__button:hover {
+    background-color: var(--black);
   }
 }
 /* max-width: 767px */

@@ -350,7 +350,283 @@
   <main class="main" data-scroll-container>
     <section class="top" data-scroll-section id="top"></section>
     <section class="yamap" data-scroll-section>
+      <div class="yamap__overlay"></div>
+      <div class="yamap__popup popup">
+        <div class="yamap__popup_flex">
+          <h3 class="yamap__heading">Ваш город</h3>
+          <button class="yamap__popup_close popup__close">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M8.6259 8.62688C9.01643 8.23635 9.64959 8.23635 10.0401 8.62688L23.3734 21.9602C23.764 22.3507 23.764 22.9839 23.3734 23.3744C22.9829 23.7649 22.3498 23.7649 21.9592 23.3744L8.6259 10.0411C8.23538 9.65057 8.23538 9.0174 8.6259 8.62688Z" fill="currentColor"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M23.3734 8.62688C23.764 9.0174 23.764 9.65057 23.3734 10.0411L10.0401 23.3744C9.64959 23.7649 9.01643 23.7649 8.6259 23.3744C8.23538 22.9839 8.23538 22.3507 8.6259 21.9602L21.9592 8.62688C22.3498 8.23635 22.9829 8.23635 23.3734 8.62688Z" fill="currentColor"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="yamap__scroll">
+          <ul class="yamap__list">
+            <li class="yamap__item">
+              <button class="yamap__button yamap__button_one"><p class="yamap__head">г.Москва</p></button>
+              <div class="yamap__info">
+                <div class="container yamap__info_container">
+                  <div class="yamap__info_flex">
+                    <div class="yamap__info_left"></div>
+                    <div class="yamap__info_right">
+                      <p class="yamap__desc">Россия, Московская обл., г.Химки, ул.Бабакина, д.5, оф.7</p>
+                      <div class="yamap__contacts">
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                      </div>
+                      <div class="yamap__email">
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="yamap__item">
+              <button class="yamap__button yamap__button_two"><p class="yamap__head">г.Пенза</p></button>
+              <div class="yamap__info">
+                <div class="container yamap__info_container">
+                  <div class="yamap__info_flex">
+                    <div class="yamap__info_left"></div>
+                    <div class="yamap__info_right">
+                      <p class="yamap__desc">Россия, Московская обл., г.Химки, ул.Бабакина, д.5, оф.7</p>
+                      <div class="yamap__contacts">
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                      </div>
+                      <div class="yamap__email">
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="yamap__item">
+              <button class="yamap__button yamap__button_three"><p class="yamap__head">г.Самара</p></button>
+              <div class="yamap__info">
+                <div class="container yamap__info_container">
+                  <div class="yamap__info_flex">
+                    <div class="yamap__info_left"></div>
+                    <div class="yamap__info_right">
+                      <p class="yamap__desc">Россия, Московская обл., г.Химки, ул.Бабакина, д.5, оф.7</p>
+                      <div class="yamap__contacts">
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                      </div>
+                      <div class="yamap__email">
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="yamap__item">
+              <button class="yamap__button yamap__button_four"><p class="yamap__head">г.Москва</p></button>
+              <div class="yamap__info">
+                <div class="container yamap__info_container">
+                  <div class="yamap__info_flex">
+                    <div class="yamap__info_left"></div>
+                    <div class="yamap__info_right">
+                      <p class="yamap__desc">Россия, Московская обл., г.Химки, ул.Бабакина, д.5, оф.7</p>
+                      <div class="yamap__contacts">
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                      </div>
+                      <div class="yamap__email">
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="yamap__item">
+              <button class="yamap__button yamap__button_five"><p class="yamap__head">г.Москва</p></button>
+              <div class="yamap__info">
+                <div class="container yamap__info_container">
+                  <div class="yamap__info_flex">
+                    <div class="yamap__info_left"></div>
+                    <div class="yamap__info_right">
+                      <p class="yamap__desc">Россия, Московская обл., г.Химки, ул.Бабакина, д.5, оф.7</p>
+                      <div class="yamap__contacts">
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                      </div>
+                      <div class="yamap__email">
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="yamap__item">
+              <button class="yamap__button yamap__button_six"><p class="yamap__head">г.Москва</p></button>
+              <div class="yamap__info">
+                <div class="container yamap__info_container">
+                  <div class="yamap__info_flex">
+                    <div class="yamap__info_left"></div>
+                    <div class="yamap__info_right">
+                      <p class="yamap__desc">Россия, Московская обл., г.Химки, ул.Бабакина, д.5, оф.7</p>
+                      <div class="yamap__contacts">
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                      </div>
+                      <div class="yamap__email">
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="yamap__item">
+              <button class="yamap__button yamap__button_seven"><p class="yamap__head">г.Москва</p></button>
+              <div class="yamap__info">
+                <div class="container yamap__info_container">
+                  <div class="yamap__info_flex">
+                    <div class="yamap__info_left"></div>
+                    <div class="yamap__info_right">
+                      <p class="yamap__desc">Россия, Московская обл., г.Химки, ул.Бабакина, д.5, оф.7</p>
+                      <div class="yamap__contacts">
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                      </div>
+                      <div class="yamap__email">
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="yamap__item">
+              <button class="yamap__button yamap__button_eight"><p class="yamap__head">г.Москва</p></button>
+              <div class="yamap__info">
+                <div class="container yamap__info_container">
+                  <div class="yamap__info_flex">
+                    <div class="yamap__info_left"></div>
+                    <div class="yamap__info_right">
+                      <p class="yamap__desc">Россия, Московская обл., г.Химки, ул.Бабакина, д.5, оф.7</p>
+                      <div class="yamap__contacts">
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                      </div>
+                      <div class="yamap__email">
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="yamap__item">
+              <button class="yamap__button yamap__button_nine"><p class="yamap__head">г.Москва</p></button>
+              <div class="yamap__info">
+                <div class="container yamap__info_container">
+                  <div class="yamap__info_flex">
+                    <div class="yamap__info_left"></div>
+                    <div class="yamap__info_right">
+                      <p class="yamap__desc">Россия, Московская обл., г.Химки, ул.Бабакина, д.5, оф.7</p>
+                      <div class="yamap__contacts">
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                      </div>
+                      <div class="yamap__email">
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="yamap__item">
+              <button class="yamap__button yamap__button_ten"><p class="yamap__head">г.Москва</p></button>
+              <div class="yamap__info">
+                <div class="container yamap__info_container">
+                  <div class="yamap__info_flex">
+                    <div class="yamap__info_left"></div>
+                    <div class="yamap__info_right">
+                      <p class="yamap__desc">Россия, Московская обл., г.Химки, ул.Бабакина, д.5, оф.7</p>
+                      <div class="yamap__contacts">
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                      </div>
+                      <div class="yamap__email">
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="yamap__item">
+              <button class="yamap__button yamap__button_eleven"><p class="yamap__head">г.Москва</p></button>
+              <div class="yamap__info">
+                <div class="container yamap__info_container">
+                  <div class="yamap__info_flex">
+                    <div class="yamap__info_left"></div>
+                    <div class="yamap__info_right">
+                      <p class="yamap__desc">Россия, Московская обл., г.Химки, ул.Бабакина, д.5, оф.7</p>
+                      <div class="yamap__contacts">
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                        <a href="tel://+7902300200" class="yamap__contact">8 902 300 200</a>
+                      </div>
+                      <div class="yamap__email">
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                        <a href="mailto://mail@gmail.com" class="yamap__contact">mail@gmail.com</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="yamap__info_popup">
+        <div class="container yamap__info_container">
+          <div class="yamap__info_block">
+            <div class="yamap__info_flex yamap__info_inner"></div>
+            <a href="tel://88002002252" class="btn btn__red yamap__phone">
+              <b>8 (800) 200-22-52</b>
+            </a>
+          </div>
+        </div>
+      </div>
       <div class="yamap__block">
+        <button class="yamap__popup_button">
+          <span>Выберите город</span>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.46094 8.17993V10.6681C8.46094 10.8394 8.55244 10.9981 8.70094 11.0836L14.7645 14.5843C15.0843 14.7691 15.0843 15.2308 14.7645 15.4156L8.70094 18.9163C8.55244 19.0021 8.46094 19.1605 8.46094 19.3318V21.82C8.46094 22.1893 8.86084 22.4203 9.18064 22.2355L20.9931 15.4156C21.3129 15.2308 21.3129 14.7691 20.9931 14.5843L9.18064 7.76413C8.86084 7.57963 8.46094 7.81033 8.46094 8.17993Z" fill="currentColor"/>
+            <path d="M20.9971 14.5842L9.18459 7.76403C9.14875 7.74323 9.13349 7.78093 9.16937 7.80165L20.3971 14.2839C20.7169 14.4687 20.7169 14.9304 20.3971 15.1152L8.58459 21.9354C8.53689 21.9631 8.50571 22.0166 8.53387 22.064C8.66063 22.2773 8.94435 22.3742 9.18459 22.2354L20.9971 15.4155C21.3172 15.2307 21.3172 14.7687 20.9971 14.5842Z" fill="currentColor"/>
+            <path d="M8.46094 8.17993V10.6681C8.46094 10.8394 8.55244 10.9981 8.70094 11.0836L14.7645 14.5843C15.0843 14.7691 15.0843 15.2308 14.7645 15.4156L8.70094 18.9163C8.55244 19.0021 8.46094 19.1605 8.46094 19.3318V21.82C8.46094 22.1893 8.86084 22.4203 9.18064 22.2355L20.9931 15.4156C21.3129 15.2308 21.3129 14.7691 20.9931 14.5843L9.18064 7.76413C8.86084 7.57963 8.46094 7.81033 8.46094 8.17993Z" stroke="currentColor" stroke-width="0.3" stroke-miterlimit="10"/>
+          </svg>
+        </button>
         <div class="yamap__zoom">
           <button class="yamap__zoom_plus" id="zoom-in"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.8 13.2V24H13.2V13.2H24V10.8H13.2V0H10.8V10.8H0V13.2H10.8Z" fill="currentColor"/></svg></button>
           <button class="yamap__zoom_minus" id="zoom-out"><svg width="24" height="4" viewBox="0 0 24 4" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0.800049H24V3.20005H0V0.800049Z" fill="currentColor"/></svg></button>
