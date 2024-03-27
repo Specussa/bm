@@ -328,7 +328,7 @@ if(maps) {
             </svg>\
           </div>\
           <div class="yamap__point_image">\
-            <img src="../img/map/map_1.webp" alt="">\
+            <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
         "latitude": 55.88088924541,
@@ -351,7 +351,7 @@ if(maps) {
             </svg>\
           </div>\
           <div class="yamap__point_image">\
-            <img src="../img/map/map_1.webp" alt="">\
+            <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
         "latitude": 59.618243,
@@ -374,7 +374,7 @@ if(maps) {
             </svg>\
           </div>\
           <div class="yamap__point_image">\
-            <img src="../img/map/map_1.webp" alt="">\
+            <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
         "latitude": 51.639685,
@@ -397,7 +397,7 @@ if(maps) {
             </svg>\
           </div>\
           <div class="yamap__point_image">\
-            <img src="../img/map/map_1.webp" alt="">\
+            <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
         "latitude": 51.627834,
@@ -420,7 +420,7 @@ if(maps) {
             </svg>\
           </div>\
           <div class="yamap__point_image">\
-            <img src="../img/map/map_1.webp" alt="">\
+            <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
         "latitude": 52.597220203418,
@@ -443,7 +443,7 @@ if(maps) {
             </svg>\
           </div>\
           <div class="yamap__point_image">\
-            <img src="../img/map/map_1.webp" alt="">\
+            <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
         "latitude": 52.923587,
@@ -466,7 +466,7 @@ if(maps) {
             </svg>\
           </div>\
           <div class="yamap__point_image">\
-            <img src="../img/map/map_1.webp" alt="">\
+            <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
         "latitude": 50.452752,
@@ -489,7 +489,7 @@ if(maps) {
             </svg>\
           </div>\
           <div class="yamap__point_image">\
-            <img src="../img/map/map_1.webp" alt="">\
+            <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
         "latitude": 53.270195255583,
@@ -512,7 +512,7 @@ if(maps) {
             </svg>\
           </div>\
           <div class="yamap__point_image">\
-            <img src="../img/map/map_1.webp" alt="">\
+            <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
         "latitude": 56.9816779,
@@ -535,7 +535,7 @@ if(maps) {
             </svg>\
           </div>\
           <div class="yamap__point_image">\
-            <img src="../img/map/map_1.webp" alt="">\
+            <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
         "latitude": 54.647213,
@@ -558,7 +558,7 @@ if(maps) {
             </svg>\
           </div>\
           <div class="yamap__point_image">\
-            <img src="../img/map/map_1.webp" alt="">\
+            <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
         "latitude": 52.650429,
