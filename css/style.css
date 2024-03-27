@@ -6757,15 +6757,15 @@ html.has-scroll-dragging {
   z-index: 1;
   -webkit-transition: -webkit-transform 1s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 1s, background-color 0.15s linear, color 0.15s linear;
   transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1) 0.1s, opacity 0s linear 0.4s, background-color 0.15s linear, color 0.15s linear;
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
 }
 
 .yamap__info_popup.active .yamap__phone {
   -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0.2s, opacity 0s linear 0s, background-color 0.15s linear, color 0.15s linear;
   transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1) 0s, opacity 0.1s linear 0s, background-color 0.15s linear, color 0.15s linear;
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
 }
 
 .yamap__info_inner {
@@ -7042,6 +7042,12 @@ html.has-scroll-dragging {
   }
   .yamap__phone {
     right: 0;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  .yamap__info_popup.active .yamap__phone {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
   .yamap__zoom {
     right: 40px;
