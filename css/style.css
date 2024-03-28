@@ -6502,6 +6502,8 @@ html.has-scroll-dragging {
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+  position: relative;
+  z-index: 2;
   background-color: var(--black);
 }
 
@@ -8585,7 +8587,7 @@ html.has-scroll-dragging {
   .yamap__popup {
     width: 100%;
     height: 100vh;
-    max-width: 380px;
+    max-width: calc(100% - 40px);
     padding: 0 0 20px;
     position: fixed;
     top: 0;
@@ -8851,6 +8853,9 @@ html.has-scroll-dragging {
   }
   .achievements__image {
     height: 230px;
+  }
+  .yamap__list {
+    gap: 10px;
   }
   .footer__desc {
     max-width: 100%;
