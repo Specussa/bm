@@ -6622,8 +6622,8 @@ html.has-scroll-dragging {
   left: 50%;
   z-index: 3;
   background-color: var(--black);
-  -webkit-transform: translateX(calc(-50% - 685px));
-  transform: translateX(calc(-50% - 685px));
+  -webkit-transform: translateX(calc(-50% - 785px));
+  transform: translateX(calc(-50% - 785px));
 }
 
 .yamap__scroll {
