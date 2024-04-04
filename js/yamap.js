@@ -76,6 +76,7 @@ yamapPopupClose.addEventListener('click', () => {
 // end
 
 // start map buttons
+// Москва
 if(yamapButtonOne){
   yamapButtonOne.addEventListener('click', () => {
     if (yamapButtonOne.classList.contains("active")) {
@@ -88,12 +89,12 @@ if(yamapButtonOne){
       yamapPopupButton.children[0].innerHTML = yamapButtonOne.children[0].innerHTML;
       yamapInfoPopup.classList.add("active");
       yamapButtonOne.classList.add("active");
-      myMap.setCenter([55.88088924541,37.423524915344],12);
+      myMap.setCenter([55.88082856885077,37.423437499999956],12);
       document.querySelector('#yamapone').classList.add("active");
     };
   });
 }
-
+// Рязань
 if(yamapButtonTwo){
   yamapButtonTwo.addEventListener('click', () => {
     if (yamapButtonTwo.classList.contains("active")) {
@@ -106,12 +107,12 @@ if(yamapButtonTwo){
       yamapPopupButton.children[0].innerHTML = yamapButtonTwo.children[0].innerHTML;
       yamapInfoPopup.classList.add("active");
       yamapButtonTwo.classList.add("active");
-      myMap.setCenter([59.618243,30.172631],12);
+      myMap.setCenter([54.64721307003627,39.63870999999999],12);
       document.querySelector('#yamaptwo').classList.add("active");
     };
   });
 }
-
+// Пенза
 if(yamapButtonThree){
   yamapButtonThree.addEventListener('click', () => {
     if (yamapButtonThree.classList.contains("active")) {
@@ -124,12 +125,12 @@ if(yamapButtonThree){
       yamapPopupButton.children[0].innerHTML = yamapButtonThree.children[0].innerHTML;
       yamapInfoPopup.classList.add("active");
       yamapButtonThree.classList.add("active");
-      myMap.setCenter([51.639685,39.324973],12);
+      myMap.setCenter([53.2699360711638,45.02489149999999],12);
       document.querySelector('#yamapthree').classList.add("active");
     };
   });
 }
-
+// Орёл
 if(yamapButtonFour){
   yamapButtonFour.addEventListener('click', () => {
     if (yamapButtonFour.classList.contains("active")) {
@@ -142,12 +143,12 @@ if(yamapButtonFour){
       yamapPopupButton.children[0].innerHTML = yamapButtonFour.children[0].innerHTML;
       yamapInfoPopup.classList.add("active");
       yamapButtonFour.classList.add("active");
-      myMap.setCenter([51.627834,36.117242],12);
+      myMap.setCenter([52.92358707142793,36.07856949999995],12);
       document.querySelector('#yamapfour').classList.add("active");
     };
   });
 }
-
+// Курск
 if(yamapButtonFive){
   yamapButtonFive.addEventListener('click', () => {
     if (yamapButtonFive.classList.contains("active")) {
@@ -160,12 +161,12 @@ if(yamapButtonFive){
       yamapPopupButton.children[0].innerHTML = yamapButtonFive.children[0].innerHTML;
       yamapInfoPopup.classList.add("active");
       yamapButtonFive.classList.add("active");
-      myMap.setCenter([52.597220203418,39.458276316873],12);
+      myMap.setCenter([51.627834072323296,36.117241999999955],12);
       document.querySelector('#yamapfive').classList.add("active");
     };
   });
 }
-
+// Воронеж
 if(yamapButtonSix){
   yamapButtonSix.addEventListener('click', () => {
     if (yamapButtonSix.classList.contains("active")) {
@@ -178,12 +179,12 @@ if(yamapButtonSix){
       yamapPopupButton.children[0].innerHTML = yamapButtonSix.children[0].innerHTML;
       yamapInfoPopup.classList.add("active");
       yamapButtonSix.classList.add("active");
-      myMap.setCenter([52.923587,36.078570],12);
+      myMap.setCenter([51.631278072332194,39.33890599999997],12);
       document.querySelector('#yamapsix').classList.add("active");
     };
   });
 }
-
+// Липецк
 if(yamapButtonSeven){
   yamapButtonSeven.addEventListener('click', () => {
     if (yamapButtonSeven.classList.contains("active")) {
@@ -196,12 +197,12 @@ if(yamapButtonSeven){
       yamapPopupButton.children[0].innerHTML = yamapButtonSeven.children[0].innerHTML;
       yamapInfoPopup.classList.add("active");
       yamapButtonSeven.classList.add("active");
-      myMap.setCenter([50.452752,40.148549],12);
+      myMap.setCenter([52.59647607167905,39.45774449999999],12);
       document.querySelector('#yamapseven').classList.add("active");
     };
   });
 }
-
+// Тамбов
 if(yamapButtonEight){
   yamapButtonEight.addEventListener('click', () => {
     if (yamapButtonEight.classList.contains("active")) {
@@ -214,12 +215,12 @@ if(yamapButtonEight){
       yamapPopupButton.children[0].innerHTML = yamapButtonEight.children[0].innerHTML;
       yamapInfoPopup.classList.add("active");
       yamapButtonEight.classList.add("active");
-      myMap.setCenter([53.270195255583,45.024497906746],12);
+      myMap.setCenter([52.65324657162419,41.43672399999999],12);
       document.querySelector('#yamapeight').classList.add("active");
     };
   });
 }
-
+// Павловск
 if(yamapButtonNine){
   yamapButtonNine.addEventListener('click', () => {
     if (yamapButtonNine.classList.contains("active")) {
@@ -232,12 +233,12 @@ if(yamapButtonNine){
       yamapPopupButton.children[0].innerHTML = yamapButtonNine.children[0].innerHTML;
       yamapInfoPopup.classList.add("active");
       yamapButtonNine.classList.add("active");
-      myMap.setCenter([56.9816779,29.9243012],12);
+      myMap.setCenter([50.4533660730111,40.148216500000004],12);
       document.querySelector('#yamapnine').classList.add("active");
     };
   });
 }
-
+// Псков
 if(yamapButtonTen){
   yamapButtonTen.addEventListener('click', () => {
     if (yamapButtonTen.classList.contains("active")) {
@@ -250,12 +251,12 @@ if(yamapButtonTen){
       yamapPopupButton.children[0].innerHTML = yamapButtonTen.children[0].innerHTML;
       yamapInfoPopup.classList.add("active");
       yamapButtonTen.classList.add("active");
-      myMap.setCenter([54.647213,39.638701],12);
+      myMap.setCenter([57.83131806677265,28.298539499999958],12);
       document.querySelector('#yamapten').classList.add("active");
     };
   });
 }
-
+// Санкт-Петербург
 if(yamapButtonEleven){
   yamapButtonEleven.addEventListener('click', () => {
     if (yamapButtonEleven.classList.contains("active")) {
@@ -268,7 +269,7 @@ if(yamapButtonEleven){
       yamapPopupButton.children[0].innerHTML = yamapButtonEleven.children[0].innerHTML;
       yamapInfoPopup.classList.add("active");
       yamapButtonEleven.classList.add("active");
-      myMap.setCenter([52.650429,41.407760],12);
+      myMap.setCenter([59.61838206459388,30.172981999999966],12);
       document.querySelector('#yamapeleven').classList.add("active");
     };
   });
@@ -313,7 +314,7 @@ if(maps) {
     var data = {
       'points': [{
         "infoPoint": 
-        '<div id="yamapone" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapone" map="г.Москва" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -331,12 +332,12 @@ if(maps) {
             <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
-        "latitude": 55.88088924541,
-        "longitude": 37.423524915344,
+        "latitude": 55.88082856885077,
+        "longitude": 37.423437499999956,
         },
         {
         "infoPoint": 
-        '<div id="yamaptwo" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamaptwo" map="г.Рязань" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -354,12 +355,12 @@ if(maps) {
             <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
-        "latitude": 59.618243,
-        "longitude": 30.172631,
+        "latitude": 54.64721307003627,
+        "longitude": 39.63870999999999,
         },
         {
         "infoPoint": 
-        '<div id="yamapthree" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapthree" map="г.Пенза" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -377,12 +378,12 @@ if(maps) {
             <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
-        "latitude": 51.639685,
-        "longitude": 39.324973,
+        "latitude": 53.2699360711638,
+        "longitude": 45.02489149999999,
         },
         {
         "infoPoint": 
-        '<div id="yamapfour" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapfour" map="г.Орёл" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -400,12 +401,12 @@ if(maps) {
             <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
-        "latitude": 51.627834,
-        "longitude": 36.117242,
+        "latitude": 52.92358707142793,
+        "longitude": 36.07856949999995,
         },
         {
         "infoPoint": 
-        '<div id="yamapfive" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapfive" map="г.Курск" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -423,12 +424,12 @@ if(maps) {
             <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
-        "latitude": 52.597220203418,
-        "longitude": 39.458276316873,
+        "latitude": 51.627834072323296,
+        "longitude": 36.117241999999955,
         },
         {
         "infoPoint": 
-        '<div id="yamapsix" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapsix" map="г.Воронеж" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -446,12 +447,12 @@ if(maps) {
             <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
-        "latitude": 52.923587,
-        "longitude": 36.078570,
+        "latitude": 51.631278072332194,
+        "longitude": 39.33890599999997,
         },
         {
         "infoPoint": 
-        '<div id="yamapseven" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapseven" map="г.Липецк" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -469,12 +470,12 @@ if(maps) {
             <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
-        "latitude": 50.452752,
-        "longitude": 40.148549,
+        "latitude": 52.59647607167905,
+        "longitude": 39.45774449999999,
         },
         {
         "infoPoint": 
-        '<div id="yamapeight" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapeight" map="г.Тамбов" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -492,12 +493,12 @@ if(maps) {
             <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
-        "latitude": 53.270195255583,
-        "longitude": 45.024497906746,
+        "latitude": 52.65324657162419,
+        "longitude": 41.43672399999999,
         },
         {
         "infoPoint": 
-        '<div id="yamapnine" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapnine" map="г.Павловск" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -515,12 +516,12 @@ if(maps) {
             <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
-        "latitude": 56.9816779,
-        "longitude": 29.9243012,
+        "latitude": 50.4533660730111,
+        "longitude": 40.148216500000004,
         },
         {
         "infoPoint": 
-        '<div id="yamapten" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapten" map="г.Псков" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -538,12 +539,12 @@ if(maps) {
             <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
-        "latitude": 54.647213,
-        "longitude": 39.638701,
+        "latitude": 57.83131806677265,
+        "longitude": 28.298539499999958,
         },
         {
         "infoPoint": 
-        '<div id="yamapeleven" class="yamap__point{% if properties.active %} active{% endif %}">\
+        '<div id="yamapeleven" map="г.Санкт-Петербург" class="yamap__point{% if properties.active %} active{% endif %}">\
           <div class="yamap__point_back">\
             <svg width="60" height="73" viewBox="0 0 60 73" fill="none" xmlns="http://www.w3.org/2000/svg">\
               <path d="M60 30.2355C60 46.9336 30 72.7879 30 72.7879C30 72.7879 0 46.9336 0 30.2355C0 13.5374 13.4315 0.000976562 30 0.000976562C46.5685 0.000976562 60 13.5374 60 30.2355Z" fill="currentColor"></path>\
@@ -561,8 +562,8 @@ if(maps) {
             <img src="./img/map/map_1.webp" alt="">\
           </div>\
         </div>',
-        "latitude": 52.650429,
-        "longitude": 41.407760,
+        "latitude": 59.61838206459388,
+        "longitude": 30.172981999999966,
         },
       ],
     };
@@ -620,7 +621,7 @@ if(maps) {
         yamapButtonEleven.classList.remove("active");
       }
       // end
-      
+      // Москва
       if (document.querySelector('#yamapone').classList.contains("active")) {
         mappoint();
         yamapButtonOne.parentNode.parentNode.scrollTop =  yamapButtonOne.offsetTop - yamapButtonOne.scrollHeight;
@@ -628,13 +629,14 @@ if(maps) {
         yamapPopupButton.children[0].innerHTML = yamapButtonOne.children[0].innerHTML;
         yamapInfoPopup.classList.add("active");
         yamapButtonOne.classList.add("active");
-        myMap.setCenter([55.88088924541,37.423524915344],12);
+        myMap.setCenter([55.88082856885077,37.423437499999956],12);
       } else {
         myMap.setCenter([55.253215,37.622504],5);
         mappoint();
         yamapInfoPopup.classList.remove("active");
         yamapPopupButton.children[0].innerHTML = "Выберите город";
       };
+      // Рязань
       if (document.querySelector('#yamaptwo').classList.contains("active")) {
         mappoint();
         yamapButtonTwo.parentNode.parentNode.scrollTop =  yamapButtonTwo.offsetTop - yamapButtonTwo.scrollHeight;
@@ -642,8 +644,9 @@ if(maps) {
         yamapPopupButton.children[0].innerHTML = yamapButtonTwo.children[0].innerHTML;
         yamapInfoPopup.classList.add("active");
         yamapButtonTwo.classList.add("active");
-        myMap.setCenter([59.618243,30.172631],12);
+        myMap.setCenter([54.64721307003627,39.63870999999999],12);
       } else {};
+      // Пенза
       if (document.querySelector('#yamapthree').classList.contains("active")) {
         mappoint();
         yamapButtonThree.parentNode.parentNode.scrollTop =  yamapButtonThree.offsetTop - yamapButtonThree.scrollHeight;
@@ -651,8 +654,9 @@ if(maps) {
         yamapPopupButton.children[0].innerHTML = yamapButtonThree.children[0].innerHTML;
         yamapInfoPopup.classList.add("active");
         yamapButtonThree.classList.add("active");
-        myMap.setCenter([51.639685,39.324973],12);
+        myMap.setCenter([53.2699360711638,45.02489149999999],12);
       } else {};
+      // Орёл
       if (document.querySelector('#yamapfour').classList.contains("active")) {
         mappoint();
         yamapButtonFour.parentNode.parentNode.scrollTop =  yamapButtonFour.offsetTop - yamapButtonFour.scrollHeight;
@@ -660,8 +664,9 @@ if(maps) {
         yamapPopupButton.children[0].innerHTML = yamapButtonFour.children[0].innerHTML;
         yamapInfoPopup.classList.add("active");
         yamapButtonFour.classList.add("active");
-        myMap.setCenter([51.627834,36.117242],12);
+        myMap.setCenter([52.92358707142793,36.07856949999995],12);
       } else {};
+      // Курск
       if (document.querySelector('#yamapfive').classList.contains("active")) {
         mappoint();
         yamapButtonFive.parentNode.parentNode.scrollTop =  yamapButtonFive.offsetTop - yamapButtonFive.scrollHeight;
@@ -669,8 +674,9 @@ if(maps) {
         yamapPopupButton.children[0].innerHTML = yamapButtonFive.children[0].innerHTML;
         yamapInfoPopup.classList.add("active");
         yamapButtonFive.classList.add("active");
-        myMap.setCenter([52.597220203418,39.458276316873],12);
+        myMap.setCenter([51.627834072323296,36.117241999999955],12);
       } else {};
+      // Воронеж
       if (document.querySelector('#yamapsix').classList.contains("active")) {
         mappoint();
         yamapButtonSix.parentNode.parentNode.scrollTop =  yamapButtonSix.offsetTop - yamapButtonSix.scrollHeight;
@@ -678,8 +684,9 @@ if(maps) {
         yamapPopupButton.children[0].innerHTML = yamapButtonSix.children[0].innerHTML;
         yamapInfoPopup.classList.add("active");
         yamapButtonSix.classList.add("active");
-        myMap.setCenter([52.923587,36.078570],12);
+        myMap.setCenter([51.631278072332194,39.33890599999997],12);
       } else {};
+      // Липецк
       if (document.querySelector('#yamapseven').classList.contains("active")) {
         mappoint();
         yamapButtonSeven.parentNode.parentNode.scrollTop =  yamapButtonSeven.offsetTop - yamapButtonSeven.scrollHeight;
@@ -687,8 +694,9 @@ if(maps) {
         yamapPopupButton.children[0].innerHTML = yamapButtonSeven.children[0].innerHTML;
         yamapInfoPopup.classList.add("active");
         yamapButtonSeven.classList.add("active");
-        myMap.setCenter([50.452752,40.148549],12);
+        myMap.setCenter([52.59647607167905,39.45774449999999],12);
       } else {};
+      // Тамбов
       if (document.querySelector('#yamapeight').classList.contains("active")) {
         mappoint();
         yamapButtonEight.parentNode.parentNode.scrollTop =  yamapButtonEight.offsetTop - yamapButtonEight.scrollHeight;
@@ -696,8 +704,9 @@ if(maps) {
         yamapPopupButton.children[0].innerHTML = yamapButtonEight.children[0].innerHTML;
         yamapInfoPopup.classList.add("active");
         yamapButtonEight.classList.add("active");
-        myMap.setCenter([53.270195255583,45.024497906746],12);
+        myMap.setCenter([52.65324657162419,41.43672399999999],12);
       } else {};
+      // Павловск
       if (document.querySelector('#yamapnine').classList.contains("active")) {
         mappoint();
         yamapButtonNine.parentNode.parentNode.scrollTop =  yamapButtonNine.offsetTop - yamapButtonNine.scrollHeight;
@@ -705,8 +714,9 @@ if(maps) {
         yamapPopupButton.children[0].innerHTML = yamapButtonNine.children[0].innerHTML;
         yamapInfoPopup.classList.add("active");
         yamapButtonNine.classList.add("active");
-        myMap.setCenter([56.9816779,29.9243012],12);
+        myMap.setCenter([50.4533660730111,40.148216500000004],12);
       } else {};
+      // Псков
       if (document.querySelector('#yamapten').classList.contains("active")) {
         mappoint();
         yamapButtonTen.parentNode.parentNode.scrollTop =  yamapButtonTen.offsetTop - yamapButtonTen.scrollHeight;
@@ -714,8 +724,9 @@ if(maps) {
         yamapPopupButton.children[0].innerHTML = yamapButtonTen.children[0].innerHTML;
         yamapInfoPopup.classList.add("active");
         yamapButtonTen.classList.add("active");
-        myMap.setCenter([54.647213,39.638701],12);
+        myMap.setCenter([57.83131806677265,28.298539499999958],12);
       } else {};
+      // Санкт-Петербург
       if (document.querySelector('#yamapeleven').classList.contains("active")) {
         mappoint();
         yamapButtonEleven.parentNode.parentNode.scrollTop =  yamapButtonEleven.offsetTop - yamapButtonEleven.scrollHeight;
@@ -723,7 +734,7 @@ if(maps) {
         yamapPopupButton.children[0].innerHTML = yamapButtonEleven.children[0].innerHTML;
         yamapInfoPopup.classList.add("active");
         yamapButtonEleven.classList.add("active");
-        myMap.setCenter([52.650429,41.407760],12);
+        myMap.setCenter([59.61838206459388,30.172981999999966],12);
       } else {};
     });
   }

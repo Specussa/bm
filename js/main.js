@@ -445,12 +445,18 @@ if(headerregionpopup) {
 
 // start tel
 const headertel = document.querySelector(".header__tel");
+const headerteldesc = document.querySelector(".header__tel_desc");
+const headertelinput = document.querySelector(".header__tel_input");
+const systemsbutton = document.querySelector(".systems__button");
+const orderservice = document.querySelector(".order_service");
 const headermobiletel = document.querySelector(".header__mobile_tel");
 const headertelclose = document.querySelector(".header__tel_close");
 const headertellabel = document.getElementsByClassName("header__tel_label");
 if(headertelpopup) {
   headertel.addEventListener('click', function() {
     if (!headertelpopup.classList.contains("active")) {
+      headerteldesc.innerText = "Мы перезвоним вам в течение 5 минут";
+      headertelinput.value = "Обратный звонок";
       headertelpopup.classList.add("active");
       headerOverlay.classList.add("active");
       bodyOverlay.classList.add("active");
@@ -477,6 +483,70 @@ if(headertelpopup) {
       html.classList.remove("noscroll");
     }
   })
+  if (systemsbutton) {
+    systemsbutton.addEventListener('click', function() {
+      if (!headertelpopup.classList.contains("active")) {
+        headerteldesc.innerText = "Стать частью";
+        headertelinput.value = "Стать частью";
+        headertelpopup.classList.add("active");
+        headerOverlay.classList.add("active");
+        bodyOverlay.classList.add("active");
+        html.classList.add("noscroll");
+        headerregionpopup.classList.remove("active");
+        headernslpActive.forEach((n) => n.classList.remove("active"));
+        headernslpActive.forEach((n) => n.style.maxHeight = null);
+        headernlpActive.forEach((n) => n.classList.remove("active"));
+        if(headervacancypopup){headervacancypopup.classList.remove("active")};
+        if(cf){
+          cfLinksActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.style.maxHeight = null);
+        };
+        if(videopopup){
+          headerOverlay.classList.remove("active");
+          videopopup.classList.remove("active");
+          videoinner.innerHTML = "";
+        };
+      } else {
+        headertelpopup.classList.remove("active");
+        headerOverlay.classList.remove("active");
+        bodyOverlay.classList.remove("active");
+        html.classList.remove("noscroll");
+      }
+    })
+  }
+  if (orderservice) {
+    orderservice.addEventListener('click', function() {
+      if (!headertelpopup.classList.contains("active")) {
+        headerteldesc.innerText = "Заказать услугу";
+        headertelinput.value = "Заказать услугу";
+        headertelpopup.classList.add("active");
+        headerOverlay.classList.add("active");
+        bodyOverlay.classList.add("active");
+        html.classList.add("noscroll");
+        headerregionpopup.classList.remove("active");
+        headernslpActive.forEach((n) => n.classList.remove("active"));
+        headernslpActive.forEach((n) => n.style.maxHeight = null);
+        headernlpActive.forEach((n) => n.classList.remove("active"));
+        if(headervacancypopup){headervacancypopup.classList.remove("active")};
+        if(cf){
+          cfLinksActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.style.maxHeight = null);
+        };
+        if(videopopup){
+          headerOverlay.classList.remove("active");
+          videopopup.classList.remove("active");
+          videoinner.innerHTML = "";
+        };
+      } else {
+        headertelpopup.classList.remove("active");
+        headerOverlay.classList.remove("active");
+        bodyOverlay.classList.remove("active");
+        html.classList.remove("noscroll");
+      }
+    })
+  }
   headermobiletel.addEventListener('click', function() {
     if (!headertelpopup.classList.contains("active")) {
       headertelpopup.classList.add("active");
