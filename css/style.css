@@ -51,12 +51,6 @@
 
 html {
   height: 100%;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
   scroll-behavior: smooth;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -2830,6 +2824,7 @@ html.has-scroll-dragging {
 
 .category__bottom {
   display: flex;
+  width: 100%;
   height: 100%;
   flex-direction: column;
   gap: 20px;
@@ -5227,6 +5222,10 @@ html.has-scroll-dragging {
   flex-direction: column;
   gap: 40px;
   background-color: var(--white);
+}
+
+.policy__desc {
+  max-width: 100%;
 }
 
 .brand__desc {
