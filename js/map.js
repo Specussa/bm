@@ -305,6 +305,7 @@ if(maplist) {
     const mapbuttoneleven = document.querySelector('.map__button_eleven');
     const mappointeleven = document.querySelector('.map__point_eleven');
     const mapeleven = document.querySelector('.map__eleven');
+    const mapregionspan = document.querySelector(".header__region span")
 
     mapscroll.style.height = (mapflex.scrollHeight - mapactive.scrollHeight) + "px";
     
@@ -553,5 +554,28 @@ if(maplist) {
         mapbuttoneleven.parentNode.parentNode.scrollTop = mapbuttoneleven.offsetTop - mapactive.scrollHeight + mapbuttoneleven.previousElementSibling.scrollHeight - mapbuttoneleven.scrollHeight;
       }
     });
+    if (mapregionspan.innerText.includes("Москва")) {
+      mapbuttonone.click();
+    } else if (mapregionspan.innerText.includes("Рязань")) {
+      mapbuttontwo.click();
+    } else if (mapregionspan.innerText.includes("Пенза")) {
+      mapbuttonthree.click();
+    } else if (mapregionspan.innerText.includes("Орёл")) {
+      mapbuttonseven.click();
+    } else if (mapregionspan.innerText.includes("Курск")) {
+      mapbuttoneight.click();
+    } else if (mapregionspan.innerText.includes("Воронеж")) {
+      mapbuttonsix.click();
+    } else if (mapregionspan.innerText.includes("Липецк")) {
+      mapbuttonfive.click();
+    } else if (mapregionspan.innerText.includes("Тамбов")) {
+      mapbuttonfour.click();
+    } else if (mapregionspan.innerText.includes("Павловск")) {
+      mapbuttoneleven.click();
+    } else if (mapregionspan.innerText.includes("Псков")) {
+      mapbuttonten.click();
+    } else if (mapregionspan.innerText.includes("Санкт-Петербург")) {
+      mapbuttonnine.click();
+    }
   });
 }

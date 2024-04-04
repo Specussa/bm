@@ -18,6 +18,7 @@ const yamapButtonTen = document.querySelector('.yamap__button_ten');
 const yamapButtonEleven = document.querySelector('.yamap__button_eleven');
 const yamapInfoInner = document.querySelector('.yamap__info_inner');
 const yamapInfoPopup = document.querySelector('.yamap__info_popup');
+const yamapregionspan = document.querySelector(".header__region span")
 function delmappoint() {
   document.querySelector('#yamapone').classList.remove("active");
   document.querySelector('#yamaptwo').classList.remove("active");
@@ -739,6 +740,33 @@ if(maps) {
     });
   }
   if (ymaps != undefined) ymaps.ready(init);
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(function() {
+      if (yamapregionspan.innerText.includes("Москва")) {
+        yamapButtonOne.click();
+      } else if (yamapregionspan.innerText.includes("Рязань")) {
+        yamapButtonTwo.click();
+      } else if (yamapregionspan.innerText.includes("Пенза")) {
+        yamapButtonThree.click();
+      } else if (yamapregionspan.innerText.includes("Орёл")) {
+        yamapButtonFour.click();
+      } else if (yamapregionspan.innerText.includes("Курск")) {
+        yamapButtonFive.click();
+      } else if (yamapregionspan.innerText.includes("Воронеж")) {
+        yamapButtonSix.click();
+      } else if (yamapregionspan.innerText.includes("Липецк")) {
+        yamapButtonSeven.click();
+      } else if (yamapregionspan.innerText.includes("Тамбов")) {
+        yamapButtonEight.click();
+      } else if (yamapregionspan.innerText.includes("Павловск")) {
+        yamapButtonNine.click();
+      } else if (yamapregionspan.innerText.includes("Псков")) {
+        yamapButtonTen.click();
+      } else if (yamapregionspan.innerText.includes("Санкт-Петербург")) {
+        yamapButtonEleven.click();
+      }
+    }, 500);
+  });
 }
 // end yandex map
 // yamap
