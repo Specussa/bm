@@ -8352,10 +8352,12 @@ font.errortext{color:red}font.notetext{color:green}
   .feedback__textarea {
     height: 150px;
   }
-  .feedback__left,
   .feedback__form_flex,
   .feedback__bottom {
     gap: 15px;
+  }
+  .feedback__left {
+    gap: 0;
   }
   .footer__info {
     flex-direction: column;
