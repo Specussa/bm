@@ -175,18 +175,24 @@ if(formvacancy) {
     vacancycheckbox.checked) {
       formvacancy.classList.add("hidden");
       document.getElementById('form__successfully_form__vacancy').classList.add("active");
-      fetch('/ajax/sendMail.php', {
+
+      let formData = new FormData();
+      formData.append('name', vacancyusername.value);
+      formData.append('email', vacancyemail.value);
+      formData.append('text', vacancytext.value);
+      formData.append('phone', vacancyphone.value);
+      formData.append('name', document.getElementById('form__vacancy_name').value);
+      formData.append('file', document.getElementById('form__vacancy_file').files[0]);
+      
+      fetch('/local/ajax/vacancy.php', {
         method: 'POST',
-        body: JSON.stringify({
-          one: vacancyusernameValue,
-          two: vacancyemailValue,
-          three: vacancytextValue,
-          four: vacancyphoneValue,
-          five: vacancyfileValue
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
+        body: formData
+      })
+      .then(response => {
+        return response.text();
+      })
+      .then(data => {
+        // console.log(data);
       });
     } else if(vacancyusernameValue !== '' && vacancyusernameValue.length >= vacancyusernameMin && vacancyusernameValue.length <= vacancyusernameMax && 
     vacancyemailValue !== '' && vacancyemailValue.length >= vacancyemailMin && vacancyemailValue.length <= vacancyemailMax &&  
@@ -195,18 +201,23 @@ if(formvacancy) {
     vacancycheckbox.checked) {
       formvacancy.classList.add("hidden");
       document.getElementById('form__successfully_form__vacancy').classList.add("active");
-      fetch('/ajax/sendMail.php', {
+      let formData = new FormData();
+      formData.append('name', vacancyusername.value);
+      formData.append('email', vacancyemail.value);
+      formData.append('text', vacancytext.value);
+      formData.append('phone', vacancyphone.value);
+      formData.append('name', document.getElementById('form__vacancy_name').value);
+      formData.append('file', document.getElementById('form__vacancy_file').files[0]);
+      
+      fetch('/local/ajax/vacancy.php', {
         method: 'POST',
-        body: JSON.stringify({
-          one: vacancyusernameValue,
-          two: vacancyemailValue,
-          three: vacancytextValue,
-          four: vacancyphoneValue,
-          five: vacancyfileValue
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
+        body: formData
+      })
+      .then(response => {
+        return response.text();
+      })
+      .then(data => {
+        // console.log(data);
       });
     }
   }
@@ -322,7 +333,7 @@ if(formtel) {
     telcheckbox.checked) {
       formtel.classList.add("hidden");
       document.getElementById('form__successfully_form__tel').classList.add("active");
-      fetch('/ajax/sendMail.php', {
+      fetch('/local/ajax/call.php', {
         method: 'POST',
         body: JSON.stringify({
           one: telusernameValue,
@@ -433,7 +444,7 @@ if(formfeedback) {
     feedbackcheckbox.checked) {
       formfeedback.classList.add("hidden");
       document.getElementById('form__successfully_form__feedback').classList.add("active");
-      fetch('/ajax/sendMail.php', {
+      fetch('/local/ajax/feedback.php', {
         method: 'POST',
         body: JSON.stringify({
           one: feedbackusernameValue,

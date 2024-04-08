@@ -309,13 +309,20 @@ section {
   /* margin: -1px 0 0;
   padding: 0 0 1px; */
   position: relative;
-  opacity: 1;
+  opacity: 0;
   pointer-events: all;
   background-color: var(--bg);
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
   overflow: hidden;
 }
 
-.container {
+body.loaded section {
+  opacity: 1;
+}
+
+.container,
+.bx-404-container {
   width: 100%;
   max-width: 1920px;
   padding: 0 100px;
@@ -417,12 +424,12 @@ section {
 .swiper-container-3d .swiper-wrapper,
 .swiper-3d .swiper-cube-shadow, .swiper-3d .swiper-slide,
 .swiper-3d {
-  will-change: transform, -webkit-transform, -moz-transform, -ms-transform, -o-transform;
+  will-change: transform, -webkit-transform, -moz-transform, -ms-transform, -o-transform, opacity;
   -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   -o-transition-property: transform;
   transition-property: transform;
-  transition-property: transform, -webkit-transform, -moz-transform, -ms-transform, -o-transform;
+  transition-property: transform, -webkit-transform, -moz-transform, -ms-transform, -o-transform, opacity;
 }
 
 [data-scroll-section],
@@ -4802,6 +4809,11 @@ html.has-scroll-dragging {
   cursor: pointer;
 }
 
+.company_specialists .catalog_filter__mobile_check p,
+.company_specialists .catalog_filter__mobile_check svg {
+  color: var(--white);
+}
+
 .catalog_filter__mobile_check svg {
   width: 20px;
   height: 20px;
@@ -5442,7 +5454,9 @@ html.has-scroll-dragging {
 }
 
 .systems__button,
-.order_service {
+.order_service,
+.systems_service,
+.systems__button_default {
   width: 100%;
   min-width: 100%;
   height: 100px;
@@ -6304,8 +6318,41 @@ html.has-scroll-dragging {
 
 .company_specialists__name,
 .company_specialists__name b,
-.company_specialists__job {
+.company_specialists__job,
+.company_specialists__job_tel {
   color: var(--white);
+}
+
+.company_specialists__job_block {
+  position: relative;
+}
+
+.company_specialists__job {
+  position: relative;
+  z-index: 1;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.company_specialists__job_tel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.company_specialists__link:hover .company_specialists__job,
+.company_specialists__job_tel {
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+.company_specialists__job,
+.company_specialists__link:hover .company_specialists__job_tel {
+  opacity: 1;
+  transition-delay: 0.15s;
 }
 
 .company_specialists__navigations {
@@ -6375,6 +6422,7 @@ html.has-scroll-dragging {
 
 .company_specialists__information {
   display: flex;
+  width: 100%;
   flex-direction: column;
 }
 
@@ -6394,7 +6442,7 @@ html.has-scroll-dragging {
 
 .video__popup {
   display: flex;
-  width: calc(100% - 20px);
+  width: calc(100% - 64px);
   height: 900px;
   max-height: calc(100vh - var(--hscroll) - 200px);
   max-width: calc(16 / 9 * 100vh);
@@ -6792,6 +6840,95 @@ html.has-scroll-dragging {
 
 /* end yamap */
 
+/* start bx */
+
+.search-page {
+  width: 100%;
+  padding: 40px 0;
+  font-family: var(--text-font);
+}
+
+div.search-page input.search-query,
+div.search-page input.search-suggest,
+table.search-filter input.input-field,
+table.search-filter select.select-field {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+div.search-page input.search-button {
+  -webkit-text-fill-color: var(--white) !important;
+  border: none !important;
+  padding: 10px;
+  background: var(--red) !important;
+  cursor: pointer;
+}
+
+font.notetext {
+  color: var(--red) !important;
+}
+
+.search-page tbody tr {
+  display: flex;
+  align-items: flex-end;
+}
+
+.bx-context-toolbar-empty-area {
+  width: 100%;
+}
+
+div.search-tags-chain a {margin:2px;}
+div.search-tags-chain a.search-tags-link {color:#333333; font-size:90%; text-decoration:none;color:#535353;}
+div.search-tags-cloud a {white-space: normal;}
+
+div.search-advanced { overflow: hidden; margin: 0.5em 0; zoom:1;}
+div.search-advanced-result { float: left; width:70%;}
+div.search-advanced-filter { float: right; }
+div.search-advanced-filter a { outline: none;}
+
+div.search-item { margin: 0 0 1.5em; padding: 0 0 1.5em; border-bottom: 1px solid;}
+div.search-item h4 { font-size: 140%; font-weight: normal; line-height: 1.2; margin: 1.3em 0 0.4em;}
+div.search-item h4 a { text-decoration:none;}
+div.search-item h4 img { border:0px;vertical-align:middle;}
+div.search-item h4 span { vertical-align:middle;text-decoration:underline;}
+div.search-result { margin: 0;}
+div.search-preview {margin: 0.5em 0;}
+
+div.search-item-meta { margin: 1em 0 0 0; overflow: hidden; zoom: 1;}
+div.search-item-rate { float: left; margin: -3px 6px 0 0;}
+div.search-item-tags { float: left; }
+div.search-item-date { float: right;}
+
+div.search-page input.search-query {width: 99%; border: 1px solid; font-size:1.3em;}
+div.search-page input.search-suggest {width: 99%; border: 1px solid; font-size:1.3em;}
+div.search-page input.search-button { font-size: 1.2em; }
+
+div.search-filter h2 { margin:1em 0 0.5em; border: none;}
+table.search-filter { width: 100%;  margin-top: 0.5em;}
+table.search-filter td { padding: 1em; border-top: 1px solid;}
+td.search-filter-name { width: 10%; text-align: right;}
+td.search-filter-field { width: 50%;}
+
+table.search-filter input.input-field { border: 1px solid; font-size:1.3em; }
+table.search-filter select.select-field {border: 1px solid; font-size:1.2em; }
+
+div.search-sorting { margin: 0.5em 0;}
+div.search-sorting b { padding: 0.2em 0.3em 0.3em ; font-weight: normal;}
+div.search-item, table.search-filter td { border-color: #E9E9E9;}
+div.search-page input.search-query, div.search-page input.search-suggest, table.search-filter input.input-field, table.search-filter select.select-field { background: #F8F7F7; border-color: #D9D9D9; }
+div.search-advanced, div.search-item-meta, div.search-item-meta a { color: #8a8a8a; }
+div.search-sorting b { background: #e8e9ec; }
+
+.search-item-rate {font-size: 11px;}
+font.errortext{color:red}font.notetext{color:green}
+
+.bx-404-container {
+  margin: 40px 0;
+}
+
+/* end bx */
+
 /* max-width: 1919px */
 @media (max-width: 1919px){
   .main {
@@ -6801,7 +6938,8 @@ html.has-scroll-dragging {
     font-size: 99px;
     line-height: 102px;
   }
-  .container {
+  .container,
+  .bx-404-container {
     padding: 0 40px;
   }
   .header__top_block {
@@ -6820,7 +6958,7 @@ html.has-scroll-dragging {
     height: 350px;
   }
   .category__item {
-    min-height: 300px;
+    height: 300px;
   }
   .category__item,
   .category__top {
@@ -7144,7 +7282,8 @@ html.has-scroll-dragging {
     font-size: 18px;
     line-height: 25px;
   }
-  .container {
+  .container,
+  .bx-404-container {
     padding: 0 20px;
   }
   #form__successfully_form__tel,
@@ -7785,7 +7924,9 @@ html.has-scroll-dragging {
     width: 306px;
   }
   .systems__button,
-  .order_service {
+  .order_service,
+  .systems_service,
+  .systems__button_default {
     height: 80px;
   }
   .systems__desc {
@@ -7887,6 +8028,9 @@ html.has-scroll-dragging {
   .video__close {
     top: -32px;
     right: 0;
+  }
+  .video__popup {
+    width: calc(100% - 20px);
   }
   .video__popup {
     max-height: calc(100% - 20px);
@@ -8404,7 +8548,7 @@ html.has-scroll-dragging {
     height: 40px;
   }
   .footer__social_list {
-    margin: 0 0 0 auto;
+    margin: 0 0 auto auto;
   }
   .footer__contact {
     display: flex;
@@ -8532,6 +8676,9 @@ html.has-scroll-dragging {
   }
   .catalog_filter__block {
     padding: 20px 0;
+  }
+  .company_specialists .catalog_filter__block {
+    padding: 20px 0 0;
   }
   .catalog_filter__clear {
     height: 100%;
@@ -8785,7 +8932,9 @@ html.has-scroll-dragging {
     width: 180px;
   }
   .systems__button,
-  .order_service {
+  .order_service,
+  .systems_service,
+  .systems__button_default {
     height: 50px;
   }
   .system__flex_images {
@@ -8869,6 +9018,9 @@ html.has-scroll-dragging {
   .achievements__image {
     height: 230px;
   }
+  .company_bottom__image {
+    display: none;
+  }
   .yamap__list {
     gap: 10px;
   }
@@ -8876,6 +9028,7 @@ html.has-scroll-dragging {
     max-width: 100%;
   }
   .footer__top {
+    align-items: flex-end;
     gap: 10px;
   }
 }
@@ -8891,14 +9044,13 @@ html.has-scroll-dragging {
   .catalog__item {
     width: 100%;
   }
-  .company_bottom__image {
-    display: none;
-  }
   .video__popup {
     height: 200px;
   }
   .footer__top {
     flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
   .footer__info {
     width: 100%;

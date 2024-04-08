@@ -449,6 +449,9 @@ const headerteldesc = document.querySelector(".header__tel_desc");
 const headertelinput = document.querySelector(".header__tel_input");
 const systemsbutton = document.querySelector(".systems__button");
 const orderservice = document.querySelector(".order_service");
+const systemsservice = document.querySelector(".systems_service");
+const findpricebutton = document.querySelector(".findprice__button");
+const calculateleasingbutton = document.querySelector(".calculateleasing__button");
 const headermobiletel = document.querySelector(".header__mobile_tel");
 const headertelclose = document.querySelector(".header__tel_close");
 const headertellabel = document.getElementsByClassName("header__tel_label");
@@ -547,6 +550,102 @@ if(headertelpopup) {
       }
     })
   }
+  if (systemsservice) {
+    systemsservice.addEventListener('click', function() {
+      if (!headertelpopup.classList.contains("active")) {
+        headerteldesc.innerText = "Заказать услугу системы точного земледелия";
+        headertelinput.value = "Заказать услугу системы точного земледелия";
+        headertelpopup.classList.add("active");
+        headerOverlay.classList.add("active");
+        bodyOverlay.classList.add("active");
+        html.classList.add("noscroll");
+        headerregionpopup.classList.remove("active");
+        headernslpActive.forEach((n) => n.classList.remove("active"));
+        headernslpActive.forEach((n) => n.style.maxHeight = null);
+        headernlpActive.forEach((n) => n.classList.remove("active"));
+        if(headervacancypopup){headervacancypopup.classList.remove("active")};
+        if(cf){
+          cfLinksActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.style.maxHeight = null);
+        };
+        if(videopopup){
+          headerOverlay.classList.remove("active");
+          videopopup.classList.remove("active");
+          videoinner.innerHTML = "";
+        };
+      } else {
+        headertelpopup.classList.remove("active");
+        headerOverlay.classList.remove("active");
+        bodyOverlay.classList.remove("active");
+        html.classList.remove("noscroll");
+      }
+    })
+  }
+  if (findpricebutton) {
+    findpricebutton.addEventListener('click', function() {
+      if (!headertelpopup.classList.contains("active")) {
+        headerteldesc.innerText = "Узнать цену";
+        headertelinput.value = "Узнать цену - " + document.querySelector(".product__head").innerText;
+        headertelpopup.classList.add("active");
+        headerOverlay.classList.add("active");
+        bodyOverlay.classList.add("active");
+        html.classList.add("noscroll");
+        headerregionpopup.classList.remove("active");
+        headernslpActive.forEach((n) => n.classList.remove("active"));
+        headernslpActive.forEach((n) => n.style.maxHeight = null);
+        headernlpActive.forEach((n) => n.classList.remove("active"));
+        if(headervacancypopup){headervacancypopup.classList.remove("active")};
+        if(cf){
+          cfLinksActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.style.maxHeight = null);
+        };
+        if(videopopup){
+          headerOverlay.classList.remove("active");
+          videopopup.classList.remove("active");
+          videoinner.innerHTML = "";
+        };
+      } else {
+        headertelpopup.classList.remove("active");
+        headerOverlay.classList.remove("active");
+        bodyOverlay.classList.remove("active");
+        html.classList.remove("noscroll");
+      }
+    })
+  }
+  if (calculateleasingbutton) {
+    calculateleasingbutton.addEventListener('click', function() {
+      if (!headertelpopup.classList.contains("active")) {
+        headerteldesc.innerText = "Рассчитать лизинг";
+        headertelinput.value = "Рассчитать лизинг - " + document.querySelector(".product__head").innerText;
+        headertelpopup.classList.add("active");
+        headerOverlay.classList.add("active");
+        bodyOverlay.classList.add("active");
+        html.classList.add("noscroll");
+        headerregionpopup.classList.remove("active");
+        headernslpActive.forEach((n) => n.classList.remove("active"));
+        headernslpActive.forEach((n) => n.style.maxHeight = null);
+        headernlpActive.forEach((n) => n.classList.remove("active"));
+        if(headervacancypopup){headervacancypopup.classList.remove("active")};
+        if(cf){
+          cfLinksActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.classList.remove("active"));
+          cfPopupActive.forEach((n) => n.style.maxHeight = null);
+        };
+        if(videopopup){
+          headerOverlay.classList.remove("active");
+          videopopup.classList.remove("active");
+          videoinner.innerHTML = "";
+        };
+      } else {
+        headertelpopup.classList.remove("active");
+        headerOverlay.classList.remove("active");
+        bodyOverlay.classList.remove("active");
+        html.classList.remove("noscroll");
+      }
+    })
+  }
   headermobiletel.addEventListener('click', function() {
     if (!headertelpopup.classList.contains("active")) {
       headertelpopup.classList.add("active");
@@ -605,6 +704,7 @@ if(headervacancypopup) {
     vacancycontact[i].onclick = function(e) {
       if (!headervacancypopup.classList.contains("active")) {
         headervacancydesc.children[1].innerText = this.parentElement.parentElement.parentElement.parentElement.children[0].children[0].children[1].children[0].children[0].innerText;
+        document.getElementById('form__vacancy_name').value = this.parentElement.parentElement.parentElement.parentElement.children[0].children[0].children[1].children[0].children[0].innerText;
         headervacancypopup.classList.add("active");
         headerOverlay.classList.add("active");
         bodyOverlay.classList.add("active");
