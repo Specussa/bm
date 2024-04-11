@@ -987,6 +987,7 @@ const heroblock = document.querySelector(".hero__block");
 if(heroblock){
   var heroslider = new Swiper(".hero__slider", {
     loop: true,
+    slidesPerView: 1,
     spaceBetween: 0,
     speed: 1500,
     autoplay: {
@@ -1004,14 +1005,6 @@ if(heroblock){
     navigation: {
       nextEl: ".hero__next",
       prevEl: ".hero__prev"
-    },
-    breakpoints: {
-      1439: {
-        slidesPerView: 1.33333,
-      },
-      1: {
-        slidesPerView: 1,
-      },
     },
     on: {
       autoplayTimeLeft(s, time, progress) {
