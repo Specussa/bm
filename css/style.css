@@ -269,9 +269,7 @@ h1 {
   color: var(--text);
 }
 
-h2,
-.catalog_top__head,
-.product__head {
+h2 {
   font-family: var(--title-font);
   font-size: 67px;
   font-weight: 700;
@@ -279,7 +277,9 @@ h2,
   color: var(--text);
 }
 
-h3 {
+h3,
+.catalog_top__head,
+.product__head {
   font-family: var(--title-font);
   font-size: 41px;
   font-weight: 700;
@@ -2059,7 +2059,7 @@ html.has-scroll-dragging {
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .header__nav_close,
@@ -7252,13 +7252,13 @@ font.errortext{color:red}font.notetext{color:green}
     font-size: 62px;
     line-height: 72px;
   }
-  h2,
-  .catalog_top__head,
-  .product__head {
+  h2 {
     font-size: 42px;
     line-height: 52px;
   }
-  h3 {
+  h3,
+  .catalog_top__head,
+  .product__head {
     font-size: 31px;
     line-height: 36px;
   }
@@ -8158,13 +8158,13 @@ font.errortext{color:red}font.notetext{color:green}
     font-size: 32px;
     line-height: 40px;
   }
-  h2,
-  .catalog_top__head,
-  .product__head {
+  h2 {
     font-size: 28px;
     line-height: 34px;
   }
-  h3 {
+  h3,
+  .catalog_top__head,
+  .product__head {
     font-size: 24px;
     line-height: 26px;
   }
