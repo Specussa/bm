@@ -1085,10 +1085,10 @@ if(news){
     spaceBetween: 10,
     loop: true,
     speed: 500,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //   delay: 4000,
+    //   disableOnInteraction: false
+    // },
     navigation: {
       nextEl: ".news__next",
       prevEl: ".news__prev"
