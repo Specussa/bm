@@ -990,10 +990,10 @@ if(heroblock){
     slidesPerView: 1,
     spaceBetween: 0,
     speed: 1500,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //   delay: 4000,
+    //   disableOnInteraction: false
+    // },
     pagination: {
       el: '.hero__pagination',
       type: 'bullets',
@@ -1031,10 +1031,10 @@ if(companyslider){
     spaceBetween: 16,
     loop: true,
     speed: 500,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //   delay: 4000,
+    //   disableOnInteraction: false
+    // },
     navigation: {
       nextEl: ".company_slider__next",
       prevEl: ".company_slider__prev"
@@ -1110,10 +1110,10 @@ if(otherslider){
     spaceBetween: 16,
     loop: true,
     speed: 500,
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false
-    },
+    // autoplay: {
+    //   delay: 4000,
+    //   disableOnInteraction: false
+    // },
     navigation: {
       nextEl: ".other__slider_next",
       prevEl: ".other__slider_prev"

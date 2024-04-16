@@ -7321,6 +7321,16 @@ font.errortext{color:red}font.notetext{color:green}
   .news__link:hover .news__info {
     height: 105px;
   }
+  .news__block {
+    width: 100%;
+    padding: 40px;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .news__slider {
+    max-width: calc(100% - 40px);
+    margin: -235px 0 0 40px;
+  }
   .footer__lists {
     padding: 20px 0px;
     gap: 80px;
@@ -7682,6 +7692,8 @@ font.errortext{color:red}font.notetext{color:green}
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    top: auto;
+    bottom: -18px;
   }
   .hero__next,
   .hero__prev,
@@ -7756,14 +7768,11 @@ font.errortext{color:red}font.notetext{color:green}
     max-width: 100%;
   }
   .news__block {
-    width: 100%;
-    padding: 40px 20px;
-    justify-content: flex-start;
-    gap: 20px;
+    padding: 40px 0;
   }
   .news__slider {
-    max-width: calc(100% - 20px);
-    margin: -235px 0 0 20px;
+    max-width: 100%;
+    margin: -235px 0 0 0;
   }
   .models__block {
     padding: 25px 0;
@@ -7827,7 +7836,7 @@ font.errortext{color:red}font.notetext{color:green}
   .feedback__right,
   .feedback__checkbox,
   .feedback__btn {
-    width: calc(50% - 5px);
+    width: calc(50% - 10px);
   }
   .feedback input,
   .feedback textarea {
@@ -8418,12 +8427,6 @@ font.errortext{color:red}font.notetext{color:green}
   .feedback__block {
     padding: 50px 0;
   }
-  .feedback__left,
-  .feedback__right,
-  .feedback__checkbox,
-  .feedback__btn {
-    width: 100%;
-  }
   .feedback__textarea {
     height: 150px;
   }
@@ -8665,6 +8668,9 @@ font.errortext{color:red}font.notetext{color:green}
     flex-direction: row;
     gap: 10px;
   }
+  .feedback textarea {
+    height: 100%;
+  }
 }
 /* max-width: 800px */
 
@@ -8871,6 +8877,16 @@ font.errortext{color:red}font.notetext{color:green}
   .yamap__button:hover {
     background-color: var(--black);
   }
+  .feedback__left,
+  .feedback__right,
+  .feedback__checkbox,
+  .feedback__btn {
+    width: 100%;
+  }
+  .hero__pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
+    top: 0;
+    bottom: 0;
+  }
 }
 /* max-width: 767px */
 
@@ -8879,6 +8895,9 @@ font.errortext{color:red}font.notetext{color:green}
   .header__bottom_contact {
     padding: 15px 20px;
     flex-direction: column;
+  }
+  .header__search_input::placeholder {
+    opacity: 0;
   }
   .catalog_top__left {
     padding: 20px;
@@ -9116,6 +9135,15 @@ font.errortext{color:red}font.notetext{color:green}
 
 /* start 390px */
 @media (max-width: 389px) {
+  .news__block {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .news__block,
+  .news::after {
+    height: 350px;
+  }
   .models__flex {
     flex-direction: column;
     align-items: flex-start;
